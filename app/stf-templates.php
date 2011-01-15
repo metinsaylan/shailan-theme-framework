@@ -37,11 +37,11 @@ function themeinfo($key){
 
 function stf_css( $args ){
 	$defaults = array(
-		'id' => null,
-		'name' => null,
+		'id' => '',
+		'name' => '',
 		'media' => 'all'
 	);
-	$args = wp_parse_args( $defaults, $args );
+	$args = wp_parse_args( $args, $defaults );
 	extract($args);
 	
 	echo "<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" />";

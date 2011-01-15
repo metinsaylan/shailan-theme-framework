@@ -15,13 +15,14 @@ $url = get_template_directory_uri();
 
 $dir = str_replace('\\' ,'/', STF_DIRECTORY); 
 $dir = preg_replace('|/+|', '/', $dir);
+$dir = basename($dir);
 
 if ( 0 === strpos($url, 'http') && is_ssl() ){
 	$url = str_replace( 'http://', 'https://', $url );} 
 
-$url = '/' . ltrim($dir, '/');
+$url .= '/' . ltrim($dir, '/');
 
-define('STF_URL', $url);
+define('STF_URL', $url . '/');
 define('STF_APP', STF_DIRECTORY . 'app/');
 
 class Shailan_Framework{
