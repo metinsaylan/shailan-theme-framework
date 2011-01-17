@@ -8,6 +8,7 @@
 
 global $stf;
 global $theme_data;
+global $stf_widget_areas;
 
 define('STF_DIRECTORY', dirname(__FILE__) . '/');
 
@@ -28,7 +29,10 @@ define('STF_APP', STF_DIRECTORY . 'app/');
 class Shailan_Framework{
 
 	function __construct(){
-	
+		global $stf_widget_areas;
+		
+		$stf_widget_areas = array();
+		
 		// Framework version
 		$this->version = "1.0";
 		
@@ -143,13 +147,13 @@ class Shailan_Framework{
 	function theme_admin_init(){
 		$file_dir = get_bloginfo('template_directory');
 		 
-		wp_enqueue_style("stf-options-page", $file_dir . "/framework/css/options.css", false, "1.0", "all");
-		wp_enqueue_style("stf-widgets-mod", $file_dir . "/framework/css/widgets.css", false, "1.0", "all");
+		wp_enqueue_style("stf-options-page", STF_URL . "css/options.css", false, "1.0", "all");
+		wp_enqueue_style("stf-widgets-mod", STF_URL . "css/widgets.css", false, "1.0", "all");
 	}
 	
 	function theme_admin_header(){
 	
-		if ( @$_GET['page'] == "theme-options" ) {
+		if ( @$_GET['page'] == "stf-options" ) {
 		
 			if ( @$_REQUEST['action'] && 'save' == $_REQUEST['action'] ) {
 				// Save settings
@@ -168,7 +172,7 @@ class Shailan_Framework{
 				// Update instance settings array
 				$this->settings = $settings;
 									
-				header("Location: admin.php?page=theme-options&saved=true");
+				header("Location: admin.php?page=stf-options&saved=true");
 				die;
 			} else if( @$_REQUEST['action'] && 'reset' == $_REQUEST['action'] ) {
 				
@@ -190,7 +194,7 @@ class Shailan_Framework{
 			}
 		}
 
-		add_submenu_page('themes.php', $this->name . " Options", "Theme Options", "administrator", "theme-options", array(&$this, 'theme_admin_page'));	
+		add_submenu_page('themes.php', $this->name . " Options", "Theme Options", "administrator", "stf-options", array(&$this, 'theme_admin_page'));	
 		
 	}
 	
@@ -203,7 +207,7 @@ class Shailan_Framework{
 		$footer_text = "<p><small><a href=\"" . $this->theme['URI'] . "\">". $this->name . "</a> is powered by <a href=\"http://shailan.com/wordpress/themes/framework\" title=\"Shailan Theme Framework\">STF</a></small></p>";
 		
 		// Render theme options page
-		include_once("stf-page-options.php");
+		include_once( STF_APP . "stf-page-options.php" );
 	}
 	
 };

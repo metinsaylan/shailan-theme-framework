@@ -6,6 +6,20 @@
  * 1.0 - First release 
 */
 
+global $stf_widget_areas;
+
+function stf_add_widget_area( $name, $id, $description='', $default_widgets='' ){
+	global $stf_widget_areas;
+	
+	$widget_area = array(
+		'name'=>$name,
+		'id'=>$id,
+		'description'=>$description,
+		'default_widgets'=>$default_widgets
+	);
+	
+	array_push($stf_widget_areas, $widget_area); 
+}
 
 function stf_register_widget_area( $args ){
 	global $wp_registered_sidebars;
@@ -31,9 +45,14 @@ function stf_register_widget_area( $args ){
 		) );
 }
 
-function stf_register_widget_areas( $widget_areas ){
+function stf_register_widget_areas( ){
+	global $stf_widget_areas;
+	
+	if(count($stf_widget_areas)==0){
+		stf_default_widget_areas();
+	}
 
-	foreach( $widget_areas as $widget_area ){	
+	foreach( $stf_widget_areas as $widget_area ){	
 	
 		$args = array(
 			'name' => $widget_area['name'],
@@ -45,10 +64,10 @@ function stf_register_widget_areas( $widget_areas ){
 	}
 }
 
-function stf_default_widget_areas(){ add_action( 'widgets_init', 'stf_register_default_widget_areas'); }
-function stf_register_default_widget_areas(){
+function stf_default_widget_areas(){ 
+	global $stf_widget_areas;
 
-	$default_widget_areas = array(
+	$stf_widget_areas = array(
 	
 		array(
 			'name' => 'Header top',
@@ -106,6 +125,8 @@ function stf_register_default_widget_areas(){
 			'description' => '')
 	);
 	
-	stf_register_widget_areas( $default_widget_areas );
+	//stf_register_widget_areas( );
 	
 }
+
+add_action( 'widgets_init', 'stf_register_widget_areas');
