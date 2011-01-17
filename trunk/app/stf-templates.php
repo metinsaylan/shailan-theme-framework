@@ -35,16 +35,19 @@ function themeinfo($key){
 	}
 }
 
-function stf_css( $args ){
+function stf_stylesheet( $name, $args = null, $echo = true ){
 	$defaults = array(
 		'id' => '',
-		'name' => '',
 		'media' => 'all'
 	);
 	$args = wp_parse_args( $args, $defaults );
 	extract($args);
 	
-	echo "<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" />";
+	if($echo){
+		echo "\n\t<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" /> ";
+	} else {
+		return "\n\t<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" /> ";
+	}
 }
 
 function stf_css_960gs(){ 
