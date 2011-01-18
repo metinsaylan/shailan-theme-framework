@@ -19,32 +19,6 @@ function shailan_postrss($content) {
 add_filter('the_excerpt_rss', 'shailan_postrss');
 add_filter('the_content', 'shailan_postrss');
 
-/** Get author link */
-function shailan_get_the_author_metalink( $meta = null , $domain = '', $title = '' ) {
-	global $authordata;
-	
-	if($meta != null && strlen($authordata->$meta)>0){
-		return '<a href="' . $domain . $authordata->$meta . '" title="' . $title . '" rel="external">' . $authordata->display_name . '</a>';
-	} else {
-		return false;
-	}
-
-}
-function shailan_the_author(){
-	global $authordata;
-	
-	$socialsite = array('twitter'=>'http://twitter.com/', 'facebook'=>'http://facebook.com/', 'url'=>'');
-	
-	foreach($socialsite as $meta=>$domain){
-		$link = shailan_get_the_author_metalink($meta, $domain);
-		if(is_object($authordata) && $link){ return $link; exit;}
-	}
-
-	return (is_object($authordata) ? $authordata->display_name : null);
-}
-
-add_filter('the_author', 'shailan_the_author');
-
 /** RSS Feed Thumbnails */
 function shailan_rss_post_thumbnail($content) {
 	global $post;
