@@ -1,7 +1,7 @@
 <?php
 
 	// INCLUDE FRAMEWORK
-	include_once('shailan-theme-framework/stf-framework.php');
+	include_once('stf-framework.php');
 	
 	// ADD WIDGET AREAS (If no sidebars added STF will use default sidebar set.
 	stf_add_widget_area('Sidebar Home', 'sidebar-home', '');
