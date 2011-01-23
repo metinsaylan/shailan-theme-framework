@@ -16,7 +16,6 @@ small, .small, .tiny { font-family: Verdana, Geneva, Tahoma, sans-serif; font-si
 .amp { font-family: baskerville, palatino, "book antiqua", serif; font-style: italic; }
 .smallcaps { font-variant: small-caps; }
 code { font-size: 1.1em; }
-
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 .alignleft, img.alignleft, img[align="left"] { -webkit-box-shadow: #999 0 2px 5px; box-shadow: #999 0 2px 5px; -moz-box-shadow: #999 0 2px 5px;}
@@ -24,19 +23,30 @@ a:hover { text-decoration: underline; }
 a img { border: 0; }
 p:first-letter { font-weight: bold; }
 h1, h2, h3, h4, p, ul, ol{ margin-bottom:15px; }
+
 .hidetext,.screen-reader-text { display:block; font-size: 0px; text-indent:-9999px; }
 .hidden{ display:none; }
-p{ text-align:justify; }
 
+/* Clear */
 .clearboth{ clear:both; }
+.clearleft{ clear:left; }
+.clearright{ clear:right; }
+/* Alignments */
+p{ text-align:justify; }
 .right{ text-align:right; }
 .left{ text-align:left; }
+
+ul.horizontal, ul.horizontal li{ list-style:none;margin:0; display:inline; }
+ul.horizontal li{ padding:3px 10px; } ul.horizontal li+li{ border-left:1px solid #999; }
 
 /** FONT SIZE */
 #site-title{ font-size:3em; }
 #site-description{ font-size:1.2em; }
 .entry-title, .widget-title, .page-title{ font-size:1.2em; font-weigt:bold; }
 
+/* Copyright */
+#theme-copyright{ width:800px; text-align:center; margin:10px auto; font-family:  Verdana, Geneva, Tahoma, sans-serif; font-size:9px; color:#888; }
+#theme-copyright a,#theme-copyright a:hover { color :#888; }
 
 
 
