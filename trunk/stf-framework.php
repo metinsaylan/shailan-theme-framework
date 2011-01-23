@@ -51,6 +51,7 @@ class Shailan_Framework{
 		
 		add_action( 'admin_init', array(&$this, 'theme_admin_init') );
 		add_action( 'admin_menu', array(&$this, 'theme_admin_header') );
+		add_action( 'wp_footer', array(&$this, 'framework_copyright') );
 		
 	}
 	
@@ -207,6 +208,10 @@ class Shailan_Framework{
 		// Render theme options page
 		include_once( STF_APP . "stf-page-options.php" );
 	}
+	
+	function framework_copyright(){ ?>
+		<div id="theme-copyright"><small>Powered by <a href="http://wordpress.org" rel="external" target="_blank">Wordpress</a> <span class="amp">&</span> <a href="http://shailan.com/wordpress/themes/framework" title="Wordpress themes, plugins, widgets and more" rel="external" target="_blank">Framework Theme</a></small></div>
+	<?php }
 	
 };
 
