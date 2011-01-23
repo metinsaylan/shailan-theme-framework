@@ -14,5 +14,13 @@ TAGS: framework, all-widget, widgets, widget-areas, xhtml
 	
 */
 
+body{ 
+	background:#eee; 
+	
+}
 
+#header-wrapper, #footer-wrapper { background-color:#ddd; }
 
+#page{ border:1px solid #ddd; }
+
+#theme-footer{ color:#999; }

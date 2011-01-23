@@ -164,7 +164,7 @@ function stf_entry_thumbnail( $size = null ){
 	
 	if(function_exists('has_post_thumbnail') && has_post_thumbnail( $post->ID )) {
 		echo '<div class="entry-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . get_the_title( $post->ID ) . '">';
-		echo get_the_post_thumbnail( $post->ID, $size, $thumb_attr );
+		echo 	get_the_post_thumbnail( $post->ID, $size, $thumb_attr );
 		echo '</a></div>';
 	} else {
 		echo '<div class="entry-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . get_the_title( $post->ID ) . '">';

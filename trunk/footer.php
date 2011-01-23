@@ -3,7 +3,7 @@
 <div id="footer-wrapper">
 
 	<!-- Footer -->
-	<div id="footer" class="container_12">
+	<div id="footer" class="container_12 clearfix">
 		
 		<div class="clearfix">
 		<!-- Footer Columns -->
