@@ -1,21 +1,23 @@
 <?php $post_index = 1;
 while ( have_posts() ): the_post(); ?>
-	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div id="entry-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="entry-header">
 			<h3 class="entry-title">
-				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php /*k2_permalink_title(); */ ?>"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php /*k2_permalink_title(); */ ?>" class="permalink"><?php the_title(); ?></a>
 			</h3>
+			
+			<?php stf_entry_header() ?>
 		</div><!-- .entry-header -->
 		
 		<div class="entry-content">
-			<?php the_content( sprintf( __('READ MORE..', 'stf'), the_title('', '', false) ) ); ?>
-		</div><!-- .entry-content -->		
+			<?php the_content( sprintf( __('Continue reading "%s" &rarr;', 'stf'), the_title('', '', false) ) ); ?>
+			<?php wp_link_pages( array('before' => '<div class="entry-pages"><span>' . __('Pages:','stf') . '</span>', 'after' => '</div>' ) ); ?>
+		</div><!-- .entry-content -->
 		
 		<div class="entry-footer">
-			<?php wp_link_pages( array('before' => '<div class="entry-pages"><span>' . __('Pages:','k2_domain') . '</span>', 'after' => '</div>' ) ); ?>
-		</div><!-- .entry-foot -->		
+			<?php stf_entry_footer() ?>
+		</div><!-- .entry-footer -->
 		
-		<div class="clear"></div>		
-	</div><!-- #post-ID -->
-
+		<div class="clear"></div>
+	</div><!-- #entry-ID -->
 <?php endwhile; /* End The Loop */ ?>

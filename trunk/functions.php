@@ -1,9 +1,9 @@
-<?php
+<?php 
 
-	// INCLUDE FRAMEWORK
-	include_once('stf-framework.php');
+include_once('stf-framework.php'); // INCLUDE FRAMEWORK
 	
-	// ADD WIDGET AREAS (If no sidebars added STF will use default sidebar set.
+// ADD WIDGET AREAS (If no sidebars added STF will use default sidebar set.
+/*
 	stf_add_widget_area('Sidebar Home', 'sidebar-home', '');
 	stf_add_widget_area('Sidebar Inner', 'sidebar', '');
 	
@@ -13,17 +13,34 @@
 	stf_add_widget_area('Footer Column 4', 'footer-column-4', '');
 	
 	stf_add_widget_area('Footer Credits', 'credits', '');
+*/
 	
-	// ADD IMAGE SIZES
-	if ( function_exists( 'add_image_size' ) ) add_theme_support( 'post-thumbnails' );
-	if ( function_exists( 'add_image_size' ) ) { 
-		add_image_size( 'featured', 930, 243, true );
-		add_image_size( 'post-thumbnail', 210, 125, true );
-	}
-	
-	// ADD NAV MENUS
+function theme_setup(){
+
+	// Post Thumbnails & Custom Image Sizes
+	add_theme_support( 'post-thumbnails', array('post', 'page') );
+	add_image_size( 'featured', 930, 243, true );
+	add_image_size( 'post-thumbnail', 210, 125, true );
+
+	// Navigation Menus
 	add_theme_support('nav_menus');
 	register_nav_menu('header', 'Header Navigation');
+
+	// Post Formats
+	add_theme_support('post-formats', array( 'aside', 'gallery', 'quote', 'link', 'chat', 'photo' ));
+	
+	// Editor Style
+	add_editor_style('/css/editor-style.css');
+	
+	
+	
+	// Queue Scripts 
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/js/theme.js', 'jquery' );
+	
+
+} add_action('after_setup_theme', 'theme_setup');
+
 
 
 // CUSTOMIZATIONS	

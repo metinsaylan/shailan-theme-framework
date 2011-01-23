@@ -8,6 +8,16 @@
 
 global $stf_widget_areas;
 
+function stf_widget_area( $id, $class='' ){
+	if( is_active_sidebar( $id ) ){ ?>
+		<!-- <?php $id ?> -->
+		<div id="<?php $id ?>" class="<?php $class ?>">
+			<?php stf_widgets($id); ?>
+		</div>
+		<!-- [End] <?php $id ?> -->
+	<?php }
+}
+
 function stf_add_widget_area( $name, $id, $description='', $default_widgets='' ){
 	global $stf_widget_areas;
 	
@@ -75,19 +85,14 @@ function stf_default_widget_areas(){
 			'description' => 'Widgets over the header area'),
 			
 		array(
+			'name' => 'Header',
+			'id' => 'header',
+			'description' => 'Next to site title'),
+			
+		array(
 			'name' => 'Header bottom',
 			'id' => 'header-bottom',
 			'description' => 'Widgets under the header area'),
-		
-		array(
-			'name' => 'Sidebar 1',
-			'id' => 'sidebar-1',
-			'description' => ''),
-			
-		array(
-			'name' => 'Sidebar 2',
-			'id' => 'sidebar-2',
-			'description' => ''),
 		
 		array(
 			'name' => 'Before Content',
@@ -102,6 +107,16 @@ function stf_default_widget_areas(){
 		array(
 			'name' => 'After Content',
 			'id' => 'after-content',
+			'description' => ''),
+			
+		array(
+			'name' => 'Sidebar 1',
+			'id' => 'sidebar-1',
+			'description' => ''),
+			
+		array(
+			'name' => 'Sidebar 2',
+			'id' => 'sidebar-2',
 			'description' => ''),
 
 		array(

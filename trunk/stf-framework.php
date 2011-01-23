@@ -21,8 +21,6 @@ $dir = basename($dir);
 if ( 0 === strpos($url, 'http') && is_ssl() ){
 	$url = str_replace( 'http://', 'https://', $url );} 
 
-$url .= '/' . ltrim($dir, '/');
-
 define('STF_URL', $url . '/');
 define('STF_APP', STF_DIRECTORY . 'app/');
 
