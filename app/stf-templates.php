@@ -35,6 +35,7 @@ function themeinfo($key){
 	}
 }
 
+function stf_css( $name, $args = null, $echo = true ){ stf_stylesheet( $name, $args, $echo ); }
 function stf_stylesheet( $name, $args = null, $echo = true ){
 	$defaults = array(
 		'id' => '',
@@ -44,22 +45,29 @@ function stf_stylesheet( $name, $args = null, $echo = true ){
 	extract($args);
 	
 	if($echo){
-		echo "\n\t<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" /> ";
+		echo "<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" />\n ";
 	} else {
-		return "\n\t<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" /> ";
+		return "<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" />\n ";
 	}
 }
 
-function stf_css_960gs(){ 
-	?><!-- 960 Grid System -->
-	<link rel="stylesheet" type="text/css" href="<?php echo STF_URL . 'css/960/reset.css'; ?>" media="screen" />
-	<link rel="stylesheet" type="text/css" href="<?php echo STF_URL . 'css/960/text.css'; ?>" media="screen" />
-	<link rel="stylesheet" type="text/css" href="<?php echo STF_URL . 'css/960/960.css'; ?>" media="screen" />
-	<!--/ 960 Grid System --><?php
+
+function stf_site_title(){
+	$logo_url = stf_get_setting('stf_logo_url');
+	if(strlen($logo_url)>0){ ?>
+		
+		<img id="logo" src="<?php echo $logo_url ?>" alt="<?php bloginfo('name') ?>" title="<?php bloginfo('description') ?>" />
+		
+	<?php } else { ?>
 	
+		<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
+		<<?php echo $heading_tag; ?> id="site-title">
+			<span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>"><?php bloginfo( 'name' ); ?></a></span>
+		</<?php echo $heading_tag; ?>>
+		<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+	
+	<?php }
 }
-
-
 
 /**
  * An extension for dynamic_sidebar(). If no widgets exist it shows default widgets
