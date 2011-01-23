@@ -17,15 +17,27 @@ small, .small, .tiny { font-family: Verdana, Geneva, Tahoma, sans-serif; font-si
 .smallcaps { font-variant: small-caps; }
 code { font-size: 1.1em; }
 
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.alignleft, img.alignleft, img[align="left"] { -webkit-box-shadow: #999 0 2px 5px; box-shadow: #999 0 2px 5px; -moz-box-shadow: #999 0 2px 5px;}
+.alignright, img.alignright, img[align="right"] { -webkit-box-shadow: #999 -2px 2px 5px; box-shadow: #999 -2px 2px 5px; -moz-box-shadow: #999 -2px 2px 5px;}
+a img { border: 0; }
+p:first-letter { font-weight: bold; }
+h1, h2, h3, h4, p, ul, ol{ margin-bottom:15px; }
+.hidetext,.screen-reader-text { display:block; font-size: 0px; text-indent:-9999px; }
+.hidden{ display:none; }
+p{ text-align:justify; }
+
 .clearboth{ clear:both; }
 .right{ text-align:right; }
 .left{ text-align:left; }
 
+/** FONT SIZE */
 #site-title{ font-size:3em; }
 #site-description{ font-size:1.2em; }
+.entry-title, .widget-title, .page-title{ font-size:1.2em; font-weigt:bold; }
 
-.entry-title{ font-size:1.2em; }
-.widget-title{ font-size:1.2em; }
+
 
 
 

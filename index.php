@@ -4,7 +4,7 @@
 <div id="content-wrapper">
 
 	<!-- Page -->
-	<div id="page" class="container_12">
+	<div id="page" class="container_12 clearfix">
 
 		<!-- Content -->
 		<div id="content" class="grid_8 clearfix">

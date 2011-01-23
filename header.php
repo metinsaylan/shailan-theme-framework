@@ -21,7 +21,8 @@
 		</div>
 		<!-- [End] Banner Area -->
 		
-		<div class="clearboth"></div>		
+		<div class="clearboth"></div>
+		
 		<?php stf_widget_area('header-bottom'); ?>
 	</div>
 	<!-- [End] Header -->

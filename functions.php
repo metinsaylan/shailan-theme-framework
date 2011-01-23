@@ -18,8 +18,9 @@ include_once('stf-framework.php'); // INCLUDE FRAMEWORK
 function theme_setup(){
 
 	// Post Thumbnails & Custom Image Sizes
-	add_theme_support( 'post-thumbnails', array('post', 'page') );
-	add_image_size( 'featured', 930, 243, true );
+	add_theme_support( 'post-thumbnails', array('post', 'page') ); // Add any other custom post types here
+	add_image_size( 'home', 200, 200, true );
+	add_image_size( 'featured', 940, 320, true );
 	add_image_size( 'post-thumbnail', 210, 125, true );
 
 	// Navigation Menus
