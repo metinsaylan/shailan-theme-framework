@@ -1,3 +1,3 @@
-<div id="sidebar-2" class="sidebar grid_4">
+<div id="sidebar-2" class="sidebar">
 	<?php stf_widgets('sidebar-2'); ?>
 </div>

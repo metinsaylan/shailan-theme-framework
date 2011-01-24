@@ -4,6 +4,7 @@
 	<title><?php wp_title( '&bull;', true, 'right' ); echo esc_html( get_bloginfo('name'), 1 ) ?></title>
 	<meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	
+	<!-- Grid System -->
 	<?php stf_css('960'); ?>
 	
 	<!-- Framework styles -->
