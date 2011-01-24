@@ -24,7 +24,9 @@ a img { border: 0; }
 p:first-letter { font-weight: bold; }
 h1, h2, h3, h4, p, ul, ol{ margin-bottom:15px; }
 
-.hidetext,.screen-reader-text { display:block; font-size: 0px; text-indent:-9999px; }
+.hidetext, .screen-reader-text { 	
+	position: absolute;
+	left: -9000px; }
 .hidden{ display:none; }
 
 /* Clear */
@@ -45,7 +47,8 @@ ul.horizontal li{ padding:3px 10px; } ul.horizontal li+li{ border-left:1px solid
 .entry-title, .widget-title, .page-title{ font-size:1.2em; font-weigt:bold; }
 
 /* Copyright */
-#theme-copyright{ width:800px; text-align:center; margin:10px auto; font-family:  Verdana, Geneva, Tahoma, sans-serif; font-size:9px; color:#888; }
+#theme-footer{ text-align:center; margin-top:15px; font-size:12px; }
+#theme-copyright{ width:800px; text-align:center; margin:10px auto; font-family:  Verdana, Geneva, Tahoma, sans-serif; font-size:10px; color:#888; }
 #theme-copyright a,#theme-copyright a:hover { color :#888; }
 
 

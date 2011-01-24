@@ -7,14 +7,14 @@ function stf_body_class_filter($classes) {
 	$classes[] = 'wordpress stf';
 
 	/* Detect whether the sidebars are in use and add appropriate classes */
-	if ( is_active_sidebar('sidebar1') && is_active_sidebar('sidebar2') )
-		$classes[] = 'columns-three';
+	if ( is_active_sidebar('sidebar-1') && is_active_sidebar('sidebar-2') )
+		$classes[] = 'sidebar1 sidebar2';
 
-	else if ( is_active_sidebar('sidebar1') )
-		$classes[] = 'columns-two sidebar1';
+	else if ( is_active_sidebar('sidebar-1') )
+		$classes[] = 'sidebar1';
 
-	else if ( is_active_sidebar('widgets-sidebar-2') )
-		$classes[] = 'columns-two sidebar2';
+	else if ( is_active_sidebar('sidebar-2') )
+		$classes[] = 'sidebar2';
 
 	else
 		$classes[] = 'columns-one';

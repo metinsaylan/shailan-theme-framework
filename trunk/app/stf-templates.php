@@ -56,7 +56,7 @@ function stf_site_title(){
 	$logo_url = stf_get_setting('stf_logo_url');
 	if(strlen($logo_url)>0){ ?>
 		
-		<img id="logo" src="<?php echo $logo_url ?>" alt="<?php bloginfo('name') ?>" title="<?php bloginfo('description') ?>" />
+		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>"><img id="logo" src="<?php echo $logo_url ?>" alt="<?php bloginfo('name') ?>" title="<?php bloginfo('description') ?>" /></a>
 		
 	<?php } else { ?>
 	
