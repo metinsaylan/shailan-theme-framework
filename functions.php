@@ -1,8 +1,8 @@
 <?php 
 
 include_once('stf-framework.php'); // INCLUDE FRAMEWORK
-
-if (!function_exists('theme_setup')) {
+	
+if(! function_exists('theme_setup')) {
 function theme_setup(){
 
 	// ADD WIDGET AREAS (If no sidebars added STF will use default sidebar set.
@@ -43,5 +43,3 @@ function theme_setup(){
 
 } add_action('after_setup_theme', 'theme_setup');
 }
-
-
