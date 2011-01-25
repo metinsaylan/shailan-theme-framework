@@ -1,4 +1,4 @@
-<?php locate_template( array('head.php'), true ); ?>
+<?php locate_template( array('head.php'), true ) ?>
 
 <!-- Header Wrapper -->
 <div id="header-wrapper">
