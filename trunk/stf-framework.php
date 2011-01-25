@@ -40,6 +40,10 @@ class Shailan_Framework{
 		$this->theme = $theme_data;
 		$this->name = $this->theme['Name'];
 		
+		$this->is_child = false; // Am I a child?
+		if(TEMPLATEPATH !== STYLESHEETPATH)
+			$this->is_child = true; 
+		
 		// Load shortcodes, widgets, template tags
 		require_once( STF_APP . "stf-loader.php" );
 		

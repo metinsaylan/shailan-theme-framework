@@ -1,0 +1,28 @@
+/*
+THEME NAME: Framework Child Theme
+THEME URI: http://shailan.com
+DESCRIPTION: Example child theme style for Framework
+VERSION: 1.0
+AUTHOR: Matt Say
+AUTHOR URI: http://shailan.com
+TAGS: framework, all-widget, widgets, widget-areas, xhtml
+
+Template:shailan-theme-framework
+*/
+
+/*
+
+	Put your customizations here.
+	
+*/
+
+body{ 
+	background:#eee; 
+	
+}
+
+#header-wrapper, #footer-wrapper { background-color:#ddd; }
+
+#page{ border:1px solid #ddd; }
+
+#theme-footer{ color:#999; }
