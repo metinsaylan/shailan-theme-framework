@@ -37,7 +37,7 @@ add_filter('mce_css', 'shailan_editor_style');
 function shailan_editor_style($url) {
   if ( !empty($url) )
 	$url .= ',';
-  $url .= trailingslashit( get_stylesheet_directory_uri() ) . 'css/editor.css';
+  $url .= trailingslashit( get_template_directory_uri() ) . 'css/editor.css';
   return $url;
 }
 
@@ -117,9 +117,17 @@ function shailan_excerpt_length($length) {
  
 /** Excerpt More text */
 function shailan_excerpt_more( $more ) {
+	$more = '<a href="'. get_permalink() . '">';
 	$more_text = get_option('shailan_more');
-	if(empty($more_text)){ $more_text = ' &hellip; <a href="'. get_permalink() . '">' . __('Continue reading <span class="meta-nav">&rarr;</span>') . '</a>'; }
-	return $more_text;
+	
+	if(empty($more_text)){ 
+		$more .= __('Continue reading <span class="meta-nav">&rarr;</span>'); 
+	} else {
+		$more .= $more_text;
+	}
+	
+	$more .= '</a>';
+	return $more;
 } add_filter( 'excerpt_more', 'shailan_excerpt_more' );
 
 /** Threaded comments script adder */
@@ -154,7 +162,6 @@ function shailan_feedburner_count($feedburner_id, $display = false){
 	$fb = $xml->feed->entry['circulation'];
 	
 	if($display){ echo $fb; } else { return $fb; }
-	
 }	
 
 /** Twitter follower count */
