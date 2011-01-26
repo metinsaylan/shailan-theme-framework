@@ -9,7 +9,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 body, td, textarea, input, select { 
 	font: normal normal normal 13px/normal Lucida Grande, Dejavu sans, Bitstream Vera Sans, Segoe UI, Verdana, Tahoma, Arial, sans-serif; }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
-.logged-in h1, .logged-in h2{ background-color:#FFFF00; }
+
+.logged-in h1{ border:1px dashed #FF0000; } /* for SEO */
+
 a { text-decoration: none; } a:hover { text-decoration: underline; }
 pre, code { font-family: monaco, consolas, "andale mono", "dejavu sans mono", monospace; }
 small, .small, .tiny { font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 10px; }
@@ -48,5 +50,5 @@ ul.horizontal li{ padding:3px 10px; } ul.horizontal li+li{ border-left:1px solid
 
 /* Copyright */
 #theme-footer{ text-align:center; margin-top:15px; font-size:12px; }
-#theme-copyright{ width:800px; text-align:center; margin:10px auto; font-family:  Verdana, Geneva, Tahoma, sans-serif; font-size:10px; color:#888; }
+#theme-copyright{ clear:both; width:800px; text-align:center; margin:10px auto; font-family:  Verdana, Geneva, Tahoma, sans-serif; font-size:10px; color:#888; }
 #theme-copyright a,#theme-copyright a:hover { color :#888; }
