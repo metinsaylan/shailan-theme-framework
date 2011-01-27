@@ -11,7 +11,7 @@
 function shailan_postrss($content) {
 	$feed_footer = stf_get_setting('stf_feed_footer');
 	if(is_feed() && !empty($feed_footer)){
-		$content = $content . $feed_footer;
+		$content = $content . '<br />' .  $feed_footer . '';
 	}
 	
 	return $content;
@@ -25,7 +25,7 @@ function shailan_rss_post_thumbnail($content) {
 	if(is_feed()){
 	if(function_exists('has_post_thumbnail') && has_post_thumbnail($post->ID)) {
 		$content = '<p align="right">' . get_the_post_thumbnail($post->ID) .
-		'</p>' . get_the_content();
+		'</p>' . $content;
 	} }
 	return $content;
 }
