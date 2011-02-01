@@ -1,17 +1,21 @@
 <?php $post_index = 1;
 while ( have_posts() ): the_post(); ?>
 	<div id="entry-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
-		<div class="entry-thumbnail">
-			<?php stf_entry_thumbnail('home'); ?>
-		</div>
+
+		<!-- Post Thumbnail -->
+		<?php if( has_post_thumbnail() ){ ?>
+			<div class="entry-thumbnail">
+				<?php stf_entry_thumbnail('home'); ?>
+			</div>
+		<?php } ?>
+		<!-- [End] Post Thumbnail -->
 	
 		<div class="entry-body">
 	
 			<div class="entry-header">
-				<h3 class="entry-title">
+				<h2 class="entry-title">
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php /*k2_permalink_title(); */ ?>" class="permalink"><?php the_title(); ?></a>
-				</h3>
+				</h2>
 				
 				<div class="entry-meta">
 					<?php stf_entry_header() ?>
