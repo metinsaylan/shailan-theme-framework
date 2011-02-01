@@ -29,7 +29,7 @@ function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
 			if ( $parent->parent && ($parent->parent != $parent->term_id) )
 			   $chain .= get_category_parents($parent->parent, true, $separator, $nicename);
 
-			$chain .= wrapCurrent($name);
+			$chain .= stf_wrapCurrent($name);
 			return $chain;
 		}
 	}
@@ -49,7 +49,7 @@ function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
 	} elseif ( ($on_front == "page" && is_front_page()) || ($on_front == "posts" && is_home()) ) {
 		$output = "";
 	} elseif ( $on_front == "page" && is_home() ) {
-		$output = $opt['sep'].wrapCurrent($opt['blog']);
+		$output = $opt['sep'].stf_wrapCurrent($opt['blog']);
 	} elseif ( !is_page() ) {
 		$output = $opt['sep'];
 		if ( ( is_single() || is_category() || is_tag() || is_date() || is_author() ) && $opt['singleparent'] != false) {
@@ -70,20 +70,20 @@ function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
 			$cat = intval( get_query_var('cat') );
 			$output .= 'Categories' . $opt['sep'] . yoast_get_category_parents($cat, false, $opt['sep']);
 		} elseif ( is_tag() ) {
-			$output .= 'Tag' . $opt['sep'] . wrapCurrent(single_cat_title('',false));
+			$output .= 'Tag' . $opt['sep'] . stf_wrapCurrent(single_cat_title('',false));
 		} elseif ( is_date() ) { 
-			$output .=  'Date' . $opt['sep'] . wrapCurrent(single_month_title('',false));
+			$output .=  'Date' . $opt['sep'] . stf_wrapCurrent(single_month_title('',false));
 		} elseif ( is_author() ) { 
 			$user = get_userdatabylogin($wp_query->query_vars['author_name']);
-			$output .= 'Author' . $opt['sep'] . wrapCurrent($user->display_name);
+			$output .= 'Author' . $opt['sep'] . stf_wrapCurrent($user->display_name);
 		} elseif ( is_search() ) {
-			$output .= 'Search' . $opt['sep'] . wrapCurrent(stripslashes(strip_tags(get_search_query())));
+			$output .= 'Search' . $opt['sep'] . stf_wrapCurrent(stripslashes(strip_tags(get_search_query())));
 		} else if ( is_tax() ) {
 			$taxonomy 	= get_taxonomy ( get_query_var('taxonomy') );
 			$term 		= get_query_var('term');
-			$output .= 'Taxonomy' . $opt['sep'] . wrapCurrent($taxonomy->label .':'. $term) ;
+			$output .= 'Taxonomy' . $opt['sep'] . stf_wrapCurrent($taxonomy->label .':'. $term) ;
 		} else {
-			$output .= wrapCurrent(get_the_title());
+			$output .= stf_wrapCurrent(get_the_title());
 		}
 	} else {
 		$post = $wp_query->get_queried_object();
@@ -125,7 +125,7 @@ function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
 				if (!$link['cur']) {
 					$output .= '<a href="'.$link['url'].'">'.$link['title'].'</a>';
 				} else {
-					$output .= wrapCurrent($link['title']);
+					$output .= stf_wrapCurrent($link['title']);
 				}
 			}
 		}

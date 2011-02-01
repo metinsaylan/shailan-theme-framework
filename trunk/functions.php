@@ -29,7 +29,7 @@ function theme_setup(){
 	register_nav_menu('header', 'Header Navigation');
 
 	// Post Formats
-	add_theme_support('post-formats', array( 'aside', 'gallery', 'quote', 'link', 'chat', 'photo' ));
+	add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video', 'audio' ) );
 	
 	// Editor Style
 	add_editor_style('/css/editor-style.css');

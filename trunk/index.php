@@ -5,6 +5,12 @@
 
 	<!-- Page -->
 	<div id="page" class="container_12 clearfix">
+	
+		<!-- Breadcrumbs -->
+		<div id="breadcrumbs" class="clearfix">
+		<?php if( !is_home() || !is_front_page() ){ ?><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>">Home</a></span><span class="breadcrumbs"><?php stf_breadcrumbs(); ?></span><?php } ?>
+		</div>
+		<!-- [End] Breadcrumbs -->
 
 		<!-- Content -->
 		<div id="content" class="grid_8 clearfix">
