@@ -13,7 +13,9 @@ while ( have_posts() ): the_post(); ?>
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php /*k2_permalink_title(); */ ?>" class="permalink"><?php the_title(); ?></a>
 				</h3>
 				
-				<?php stf_entry_header() ?>
+				<div class="entry-meta">
+					<?php stf_entry_header() ?>
+				</div>
 			</div><!-- .entry-header -->
 			
 			<div class="entry-content">

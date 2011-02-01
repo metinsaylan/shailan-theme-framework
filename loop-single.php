@@ -3,7 +3,7 @@ while ( have_posts() ): the_post(); ?>
 
 	<div class="entry-header">
 		<h1 class="entry-title">
-			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php /*k2_permalink_title(); */ ?>"><?php the_title(); ?></a>
+			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 		</h1>
 		
 		<div class="entry-meta">
