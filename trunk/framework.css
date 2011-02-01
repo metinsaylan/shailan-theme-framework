@@ -10,11 +10,29 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 body, td, textarea, input, select{ font: normal normal normal 13px/18px Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif; }
 pre, code { font-family: Monaco, Consolas, "Andale Mono", "Dejavu Sans Mono", monospace; }
-blockquote, .amp, .and { font-family: Baskerville, Palatino, "Book Antiqua", serif; font-style: italic; }
-small, .small, .tiny { font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 10px; }
+blockquote, .amp, .and { font-family: Baskerville, Palatino, "Book Antiqua", serif; font-style: oblique; }
+
+.comment-body, .comment-body p { font-family: georgia, palatino, palatino linotype, times, times new roman, serif; font-style: oblique; }
+
+small, 
+.small,
+.tiny,
+.entry-meta,
+.entry-footer,
+.edit-link a,
+#comments-list li .comment-edit-link,
+.reply a,
+#cancel-comment-reply,
+.entry-category,
+.read-more,
+.edit-link,
+.comments-link {
+	font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 10px; 
+}
+
 .smallcaps { font-variant: small-caps; }
 
-h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; letter-spacing: 1px; text-shadow: 1px 1px 1px rgba(125, 125, 125, 0.3); }
 
 .logged-in h1{ border:1px dashed rgba(255,0,0,0.3); } /* for SEO */
 .logged-in h1:hover{ border:1px dashed rgba(255,0,0,0.9); } /* for SEO */
@@ -35,7 +53,10 @@ a img { border: 0; }
 
 .wp-caption p.wp-caption-text { font-size: 10px; }
 
-h1, h2, h3, h4, p, ul, ol{ margin-bottom:15px; }
+h1, h2, h3, h4, p, ul, ol, .widget-title{ margin-bottom:15px; }
+
+.widget-title{ display:block; }	
+.note, .warning { font-style: oblique; }
 
 .hidetext, .screen-reader-text { 	
 	position: absolute;
@@ -46,13 +67,11 @@ h1, h2, h3, h4, p, ul, ol{ margin-bottom:15px; }
 .clearboth{ clear:both; }
 .clearleft{ clear:left; }
 .clearright{ clear:right; }
+
 /* Alignments */
 p{ text-align:justify; }
 .right{ text-align:right; }
 .left{ text-align:left; }
-
-ul.horizontal, ul.horizontal li{ list-style:none;margin:0; display:inline; }
-ul.horizontal li{ padding:3px 10px; } ul.horizontal li+li{ border-left:1px solid #999; }
 
 /* Copyright */
 #theme-footer{ text-align:center; margin-top:15px; font-size:12px; }
