@@ -6,8 +6,14 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /*------------------------------------
 	COMMON
 ------------------------------------*/
-body, td, textarea, input, select { 
-	font: normal normal normal 13px/normal Lucida Grande, Dejavu sans, Bitstream Vera Sans, Segoe UI, Verdana, Tahoma, Arial, sans-serif; }
+/* body, td, textarea, input, select { font: normal normal normal 13px/normal Lucida Grande, Dejavu sans, Bitstream Vera Sans, Segoe UI, Verdana, Tahoma, Arial, sans-serif; } */
+
+body, td, textarea, input, select{ font: normal normal normal 13px/18px Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif; }
+pre, code { font-family: Monaco, Consolas, "Andale Mono", "Dejavu Sans Mono", monospace; }
+blockquote, .amp, .and { font-family: Baskerville, Palatino, "Book Antiqua", serif; font-style: italic; }
+small, .small, .tiny { font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 10px; }
+.smallcaps { font-variant: small-caps; }
+
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
 .logged-in h1{ border:1px dashed rgba(255,0,0,0.3); } /* for SEO */
@@ -16,13 +22,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 .logged-in a[rel~="nofollow"]:hover { border: 1px dashed rgba(255,150,0, 1); }  /* for SEO */
 
 a { text-decoration: none; } a:hover { text-decoration: underline; }
-pre, code { font-family: monaco, consolas, "andale mono", "dejavu sans mono", monospace; }
-small, .small, .tiny { font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 10px; }
-.amp { font-family: baskerville, palatino, "book antiqua", serif; font-style: italic; }
-.smallcaps { font-variant: small-caps; }
+
 code { font-size: 1.1em; }
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
+
 .alignleft, img.alignleft, img[align="left"] { -webkit-box-shadow: #999 0 2px 5px; box-shadow: #999 0 2px 5px; -moz-box-shadow: #999 0 2px 5px;}
 .alignright, img.alignright, img[align="right"] { -webkit-box-shadow: #999 -2px 2px 5px; box-shadow: #999 -2px 2px 5px; -moz-box-shadow: #999 -2px 2px 5px;}
 
@@ -30,6 +32,8 @@ a:hover { text-decoration: underline; }
 .alignright.noshadow, img.alignright.noshadow { -webkit-box-shadow: none; box-shadow: none; -moz-box-shadow: none;}
 
 a img { border: 0; }
+
+.wp-caption p.wp-caption-text { font-size: 10px; }
 
 h1, h2, h3, h4, p, ul, ol{ margin-bottom:15px; }
 
