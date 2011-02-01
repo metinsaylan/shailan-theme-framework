@@ -10,7 +10,10 @@ body, td, textarea, input, select {
 	font: normal normal normal 13px/normal Lucida Grande, Dejavu sans, Bitstream Vera Sans, Segoe UI, Verdana, Tahoma, Arial, sans-serif; }
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
-.logged-in h1{ border:1px dashed #FF0000; } /* for SEO */
+.logged-in h1{ border:1px dashed rgba(255,0,0,0.3); } /* for SEO */
+.logged-in h1:hover{ border:1px dashed rgba(255,0,0,0.9); } /* for SEO */
+.logged-in a[rel~="nofollow"] { border: 1px dashed rgba(255,100,0,0.3); }  /* for SEO */
+.logged-in a[rel~="nofollow"]:hover { border: 1px dashed rgba(255,150,0, 1); }  /* for SEO */
 
 a { text-decoration: none; } a:hover { text-decoration: underline; }
 pre, code { font-family: monaco, consolas, "andale mono", "dejavu sans mono", monospace; }
