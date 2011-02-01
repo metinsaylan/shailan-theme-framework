@@ -1,0 +1,9 @@
+ul.ticks, ol.ticks{
+	list-style:none;
+	padding-left:20px;
+}
+
+ul.ticks li{ background: url(icon-tick.gif) no-repeat 8px 3px;
+line-height: 30px;
+list-style: none;
+padding-left: 42px; }
