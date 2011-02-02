@@ -179,6 +179,13 @@ body .countdown_descr{ font-family: 'Tangerine', serif; font-size:48px; }
 #footer.fixed { font-weight: bold; text-shadow: black 1px 1px 2px; }
 #footer.fixed { text-shadow: black 1px 1px 2px; }
 
+#footer {
+	background: #DDD;
+	border-top: 1px solid #CCC;
+	color: #777;
+	padding-top: 15px;
+}
+
 
 /* ===========================================================================================================================================*/
 
@@ -195,7 +202,7 @@ body .countdown_descr{ font-family: 'Tangerine', serif; font-size:48px; }
 .half{ width:50%; float:left; }
 .center{ text-align:center; }
 
-
+/*
 .navigation { color: #888; font-size: 12px; overflow: hidden; }
 .navigation a:link, .navigation a:visited { 
 	color: #888;
@@ -216,7 +223,7 @@ body .countdown_descr{ font-family: 'Tangerine', serif; font-size:48px; }
 .navigation .nav-next a {
 	padding-right: 24px;
 	background: url(images/arrow_right.png) 100% 50% no-repeat;
-}
+}*/
 
 a.read-more, a.comments-link, a.edit-link, input#submit, input#searchsubmit, .wpcf7-submit{
 	text-align:center;
@@ -380,10 +387,6 @@ div#before-content { margin: 15px 330px 0 15px; }
 div#main { margin-bottom: 15px; }
 div#secondary { clear: right; }
 div.banner { margin: 0px auto; padding: 10px; width: 468px; }
-
-div.note, .note { -khtml-border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border: 1px solid #e6db55; border-radius: 8px; margin: 10px; padding: 10px; padding-left: 20px; }
-div.sidebar { float: right; overflow: hidden; padding: 15px; position: relative; width: 300px; z-index: 3; }
-div.warning, .warning { -khtml-border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border: 1px solid #bb7777; border-radius: 8px; margin: 10px; padding: 10px; padding-left: 20px; }
 
 hr { display: none; }
 img.noborder { border: none !important; }
