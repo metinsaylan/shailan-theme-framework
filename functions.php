@@ -1,6 +1,12 @@
 <?php 
 
 include_once('stf-framework.php'); // INCLUDE FRAMEWORK
+
+if(! function_exists('get_post_format') ){
+function get_post_format(){
+	return 'standard';
+}
+}
 	
 if(! function_exists('theme_setup')) {
 function theme_setup(){
@@ -23,6 +29,8 @@ function theme_setup(){
 	add_image_size( 'home', 200, 200, true );
 	add_image_size( 'featured', 940, 320, true );
 	add_image_size( 'post-thumbnail', 210, 125, true );
+	add_image_size( 'medium-rectangle', 300, 250, true );
+	add_image_size( 'featured-small', 125, 125, true );
 
 	// Navigation Menus
 	add_theme_support('nav_menus');

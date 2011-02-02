@@ -23,7 +23,9 @@
 		
 		<div class="clearboth"></div>
 		
-		<?php stf_widget_area('header-bottom'); ?>
+		<div id="header-bottom">
+			<?php stf_widget_area('header-bottom'); ?>
+		</div>
 	</div>
 	<!-- [End] Header -->
 	
