@@ -8,7 +8,7 @@ function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
 	
 	$opt 						= array();
 	$opt['home'] 				= "Home";
-	$opt['blog'] 				= "Blog";
+	$opt['blog'] 				= __("Home");
 	$opt['sep'] 				= " <span class=\"seperator\">&raquo;</span> ";
 	$opt['prefix']				= "";
 	$opt['boldlast'] 			= true;
@@ -68,20 +68,20 @@ function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
 		}
 		if ( is_category() ) {
 			$cat = intval( get_query_var('cat') );
-			$output .= 'Categories' . $opt['sep'] . yoast_get_category_parents($cat, false, $opt['sep']);
+			$output .= __('Categories') . $opt['sep'] . yoast_get_category_parents($cat, false, $opt['sep']);
 		} elseif ( is_tag() ) {
-			$output .= 'Tag' . $opt['sep'] . stf_wrapCurrent(single_cat_title('',false));
+			$output .= __('Tags') . $opt['sep'] . stf_wrapCurrent(single_cat_title('',false));
 		} elseif ( is_date() ) { 
-			$output .=  'Date' . $opt['sep'] . stf_wrapCurrent(single_month_title('',false));
+			$output .=  __('Date') . $opt['sep'] . stf_wrapCurrent(single_month_title('',false));
 		} elseif ( is_author() ) { 
 			$user = get_userdatabylogin($wp_query->query_vars['author_name']);
-			$output .= 'Author' . $opt['sep'] . stf_wrapCurrent($user->display_name);
+			$output .= __('Author') . $opt['sep'] . stf_wrapCurrent($user->display_name);
 		} elseif ( is_search() ) {
-			$output .= 'Search' . $opt['sep'] . stf_wrapCurrent(stripslashes(strip_tags(get_search_query())));
+			$output .= __('Search') . $opt['sep'] . stf_wrapCurrent(stripslashes(strip_tags(get_search_query())));
 		} else if ( is_tax() ) {
 			$taxonomy 	= get_taxonomy ( get_query_var('taxonomy') );
 			$term 		= get_query_var('term');
-			$output .= 'Taxonomy' . $opt['sep'] . stf_wrapCurrent($taxonomy->label .':'. $term) ;
+			$output .= __('Taxonomy') . $opt['sep'] . stf_wrapCurrent($taxonomy->label .':'. $term) ;
 		} else {
 			$output .= stf_wrapCurrent(get_the_title());
 		}

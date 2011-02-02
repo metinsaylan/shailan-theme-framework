@@ -1,26 +1,31 @@
-<?php
-/**
- * The template for displaying attachments.
- *
- * @package WordPress
- * @subpackage Twenty_Ten
- * @since Twenty Ten 1.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<!-- Content Wrapper -->
+<div id="content-wrapper">
 
-		<div id="container" class="single-attachment">
-			<div id="content" role="main">
+	<!-- Page -->
+	<div id="page" class="container_12 clearfix">
+	
+		<!-- Breadcrumbs -->
+		<div id="breadcrumbs" class="clearfix">
+			<?php if( !is_home() || !is_front_page() ){ ?><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>">Home</a></span><span class="breadcrumbs"><?php stf_breadcrumbs(); ?></span><?php } ?>
+		
+			<div class="clear"></div>
+			<div id="billboard">
+				<?php stf_widget_area( 'billboard' ); ?>
+			</div>
+		</div>
+		<!-- [End] Breadcrumbs -->
 
-			<?php
-			/* Run the loop to output the attachment.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-attachment.php and that will be used instead.
-			 */
-			get_template_part( 'loop', 'attachment' );
-			?>
-
-			</div><!-- #content -->
-		</div><!-- #container -->
+		<!-- Content -->
+		<div id="content" class="grid_12 clearfix">
+			<?php get_template_part( 'loop', 'attachment' ); ?>
+		</div><!-- #content -->
+		
+	</div>
+	<!-- [End] Page -->
+		
+</div>
+<!-- [End] Content Wrapper -->
 
 <?php get_footer(); ?>

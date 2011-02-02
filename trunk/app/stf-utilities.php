@@ -117,7 +117,7 @@ function shailan_excerpt_length($length) {
  
 /** Excerpt More text */
 function shailan_excerpt_more( $more ) {
-	$more = '<a href="'. get_permalink() . '">';
+	$more = ' <a href="'. get_permalink() . '">';
 	$more_text = get_option('shailan_more');
 	
 	if(empty($more_text)){ 
