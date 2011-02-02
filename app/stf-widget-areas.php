@@ -92,7 +92,12 @@ function stf_default_widget_areas(){
 		array(
 			'name' => 'Header bottom',
 			'id' => 'header-bottom',
-			'description' => 'Widgets under the header area'),
+			'description' => 'Widgets under the header area'),		
+			
+		array(
+			'name' => 'Billboard',
+			'id' => 'billboard',
+			'description' => ''),
 		
 		array(
 			'name' => 'Before Content',
