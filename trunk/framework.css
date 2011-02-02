@@ -64,11 +64,11 @@ code { font-size: 1.1em; padding: 0 2px; }
 ul, li { list-style-type: circle; }
 ul, ol { margin-top: 1em; padding-left: 1.5em; }
 
-.alignleft, img.alignleft, img[align="left"] { -webkit-box-shadow: #999 0 2px 5px; box-shadow: #999 0 2px 5px; -moz-box-shadow: #999 0 2px 5px;}
-.alignright, img.alignright, img[align="right"] { -webkit-box-shadow: #999 -2px 2px 5px; box-shadow: #999 -2px 2px 5px; -moz-box-shadow: #999 -2px 2px 5px;}
+img.alignleft, img[align="left"] { -webkit-box-shadow: #999 0 2px 5px; box-shadow: #999 0 2px 5px; -moz-box-shadow: #999 0 2px 5px;}
+img.alignright, img[align="right"] { -webkit-box-shadow: #999 -2px 2px 5px; box-shadow: #999 -2px 2px 5px; -moz-box-shadow: #999 -2px 2px 5px;}
 
-.alignleft.noshadow, img.alignleft.noshadow { -webkit-box-shadow: none; box-shadow: none; -moz-box-shadow: none;}
-.alignright.noshadow, img.alignright.noshadow { -webkit-box-shadow: none; box-shadow: none; -moz-box-shadow: none;}
+img.alignleft.noshadow { -webkit-box-shadow: none; box-shadow: none; -moz-box-shadow: none;}
+img.alignright.noshadow { -webkit-box-shadow: none; box-shadow: none; -moz-box-shadow: none;}
 
 a img { border: 0; }
 
