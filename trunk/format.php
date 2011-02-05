@@ -27,6 +27,8 @@
 		<?php wp_link_pages( array('before' => '<div class="entry-pages"><span>' . __('Pages:','stf') . '</span>', 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	
+	<?php if(is_single()){ get_template_part('authorinfo', 'single'); } ?>
+
 	<div class="entry-footer">
 		<?php stf_entry_footer() ?>
 	</div><!-- .entry-footer -->

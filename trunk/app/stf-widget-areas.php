@@ -142,7 +142,12 @@ function stf_default_widget_areas(){
 		array(
 			'name' => 'Footer Wide',
 			'id' => 'footer-wide',
-			'description' => '')
+			'description' => ''),
+			
+		array(
+			'name' => 'Columns',
+			'id' => 'columns',
+			'description' => 'This widget area is displayed on Columns template only. Add Loops & Seperators here.')
 	);
 	
 	//stf_register_widget_areas( );

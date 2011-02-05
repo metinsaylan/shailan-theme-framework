@@ -150,7 +150,7 @@ function stf_comments_link($args){
 	global $post, $id;
 	
 	$defaults = array(
-		'zero' => __('Leave Comment'),
+		'zero' => __('Leave a comment'),
 		'one' => __('1 Comment'),
 		'more' => __('% Comments')
 	);	
