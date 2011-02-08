@@ -96,7 +96,7 @@ function stf_categories($args){
 	
 	$defaults = array(
 		'separator' => ', ',
-		'lastseparator' => ' ' . __('and') . ' '
+		'lastseparator' => ', '
 	);
 	
 	$args = wp_parse_args( $args, $defaults );
@@ -206,6 +206,13 @@ function stf_edit_link_shortcode($atts){
 	$link = ob_get_contents();
 	ob_end_clean();
 	return $link;
+}
+
+function stf_views($atts){
+	if( function_exists( 'the_views') ){
+		$view_count = get_post_meta( get_the_ID(), 'views', true);
+		return '<span class="views view-count">' . $view_count . '</span>';
+	}
 }
 
 
@@ -567,6 +574,7 @@ add_shortcode('comment_count', 'stf_comment_count');
 add_shortcode('the_shortlink', 'stf_the_shortlink'); 
 add_shortcode('shortlink', 'stf_the_shortlink');
 add_shortcode('edit', 'stf_edit_link_shortcode');
+add_shortcode('views', 'stf_views');
 
 /* CONDITIONALS */
 add_shortcode('home', 'stf_is_home');
