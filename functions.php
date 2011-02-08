@@ -29,6 +29,7 @@ function theme_setup(){
 	add_image_size( 'home', 200, 200, true );
 	add_image_size( 'featured', 940, 320, true );
 	add_image_size( 'post-thumbnail', 210, 125, true );
+	add_image_size( 'video-thumbnail', 120, 90, true );
 	add_image_size( 'medium-rectangle', 300, 250, true );
 	add_image_size( 'featured-small', 125, 125, true );
 
@@ -47,6 +48,7 @@ function theme_setup(){
 	// Queue Scripts 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/js/theme.js', 'jquery' );
+	wp_enqueue_script( 'cycle', 'http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js', array( 'jquery') );
 	
 
 } add_action('after_setup_theme', 'theme_setup');

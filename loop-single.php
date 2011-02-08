@@ -14,14 +14,18 @@ while ( have_posts() ): the_post(); ?>
 		</div><!-- .entry-header -->
 	
 		<div class="entry-content">
+			<?php get_template_part('teaser', 'single'); ?>
+		
 			<?php the_content( sprintf( __('READ MORE \'%s\'', 'stf'), the_title('', '', false) ) ); ?>
 			<?php wp_link_pages( array('before' => '<div class="entry-pages"><span>' . __('Pages:','k2_domain') . '</span>', 'after' => '</div>' ) ); ?>
 		</div><!-- .entry-content -->	
 
-	<?php if(is_single()){ get_template_part('authorinfo', 'single'); } ?>
+		<?php if(is_single()){ get_template_part('ads', 'bottom'); } ?>
+		<?php get_template_part('share', 'single'); ?>
+		<?php if(is_single()){ get_template_part('authorinfo', 'single'); } ?>
 	
 		<div class="entry-footer">
-			<?php stf_entry_footer(); ?>
+			<?php stf_entry_footer(); ?> | <?php if( function_exists('the_views') ){ the_views(); } ?>
 		</div><!-- .entry-foot -->		
 		
 		<div class="clear"></div>		
