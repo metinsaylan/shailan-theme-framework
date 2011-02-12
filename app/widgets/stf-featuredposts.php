@@ -11,18 +11,21 @@
 class stf_featured extends WP_Widget {
     function stf_featured() {
 		$widget_ops = array('classname' => 'stf-featured-posts', 'description' => __( 'Featured posts with thumbs' ) );
-		$this->WP_Widget('stf-featured-posts', __('Featured Posts'), $widget_ops);
+		$this->WP_Widget('stf-featured-posts', __('STF Posts'), $widget_ops);
 		$this->alt_option_name = 'stf_featured_posts';	
 		
 		$this->widget_defaults = array(
-			'title' => '',
-			'category' => '',
-			'number' => 1,
-			'thumbnail' => FALSE,
-			'thumbnail_size' => 'thumbnail',
-			'template' => 'stf-default-template',
-			'post_title' => FALSE,
-			'content' => 'none'
+			'title'				=> '',
+			'category'			=> '',
+			'number'			=> 1,
+			'thumbnail'			=> FALSE,
+			'thumbnail_size'	=> 'thumbnail',
+			'template'			=> 'stf-default-template',
+			'post_title'		=> FALSE,
+			'content'			=> 'none',
+			'filter'			=> 'stf-latest',
+			'orderby'			=> '',
+			'order'				=> 'ASC'
 		);
     }
 
@@ -146,8 +149,8 @@ class stf_featured extends WP_Widget {
 		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></label></p>
 		
 		<p><label for="<?php echo $this->get_field_id('filter'); ?>"><?php _e('Filter:'); ?><select name="<?php echo $this->get_field_name('filter'); ?>" id="<?php echo $this->get_field_id('filter'); ?>" >	
-			<option value="stf-latest" <?php if($filter == 'stf-latest'){ echo ' selected="selected"'; }; ?>>All posts</option>
-			<option value="stf-sticky-posts" <?php if($filter == 'stf-sticky-posts'){ echo ' selected="selected"'; }; ?>>Sticky posts</option>
+			<option value="stf-latest" <?php selected( $filter , 'stf-latest'); ?>>All posts</option>
+			<option value="stf-sticky-posts" <?php selected( $filter, 'stf-sticky-posts' ); ?>>Sticky posts</option>
 			<?php if(function_exists('the_views')){ ?>
 				<option value="stf-most-viewed" <?php selected( $filter, 'stf-most-viewed' ); ?>>Most Viewed</option>
 				<option value="stf-least-viewed" <?php selected( $filter, 'stf-least-viewed' ); ?>>Least Viewed</option>
@@ -183,8 +186,8 @@ class stf_featured extends WP_Widget {
 		</select></label></p>	
 		
 		<p><label for="<?php echo $this->get_field_id('order'); ?>"><?php _e('Order:'); ?><select name="<?php echo $this->get_field_name('order'); ?>" id="<?php echo $this->get_field_id('order'); ?>" >	
-			<option value="ASC" <?php if($filter == 'ASC'){ echo ' selected="selected"'; }; ?>>Ascending</option>
-			<option value="DESC" <?php if($filter == 'DESC'){ echo ' selected="selected"'; }; ?>>Descending</option>
+			<option value="ASC" <?php if($order == 'ASC'){ echo ' selected="selected"'; }; ?>>Ascending</option>
+			<option value="DESC" <?php if($order == 'DESC'){ echo ' selected="selected"'; }; ?>>Descending</option>
 		</select></label></p>	
 		
 		<p><label for="<?php echo $this->get_field_id('template'); ?>"><?php _e('Template:'); ?><select name="<?php echo $this->get_field_name('template'); ?>" id="<?php echo $this->get_field_id('template'); ?>" >	

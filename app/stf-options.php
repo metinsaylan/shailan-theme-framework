@@ -10,7 +10,7 @@ $font_families = array(
 
 $options = array (
 
-array( "name" => "Theme Options",
+array( "name" => "Basic Options",
 		"type" => "section"),
 		
 array( "type" => "open"),
@@ -24,7 +24,7 @@ array( "type" => "open"),
 	array(  "name" => "Entry header",
 		"desc" => "Entry header meta, shows right under the post title.",
 		"id" => "stf_entry_header_meta",
-		"std" => "By [author] on [date] | [cmnts]",
+		"std" => "By [authorlink] on [date] | [cmnts] [edit]",
 		"type" => "text"),
 		
 	array(  "name" => "Entry footer",
@@ -47,7 +47,7 @@ array( "type" => "open"),
 
 array( "type" => "close"),
 
-array( "name" => "Framework Options",
+array( "name" => "Advanced Options",
 	"type" => "section"),
 	
 array( "type" => "open"),
@@ -69,6 +69,12 @@ array( "type" => "open"),
 		"id" => "stf_feedburner",
 		"type" => "text",
 		"std" => get_bloginfo('rss2_url')),
+		
+	array("name" => "Excerpt More Text",
+		"desc" => "Displayed if a post content is trimmed",
+		"id" => "shailan_more",
+		"type" => "text",
+		"std" => "read on &rarr;"),
 	
 array( "type" => "close")
 

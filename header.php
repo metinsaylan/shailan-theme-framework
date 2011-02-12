@@ -24,7 +24,23 @@
 		<div class="clearboth"></div>
 		
 		<div id="header-bottom">
+		<?php if(is_active_sidebar('header-bottom')){ ?>
 			<?php stf_widget_area('header-bottom'); ?>
+		<?php } else { ?>
+			<?php 
+				$args = array(
+					'sort_column' => 'menu_order, post_title',
+					'menu_class'  => 'menu',
+					'include'     => '',
+					'exclude'     => '',
+					'echo'        => true,
+					'show_home'   => true,
+					'link_before' => '',
+					'link_after'  => '');
+					
+				wp_page_menu( $args );
+			?>
+		<?php } ?>
 		</div>
 	</div>
 	<!-- [End] Header -->

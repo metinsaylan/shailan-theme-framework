@@ -1,6 +1,6 @@
 <?php 
 
-include_once('stf-framework.php'); // INCLUDE FRAMEWORK
+include_once('app/stf-framework.php'); // INCLUDE FRAMEWORK
 
 if(! function_exists('get_post_format') ){
 function get_post_format(){
