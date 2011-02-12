@@ -8,7 +8,7 @@
 						$thumb_id = get_post_thumbnail_id();
 						$alt = the_title('','',false);
 						/* $src = wp_get_attachment_url($thumb_id);	*/
-						echo get_image_tag($thumb_id, $alt, $alt, $thumbnail_align, $thumbnail_size);
+						echo get_image_tag( $thumb_id, $alt, $alt, $thumbnail_align, $thumbnail_size );
 					} else {
 						echo '<img src="'.get_bloginfo('template_directory').'/images/default-'.$thumbnail_size.'.png" title="'.the_title('','',false).'" width="'.$w.'" height="'.$h.'" class="align'.$thumbnail_align.' size-'.$thumbnail_size.'" />';
 					} ?>

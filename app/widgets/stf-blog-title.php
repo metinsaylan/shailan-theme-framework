@@ -3,7 +3,7 @@ class stf_blog_title extends WP_Widget {
     /** constructor */
     function stf_blog_title() {
 		$widget_ops = array('classname' => 'stf_blog_title', 'description' => __( 'Automatic title widget' ) );
-		$this->WP_Widget('stf-blog-title', __('Blog Title'), $widget_ops);
+		$this->WP_Widget('stf-blog-title', __('# Blog Title'), $widget_ops);
 		$this->alt_option_name = 'stf_blog_title';	
 		
 		$this->widget_defaults = array(

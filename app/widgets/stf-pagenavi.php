@@ -3,7 +3,7 @@ class stf_pagenavi extends WP_Widget {
     /** constructor */
     function stf_pagenavi() {
 		$widget_ops = array('classname' => 'stf-pagenavi', 'description' => __( 'Pagination by LesterChan' ) );
-		$this->WP_Widget('stf-pagenavi', __('Pagenavi'), $widget_ops);
+		$this->WP_Widget('stf-pagenavi', __('# Pagenavi'), $widget_ops);
 		$this->alt_option_name = 'stf_page_navi';	
     }
 

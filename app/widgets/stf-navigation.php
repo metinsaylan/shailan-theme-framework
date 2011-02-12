@@ -11,7 +11,7 @@
 class stf_navigation extends WP_Widget {
     function stf_navigation() {
 		$widget_ops = array('classname' => 'stf-navigation', 'description' => __( 'Older/Newer posts navigation', 'stf' ) );
-		$this->WP_Widget('stf-navigation', __('Posts Navigation'), $widget_ops);
+		$this->WP_Widget('stf-navigation', __('# Older/Newer'), $widget_ops);
 		$this->alt_option_name = 'stf_navigation';	
     }
 

@@ -60,6 +60,8 @@ function stf_the_category($args){
 	global $post;
 	
 	$defaults = array(
+		'before' => '',
+		'after' => '',
 		'separator' => ', ',
 		'single' => true
 	);
@@ -67,62 +69,69 @@ function stf_the_category($args){
 	$args = wp_parse_args( $args, $defaults );
 	extract( $args );
 	
-	if($post->post_type == 'post'){
-		
-		$cats = get_the_category($post->ID);
-		$single_cat = $cats[0]->cat_name;
-		$single_link = '<a href="'.get_category_link( $cats[0]->cat_ID ) .'" title="'.$single_cat.'">'.$single_cat.'</a>';	
+	$cats = get_the_category($post->ID);
+	$last = count($cats);
 	
-		if($single){
-			return '<span class="meta_category">' . $single_link . '</span>';
+	if($last >0){ // If there are categories
+		if( $single ){
+			$single_cat = $cats[0]->cat_name;
+			$single_link = '<a href="'.get_category_link( $cats[0]->cat_ID ) .'" title="'.$single_cat.'">'.$single_cat.'</a>';	
+			return '<span class="meta-category">' . $single_link . '</span>';
 		} else {
-			$categories = '<span class="meta_category">';
+			$categories = '<span class="meta-category">';
+			$categories .= $before;
+			$current = 0;
+			
 			foreach((get_the_category($post->ID)) as $category) { 
+				$current += 1; 
 				$cat_link = '<a href="'.get_category_link( $category->cat_ID ) .'" title="'.$category->cat_name.'">'.$category->cat_name.'</a>';
-				$categories .= $cat_link . $separator; 
+				$categories .= ( $current==$last ? $cat_link : ( $current==$last-1 ? $cat_link . $lastseparator : $cat_link . $separator) );
 			} 
+			
+			$categories .= $after;
 			$categories .= '</span>';
 			return $categories;
-	}
-	
+		}
 	} else {
-		return __('No categories.');
+		// No categories to display.
 	}
-	
 } 
 
 function stf_categories($args){ 
 	global $post;
 	
 	$defaults = array(
+		'before' => '',
+		'after' => '',
 		'separator' => ', ',
 		'lastseparator' => ', '
 	);
 	
 	$args = wp_parse_args( $args, $defaults );
 	extract( $args );
+
+	$cats = get_the_category($post->ID);
+	$last = count($cats);
 	
-	if($post->post_type == 'post'){
+	if($last >0){ // If there are categories
 	
-		$cats = get_the_category($post->ID);
-		
-		$categories = '<span class="meta_category">';
-		$last = count($cats);
+		$categories = '<span class="meta-category">';
+		$categories .= $before;
 		$current = 0;
-		
+
 		foreach($cats as $category) { 
 			$current += 1; 
 			$cat_link = '<a href="'.get_category_link( $category->cat_ID ) .'" title="'.$category->cat_name.'">'.$category->cat_name.'</a>';
 			$categories .= ( $current==$last ? $cat_link : ( $current==$last-1 ? $cat_link . $lastseparator : $cat_link . $separator) );
 		} 
-		
+	
+		$categories .= $after;
 		$categories .= '</span>';
 		return $categories;
-	
 	} else {
-		return __('No categories.');
+		// No categories to display.
 	}
-	
+
 } 
 
 function stf_tags($args){ 
@@ -139,7 +148,7 @@ function stf_tags($args){
 	
 	if($post->post_type == 'post'){
 		$tag_list = get_the_tag_list( $before, $separator, $after );
-		return '<span class="meta_tags">' . $tag_list . '</span>';
+		return '<span class="meta-tags">' . $tag_list . '</span>';
 	} else {
 		return __('No tags.');
 	}

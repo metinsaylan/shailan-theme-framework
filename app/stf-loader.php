@@ -14,6 +14,7 @@ include_once('stf-breadcrumbs.php'); // SHORTCODES
 include_once('stf-filters.php'); // FILTERS
 include_once('stf-templates.php'); // CUSTOM TEMPLATES
 include_once('stf-social.php'); // SOCIAL
+include_once('stf-post-formats.php'); // POST FORMATS
 
 // WIDGETS
 function stf_widget_footer(){
