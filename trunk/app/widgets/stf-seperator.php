@@ -1,17 +1,10 @@
 <?php 
 
-/** SHAILAN THEME FRAMEWORK 
- File 		: stf-navigation.php
- Author		: Matt Say
- Author URL	: http://shailan.com
- Version	: 1.0
- Contact	: metinsaylan (at) gmail (dot) com
-*/
-
 class stf_seperator extends WP_Widget {
-    function stf_seperator() {
+    
+	function stf_seperator() {
 		$widget_ops = array('classname' => 'stf-seperator', 'description' => __( 'Horizontal Seperator for Columns', 'stf' ) );
-		$this->WP_Widget('stf-seperator', __('Seperator'), $widget_ops);
+		$this->WP_Widget('stf-seperator', __('# Seperator'), $widget_ops);
 		$this->alt_option_name = 'stf_seperator';	
     }
 
@@ -32,5 +25,5 @@ class stf_seperator extends WP_Widget {
 		stf_widget_footer();
     }
 
-} 
-add_action('widgets_init', create_function('', 'return register_widget("stf_seperator");'));
+	
+} add_action('widgets_init', create_function('', 'return register_widget("stf_seperator");'));

@@ -30,7 +30,7 @@ array( "type" => "open"),
 	array(  "name" => "Entry footer",
 		"desc" => "Entry footer meta, shows below the post content.",
 		"id" => "stf_entry_footer_meta",
-		"std" => "Filed in [categories] | [tags]",
+		"std" => '[categories before="Filed in: "] [tags before="| Tagged: "]',
 		"type" => "text"),
 		
 	array(  "name" => "Theme footer",
@@ -43,7 +43,7 @@ array( "type" => "open"),
 		"desc" => "Displays after every post in the feed.",
 		"id" => "stf_feed_footer",
 		"std" => '<p><strong><em>This post is originally posted on <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>. <br />Visit <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> for more..</em></strong></p>',
-		"type" => "text"),
+		"type" => "textarea"),
 
 array( "type" => "close"),
 
@@ -75,6 +75,12 @@ array( "type" => "open"),
 		"id" => "shailan_more",
 		"type" => "text",
 		"std" => "read on &rarr;"),
+
+	array("name" => "Use categories for post formats",
+		"desc" => "Use common categories for post format display. Supports asides, gallery, and more.",
+		"id" => "stf_category_formats",
+		"type" => "checkbox",
+		"std" => "on"),
 	
 array( "type" => "close")
 

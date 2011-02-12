@@ -1,8 +1,9 @@
-<?php $post_index = 1;
-while ( have_posts() ): the_post(); ?>
+<?php $post_index = 1; while ( have_posts() ): the_post(); ?>
 
+	<!-- Post -->
 	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
+		<!-- Entry Header -->
 		<div class="entry-header">
 			<h1 class="entry-title">
 				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -11,29 +12,36 @@ while ( have_posts() ): the_post(); ?>
 			<div class="entry-meta">
 				<?php stf_entry_header(); ?>
 			</div>
-		</div><!-- .entry-header -->
+		</div>
+		<!-- [End] Entry Header -->
 	
+		<!-- Entry Content -->
 		<div class="entry-content">
-			<?php get_template_part('teaser', 'single'); ?>
+			<?php get_template_part('ads', 'top'); ?>
 		
-			<?php the_content( sprintf( __('READ MORE \'%s\'', 'stf'), the_title('', '', false) ) ); ?>
-			<?php wp_link_pages( array('before' => '<div class="entry-pages"><span>' . __('Pages:','k2_domain') . '</span>', 'after' => '</div>' ) ); ?>
-		</div><!-- .entry-content -->	
+			<?php the_content( ); ?>
+			<?php 
+			
+			wp_link_pages( array(
+				'before' => '<div class="entry-pages"><span>' . __('Pages:') . '</span>',
+				'after' => '</div>' 
+			) ); 
+			
+			?>
+		</div>
+		<!-- [End] Entry Content -->
 
-		<?php if(is_single()){ get_template_part('ads', 'bottom'); } ?>
+		<?php get_template_part('ads', 'bottom'); ?>
 		<?php get_template_part('share', 'single'); ?>
-		<?php if(is_single()){ get_template_part('authorinfo', 'single'); } ?>
+		<?php get_template_part('authorinfo', 'single'); ?>
 	
 		<div class="entry-footer">
-			<?php stf_entry_footer(); ?> | <?php if( function_exists('the_views') ){ the_views(); } ?>
+			<?php stf_entry_footer(); ?>
 		</div><!-- .entry-foot -->		
 		
 		<div class="clear"></div>		
-	</div><!-- #post-ID -->
-	
-	<div class="entry-widgets">
-		<?php stf_widgets('entry-footer'); ?>
 	</div>
+	<!-- [End] Post -->
 	
 	<?php comments_template( '', true ); ?>
 

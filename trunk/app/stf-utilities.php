@@ -145,6 +145,14 @@ function shailan_remove_version() { return ''; } add_filter('the_generator', 'sh
 /** Allow shortcodes in widgets */
 add_filter('widget_text', 'do_shortcode');
 
+/** If title is empty return a middot */
+function invisible_titles( $title, $post_id = 0 ){
+	if('' == $title)
+		return "#" . $post_id;
+	else
+		return $title;
+} add_filter( 'the_title', 'invisible_titles', '', 2 );
+
 /** Feedburner subscriber count */
 function shailan_feedburner_count($feedburner_id, $display = false){
 	$whaturl="http://api.feedburner.com/awareness/1.0/GetFeedData?uri=" . $feedburner_id;

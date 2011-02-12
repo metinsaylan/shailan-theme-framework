@@ -213,7 +213,7 @@ class Shailan_Framework{
 		$title = $this->name . ' Theme Settings';		
 		
 		$navigation = "";
-		$footer_text = "<p><small><a href=\"" . $this->theme['URI'] . "\">". $this->name . "</a> is powered by <a href=\"http://shailan.com/wordpress/themes/framework\" title=\"Shailan Theme Framework\">STF</a></small></p>";
+		$footer_text = "<a href=\"" . $this->theme['URI'] . "\">". $this->name . "</a> is powered by <a href=\"http://shailan.com/wordpress/themes/framework\" title=\"Shailan Theme Framework\">Shailan Theme Framework</a>";
 		
 		// Render theme options page
 		include_once( STF_APP . "stf-page-options.php" );

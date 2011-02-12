@@ -66,6 +66,8 @@ h2.entry-title, h1.entry-title, .widget-title, .page-title{
 .hentry { position:relative; padding-top:15px; }
 .hentry p { line-height: 2em; text-align: justify; }
 
+.sticky { border: 1px solid #aaaaaa; }
+
 .format-standard, #respond{
 	background: #efefef; 
 	background: -moz-linear-gradient(top, #FFFFFF 0%, #EFEFEF 10%, #EFEFEF 100%); /* firefox */
@@ -98,9 +100,11 @@ abbr.entry-date { cursor: inherit; }
 .entry-title, .widget-title, .page-title{ font-size:22px; font-weight:normal; }
 .entry-header, .entry-content, .entry-summary { margin:0 15px; }
 
-.entry-pages{ line-height: 30px; text-align: right; }
-.entry-pages span { color:#AAAAAA; } 
-.entry-pages a { border: 1px solid #DDDDDD; font-size: 13px; padding: 0px 4px; }
+/* Entry pagination */
+.entry-pages{ padding: 15px 0; text-align: right; }
+.entry-pages span { color:#cccccc; font-style:italic; } 
+.entry-pages a { border: 1px solid #dddddd; font-size: 13px; margin-left:6px; padding: 0px 4px; }
+.entry-pages a:hover { background: #dddddd; border-color: #cccccc; }
 
 .entry-attachment, p.attachment{ text-align:center; }
 

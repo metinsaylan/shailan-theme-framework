@@ -1,57 +1,62 @@
+.clear{ clear:both; }
+
 .ex_wrap{ width:900px; }
+.ex_opts { margin-top: 20px; }
+.ex_section{  }
+.ex_opts label{ font-size:12px; font-weight:700; width:230px; display:block; float:left; }
+.ex_input { padding:10px 10px; border-bottom:1px solid #eee; }
+.ex_opts small{ display:block; float:right; width:220px; color:#999; }
+.ex_opts input[type="text"], .ex_opts select{ width:360px; font-size:12px; padding:4px; color:#333; line-height:1em;	background:#efefef; }
+.ex_input input:focus, .ex_input textarea:focus{ background:#fff; }
+.ex_input textarea{ width:360px; height:175px; font-size:12px; padding:4px; color:#333; line-height:1.5em; background:#efefef;
+}
+.ex_table th, .ex_table td{ border:1px solid #bbb; padding:10px; text-align:center; }
+.ex_table th, .ex_table td.feature{ border-color:#ccc; }
 
-.ex_section{
-
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 32px; /*--Set height of tabs--*/
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	width: 100%;
+}
+ul.tabs li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	height: 31px; /*--Subtract 1px from the height of the unordered list--*/
+	line-height: 31px; /*--Vertically aligns the text within the tab--*/
+	border: 1px solid #ccc;
+	border-left: none;
+	margin-bottom: -1px; /*--Pull the list item down 1px--*/
+	overflow: hidden;
+	position: relative;
+	background: #e0e0e0;
+}
+ul.tabs li a {
+	text-decoration: none;
+	color: #000;
+	display: block;
+	font-size: 1.2em;
+	padding: 0 20px;
+	border: 1px solid #fff; /*--Gives the bevel look with a 1px white border inside the list item--*/
+	outline: none;
+}
+ul.tabs li a:hover {
+	background: #ccc;
+}
+html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that the active tab does not listen to the hover properties--*/
+	background: #fff;
+	border-bottom: 1px solid #fff; /*--Makes the active tab look like it's connected with its content--*/
 }
 
-.ex_opts label{
-	font-size:12px;
-	font-weight:700;
-	width:230px;
-	display:block;
-	float:left;	
-}
-.ex_input {
-	padding:10px 10px;
-	border-bottom:1px solid #eee;
-}
-.ex_opts small{
-	display:block;
-	float:right;
-	width:220px;
-	color:#999;
-}
-.ex_opts input[type="text"], .ex_opts select{
-	width:310px;
-	font-size:12px;
-	padding:4px;
-	color:#333;
-	line-height:1em;
-	background:#f3f3f3;
-}
-.ex_input input:focus, .ex_input textarea:focus{
-		background:#fff;
-}
-.ex_input textarea{
-	width:310px;
-	height:175px;
-	font-size:12px;
-	padding:4px;
-	color:#333;
-	line-height:1.5em;
-	background:#f3f3f3;
-}
+.tab_container { border: 1px solid #ccc; border-top: none; overflow: hidden;
+	clear: both; float: left; width: 100%; background: #fff; }
+.tab_content { padding: 20px; }
 
-.clearfix{
-	clear:both;
-}
-
-.ex_table th, .ex_table td{
-	border:1px solid #bbb;
-	padding:10px;
-	text-align:center;
-}
-
-.ex_table th, .ex_table td.feature{
-	border-color:#888;
-	}
+#tabs-footer{ padding:20px; background: #e0e0e0; border-top: 1px solid #ccc; overflow:hidden; }
+#tabs-footer p.submit{ margin:0; padding:0; float:right; }
+#options-tabs .button-primary { padding: 8px 20px; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; }

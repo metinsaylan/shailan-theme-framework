@@ -1,34 +1,22 @@
 <?php 
 
+define( 'STF_DEBUG', false );
+
 include_once('app/stf-framework.php'); // INCLUDE FRAMEWORK
 
-if(! function_exists('get_post_format') ){
-function get_post_format(){
-	return 'standard';
-}
-}
-	
 if(! function_exists('theme_setup')) {
 function theme_setup(){
 
 	// ADD WIDGET AREAS (If no sidebars added STF will use default sidebar set.
+	// I am sure you know that; if you add custom sidebars here, you need to edit templates too.
 	/*
 		stf_add_widget_area('Sidebar Home', 'sidebar-home', '');
-		stf_add_widget_area('Sidebar Inner', 'sidebar', '');
-		
-		stf_add_widget_area('Footer Column 1', 'footer-column-1', '');
-		stf_add_widget_area('Footer Column 2', 'footer-column-2', '');
-		stf_add_widget_area('Footer Column 3', 'footer-column-3', '');
-		stf_add_widget_area('Footer Column 4', 'footer-column-4', '');
-		
-		stf_add_widget_area('Footer Credits', 'credits', '');
 	*/
 
 	// Post Thumbnails & Custom Image Sizes
 	add_theme_support( 'post-thumbnails', array('post', 'page') ); // Add any other custom post types here
 	add_image_size( 'home', 200, 200, true );
 	add_image_size( 'featured', 940, 320, true );
-	add_image_size( 'post-thumbnail', 210, 125, true );
 	add_image_size( 'video-thumbnail', 120, 90, true );
 	add_image_size( 'medium-rectangle', 300, 250, true );
 	add_image_size( 'featured-small', 125, 125, true );
