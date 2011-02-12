@@ -19,6 +19,21 @@
  
 <div class="ex_opts">
 <form method="post">
+<div id="options-tabs">
+
+<!-- Tabs navigation -->
+	<ul id="tabs-navigation" class="tabs">
+<?php
+	foreach ($options as $value) {
+		if ( $value['type'] == "section" ) {
+			echo "<li><a href=\"#" . sanitize_title( $value['name'] ) . "\">".$value['name']."</a></li>";
+		}
+	}
+?>
+	</ul>
+<!-- [End] Tabs Navigation -->
+
+<div class="tab_container">
 <?php foreach ($options as $value) {
 switch ( $value['type'] ) {
  
@@ -27,11 +42,9 @@ switch ( $value['type'] ) {
 <?php break;
 	
 	case 'close': ?>
- 
-</div>
-</div>
-<br />
 
+</div>
+</div>
  
 <?php break;
 	
@@ -39,7 +52,7 @@ switch ( $value['type'] ) {
 
 <div class="ex_input ex_text">
 	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
- 	<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( $current[ $value['id'] ] != "") { echo esc_html(stripslashes($current[ $value['id'] ] ) ); } ?>" />
+ 	<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( isset($current[ $value['id'] ]) && $current[ $value['id'] ] != "") { echo esc_html(stripslashes($current[ $value['id'] ] ) ); } ?>" />
  <small><?php echo $value['desc']; ?></small><div class="clearfix"></div>
  
  </div>
@@ -92,7 +105,7 @@ case "section":
 
 ?>
 
-<div class="ex_section">
+<div class="ex_section tab_content" id="<?php echo sanitize_title( $value['name'] ); ?>">
 <div class="ex_title"><h3><?php echo $value['name']; ?></h3><span class="submit">
 </span><div class="clearfix"></div></div>
 <div class="ex_options">
@@ -103,7 +116,9 @@ case "section":
 }
 }
 ?>
- 
+</div>
+</div>
+
 <p class="submit">
 <input name="save" type="submit" class="button-primary" value="Save changes" />
 <input type="hidden" name="action" value="save" />
@@ -112,5 +127,28 @@ case "section":
 </form>
 
 <?php if(!empty($footer_text)){echo $footer_text;} ?>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+	//When page loads...
+	jQuery(".tab_content").hide(); //Hide all content
+	jQuery("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	jQuery(".tab_content:first").show(); //Show first tab content
+
+	//On Click Event
+	jQuery("ul.tabs li").click(function() {
+
+		jQuery("ul.tabs li").removeClass("active"); //Remove any "active" class
+		jQuery(this).addClass("active"); //Add "active" class to selected tab
+		jQuery(".tab_content").hide(); //Hide all tab content
+
+		var activeTab = jQuery(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+		jQuery(activeTab).fadeIn(); //Fade in the active ID content
+		return false;
+	});
+
+});
+</script>
 
 </div> 

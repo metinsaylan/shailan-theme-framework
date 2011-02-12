@@ -21,8 +21,8 @@ $dir = basename($dir);
 if ( 0 === strpos($url, 'http') && is_ssl() ){
 	$url = str_replace( 'http://', 'https://', $url );} 
 
-define('STF_URL', $url . '/');
-define('STF_APP', STF_DIRECTORY . 'app/');
+define('STF_URL', $url . '/app/');
+define('STF_APP', STF_DIRECTORY );
 
 class Shailan_Framework{
 
@@ -152,6 +152,12 @@ class Shailan_Framework{
 		 
 		wp_enqueue_style("stf-options-page", STF_URL . "css/options.css", false, "1.0", "all");
 		wp_enqueue_style("stf-widgets-mod", STF_URL . "css/widgets.css", false, "1.0", "all");
+		
+		wp_enqueue_style("stf-options-tabs", STF_URL . "css/options-tabs.css", false, "1.0", "all");
+		
+		wp_enqueue_script("jquery");
+		wp_enqueue_script('jquery-ui-core');
+		wp_enqueue_script("jquery-ui-tabs");
 	}
 	
 	function theme_admin_header(){
