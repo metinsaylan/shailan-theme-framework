@@ -146,6 +146,7 @@ function shailan_remove_version() { return ''; } add_filter('the_generator', 'sh
 
 /** Allow shortcodes in widgets */
 add_filter('widget_text', 'do_shortcode');
+add_filter('the_excerpt_rss', 'do_shortcode');
 
 /** If title is empty return a middot */
 function invisible_titles( $title, $post_id = 0 ){
