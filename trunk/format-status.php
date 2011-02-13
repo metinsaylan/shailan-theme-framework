@@ -5,6 +5,8 @@
 	</div>
 	<!-- [End] Entry Content -->
 	
-	<?php stf_entry_short_meta(); ?>
+	<div class="entry-controls">
+		<?php stf_entry_short_meta(); ?>	
+	</div>
 </div>
 <div class="clear"></div>

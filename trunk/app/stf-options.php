@@ -36,7 +36,7 @@ array( "type" => "open"),
 	array(  "name" => "Entry footer for short formats",
 		"desc" => "Entry footer meta for short formats: link, status, aside, picture ",
 		"id" => "stf_entry_short_meta",
-		"std" => '[permalink] [cmnts] [edit]',
+		"std" => '[permalink] &middot; [cmnts] [edit before="&middot; "]',
 		"type" => "text"),
 		
 	array(  "name" => "Theme footer",

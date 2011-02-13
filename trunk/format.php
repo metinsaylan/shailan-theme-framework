@@ -13,7 +13,7 @@
 		if( is_archive() ){ 
 			the_excerpt(); 
 		} else {
-			the_content( sprintf( __('Continue reading "%s" &rarr;', 'stf'), the_title('', '', false) ) ); 
+			the_content( stf_more() ); 
 		}
 	
 	?>

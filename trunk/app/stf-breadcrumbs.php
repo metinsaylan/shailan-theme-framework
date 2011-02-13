@@ -10,16 +10,11 @@ function stf_breadcrumbs( $args = array() ) {
 	
 		'echo'		=> 1,
 		'prefix'	=> '',
-		'suffix'	=> ''
+		'suffix'	=> '',
+		'seperator' => ' <span class=\"seperator\">&raquo;</span> ',
+		'hometext'	=> 'Welcome to <strong>' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</strong>'
 	
 	) ), EXTR_SKIP );
-	
-	
-	$opt 						= array();
-	$opt['sep'] 				= " <span class=\"seperator\">&raquo;</span> ";
-	$opt['prefix']				= "";
-	$opt['boldlast'] 			= true;
-	$opt['singleparent'] 		= 0;
 	
 	
 	$home_link = "<span><a href=\"" . home_url( '/' ) . "\" title=\"". esc_attr( get_bloginfo( 'name', 'display' ) ) . "\" rel=\"home ". ((!is_front_page() || !is_home()) ? 'nofollow' : '') . "\">" . __('Home') . "</a></span>";
@@ -48,6 +43,8 @@ function stf_breadcrumbs( $args = array() ) {
 	$on_front = get_option('show_on_front');
 
 	if (is_404()){
+	
+		// Change not found phrases here
 		$not_found = array(
 			'404',
 			'what is that?',
@@ -56,43 +53,52 @@ function stf_breadcrumbs( $args = array() ) {
 			'well, i can\'t find it'
 		);
 		
-		$output = $opt['sep'].$not_found[rand(0, count($not_found) - 1)];
+		$output = $home_link . $seperator . $not_found[ rand(0, count($not_found) - 1) ];
+		
 	} elseif ( ($on_front == "page" && is_front_page()) || ($on_front == "posts" && is_home()) ) {
-		$output = "";
+	
+		$output = $hometext;
+		
 	} elseif ( $on_front == "page" && is_home() ) {
-		$output = $opt['sep'].stf_wrapCurrent($opt['blog']);
+	
+		$output =  $home_link . $seperator . stf_wrapCurrent( get_the_title() );
+		
 	} elseif ( !is_page() ) {
-		$output = $opt['sep'];
-		if ( ( is_single() || is_category() || is_tag() || is_date() || is_author() ) && $opt['singleparent'] != false) {
-			$output .= '<a href="'.get_permalink($opt['singleparent']).'">'.get_the_title($opt['singleparent']).'</a>'.$opt['sep'];
-		} 
+	
+		$output = $home_link . $seperator;
+		
+		/* if ( ( is_single() || is_category() || is_tag() || is_date() || is_author() ) && $opt['singleparent'] != false) {
+			$output .= '<a href="' . get_permalink( $opt['singleparent']) . '">' . get_the_title($opt['singleparent']).'</a>'.$seperator;
+		} */
+		
 		if (is_single()) {
 			$cats = get_the_category();
 			$cat = $cats[0];
 			if ( is_object($cat) ) {
 				if ($cat->parent != 0) {
-					$output .= get_category_parents($cat->term_id, true, $opt['sep']);
+					$output .= get_category_parents($cat->term_id, true, $seperator);
 				} else {
-					$output .= '<a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a>'.$opt['sep']; 
+					$output .= '<a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a>'.$seperator; 
 				}
 			}
 		}
+		
 		if ( is_category() ) {
 			$cat = intval( get_query_var('cat') );
-			$output .= __('Categories') . $opt['sep'] . yoast_get_category_parents($cat, false, $opt['sep']);
+			$output .= __('Categories') . $seperator . yoast_get_category_parents($cat, false, $seperator);
 		} elseif ( is_tag() ) {
-			$output .= __('Tags') . $opt['sep'] . stf_wrapCurrent(single_cat_title('',false));
+			$output .= __('Tags') . $seperator . stf_wrapCurrent(single_cat_title('',false));
 		} elseif ( is_date() ) { 
-			$output .=  __('Date') . $opt['sep'] . stf_wrapCurrent(single_month_title('',false));
+			$output .=  __('Date') . $seperator . stf_wrapCurrent(single_month_title('',false));
 		} elseif ( is_author() ) { 
 			$user = get_userdatabylogin($wp_query->query_vars['author_name']);
-			$output .= __('Author') . $opt['sep'] . stf_wrapCurrent($user->display_name);
+			$output .= __('Author') . $seperator . stf_wrapCurrent($user->display_name);
 		} elseif ( is_search() ) {
-			$output .= __('Search') . $opt['sep'] . stf_wrapCurrent(stripslashes(strip_tags(get_search_query())));
+			$output .= __('Search') . $seperator . stf_wrapCurrent(stripslashes(strip_tags(get_search_query())));
 		} else if ( is_tax() ) {
 			$taxonomy 	= get_taxonomy ( get_query_var('taxonomy') );
 			$term 		= get_query_var('term');
-			$output .= __('Taxonomy') . $opt['sep'] . stf_wrapCurrent($taxonomy->label .':'. $term) ;
+			$output .= __('Taxonomy') . $seperator . stf_wrapCurrent($taxonomy->label .':'. $term) ;
 		} else {
 			$output .= stf_wrapCurrent(get_the_title());
 		}
@@ -101,7 +107,7 @@ function stf_breadcrumbs( $args = array() ) {
 
 		// If this is a top level Page, it's simple to output the breadcrumb
 		if ( 0 == $post->post_parent ) {
-			$output = $home_link . $opt['sep'] . stf_wrapCurrent( get_the_title() );
+			$output = $home_link . $seperator . stf_wrapCurrent( get_the_title() );
 		} else {
 			if (isset($post->ancestors)) {
 				if (is_array($post->ancestors))
@@ -132,7 +138,7 @@ function stf_breadcrumbs( $args = array() ) {
 
 			$output = $home_link;
 			foreach ( $links as $link ) {
-				$output .= $opt['sep'];
+				$output .= $seperator;
 				if (!$link['cur']) {
 					$output .= '<a href="'.$link['url'].'">'.$link['title'].'</a>';
 				} else {

@@ -14,7 +14,16 @@ body, td, textarea, input, select{ font: normal normal normal 13px/18px Georgia,
 pre, code, tt, code, kbd, samp { font-family: Monaco, Consolas, "Andale Mono", "Dejavu Sans Mono", monospace; }
 blockquote.stylish, .amp, .and { font-family: Baskerville, Palatino, "Book Antiqua", serif; font-style: oblique; }
 blockquote.stylish{ font-size:1.2em }
-blockquote{ font-style:italic; padding: 15px; border-bottom:1px solid #ddd; background:#e8e8e8;  }
+blockquote{ 
+	font-style:italic; padding: 15px; 
+	border-bottom:1px solid #ddd; 
+	border-left:1px solid #ddd; 
+	border-top:1px solid #f0f0f0; 
+	border-right:1px solid #f0f0f0; 
+	background:#e8e8e8; 
+	border-radius:8px; 
+	-moz-border-radius:8px; 
+	-webkit-border-radius:8px;	}
 blockquote.left { float: left; margin-left: 0; margin-right: 20px; text-align: right; width: 33%; }
 blockquote.right { float: right; margin-left: 20px; margin-right: 0; text-align: left; width: 33%; }
 
@@ -133,16 +142,16 @@ img.icon { vertical-align: middle; margin: 4px; }
 .wp-caption p.wp-caption-text { font-size: 10px; text-align:center; padding:4px; }
 
 /* Tables */ 
-table{ border-collapse: collapse; border-spacing:0; border: 1px solid #fff; 
+#page table{ border-collapse: collapse; border-spacing:0; border: 1px solid #fff; 
 	/* Shadows */
 	box-shadow: #bbbbbb 0 2px 5px; 
 	-moz-box-shadow: #bbbbbb 0 2px 5px;
 	-webkit-box-shadow: #bbbbbb 0 2px 5px; 
 }
-tr{ border-bottom:1px solid #ddd; }
-tr.alternate, tr.alt { background:#e8e8e8; }
-tr:hover{ background: #fff6c3; -webkit-transition: 1s; }
-td{ border-color: #ddd;
+#page tr{ border-bottom:1px solid #ddd; }
+#page tr.alternate, tr.alt { background:#e8e8e8; }
+#page tr:hover{ background: #fff6c3; -webkit-transition: 1s; }
+#page td{ border-color: #ddd;
 border-style: solid;
 border-spacing: 0;
 border-width: 0 0 1px;
@@ -150,7 +159,7 @@ height: 29px;
 padding: 0 10px 0;
 text-align: left;
 vertical-align: middle; }
-td.label, th[scope="row"]{ font-weight:bold; min-width:200px; }
+#page td.label, th[scope="row"]{ font-weight:bold; min-width:200px; }
 
 /* Definition lists */
 dl{ border-top:1px solid #ddd; border-bottom:1px solid #ddd; padding:15px 0;}
