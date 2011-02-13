@@ -166,19 +166,22 @@ function stf_tags($args){
 	
 } 
 
-function stf_comments_link($args){
+function stf_comments_link( $atts ){
 	global $post, $id;
 	
-	$defaults = array(
+	extract(shortcode_atts( array(
+		'before' => '',
+		'after' => '',
 		'zero' => __('Leave a comment'),
 		'one' => __('1 Comment'),
-		'more' => __('% Comments')
-	);	
-	$args = wp_parse_args( $args, $defaults );
-	extract( $args );	
+		'more' => __('% Comments'),
+		'closed' => ''
+	), $atts));
 	
-	$link = get_comments_link();
-	$number = get_comments_number($id);
+	if ('open' == $post->comment_status) {
+
+		$link = get_comments_link();
+		$number = get_comments_number($id);
 
         if ( $number > 1 )
                 $output = str_replace('%', number_format_i18n($number), ( false === $more ) ? __('% Comments') : $more);
@@ -187,15 +190,23 @@ function stf_comments_link($args){
         else // must be one
                 $output = ( false === $one ) ? __('1 Comment') : $one;
 	
-	return '<span class="comments-link"><a href="'.$link.'" >' . $output . '</a></span>';
+		return $before . '<span class="comments-link"><a href="'.$link.'" >' . $output . '</a></span>' . $after;
+	
+	} else {
+		return $closed;
+	}
+	
 } 
 
 function stf_comment_count($args){
 	global $post, $id;	
-	$link = get_comments_link();
-	$number = get_comments_number($id);
 	
-	return '<span class="comments-count"><a href="'.$link.'" >' . $number . '</a></span>';
+	if ('open' == $post->comment_status) {
+		$link = get_comments_link();
+		$number = get_comments_number($id);
+		
+		return '<span class="comments-count"><a href="'.$link.'" >' . $number . '</a></span>';
+	}
 } 
 
 // [shortlink text="shortlink" title="twit this" before="Get the " after="!"]

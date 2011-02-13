@@ -38,6 +38,8 @@ function stf_post_format(){
 				return 'audio';
 			}		
 			
+		} else {
+			return $format;
 		}
 		
 	} else {

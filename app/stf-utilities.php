@@ -110,25 +110,27 @@ function shailan_favicon() {
 
 /** Excerpt Length Settings */
 function shailan_excerpt_length($length) {
-	$excerpt_length = get_option('shailan_excerpt_length');
+	$excerpt_length = stf_get_setting('shailan_excerpt_length');
 	if(empty($excerpt_length)){ $excerpt_length = 25; }
 	return $excerpt_length;
 } add_filter('excerpt_length', 'shailan_excerpt_length');
  
 /** Excerpt More text */
-function shailan_excerpt_more( $more ) {
+function stf_more( $more_fallback = '' ) {
 	$more = ' <a href="'. get_permalink() . '">';
-	$more_text = get_option('shailan_more');
+	$more_text = stf_get_setting('shailan_more');
+	$more_text = preg_replace('#%title%#i', get_the_title(), $more_text);
 	
-	if(empty($more_text)){ 
+	if( empty($more_text) ){ 
 		$more .= __('Continue reading <span class="meta-nav">&rarr;</span>'); 
 	} else {
 		$more .= $more_text;
 	}
 	
 	$more .= '</a>';
+	
 	return $more;
-} add_filter( 'excerpt_more', 'shailan_excerpt_more' );
+} add_filter( 'excerpt_more', 'stf_more' );
 
 /** Threaded comments script adder */
 function enable_threaded_comments(){

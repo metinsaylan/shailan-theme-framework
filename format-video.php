@@ -1,27 +1,14 @@
 <div class="video-preview">
-<?php the_content(); ?>
+	<?php the_content( stf_more() ); ?>
 </div>
 
 <div class="entry-body">
 
-	<div class="entry-header">
-		<h2 class="entry-title">
-			<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php /*k2_permalink_title(); */ ?>" class="permalink"><?php the_title(); ?></a>
-		</h2>
-		
-		<div class="entry-meta">
-			<?php stf_entry_header() ?>
-		</div>
-	</div><!-- .entry-header -->
+	<?php get_template_part('entry', 'header'); ?>
 	
-	<div class="entry-content">
-		
-		<?php wp_link_pages( array('before' => '<div class="entry-pages"><span>' . __('Pages:','stf') . '</span>', 'after' => '</div>' ) ); ?>
-	</div><!-- .entry-content -->
-	
-	<div class="entry-footer">
-		<?php stf_entry_footer() ?>
-	</div><!-- .entry-footer -->
+	<div class="entry-controls">
+		<?php stf_entry_short_meta(); ?>	
+	</div>
 
 </div>
 

@@ -1,8 +1,8 @@
 <div class="entry-body">
-	<!-- Entry Content -->
-	<div class="entry-content">
-		<?php the_content( sprintf( __('Continue reading "%s" &rarr;', 'stf'), the_title('', '', false) ) ); ?>
+	<div class="entry-content"><?php the_content( stf_more() ); ?></div>
+	
+	<div class="entry-controls">
+		<?php stf_entry_short_meta(); ?>	
 	</div>
-	<!-- [End] Entry Content -->
 </div>
 <div class="clear"></div>

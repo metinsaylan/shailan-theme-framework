@@ -1,7 +1,12 @@
 <div class="entry-body">
+	<!-- Entry Content -->
 	<div class="entry-content">
-		<?php the_content( sprintf( __('Continue reading "%s" &rarr;', 'stf'), the_title('', '', false) ) ); ?>
-		<?php wp_link_pages( array('before' => '<div class="entry-pages"><span>' . __('Pages:','stf') . '</span>', 'after' => '</div>' ) ); ?>
-	</div><!-- .entry-content -->
+		<?php the_content( stf_more() ); ?>
+	</div>
+	<!-- [End] Entry Content -->
+	
+	<div class="entry-controls">
+		<?php stf_entry_short_meta(); ?>	
+	</div>
 </div>
 <div class="clear"></div>
