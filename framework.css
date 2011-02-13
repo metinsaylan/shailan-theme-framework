@@ -76,13 +76,13 @@ ul, ol { margin-top: 1em; padding-left: 1.5em; }
 .alignleft{ float:left; margin-right:15px; }
 .alignnone{ float:none; }
 
-img.alignleft, img[align="left"] { 
+.wp-caption.alignleft, img.alignleft, img[align="left"] { 
 	box-shadow: #bbbbbb 2px 2px 5px; 
 	-moz-box-shadow: #bbbbbb 2px 2px 5px;
 	-webkit-box-shadow: #bbbbbb 2px 2px 5px; 
 }
 
-img.alignright, img[align="right"] {
+.wp-caption.alignright, img.alignright, img[align="right"] {
 	-webkit-box-shadow: #bbbbbb -2px 2px 5px; 
 	box-shadow: #bbbbbb -2px 2px 5px; 
 	-moz-box-shadow: #bbbbbb -2px 2px 5px;
@@ -95,7 +95,16 @@ a img { border: 0; }
 
 img.icon { vertical-align: middle; margin: 4px; }
 
-.wp-caption p.wp-caption-text { font-size: 10px; }
+/* Captions */
+.wp-caption{ 
+	padding:4px; 
+	/* Shadows */
+	box-shadow: #bbbbbb 0 2px 5px; 
+	-moz-box-shadow: #bbbbbb 0 2px 5px;
+	-webkit-box-shadow: #bbbbbb 0 2px 5px; 
+}
+.wp-caption p.wp-caption-text { font-size: 10px; text-align:center; padding:4px; }
+
 
 h1, h2, h3, h4, p, ul, ol, .widget-title{ margin-bottom:15px; }
 
@@ -135,8 +144,7 @@ p{ text-align:justify; }
 
 /*- Author box */
 #authorbox{ border-top:1px solid #CECFD0; margin:0 10px 10px; overflow:hidden; }
-#authorbox .author-avatar{ margin:0; padding:5px; float:right; }
-#authorbox .avatar{ border:0; }
+#authorbox .avatar{ border:0; margin:0; padding:5px; float:right; }
 #authorbox .author-info{ padding:5px; padding-right:60px; }
 #authorbox { color:#888888; }
 
