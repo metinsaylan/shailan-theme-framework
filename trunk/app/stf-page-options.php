@@ -24,9 +24,9 @@
 	<!-- Tabs navigation -->
 	<ul id="tabs-navigation" class="tabs">
 	<?php
-		foreach ($options as $value) {
-			if ( $value['type'] == "section" ) {
-				echo "<li><a href=\"#" . sanitize_title( $value['name'] ) . "\">".$value['name']."</a></li>";
+		foreach ($options as $field) {
+			if ( $field['type'] == "section" ) {
+				echo "<li><a href=\"#" . sanitize_title( $field['name'] ) . "\">".$field['name']."</a></li>";
 			}
 		}
 	?>
@@ -34,8 +34,8 @@
 	<!-- [End] Tabs Navigation -->
 
 <div class="tab_container">
-<?php foreach ($options as $value) {
-switch ( $value['type'] ) {
+<?php foreach ($options as $field) {
+switch ( $field['type'] ) {
  
 	case 'open': ?>
  
@@ -51,11 +51,12 @@ switch ( $value['type'] ) {
 	case 'text': ?>
 
 <div class="ex_input ex_text">
-	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
- 	<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if ( isset($current[ $value['id'] ]) && $current[ $value['id'] ] != "") { echo esc_html(stripslashes($current[ $value['id'] ] ) ); } ?>" />
- <small><?php echo $value['desc']; ?></small><div class="clear"></div>
- 
- </div>
+	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
+ 	<input name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" value="<?php if ( isset($current[ $field['id'] ]) && $current[ $field['id'] ] != "") { echo esc_html(stripslashes($current[ $field['id'] ] ) ); } ?>" />
+	<small><?php echo $field['desc']; ?></small>
+	<div class="clear"></div>
+</div>
+
 <?php
 break;
  
@@ -63,9 +64,9 @@ case 'textarea':
 ?>
 
 <div class="ex_input ex_textarea">
-	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
- 	<textarea name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" cols="" rows=""><?php if ( $current[ $value['id'] ] != "") { echo stripslashes($current[ $value['id'] ] ); } else { echo $value['std']; } ?></textarea>
- <small><?php echo $value['desc']; ?></small><div class="clear"></div>
+	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
+ 	<textarea name="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" cols="" rows=""><?php if ( $current[ $field['id'] ] != "") { echo stripslashes($current[ $field['id'] ] ); } else { echo $field['std']; } ?></textarea>
+ <small><?php echo $field['desc']; ?></small><div class="clear"></div>
  
  </div>
   
@@ -76,14 +77,14 @@ case 'select':
 ?>
 
 <div class="ex_input ex_select">
-	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
 	
-<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>">
-<?php foreach ($value['options'] as $option) { ?>
-		<option <?php if ( isset($current[ $value['id'] ]) && $current[ $value['id'] ] == $option) { echo 'selected="selected"'; } ?>><?php echo $option; ?></option><?php } ?>
+<select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>">
+<?php foreach ($field['options'] as $option) { ?>
+		<option <?php if ( isset($current[ $field['id'] ]) && $current[ $field['id'] ] == $option) { echo 'selected="selected"'; } ?>><?php echo $option; ?></option><?php } ?>
 </select>
 
-	<small><?php echo $value['desc']; ?></small><div class="clear"></div>
+	<small><?php echo $field['desc']; ?></small><div class="clear"></div>
 </div>
 <?php
 break;
@@ -92,19 +93,19 @@ case "checkbox":
 ?>
 
 <div class="ex_input ex_checkbox">
-	<label for="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></label>
+	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
 	
-	<input type="checkbox" name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" value="on" <?php checked($current[ $value['id'] ], "on") ?> />
+	<input type="checkbox" name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" value="on" <?php checked($current[ $field['id'] ], "on") ?> />
 
-	<small><?php echo $value['desc']; ?></small><div class="clear"></div>
+	<small><?php echo $field['desc']; ?></small><div class="clear"></div>
  </div>
 <?php break; 
 case "section":
 
 ?>
 
-<div class="ex_section tab_content" id="<?php echo sanitize_title( $value['name'] ); ?>">
-<!-- <div class="ex_title"><h3><?php echo $value['name']; ?></h3><span class="submit">
+<div class="ex_section tab_content" id="<?php echo sanitize_title( $field['name'] ); ?>">
+<!-- <div class="ex_title"><h3><?php echo $field['name']; ?></h3><span class="submit">
 </span><div class="clear"></div></div> -->
 <div class="ex_options">
 

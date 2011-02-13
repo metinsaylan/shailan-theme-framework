@@ -72,7 +72,7 @@ class Shailan_Framework{
 			$settings = array();
 			// Set default values
 			foreach($this->default_options as $option){
-				$settings[$option['id']] = $option['std'];
+				$settings[ $option['id'] ] = $option['std'];
 			}
 			$settings['stf_version'] = $this->version;
 			// Save the settings

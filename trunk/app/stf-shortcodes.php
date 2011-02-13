@@ -38,6 +38,17 @@ function stf_and_shortcode($args) {
 /** [ID], [the_ID] */
 function stf_the_ID($args){ return '<span class="meta_ID">' . get_the_ID() . '</span>'; } 
 
+/** [permalink] */
+function stf_permalink($atts){ 
+	extract(shortcode_atts( array(
+		'before' => '<span class="entry-permalink">',
+		'after' => '</span>',
+		'text' => __('Permalink')
+	), $atts));
+	
+	return $before . '<a href="' . get_permalink( get_the_ID() ) . '" >' . $text . '</a>' . $after; 
+} 
+
 /** [author], [the_author] */
 function stf_the_author_shortcode($args){
 	$defaults = array(
@@ -45,7 +56,7 @@ function stf_the_author_shortcode($args){
 		'after' => ''
 	); $args = wp_parse_args( $args, $defaults ); extract( $args );
 	
-	return '<span class="meta_author">' . $before . get_the_author() . $after . '</span>'; } 
+	return '<span class="author">' . $before . get_the_author() . $after . '</span>'; } 
 
 /** [authorlink], [the_author_link] */
 function stf_the_author_link_shortcode($args){ 
@@ -150,7 +161,7 @@ function stf_tags($args){
 		$tag_list = get_the_tag_list( $before, $separator, $after );
 		return '<span class="meta-tags">' . $tag_list . '</span>';
 	} else {
-		return __('No tags.');
+		return "<!-- No tags -->";
 	}
 	
 } 
@@ -210,8 +221,14 @@ function stf_the_shortlink($args){
 } 
 
 function stf_edit_link_shortcode($atts){
+	extract(shortcode_atts( array(
+		'before' => '',
+		'after' => '',
+		'text' => __('Edit')
+	), $atts));
+
 	ob_start();
-	edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( $text, $before . '<span class="edit-link">', '</span>' . $after );
 	$link = ob_get_contents();
 	ob_end_clean();
 	return $link;
@@ -584,6 +601,8 @@ add_shortcode('the_shortlink', 'stf_the_shortlink');
 add_shortcode('shortlink', 'stf_the_shortlink');
 add_shortcode('edit', 'stf_edit_link_shortcode');
 add_shortcode('views', 'stf_views');
+add_shortcode('permalink', 'stf_permalink');
+
 
 /* CONDITIONALS */
 add_shortcode('home', 'stf_is_home');
