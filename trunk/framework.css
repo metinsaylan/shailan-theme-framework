@@ -203,7 +203,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table,dl, .widget-title{ mar
 #authorbox { color:#888888; }
 
 /*- Format Gallery */
-.gallery-wrap{ height:270px; border:1px solid #ccc; background: #ddd; }
+.gallery-wrap{ height:270px; border:1px solid #111; background: #222; 
+	border-radius:8px; -moz-border-radius:8px; khtml-border-radius:8px; 
+}
 .gallery-container{ margin:10px auto; }
 .gallery-footer {
 	position: absolute;

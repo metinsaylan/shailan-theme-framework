@@ -9,9 +9,7 @@ TAGS: framework, all-widget, widgets, widget-areas, xhtml
 */
 
 /*
-
 	Put your customizations here.
-	
 */
 
 @font-face {
@@ -38,7 +36,7 @@ body.single a[rel~="tag"]:hover{ background: #EDEDED; color: #666; text-decorati
 /*- TITLES */
 h3 { font: normal normal normal 1.3em/1.3em GillSans, "Trebuchet MS", Calibri, sans-serif; text-transform: uppercase; }
 h2.entry-title, h1.entry-title, .widget-title, .page-title{ 
-	font: normal normal normal 32px/normal LeagueGothicRegular, Arial, Helvetica, Clean, sans-serif; 
+	font: normal normal normal 32px/normal 'LeagueGothicRegular', GillSans, "Trebuchet MS", Calibri, sans-serif; 
 	text-shadow: rgba(125, 125, 125, 0.292969) 2px 2px 0px;
 }
 
