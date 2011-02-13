@@ -100,28 +100,13 @@ function stf_default_widget_areas(){
 			'description' => ''),
 		
 		array(
-			'name' => 'Before Content',
-			'id' => 'before-content',
-			'description' => ''),
-			
-		array(
 			'name' => 'Content',
 			'id' => 'content',
 			'description' => 'If you put a widget here, your blog posts wont be visible. Make sure you add a Blog Posts Widget here to display them'),
-		
-		array(
-			'name' => 'After Content',
-			'id' => 'after-content',
-			'description' => ''),
 			
 		array(
-			'name' => 'Sidebar 1',
-			'id' => 'sidebar-1',
-			'description' => ''),
-			
-		array(
-			'name' => 'Sidebar 2',
-			'id' => 'sidebar-2',
+			'name' => 'Sidebar',
+			'id' => 'sidebar',
 			'description' => ''),
 
 		array(
@@ -142,12 +127,7 @@ function stf_default_widget_areas(){
 		array(
 			'name' => 'Footer Wide',
 			'id' => 'footer-wide',
-			'description' => ''),
-			
-		array(
-			'name' => 'Columns',
-			'id' => 'columns',
-			'description' => 'This widget area is displayed on Columns template only. Add Loops & Seperators here.')
+			'description' => '')
 	);
 	
 	//stf_register_widget_areas( );

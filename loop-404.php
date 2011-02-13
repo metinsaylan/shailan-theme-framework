@@ -1,2 +1,5 @@
-<p>No posts found.</p>
+<div class="warning">No posts found.</div>
+
+
+
 
