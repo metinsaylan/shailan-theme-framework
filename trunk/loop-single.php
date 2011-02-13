@@ -20,6 +20,7 @@
 			<?php get_template_part('ads', 'top'); ?>
 		
 			<?php the_content( ); ?>
+			
 			<?php 
 			
 			wp_link_pages( array(

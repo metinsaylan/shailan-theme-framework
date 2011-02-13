@@ -66,7 +66,19 @@ h2.entry-title, h1.entry-title, .widget-title, .page-title{
 .hentry { position:relative; padding-top:15px; }
 .hentry p { line-height: 2em; text-align: justify; }
 
-.sticky { border: 1px solid #aaaaaa; }
+.hentry:hover{
+	/* -webkit-transition:0.5s; */
+	border:1px solid #999999; 
+	box-shadow: 0px 2px 5px #aaaaaa;
+	-moz-box-shadow: 0px 2px 5px #aaaaaa;
+	-webkit-box-shadow: 0px 2px 5px #aaaaaa; }
+
+.sticky { 
+	border: 1px solid #999999; 
+	box-shadow: 0px 2px 5px #CCCCCC;
+	-moz-box-shadow: 0px 2px 5px #CCCCCC;
+	-webkit-box-shadow: 0px 2px 5px #CCCCCC;
+}
 
 .format-standard, #respond{
 	background: #efefef; 
@@ -100,8 +112,10 @@ abbr.entry-date { cursor: inherit; }
 .entry-title, .widget-title, .page-title{ font-size:22px; font-weight:normal; }
 .entry-header, .entry-content, .entry-summary { margin:0 15px; }
 
+.entry-content img { max-width: 588px; }
+
 /* Entry pagination */
-.entry-pages{ padding: 15px 0; text-align: right; }
+.entry-pages{ clear:both; padding: 15px 0; text-align: right; }
 .entry-pages span { color:#cccccc; font-style:italic; } 
 .entry-pages a { border: 1px solid #dddddd; font-size: 13px; margin-left:6px; padding: 0px 4px; }
 .entry-pages a:hover { background: #dddddd; border-color: #cccccc; }
@@ -111,6 +125,9 @@ abbr.entry-date { cursor: inherit; }
 .navigation{ width:75%; margin:15px auto; padding:10px; }
 .nav-previous{ float:left; } 
 .nav-next{ float:right; }
+
+/* Bottom ads */
+.ads-bottom{ clear:both; }
 
 /*- COMMENTS */
 #comments code { font-size: 12px; }
