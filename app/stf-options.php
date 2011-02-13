@@ -33,6 +33,12 @@ array( "type" => "open"),
 		"std" => '[categories before="Filed in: "] [tags before="| Tagged: "]',
 		"type" => "text"),
 		
+	array(  "name" => "Entry footer for short formats",
+		"desc" => "Entry footer meta for short formats: link, status, aside, picture ",
+		"id" => "stf_entry_short_meta",
+		"std" => '[permalink] [cmnts] [edit]',
+		"type" => "text"),
+		
 	array(  "name" => "Theme footer",
 		"desc" => "Displays at the bottom of site. You can use various shortcodes here.",
 		"id" => "stf_theme_footer",

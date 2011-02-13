@@ -56,7 +56,8 @@ h2.entry-title, h1.entry-title, .widget-title, .page-title{
 #site-info a, #site-info a:hover { text-decoration: none; }
 
 /*- BILLBOARD */
-#billboard { margin: 0px auto; padding: 10px; width: 728px; }
+#billboard-wrapper{  }
+#billboard .leaderboard{ margin: 0px auto; padding: 10px; width: 728px; }
 
 /*- PAGE CONTENT */
 #page{ background:#EEEEEE; }
@@ -116,9 +117,8 @@ abbr.entry-date { cursor: inherit; }
 
 /* Entry pagination */
 .entry-pages{ clear:both; padding: 15px 0; text-align: right; }
-.entry-pages span { color:#cccccc; font-style:italic; } 
-.entry-pages a { border: 1px solid #dddddd; font-size: 13px; margin-left:6px; padding: 0px 4px; }
-.entry-pages a:hover { background: #dddddd; border-color: #cccccc; }
+.entry-pages span.label { color:#cccccc; font-style:italic; } 
+.entry-pages .page-number { border: 1px solid #dddddd; font-size: 13px; margin-left:6px; padding: 0px 4px; }
 
 .entry-attachment, p.attachment{ text-align:center; }
 

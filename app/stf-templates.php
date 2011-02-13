@@ -126,10 +126,12 @@ function default_sidebar_widgets(){
  * @since 1.0.0
  * @uses do_shortcode() to parse shortcodes in header.
  */
-function stf_entry_header(){
+function stf_entry_header_meta(){
 	$meta = stf_get_setting('stf_entry_header_meta');
 	if(FALSE !== $meta){
-		echo do_shortcode($meta);
+		echo "<div class=\"entry-meta entry-meta-header\">";
+			echo do_shortcode( $meta );
+		echo "</div>";
 	}
 }
 
@@ -139,10 +141,24 @@ function stf_entry_header(){
  * @since 1.0.0
  * @uses do_shortcode() to parse shortcodes in the footer.
  */
-function stf_entry_footer(){
+function stf_entry_footer_meta(){
 	$meta = stf_get_setting('stf_entry_footer_meta');
 	if(FALSE !== $meta){
-		echo do_shortcode(stripslashes($meta));
+		echo do_shortcode( stripslashes($meta) );
+	}
+}
+
+
+/**
+ * Returns entry footer for short post formats.
+ *
+ * @since 1.0.0
+ * @uses do_shortcode() to parse shortcodes in the footer.
+ */
+function stf_entry_short_meta(){
+	$meta = stf_get_setting('stf_entry_short_meta');
+	if(FALSE !== $meta){
+		echo do_shortcode( stripslashes($meta) );
 	}
 }
 
@@ -150,7 +166,7 @@ function stf_entry_footer(){
  * Returns entry thumbnail. Size can be changed via options panel.
  *
  * @since 1.0.0
- * @uses do_shortcode() to parse shortcodes in the footer.
+ * @uses get_the_title(), has_post_thumbnail(), get_permalink(), the_title_attribute(), get_the_post_thumbnail()
  */
 function stf_entry_thumbnail( $size = null ){
 	global $post;
@@ -167,6 +183,21 @@ function stf_entry_thumbnail( $size = null ){
 		echo 	get_the_post_thumbnail( $post->ID, $size, $thumb_attr );
 		echo '</a></div>';
 	} 
+}
+
+/**
+ * Returns entry pages navigation.
+ *
+ * @since 1.0.0
+ * @uses wp_link_pages()
+ */
+function stf_entry_pages_navigation(){
+	wp_link_pages( array(
+		'before'		=> '<div class="entry-pages"><span class="label">' . __('Pages:') . '</span>',
+		'after'			=> '</div>',
+		'link_before'	=> '<span class="page-number">',
+		'link_after'	=> '</span>'
+	) ); 
 }
 
 function stf_get_templates(){

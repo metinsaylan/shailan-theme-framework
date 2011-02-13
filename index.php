@@ -1,8 +1,4 @@
-<?php 
-
-/* Template Name: Columns */
-
-get_header() ?>
+<?php get_header() ?>
 
 <!-- Content Wrapper -->
 <div id="content-wrapper">
@@ -10,16 +6,12 @@ get_header() ?>
 	<!-- Page -->
 	<div id="page" class="container_12 clearfix">
 	
-		<!-- Breadcrumbs -->
-		<div id="breadcrumbs" class="clearfix">
-			<?php if( !is_home() || !is_front_page() ){ ?><span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>"><?php _e('Home'); ?></a></span><span class="breadcrumbs"><?php stf_breadcrumbs(); ?></span><?php } ?>
-		
-			<div class="clear"></div>
-			<div id="billboard">
-				<?php stf_widget_area( 'billboard' ); ?>
-			</div>
+		<!-- Billboard -->
+		<div id="billboard-wrapper" class="clearfix">
+			<?php stf_breadcrumbs() ?>			
+			<?php stf_widget_area( 'billboard' ) ?>
 		</div>
-		<!-- [End] Breadcrumbs -->
+		<!-- [End] Billboard -->
 
 		<!-- Content -->
 		<div id="content" class="grid_8 clearfix">
@@ -32,12 +24,12 @@ get_header() ?>
 			<!-- [End] Main -->
 			
 			<?php stf_widget_area( 'after-content' ); ?>
-		</div><!-- #content -->
+		</div>
+		<!-- [End] Content -->
 		
 		<!-- Sidebars -->
 		<div id="sidebars" class="grid_4">
-			<?php get_sidebar('1') ?>
-			<?php get_sidebar('2') ?>
+			<?php get_sidebar() ?>
 		</div>		
 		<!-- [End] Sidebars -->
 		

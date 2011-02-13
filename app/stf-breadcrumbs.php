@@ -3,16 +3,27 @@
 function stf_wrapCurrent($link){
 	return "<span class='current'>".$link."</span>";
 }
-function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
+function stf_breadcrumbs( $args = array() ) {
 	global $wp_query, $post;
 	
+	extract( wp_parse_args( $args, array( // Default options:
+	
+		'echo'		=> 1,
+		'prefix'	=> '',
+		'suffix'	=> ''
+	
+	) ), EXTR_SKIP );
+	
+	
 	$opt 						= array();
-	$opt['home'] 				= "Home";
-	$opt['blog'] 				= __("Home");
 	$opt['sep'] 				= " <span class=\"seperator\">&raquo;</span> ";
 	$opt['prefix']				= "";
 	$opt['boldlast'] 			= true;
 	$opt['singleparent'] 		= 0;
+	
+	
+	$home_link = "<span><a href=\"" . home_url( '/' ) . "\" title=\"". esc_attr( get_bloginfo( 'name', 'display' ) ) . "\" rel=\"home ". ((!is_front_page() || !is_home()) ? 'nofollow' : '') . "\">" . __('Home') . "</a></span>";
+	
 
 	if (!function_exists('yoast_get_category_parents')) {
 		function yoast_get_category_parents($id, $link = FALSE, $separator = '/', $nicename = FALSE){
@@ -90,7 +101,7 @@ function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
 
 		// If this is a top level Page, it's simple to output the breadcrumb
 		if ( 0 == $post->post_parent ) {
-			$output = $opt['sep'].get_the_title();
+			$output = $home_link . $opt['sep'] . stf_wrapCurrent( get_the_title() );
 		} else {
 			if (isset($post->ancestors)) {
 				if (is_array($post->ancestors))
@@ -119,7 +130,7 @@ function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
 				$links[] = $tmp;
 			}
 
-			$output = '';
+			$output = $home_link;
 			foreach ( $links as $link ) {
 				$output .= $opt['sep'];
 				if (!$link['cur']) {
@@ -131,8 +142,8 @@ function stf_breadcrumbs($prefix = '', $suffix = '', $display = true) {
 		}
 	}
 
-	if ($display) {
-		echo $prefix.$output.$suffix;
+	if ( $echo ) {
+		echo $prefix. "<span class='breadcrumbs'>" . $output . "</span>" . $suffix;
 	} else {
 		$prefix.$output.$suffix;
 	}
