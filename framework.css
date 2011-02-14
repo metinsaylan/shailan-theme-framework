@@ -81,7 +81,7 @@ acronym{ border-bottom:1px dotted #444444; }
 abbr[title], acronym[title] { cursor: help; }
 hr { display: none; }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table,dl, .widget-title, .wp-caption{ margin-bottom:15px; }
+h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table,dl, .widget-title, .widget-container, .wp-caption{ margin-bottom:15px; }
 
 .logged-in h1{ border:1px dashed rgba(255,0,0,0.3); } /* for SEO */
 .logged-in h1:hover{ border:1px dashed rgba(255,0,0,0.9); } /* for SEO */
