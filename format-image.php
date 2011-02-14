@@ -1,6 +1,6 @@
 <div class="entry-body">
 	<!-- Entry Content -->
-	<div class="entry-content">
+	<div class="entry-content center">
 		<?php the_content( stf_more() ); ?>
 	</div>
 	<!-- [End] Entry Content -->

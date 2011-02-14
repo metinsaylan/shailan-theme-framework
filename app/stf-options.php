@@ -24,7 +24,7 @@ array( "type" => "open"),
 	array(  "name" => "Entry header",
 		"desc" => "Entry header meta, shows right under the post title.",
 		"id" => "stf_entry_header_meta",
-		"std" => "By [authorlink] on [date] | [cmnts] [edit]",
+		"std" => "By [authorlink] on [date] [cmnts before='| '] [edit ]",
 		"type" => "text"),
 		
 	array(  "name" => "Entry footer",

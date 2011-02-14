@@ -10,10 +10,11 @@ class stf_pagenavi extends WP_Widget {
     /** @see WP_Widget::widget */
     function widget($args, $instance) {		
         extract( $args );
-        $title = apply_filters('widget_title', $instance['title']);
+		
+		if(isset($instance['title'])){ $title = apply_filters('widget_title', $instance['title']); }
 				
         echo $before_widget;		
-		if ( $title )
+		if ( isset($title) )
 			echo $before_title . $title . $after_title;
 				
 			if(function_exists('wp_pagenavi')) {
