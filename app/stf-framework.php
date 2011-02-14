@@ -227,7 +227,7 @@ class Shailan_Framework{
 
 $stf = new Shailan_Framework();
 
-function stf_get_setting($key){
+function stf_get_setting( $key ){
 	$settings = get_option('stf_settings');
 	
 	if(isset($settings[$key])){
@@ -237,6 +237,13 @@ function stf_get_setting($key){
 		return FALSE;
 	}
 }
+
+function stf_update_setting( $key, $value ){
+	$settings = get_option('stf_settings');
+	$settings[$key] = $value;
+	update_option('stf_settings', $settings);
+}
+
 
 
 

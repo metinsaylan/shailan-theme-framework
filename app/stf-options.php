@@ -76,6 +76,12 @@ array( "type" => "open"),
 		"type" => "text",
 		"std" => get_bloginfo('rss2_url')),
 		
+	array("name" => "Excerpt length",
+		"desc" => "Post excerpts word count",
+		"id" => "shailan_excerpt_length",
+		"type" => "text",
+		"std" => "25"),
+		
 	array("name" => "Excerpt More Text",
 		"desc" => "Displayed if a post content is trimmed",
 		"id" => "shailan_more",

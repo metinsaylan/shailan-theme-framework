@@ -1,4 +1,4 @@
-<?php $blocktag = ( is_home() ? 'h2' : 'h1' ); // Per seo ?>
+<?php $blocktag = ( ( is_single() || is_page() ) ? 'h1' : 'h2' ); // Per seo ?>
 
 <!-- Entry Header -->
 <div class="entry-header">
