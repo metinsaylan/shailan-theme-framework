@@ -182,7 +182,11 @@ function stf_entry_thumbnail( $size = null ){
 		echo '<div class="entry-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '">';
 		echo 	get_the_post_thumbnail( $post->ID, $size, $thumb_attr );
 		echo '</a></div>';
-	} 
+	} else {
+		echo '<div class="entry-thumbnail default-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '">';
+			theme_image('default-thumbnail', $size, 'default-thumbnail', $thumb_attr['alt'], $thumb_attr['title'] );
+		echo '</a></div>';
+	}
 }
 
 /**
