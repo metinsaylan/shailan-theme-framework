@@ -4,7 +4,15 @@
 	
 		<!-- Advertisement -->
 		<div class="teaser-ads alignleft">
-				<?php echo do_shortcode('[adsense type="medium-rectangle"]'); ?>
+		
+		<!-- Put your ad code below to show at the top of pages -->
+		
+		
+		
+		
+		
+		
+				<?php //echo do_shortcode('[adsense type="medium-rectangle"]'); ?>
 		</div>
 		<!-- [End] Advertisement -->
 		
@@ -20,7 +28,15 @@
 	
 		<!-- Advertisement -->
 		<div class="teaser-ads alignright">
-			<?php echo do_shortcode('[adsense type="medium-rectangle"]'); ?>
+		
+		<!-- Put your ad code below to show at the end of pages -->
+		
+		
+		
+		
+		
+		
+			<?php //echo do_shortcode('[adsense type="medium-rectangle"]'); ?>
 		</div>
 		<!-- [End] Advertisement -->
 		

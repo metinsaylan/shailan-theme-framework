@@ -16,13 +16,4 @@ Template:shailan-theme-framework
 	
 */
 
-body{ 
-	background:#eee; 
-	
-}
-
-#header-wrapper, #footer-wrapper { background-color:#ddd; }
-
-#page{ border:1px solid #ddd; }
-
-#theme-footer{ color:#999; }
+body{ background:#333; }

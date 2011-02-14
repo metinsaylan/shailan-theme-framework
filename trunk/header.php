@@ -8,13 +8,13 @@
 		<?php stf_widget_area('header-top'); ?>
 		
 		<!-- Branding -->
-		<div id="branding" class="grid_4">
+		<div id="branding">
 			<?php stf_site_title(); ?>
 		</div>
 		<!-- [End] Branding -->
 		
 		<!-- Banner Area -->
-		<div id="header-widgets" class="grid_8">
+		<div id="header-widgets">
 			
 			<?php stf_widgets('header'); ?>
 			

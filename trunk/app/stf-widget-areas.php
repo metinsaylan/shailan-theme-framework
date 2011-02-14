@@ -10,11 +10,11 @@ global $stf_widget_areas;
 
 function stf_widget_area( $id, $class='' ){
 	if( is_active_sidebar( $id ) ){ ?>
-		<!-- <?php $id ?> -->
-		<div id="<?php $id ?>" class="<?php $class ?>">
+		<!-- <?php echo $id ?> -->
+		<div id="<?php echo $id ?>" class="<?php echo $class ?>">
 			<?php stf_widgets($id); ?>
 		</div>
-		<!-- [End] <?php $id ?> -->
+		<!-- [End] <?php echo $id ?> -->
 	<?php }
 }
 
@@ -102,7 +102,7 @@ function stf_default_widget_areas(){
 		array(
 			'name' => 'Content',
 			'id' => 'content',
-			'description' => 'If you put a widget here, your blog posts wont be visible. Make sure you add a Blog Posts Widget here to display them'),
+			'description' => 'You should add a "the Loop" widget here to display posts.'),
 			
 		array(
 			'name' => 'Sidebar',
