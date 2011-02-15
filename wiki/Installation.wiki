@@ -12,4 +12,5 @@
 
 = Setting Up = 
 
-  After theme is installed, you will need to set up some options for it to work as you expected. To set up your theme visit `Appearance->Theme Options` page.
+  After theme is installed, you will need to set up some options for it to work as you expected.
+  To set up your theme visit `Appearance->Theme Options` page.
