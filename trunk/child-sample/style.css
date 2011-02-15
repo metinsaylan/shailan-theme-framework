@@ -1,7 +1,7 @@
 /*
-THEME NAME: Framework Child Sample
+THEME NAME: Framework Child - Sample theme
 THEME URI: http://shailan.com
-DESCRIPTION: Example child theme style for Framework
+DESCRIPTION: Example child theme style for Shailan Theme Framework
 VERSION: 1.0
 AUTHOR: Matt Say
 AUTHOR URI: http://shailan.com
@@ -10,10 +10,10 @@ TAGS: framework, all-widget, widgets, widget-areas, xhtml
 Template:shailan-theme-framework
 */
 
-/*
+/* NOTE : To load main styles with your theme remove comments '/*' and '* / below */
 
-	Put your customizations here.
-	
-*/
+/* @import url('../shailan-theme-framework/style.css'); */
+
+/* You can add your customizations in this file. */
 
 body{ background:#333; }
