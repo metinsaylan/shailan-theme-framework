@@ -458,37 +458,22 @@ if($tag_base == '')	$tag_base = 'tag';
 	return '<a href="'.$url.'" rel="tag">' . $content . '</a>';
 }
 
-function stf_wrap_twitter_tag($atts, $content = null ){
-	return '<a href="https://twitter.com/search?q=%23'.$content.'" rel="nofollow">#'.$content.'</a>';
-}
-
-function stf_dropcap($atts, $content = null ){
-	return '<span class="dropcap">'.$content.'</span>';
-}
-
-function stf_is_home($atts, $content = null){
-	if(is_home()){ return $content; } else { return null; }
-}
-
-function stf_is_single($atts, $content = null){
-	if(is_single()){ return $content; } else { return null; }
-}
-
-function stf_is_search($atts, $content = null){
-	if(is_search()){ return $content; } else { return null; }
-}
-
-function stf_is_archives($atts, $content = null){
-	if(is_archive()){ return $content; } else { return null; }
-}
+function stf_wrap_twitter_tag($atts, $content = null ){ return '<a href="https://twitter.com/search?q=%23'.$content.'" rel="nofollow">#'.$content.'</a>'; }
+function stf_dropcap($atts, $content = null ){ return '<span class="dropcap">'.$content.'</span>'; }
+function stf_is_home($atts, $content = null){ if(is_home()){ return do_shortcode($content); } else { return null; } }
+function stf_is_single($atts, $content = null){	if(is_single()){ return do_shortcode($content); } else { return null; } }
+function stf_is_search($atts, $content = null){	if(is_search()){ return do_shortcode($content); } else { return null; } }
+function stf_is_archives($atts, $content = null){ if(is_archive()){ return do_shortcode($content); } else { return null; } }
 
 function stf_user_only($atts, $content = null){
 	extract(shortcode_atts( array(
+	
 		'capability' => 'read',
 		'msg' => '<div class="access-denied"><span>[ Member only content ]</span></div>'
+		
 	), $atts));
 	
-	if(current_user_can($capability)){ return $content; } else { return $msg; }
+	if(current_user_can($capability)){ return do_shortcode($content); } else { return $msg; }
 }
 
 function stf_generator_link_shortcode($atts, $content = null){
@@ -614,13 +599,11 @@ add_shortcode('edit', 'stf_edit_link_shortcode');
 add_shortcode('views', 'stf_views');
 add_shortcode('permalink', 'stf_permalink');
 
-
 /* CONDITIONALS */
 add_shortcode('home', 'stf_is_home');
 add_shortcode('single', 'stf_is_single');
 add_shortcode('search', 'stf_is_search');
 add_shortcode('archive', 'stf_is_archive');
-
 add_shortcode('cloak', 'stf_user_only');
 
 ?>
