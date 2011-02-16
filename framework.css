@@ -230,6 +230,22 @@ dd{ padding:10px 10px 10px 25px; }
 .clearleft{ clear:left; }
 .clearright{ clear:right; }
 
+/* Clearfix */
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+* html > body .clearfix {
+	display: block;
+	width: 100%;
+}
+* html .clearfix {
+	height: 1%;
+}
+
 /*- Columnar layout */
 #columns .widget-container{ display:inline; float:left; width:300px; margin-left: 10px; margin-right: 10px; }
 #columns .seperator{ clear:both; border-top:1px solid #ccc; margin:0px 10px 20px; height:1px; }
