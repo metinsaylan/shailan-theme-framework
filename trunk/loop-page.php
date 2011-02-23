@@ -1,37 +1,43 @@
-<?php $post_index = 1; while ( have_posts() ): the_post(); ?>
+<?php 
+	$post_index = 1; while ( have_posts() ): the_post(); 
+	$posts_displayed[] = $post->ID;
+?>
 
-<!-- Post -->
-<div id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+<div class="entry-wrap">
 
-	<?php get_template_part('entry', 'header'); ?>
-	
-	<!-- Entry Content -->
-	<div class="entry-content">
-		<?php // get_template_part('ads', 'top'); ?>
+	<!-- Post -->
+	<div id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+
+		<?php get_template_part('entry', 'header'); ?>
 		
-	<?php 
-	
-		if( is_archive() ){ 
-			the_excerpt(); 
-		} else {
-			the_content( sprintf( __('Continue reading "%s" &rarr;', 'stf'), the_title('', '', false) ) ); 
-		}
-	
-	?>
+		<!-- Entry Content -->
+		<div class="entry-content">
+			<?php // get_template_part('ads', 'top'); ?>
+			
+		<?php 
 		
-		<?php stf_entry_pages_navigation(); ?>
-	</div>
-	<!-- [End] Entry Content -->	
+			if( is_archive() ){ 
+				the_excerpt(); 
+			} else {
+				the_content( sprintf( __('Continue reading "%s" &rarr;', 'stf'), the_title('', '', false) ) ); 
+			}
 		
-	<?php get_template_part('ads', 'bottom'); ?>
-	<?php get_template_part('share', 'single'); ?>
-	<?php get_template_part('author', 'single'); ?>
-	
-	<?php get_template_part('entry', 'footer'); ?>
+		?>
+			
+			<?php stf_entry_pages_navigation(); ?>
+		</div>
+		<!-- [End] Entry Content -->	
+			
+		<?php get_template_part('ads', 'bottom'); ?>
+		<?php get_template_part('share', 'single'); ?>
+		<?php get_template_part('author', 'single'); ?>
 		
-	</div>
+		<?php get_template_part('entry', 'footer'); ?>
+			
+		</div>
 	<!-- [End] Post -->
-	
-	<?php comments_template( '', true ); ?>
+	<?php stf_comments(); ?>
+
+</div>
 
 <?php endwhile; /* End The Loop */ ?>
