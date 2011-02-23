@@ -7,7 +7,7 @@ foreach ( $comments as $comment )
 ?>
 
 <?php if ( have_comments() ) : ?>
-<div id="comments-list">
+<div class="inline-comments-list">
 <ul class="commentslist inlinecomments">
 	<?php wp_list_comments('type=comment&callback=stf_comment_inline'); ?>
 </ul>
