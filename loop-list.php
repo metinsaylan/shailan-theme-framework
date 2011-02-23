@@ -1,4 +1,7 @@
-<?php $post_index = 1; while ( have_posts() ): the_post(); ?>
+<?php 
+	$post_index = 1; while ( have_posts() ): the_post(); 
+	$posts_displayed[] = $post->ID;
+?>
 
 	<li id="entry-<?php the_ID(); ?>">
 	

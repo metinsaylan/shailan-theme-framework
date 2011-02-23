@@ -40,6 +40,9 @@ small,
 #comments-list li .comment-edit-link,
 .reply a,
 #cancel-comment-reply,
+.inline-comment,
+.inline-comment .comment-date,
+.reply-inline,
 .entry-category,
 .read-more,
 .edit-link,
@@ -49,6 +52,10 @@ small,
 	font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 11px; 
 	line-height: 14px;
 }
+
+.comment-date { font-size:12px; }
+.comment-meta, .comment-meta a{ color:#aaa; }
+.comment-meta a:hover{ color:#2277dd; }
 
 .smallcaps { font-variant: small-caps; }
 
@@ -81,7 +88,8 @@ acronym{ border-bottom:1px dotted #444444; }
 abbr[title], acronym[title] { cursor: help; }
 hr { display: none; }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table,dl, .widget-title, #sidebar .widget-container, .wp-caption{ margin-bottom:15px; }
+h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table,dl, 
+.entry-wrap, .widget-title, #sidebar .widget-container, .wp-caption{ margin-bottom:15px; }
 
 .logged-in h1{ border:1px dashed rgba(255,0,0,0.3); } /* for SEO */
 .logged-in h1:hover{ border:1px dashed rgba(255,0,0,0.9); } /* for SEO */
@@ -249,6 +257,14 @@ dd{ padding:10px 10px 10px 25px; }
 /*- Columnar layout */
 #columns .widget-container{ display:inline; float:left; width:300px; margin-left: 10px; margin-right: 10px; }
 #columns .seperator{ clear:both; border-top:1px solid #ccc; margin:0px 10px 20px; height:1px; }
+
+/*- Entry */
+
+
+/*- Comments */
+div#comments{ margin:15px; }
+ul.inlinecomments, ul.inlinecomments ul, ul.inlinecomments li{ padding:0; margin:0; }
+ul.inlinecomments{ margin-top:2px; padding:5px; }
 
 /*- Share bottom */
 .share-bottom { text-align: right; padding: 5px; }

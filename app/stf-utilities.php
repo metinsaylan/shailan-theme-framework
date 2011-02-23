@@ -135,7 +135,7 @@ function stf_more( $more_fallback = '' ) {
 /** Threaded comments script adder */
 function enable_threaded_comments(){
 	if (!is_admin()) { 
-		if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) 	
+		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1) OR stf_get_setting('enable_comments_on_home')) 	
 			wp_enqueue_script('comment-reply');
 	}
 }

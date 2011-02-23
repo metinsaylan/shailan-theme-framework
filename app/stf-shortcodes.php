@@ -245,6 +245,20 @@ function stf_edit_link_shortcode($atts){
 	return $link;
 }
 
+// Returns post reply link
+function stf_post_reply_link_shortcode( $atts ){
+	extract(shortcode_atts( array(
+		'before' => '',
+		'after' => '',
+		'text' => __('Reply', 'stf')
+	), $atts));
+	
+	if ( ! post_password_required() ){
+		$link = post_reply_link( array( 'before' => $before, 'after' => $after,  'reply_text' => $text, 'add_below' => 'entry' ), get_the_id() );
+		return $link;
+	}	
+}
+
 function stf_views($atts){
 	if( function_exists( 'the_views') ){
 		$view_count = get_post_meta( get_the_ID(), 'views', true);
@@ -596,6 +610,7 @@ add_shortcode('comment_count', 'stf_comment_count');
 add_shortcode('the_shortlink', 'stf_the_shortlink'); 
 add_shortcode('shortlink', 'stf_the_shortlink');
 add_shortcode('edit', 'stf_edit_link_shortcode');
+add_shortcode('reply', 'stf_post_reply_link_shortcode');
 add_shortcode('views', 'stf_views');
 add_shortcode('permalink', 'stf_permalink');
 
