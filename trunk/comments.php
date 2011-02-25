@@ -1,5 +1,5 @@
 
-<div id="comments">
+<div id="comments" class="entry-comments">
 <?php /* Run some checks for bots and password protected posts */ ?>
 <?php
  $req = get_option('require_name_email'); // Checks if fields are required.
