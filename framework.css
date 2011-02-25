@@ -263,8 +263,9 @@ dd{ padding:10px 10px 10px 25px; }
 
 /*- Comments */
 div#comments{ margin:15px; }
-ul.inlinecomments, ul.inlinecomments ul, ul.inlinecomments li{ padding:0; margin:0; }
+ul.inlinecomments, ul.inlinecomments ul, ul.inlinecomments li{ padding:0; margin:0; list-style:none; }
 ul.inlinecomments{ margin-top:2px; padding:5px; }
+ul.inlinecomments ul{ margin-left:10px; }
 
 /*- Share bottom */
 .share-bottom { text-align: right; padding: 5px; }

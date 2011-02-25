@@ -219,8 +219,8 @@ abbr.entry-date { cursor: inherit; }
 #comments-list ol, #comments-list ul { list-style: none; }
 .comment-author-avatar { float: left; margin: 3px 6px 3px 3px; position: relative; z-index: 3; }
 
-#comments-list li .comment-author { color: #f60; margin-right: 10px; font-weight:bold;}
-#comments-list li .comment-author a{ color: #27d; margin-right: 10px; }
+.entry-comments li .comment-author { color: #f60; margin-right: 10px; font-weight:bold;}
+.entry-comments li .comment-author a{ color: #27d; margin-right: 10px; }
 .comment-body { -khtml-border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
 #respond, #comments-list #respond { overflow: hidden; padding: 15px; position: relative; }
 div.comment-body { background: #ffe; border: 1px solid #ccc; display: block; margin: 6px; min-height: 67px; overflow: hidden; padding: 8px; position: relative; }
