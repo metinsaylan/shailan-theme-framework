@@ -1,3 +1,4 @@
+@import url('http://fonts.googleapis.com/css?family=Ubuntu');
 @charset "utf-8";
 
 /*------------------------------------
@@ -8,9 +9,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /*------------------------------------
 	COMMON
 ------------------------------------*/
-/* body, td, textarea, input, select { font: normal normal normal 13px/normal Lucida Grande, Dejavu sans, Bitstream Vera Sans, Segoe UI, Verdana, Tahoma, Arial, sans-serif; } */
-
-body, td, textarea, input, select{ font: normal normal normal 13px/18px Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif; }
+body{ background:#efefef; }
+body, td, textarea, input, select{ 
+	font: normal normal normal 13px/18px Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif; 
+	text-shadow: transparent 0 0 1px;
+	color:#444;
+}
 pre, code, tt, code, kbd, samp { font-family: Monaco, Consolas, "Andale Mono", "Dejavu Sans Mono", monospace; }
 blockquote.stylish, .amp, .and { font-family: Baskerville, Palatino, "Book Antiqua", serif; font-style: oblique; }
 blockquote.stylish{ font-size:1.2em }
@@ -35,7 +39,10 @@ small,
 .tiny,
 .entry-meta,
 .entry-footer,
+.entry-controls,
 .entry-permalink,
+.entry-permalink a,
+.comment-reply-link,
 .edit-link a,
 #comments-list li .comment-edit-link,
 .reply a,
@@ -44,13 +51,16 @@ small,
 .inline-comment .comment-date,
 .reply-inline,
 .entry-category,
+.meta-category a,
 .read-more,
 .edit-link,
 .comments-link,
+.comments-link a,
 .breadcrumbs,
 .wp-caption p.wp-caption-text {
 	font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 11px; 
 	line-height: 14px;
+	color:#888888;
 }
 
 .comment-date { font-size:12px; }
@@ -63,11 +73,13 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: GillSans, "Trebuchet MS", Calibri, sans-serif;
 	font-weight: normal;
 	letter-spacing: 1px; 
-	text-shadow: 1px 1px 1px rgba(125, 125, 125, 0.3); }
+	text-shadow: 1px 1px 1px rgba(125, 125, 125, 0.3); 
+	color:#333333;
+}
 
 h1{ font-size:2em; }
 h2{ font-size:1.7em; font-style:italic; }
-h3{ font-size:1.17em; text-transform:uppercase; }
+h3{ font-size:1.17em; text-transform:uppercase; font-weight:bold; }
 h4{ font-size:1.3em; }
 h5{ font-size:1.1em; font-style:italic; }
 h6{ font-size:1em; font-weight:bold; letter-spacing: 3px; }
@@ -225,13 +237,13 @@ dd{ padding:10px 10px 10px 25px; }
 
 /* Dialogs */
 .alert, .note, .warning { font-style: oblique; border-style:solid; border-width:1px; 
-	-moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;
-	padding:10px;
+	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+	padding:5px; margin:15px 5px;
 }
 
 .alert { background: #fff6bf; }
 .note { background: #fffbbc; }
-.warning { background: #ffcccc; }
+.warning { background: #ffdfdf; border-color: #db8383; }
 
 /* Clear */
 .clear, .clearboth{ clear:both; }
@@ -254,12 +266,26 @@ dd{ padding:10px 10px 10px 25px; }
 	height: 1%;
 }
 
-/*- Columnar layout */
-#columns .widget-container{ display:inline; float:left; width:300px; margin-left: 10px; margin-right: 10px; }
-#columns .seperator{ clear:both; border-top:1px solid #ccc; margin:0px 10px 20px; height:1px; }
+/*- Header */
+#site-title { font: normal normal normal 32px/normal 'Ubuntu', GillSans, "Trebuchet MS", Calibri, sans-serif; margin:0; }  
+#site-description{ font-size:1.2em; font-style:italic; color: #96c; }
+#site-info a, #site-info a:hover { text-decoration: none; }
 
 /*- Entry */
+h2.entry-title{ margin-bottom:5px; }
+.entry-meta{ margin-bottom:10px; }
+.entry-controls{ text-align:right; }
 
+/* Entry pagination */
+.entry-pages{ clear:both; padding: 15px 0; text-align: right; }
+.entry-pages span.label { color:#999999; font-style:italic; } 
+.entry-pages .page-number { border: 1px solid #dddddd; font-size: 13px; margin-left:6px; padding: 0px 4px; }
+.entry-attachment, p.attachment{ text-align:center; }
+
+/* Entry navigation */
+.navigation{ margin:15px auto; padding:10px; }
+.nav-previous{ float:left; } 
+.nav-next{ float:right; }
 
 /*- Comments */
 div#comments{ margin:15px; }
