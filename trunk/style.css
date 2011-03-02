@@ -18,13 +18,6 @@ a:hover { color: #2277dd; }
 h1, h2, h3, h4, h5, h6, .widget-title { color: #711fc2; }
 p{ text-align:left; }
 
-/*- Titles */
-h3 { font: normal normal normal 1.3em/1.3em GillSans, "Trebuchet MS", Calibri, sans-serif; text-transform: uppercase; }
-h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{ 
-	font: normal normal normal 20px/normal 'Ubuntu', GillSans, "Trebuchet MS", Calibri, sans-serif; 
-	text-shadow: rgba(125, 125, 125, 0.292969) 2px 2px 0px;
-}
-
 /*- Header */
 #header-wrapper { 
 	width:100%; padding-top: 5px; position: relative; z-index:4; 
@@ -92,9 +85,7 @@ h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
 }
 
 /*- Billboard */
-#billboard-wrapper{ padding:5px; margin-bottom:20px; background:#ddd; border-bottom:1px solid #ccc; } 
-#billboard .adsense.leaderboard{ padding:10px; width:728px; margin:0 auto; }
-
+#billboard-wrapper{ background:#ddd; border-bottom:1px solid #ccc; } 
 .breadcrumbs { color: #999999; }
 .breadcrumbs .current { color: #cc66cc; font-weight:bold; }
 

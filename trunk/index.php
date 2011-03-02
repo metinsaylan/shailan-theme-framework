@@ -19,7 +19,7 @@
 			
 			<!-- Main -->
 			<div id="content-main">
-				<?php stf_widgets( 'content' , array( 'stf_navigation', 'stf_blog_posts', 'stf_navigation' ) ); ?>
+				<?php stf_widgets( 'content' , array( 'stf_blog_posts', 'stf_navigation' ) ); ?>
 			</div>
 			<!-- [End] Main -->
 			

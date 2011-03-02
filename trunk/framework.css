@@ -57,7 +57,9 @@ small,
 .comments-link,
 .comments-link a,
 .breadcrumbs,
-.wp-caption p.wp-caption-text {
+.wp-caption p.wp-caption-text,
+#navigation,
+.sub-menu {
 	font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 11px; 
 	line-height: 14px;
 	color:#888888;
@@ -109,12 +111,21 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, table,dl,
 .logged-in a[rel~="nofollow"]:hover { border-bottom: 1px dashed rgba(255,150,0, 1); }  /* for SEO */
 
 /* Links */
-a { text-decoration: none; } a:hover { text-decoration: underline; }
+a { text-decoration: none; color:#2277dd; } 
+a:visited { color:#642e8c; } 
+a:hover { text-decoration: underline;  }
 .hentry a[rel~="external"], a.external { 
 	white-space: nowrap; padding-right: 15px; 
 	background: url('images/external-link-ltr-icon.png') no-repeat 100% 50%; zoom: 1; 
 }
 a.rss { background: url(images/icons/rss.gif) 0 50% no-repeat; padding-left:20px; }
+
+/*- Titles */
+h3 { font: normal normal normal 1.3em/1.3em GillSans, "Trebuchet MS", Calibri, sans-serif; text-transform: uppercase; }
+h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{ 
+	font: normal normal normal 20px/normal 'Ubuntu', GillSans, "Trebuchet MS", Calibri, sans-serif; 
+	text-shadow: rgba(125, 125, 125, 0.292969) 2px 2px 0px;
+}
 
 /*- Lists */
 .entry-content li, .sidebar li, 
@@ -129,7 +140,7 @@ ol ol li { list-style-type: lower-alpha; }
 ol ol ol li { list-style-type: lower-roman; }
 
 /* Horizontal lists */
-ul.horizontal, ul.horizontal li{ list-style:none;margin:0; display:inline; }
+ul.horizontal, ul.horizontal li { list-style:none; margin:0; padding:0; display:inline; }
 ul.horizontal li{ padding:3px 10px; } ul.horizontal li+li{ border-left:1px solid #999; }
 
 /* Check list */
@@ -270,6 +281,60 @@ dd{ padding:10px 10px 10px 25px; }
 #site-title { font: normal normal normal 32px/normal 'Ubuntu', GillSans, "Trebuchet MS", Calibri, sans-serif; margin:0; }  
 #site-description{ font-size:1.2em; font-style:italic; color: #96c; }
 #site-info a, #site-info a:hover { text-decoration: none; }
+
+/*- Menu */
+div#navigation{ border-bottom:1px solid #666666; margin-top:20px; 
+background: #EFEFEF; /* old browsers */
+background: -moz-linear-gradient(top, #EFEFEF 0%, #DDDDDD 100%); /* firefox */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EFEFEF), color-stop(100%,#DDDDDD)); /* webkit */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EFEFEF', endColorstr='#DDDDDD',GradientType=0 ); /* ie */
+}
+
+#sub-navigation{ border-top:2px solid #666666; background:#ddd; clear:both; }
+#sub-navigation ul li a{ color:#777777; }
+
+ul.menu, ul.menu li { list-style:none; padding:0; margin:0; display:inline; }
+ul.menu li ul { display:none; }
+ul.menu li { display: block; float: left; margin-right: 2px; }
+ul.menu li a{ padding: 4px 10px; display: block; height: 14px; }
+
+ul.main-menu li{ 
+	display: block;
+	float: left; 	
+	border:1px solid #888888;
+	border-bottom:1px solid #dddddd;
+	background: #DDD;
+	-webkit-border-top-left-radius: 7px;
+	-webkit-border-top-right-radius: 7px;
+	-moz-border-radius-topleft: 7px;
+	-moz-border-radius-topright: 7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	margin-right: 2px;
+}
+ul.main-menu li a{
+	color:#555555;
+	border:1px solid #eee;
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-topright: 6px;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border-bottom:1px solid #dddddd;
+}
+ul.main-menu li.current_page_item{ background:#666666; color:#fff; border-color:#666666; border-bottom:1px solid #666666; }
+ul.main-menu li.current_page_item a{ border-color:#888888; border-bottom:1px solid #666666; color:#dedede; }
+ul.main-menu li a:hover{ background:#999; color:#fff; border-color:#bbbbbb; border-bottom:1px solid #999999; text-decoration:none; }
+ul.main-menu li:hover{ background:#999; border-bottom:1px solid #999999; }
+
+/*- Billboard */
+#billboard-wrapper{ padding:5px; margin-bottom:20px; clear:both; } 
+#billboard .adsense.leaderboard{ padding:10px; width:728px; margin:0 auto; }
+
+.breadcrumbs { color: #666666; }
+.breadcrumbs a{ color:#666666; }
+.breadcrumbs .current { color: #444444; font-weight:bold; }
 
 /*- Entry */
 h2.entry-title{ margin-bottom:5px; }
