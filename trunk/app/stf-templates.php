@@ -385,7 +385,7 @@ function theme_image($filename, $dimensions=NULL, $classname='', $alt='', $title
 } 
 
 function stf_comments(){
-	if( is_home() && stf_get_setting('enable_comments_on_home') ){
+	if( is_home() && "on" == stf_get_setting('enable_comments_on_home') ){
 		global $withcomments;
 		$withcomments = true;
 		comments_template( '/inline-comments.php', true );

@@ -169,13 +169,6 @@ abbr.entry-date { cursor: inherit; }
 
 .entry-content img { max-width: 586px; }
 
-/* Entry pagination */
-.entry-pages{ clear:both; padding: 15px 0; text-align: right; }
-.entry-pages span.label { color:#cccccc; font-style:italic; } 
-.entry-pages .page-number { border: 1px solid #dddddd; font-size: 13px; margin-left:6px; padding: 0px 4px; }
-
-.entry-attachment, p.attachment{ text-align:center; }
-
 /* Entry navigation */
 .navigation{ width:80%; margin:15px auto; padding:10px; }
 .nav-previous{ float:left; } 

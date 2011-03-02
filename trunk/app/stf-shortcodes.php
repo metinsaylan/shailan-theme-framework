@@ -254,7 +254,7 @@ function stf_post_reply_link_shortcode( $atts ){
 	), $atts));
 	
 	if ( ! post_password_required() ){
-		$link = post_reply_link( array( 'before' => $before, 'after' => $after,  'reply_text' => $text, 'add_below' => 'entry' ), get_the_id() );
+		$link = get_post_reply_link( array( 'before' => $before, 'after' => $after,  'reply_text' => $text, 'add_below' => 'entry' ), get_the_id() );
 		return $link;
 	}	
 }

@@ -93,6 +93,12 @@ array( "type" => "open"),
 		"id" => "stf_category_formats",
 		"type" => "checkbox",
 		"std" => "on"),
+		
+	array("name" => "Show comments on home page",
+		"desc" => "Enable commenting on home page.",
+		"id" => "enable_comments_on_home",
+		"type" => "checkbox",
+		"std" => "off"),
 	
 array( "type" => "close")
 
