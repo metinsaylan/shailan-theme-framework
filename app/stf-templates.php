@@ -150,7 +150,7 @@ function stf_entry_footer_meta(){
 
 
 /**
- * Returns entry footer for short post formats.
+ * Returns entry footer for short post formats. (aside, link, quote)
  *
  * @since 1.0.0
  * @uses do_shortcode() to parse shortcodes in the footer.
