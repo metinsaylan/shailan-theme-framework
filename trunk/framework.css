@@ -59,7 +59,8 @@ small,
 .breadcrumbs,
 .wp-caption p.wp-caption-text,
 #navigation,
-.sub-menu {
+.sub-menu, 
+.author-info {
 	font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 11px; 
 	line-height: 14px;
 	color:#888888;

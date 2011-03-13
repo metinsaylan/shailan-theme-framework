@@ -168,22 +168,27 @@ function stf_entry_short_meta(){
  * @since 1.0.0
  * @uses get_the_title(), has_post_thumbnail(), get_permalink(), the_title_attribute(), get_the_post_thumbnail()
  */
-function stf_entry_thumbnail( $size = null ){
+function stf_entry_thumbnail( $size = 'thumbnail', $args = null ){
 	global $post;
 	
-	$title = get_the_title(get_the_ID());
+	extract( wp_parse_args( $args, array(
+		'title' => the_title_attribute( array('echo' => 0 ) ), 
+		'alt' => the_title_attribute( array('echo' => 0 ) ),
+		'class' => 'entry-thumbnail',
+		'default' => ''
+	) ) ) ;
 	
 	$thumb_attr = array(
-		'alt'	=> trim(strip_tags( $title )),
-		'title'	=> trim(strip_tags( $title )),
+		'alt'	=> trim( strip_tags( $title ) ),
+		'title'	=> trim( strip_tags( $title ) ),
 	);
 	
 	if( function_exists('has_post_thumbnail') && has_post_thumbnail( $post->ID ) ) {
-		echo '<div class="entry-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '">';
+		echo '<div class="' . $class . ' thumb-wrap-' . $size . '"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '">';
 		echo 	get_the_post_thumbnail( $post->ID, $size, $thumb_attr );
 		echo '</a></div>';
 	} else {
-		echo '<div class="entry-thumbnail default-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '"><img src="'. get_template_directory_uri() .'/images/blank.gif" /></a></div>';
+		echo '<div class="' . $class . ' thumb-wrap-' . $size . ' no-thumbnail default-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '"><img src="'. get_template_directory_uri() .'/images/blank.gif" /></a></div>';
 	}
 }
 
@@ -201,6 +206,8 @@ function stf_entry_pages_navigation(){
 		'link_after'	=> '</span>'
 	) ); 
 }
+
+function stf_entry_pages(){ stf_entry_pages_navigation(); }
 
 function stf_get_templates(){
 	global $wp_query;

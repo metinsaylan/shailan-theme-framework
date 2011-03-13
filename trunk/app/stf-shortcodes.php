@@ -517,6 +517,30 @@ function stf_site_link_shortcode($atts, $content = null){
 	return "<a href='".get_bloginfo('url')."' rel='".$rel."' title='".$title."'>". $content . "</a>";
 }
 
+function stf_back_to_parent_shortcode($atts){
+	global $post;
+	
+	if( is_page() ){		
+	
+	$parent = &get_post( $post->post_parent );
+		$parent_title = isset( $parent->post_title ) ? $parent->post_title : '';
+		if( $parent_title != the_title( '','',false ) ) {
+
+		extract(shortcode_atts( array(
+			'class' => 'read-more',
+			'title' => get_bloginfo('description'),
+			'before_link' => '&larr; Back to ',
+			'after_link' => '',
+			'before' => '',
+			'after' => ''			
+		), $atts));
+	
+	
+		
+			echo $before . '<a class="'.$class.'" href="' . get_permalink( $post->post_parent ) . '" title="' . $parent_title . '">' . $before_link . $parent_title . $after_link . '</a>' . $after; } 
+	}
+}
+
 function stf_latest_tweet_shortcode($atts, $content = null){
 	extract(shortcode_atts( array(
 		'username' => 'shailancom'
@@ -613,6 +637,7 @@ add_shortcode('edit', 'stf_edit_link_shortcode');
 add_shortcode('reply', 'stf_post_reply_link_shortcode');
 add_shortcode('views', 'stf_views');
 add_shortcode('permalink', 'stf_permalink');
+add_shortcode('back', 'stf_back_to_parent_shortcode');
 
 /* CONDITIONALS */
 add_shortcode('home', 'stf_is_home');
