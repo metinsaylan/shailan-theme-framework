@@ -48,7 +48,7 @@ class Shailan_Framework{
 		require_once( STF_APP . "stf-loader.php" );
 		
 		// Load default options
-		require_once( "stf-options.php" );
+		locate_template( array('stf-options.php'), true, true );
 		
 		$this->default_options = $options;
 		$this->settings = $this->get_settings();		

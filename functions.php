@@ -14,6 +14,7 @@ function theme_setup(){
 
 	// Post Thumbnails & Custom Image Sizes
 	add_theme_support( 'post-thumbnails', array('post', 'page') ); // Add any other custom post types here
+	set_post_thumbnail_size( '200', '200', true );
 	add_image_size( 'home', 200, 200, true );
 	add_image_size( 'featured', 940, 320, true );
 	add_image_size( 'video-thumbnail', 120, 90, true );
@@ -28,9 +29,7 @@ function theme_setup(){
 	add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video', 'audio' ) );
 	
 	// Editor Style
-	add_editor_style('/css/editor-style.css');
-	
-	
+	add_editor_style( '/css/editor-style.css' );
 	
 	// Queue Scripts 
 	wp_enqueue_script( 'jquery' );
