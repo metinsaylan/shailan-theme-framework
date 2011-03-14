@@ -46,7 +46,7 @@ function stf_permalink($atts){
 		'text' => __('Permalink')
 	), $atts));
 	
-	return $before . '<a href="' . get_permalink( get_the_ID() ) . '" >' . $text . '</a>' . $after; 
+	return $before . '<a href="' . get_permalink( get_the_ID() ) . '" class="permalink" >' . $text . '</a>' . $after; 
 } 
 
 /** [author], [the_author] */
