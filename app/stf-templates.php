@@ -129,11 +129,11 @@ function default_sidebar_widgets(){
 function stf_entry_header_meta(){
 	$meta = stf_get_setting('stf_entry_header_meta');
 	if(FALSE !== $meta){
-		echo "<!-- Entry Meta -->";
-		echo "<div class=\"entry-meta entry-meta-header\">";
+		echo "\n\t<!-- Entry Header Meta -->";
+		echo "\n\t<div class=\"entry-meta entry-meta-header\">\n\t\t";
 			echo do_shortcode( $meta );
-		echo "</div>";
-		echo "<!-- [End] Entry Meta -->";
+		echo "\n\t</div>";
+		echo "\n\t<!-- [End] Entry Header Meta -->\n";
 	}
 }
 
@@ -146,11 +146,11 @@ function stf_entry_header_meta(){
 function stf_entry_footer_meta(){
 	$meta = stf_get_setting('stf_entry_footer_meta');
 	if(FALSE !== $meta){
-		echo "<!-- Entry Footer -->";
-		echo "<div class=\"entry-meta entry-meta-footer\">";
+		echo "\n\t<!-- Entry Footer Meta -->";
+		echo "\n\t<div class=\"entry-meta entry-meta-footer\">\n\t\t";
 		echo do_shortcode( stripslashes($meta) );
-		echo "</div>";
-		echo "<!-- [End] Entry Footer -->";
+		echo "\n\t</div>";
+		echo "\n\t<!-- [End] Entry Footer Meta -->\n";
 	}
 }
 
@@ -194,7 +194,7 @@ function stf_entry_thumbnail( $size = 'thumbnail', $args = null ){
 		echo 	get_the_post_thumbnail( $post->ID, $size, $thumb_attr );
 		echo '</a></div>';
 	} else {
-		echo '<div class="' . $class . ' thumb-wrap-' . $size . ' no-thumbnail default-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '"><img src="'. get_template_directory_uri() .'/images/blank.gif" /></a></div>';
+		echo '<div class="thumb-wrap-' . $size . ' no-thumbnail default-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '"><img src="'. get_template_directory_uri() .'/images/blank.gif" /></a></div>';
 	}
 }
 
