@@ -287,7 +287,7 @@ dd{ padding:10px 10px 10px 25px; }
 #site-info a, #site-info a:hover { text-decoration: none; }
 
 /*- Menu */
-div#navigation{ border-bottom:1px solid #666666; margin-top:20px; 
+div#navigation{ border-bottom:1px solid #666666; 
 background: #EFEFEF; /* old browsers */
 background: -moz-linear-gradient(top, #EFEFEF 0%, #DDDDDD 100%); /* firefox */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#EFEFEF), color-stop(100%,#DDDDDD)); /* webkit */
