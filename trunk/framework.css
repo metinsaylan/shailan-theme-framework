@@ -42,8 +42,9 @@ small,
 .entry-controls,
 .entry-permalink,
 .entry-permalink a,
-.comment-reply-link,
+a.comment-reply-link,
 .edit-link a,
+a.edit-link,
 #comments-list li .comment-edit-link,
 .reply a,
 #cancel-comment-reply,
@@ -60,8 +61,10 @@ small,
 .wp-caption p.wp-caption-text,
 #navigation,
 .sub-menu, 
-.author-info {
-	font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 11px; 
+.author-info,
+.comment-body-inline {
+	font-family: Verdana, Geneva, Tahoma, sans-serif; 
+	font-size: 11px; 
 	line-height: 14px;
 	color:#888888;
 }
@@ -131,7 +134,7 @@ h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
 /*- Lists */
 .entry-content li, .sidebar li, 
 #sidebar .widget-container li, #footer .widget-container li{
-	line-height:30px; }
+	line-height:24px; }
 ul, ol { margin-top: 1em; padding-left: 1.5em; }
 ul li { list-style-type: circle; }
 ul ul li{ list-style-type: square; }

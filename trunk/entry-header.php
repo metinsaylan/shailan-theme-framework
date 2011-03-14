@@ -1,10 +1,19 @@
-<?php $blocktag = ( ( is_single() || is_page() ) ? 'h1' : 'h2' ); // Per seo ?>
+<?php 
 
+	if( is_single() ){ 
+		$titleblock = "h1";
+	} elseif( is_home() ) {
+		$titleblock = "h2";
+	} else { 
+		$titleblock = "h2";
+	}
+	
+?>
 <!-- Entry Header -->
 <div class="entry-header">
-	<<?php echo $blocktag; ?> class="entry-title">
-		<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-	</<?php echo $blocktag; ?>>
+	<!-- Entry Title -->
+	<<?php echo $titleblock; ?> class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'shailan' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" post_id="<?php the_ID(); ?>" class="ajax"><?php the_title(); ?></a></<?php echo $titleblock; ?>>
+	<!-- [End] Entry Title -->
 	
 	<?php stf_entry_header_meta(); ?>
 </div>
