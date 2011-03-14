@@ -43,10 +43,11 @@ function stf_permalink($atts){
 	extract(shortcode_atts( array(
 		'before' => '<span class="entry-permalink">',
 		'after' => '</span>',
-		'text' => __('Permalink')
+		'text' => __('Permalink'),
+		'class' => 'permalink'
 	), $atts));
 	
-	return $before . '<a href="' . get_permalink( get_the_ID() ) . '" class="permalink" >' . $text . '</a>' . $after; 
+	return $before . '<a href="' . get_permalink( get_the_ID() ) . '" class="' . $class . '" >' . $text . '</a>' . $after; 
 } 
 
 /** [author], [the_author] */
