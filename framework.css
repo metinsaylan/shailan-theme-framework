@@ -342,7 +342,6 @@ ul.main-menu li:hover{ background:#999; border-bottom:1px solid #999999; }
 
 /*- Entry */
 h2.entry-title{ margin-bottom:5px; }
-.entry-meta{ margin-bottom:10px; }
 .entry-controls{ text-align:right; }
 
 /* Entry pagination */
@@ -377,7 +376,7 @@ a.share-button { display: inline; -moz-border-radius: 4px; -webkit-border-radius
 #authorbox { color:#888888; }
 
 /* Copyright */
-#theme-footer{ text-align:center; margin:15px auto 30px; font-size:12px; }
+#theme-footer{ text-align:center; font-size:12px; }
 #theme-copyright{ clear:both; width:800px; text-align:center; margin:10px auto; font-family:  Verdana, Geneva, Tahoma, sans-serif; font-size:10px; color:#888; }
 #theme-copyright a,#theme-copyright a:hover { color :#888; }
 

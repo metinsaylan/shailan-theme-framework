@@ -515,3 +515,23 @@ function stf_post_reply_link(){
 	if ( ! post_password_required() )
 		echo post_reply_link( array( 'before' => ' | ', 'after' => '',  'reply_text' => __( 'Reply', 'stf' ), 'add_below' => 'entry' ), get_the_id() );
 }
+
+function stf_pagination( $args = null ){
+	
+	extract( wp_parse_args( $args, array(
+		'label_next' => __( '<span class="meta-nav">&larr;</span> Older posts', 'stf' ),
+		'label_previous' => __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'stf' )
+	) ) ) ;
+
+	if(function_exists('wp_pagenavi')) {
+		wp_pagenavi(); 
+	} else { ?>
+		<!-- Entries navigation -->
+		<div class="entry-navigation clearfix">
+			<div class="nav-previous"><?php next_posts_link( $label_next ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( $label_previous ); ?></div>
+		</div>
+		<!-- [End] Entries navigation -->
+		<?php
+	}
+}
