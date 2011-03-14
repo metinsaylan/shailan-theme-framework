@@ -1,5 +1,8 @@
-<?php $post_index = 1;
-while ( have_posts() ): the_post(); ?>
+<?php 
+	$post_index = 1; 
+	while ( have_posts() ): the_post(); 
+	$posts_displayed[] = $post->ID;
+?>
 	<div class="entry-wrap">
 		<!-- Post -->
 		<div id="entry-<?php the_ID(); ?>" <?php post_class(); ?>>

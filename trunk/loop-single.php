@@ -1,5 +1,6 @@
 <?php 
-	$post_index = 1; while ( have_posts() ): the_post(); 
+	$post_index = 1; 
+	while ( have_posts() ): the_post(); 
 	$posts_displayed[] = $post->ID;
 ?>
 

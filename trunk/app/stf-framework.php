@@ -8,7 +8,7 @@
 
 global $stf;
 global $theme_data;
-global $stf_widget_areas;
+global $stf_widget_areas; 
 
 define('STF_DIRECTORY', dirname(__FILE__) . '/');
 
@@ -24,6 +24,7 @@ if ( 0 === strpos($url, 'http') && is_ssl() ){
 define('STF_URL', $url . '/app/');
 define('STF_APP', STF_DIRECTORY );
 
+// Framework class
 class Shailan_Framework{
 
 	function __construct(){
@@ -45,10 +46,11 @@ class Shailan_Framework{
 			$this->is_child = true; 
 		
 		// Load shortcodes, widgets, template tags
-		require_once( STF_APP . "stf-loader.php" );
+		require_once( "stf-loader.php" );
 		
 		// Load default options
-		locate_template( array('stf-options.php'), true, true );
+		//locate_template( array('stf-options.php'), true, true );
+		require_once( "stf-options.php" );
 		
 		$this->default_options = $options;
 		$this->settings = $this->get_settings();		
@@ -152,12 +154,11 @@ class Shailan_Framework{
 		 
 		wp_enqueue_style("stf-options-page", STF_URL . "css/options.css", false, "1.0", "all");
 		wp_enqueue_style("stf-widgets-mod", STF_URL . "css/widgets.css", false, "1.0", "all");
-		
 		wp_enqueue_style("stf-options-tabs", STF_URL . "css/options-tabs.css", false, "1.0", "all");
 		
-		wp_enqueue_script("jquery");
+		/*wp_enqueue_script("jquery");
 		wp_enqueue_script('jquery-ui-core');
-		wp_enqueue_script("jquery-ui-tabs");
+		wp_enqueue_script("jquery-ui-tabs");*/
 	}
 	
 	function theme_admin_header(){
