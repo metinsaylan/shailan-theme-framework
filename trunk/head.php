@@ -12,15 +12,17 @@
 	
 	<!-- Stylesheet -->
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>" />
-	
-	<?php wp_head(); // For plugins ?>
 
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'widgetbox' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf( __( '%s latest comments', 'widgetbox' ), wp_specialchars( get_bloginfo('name'), 1 ) ) ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	
+	<?php wp_head(); // [hook] For plugins ?>
+	
 <!-- Paste HEAD scripts here -->
 <!-- Alternatively you can use wp_head hook. -->
+
+	
 
 
 
@@ -30,13 +32,14 @@
 </head>
 <body <?php body_class(); ?>>
 
-<?php do_action('stf_body_top'); ?>
+<?php do_action('stf_body_top'); // [hook] ?>
 
 <?php global $posts_displayed; $posts_displayed = array(); ?>
 
 <!-- Paste BODY scripts here -->
 <!-- Alternatively you can use stf_body_top hook. -->
-
+ 
+ 
 
 
 
