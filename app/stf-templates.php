@@ -129,9 +129,11 @@ function default_sidebar_widgets(){
 function stf_entry_header_meta(){
 	$meta = stf_get_setting('stf_entry_header_meta');
 	if(FALSE !== $meta){
+		echo "<!-- Entry Meta -->";
 		echo "<div class=\"entry-meta entry-meta-header\">";
 			echo do_shortcode( $meta );
 		echo "</div>";
+		echo "<!-- [End] Entry Meta -->";
 	}
 }
 
@@ -144,7 +146,11 @@ function stf_entry_header_meta(){
 function stf_entry_footer_meta(){
 	$meta = stf_get_setting('stf_entry_footer_meta');
 	if(FALSE !== $meta){
+		echo "<!-- Entry Footer -->";
+		echo "<div class=\"entry-meta entry-meta-footer\">";
 		echo do_shortcode( stripslashes($meta) );
+		echo "</div>";
+		echo "<!-- [End] Entry Footer -->";
 	}
 }
 
