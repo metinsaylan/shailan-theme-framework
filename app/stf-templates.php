@@ -470,8 +470,7 @@ function stf_comment_inline( $comment, $args, $depth ) {
 				<?php endif; ?>
 				
 				<span class="comment-author"><?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?></a></span> 
-				<span class="comment-text"><?php comment_text(); ?></span>
-				
+				<div class="comment-text"><?php comment_text(); ?></div>
 				<div class="comment-meta commentmetadata">
 				  <span class="comment-date"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php
 						/* translators: 1: date, 2: time */

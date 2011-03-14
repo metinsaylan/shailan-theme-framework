@@ -1,7 +1,7 @@
 <?php 
 
 define( 'STF_DEBUG', false );
-include_once('app/stf-framework.php'); // INCLUDE FRAMEWORK
+include_once('app/stf-framework.php'); // INCLUDE FRAMEWORK 
 
 if(! function_exists('theme_setup')) {
 function theme_setup(){
@@ -35,7 +35,6 @@ function theme_setup(){
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/js/theme.js', 'jquery' );
 	wp_enqueue_script( 'cycle', 'http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js', array( 'jquery') );
-	
 
 } add_action('after_setup_theme', 'theme_setup');
 }

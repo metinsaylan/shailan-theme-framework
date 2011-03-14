@@ -11,6 +11,8 @@ TAGS: framework, all-widget, widgets, widget-areas, xhtml
 @import url('http://fonts.googleapis.com/css?family=Allan:bold');
 @import url('http://fonts.googleapis.com/css?family=Ubuntu');
 
+@import "css/comments.css";
+
 /*- General */
 body{ background-color:#bababa; color:#444; }
 a { color: #2277dd; }
@@ -92,6 +94,7 @@ p{ text-align:left; }
 /*- Post, post formats */
 .hentry { position:relative; padding-top:15px; }
 .hentry p { line-height: 2em; text-align: justify; }
+.hentry a { border-bottom: 1px solid #DFDFDF; }
 
 .sticky { /* Sticky posts */
 	border: 1px solid #999999; 
@@ -189,37 +192,7 @@ abbr.entry-date { cursor: inherit; }
 /* Bottom ads */
 .ads-bottom{ clear:both; }
 
-/*- Comments */
-#comments code { font-size: 12px; }
-#comments pre { font-size: 12px; }
-#comments{ padding:0 0 15px; }
-#cancel-comment-reply { position: absolute; right: 5px; top: 5px; }
-#commentform input[type="text"] { border: none; border-bottom: 1px dashed #999; }
-#commentform textarea { border: 1px solid #ccc; width: 98%; }
-#comments-list .avatar, #comments-list .gravatar { float: left; margin-right: 10px; }
-#comments-list li { list-style:none; position: relative; }
-#comments-list li .buttons { margin-bottom: 10px; }
-#comments-list li li { margin-left: 15px; }
-#comments-list ol, #comments-list ul { list-style: none; }
-.comment-author-avatar { float: left; margin: 3px 6px 3px 3px; position: relative; z-index: 3; }
 
-.entry-comments li .comment-author { color: #f60; margin-right: 10px; font-weight:bold;}
-.entry-comments li .comment-author a{ color: #27d; margin-right: 10px; }
-.comment-body { -khtml-border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
-#respond, #comments-list #respond { overflow: hidden; padding: 15px; position: relative; }
-div.comment-body { background: #ffe; border: 1px solid #ccc; display: block; margin: 6px; min-height: 67px; overflow: hidden; padding: 8px; position: relative; }
-
-div.inline-comment{ background-color: #DDD; border-bottom: 1px solid #CCC; margin-top: 2px; padding: 5px 5px 4px; }
-.inline-comment p{ margin:0; padding:0; }
-.inline-comment .comment-author-avatar { margin: 0; }
-div.comment-body-inline{ display:block; margin-left:45px; }
-
-div.reply { left: 4px; position: absolute; top: 65px; width: 40px; text-align:center; }
-div.reply a{ background: #CCC; border-radius:4px; padding: 3px; color:#fff; }
-div.reply a:hover{ background: #f60; color:#fff; }
-.form-submit{ float: right; } 
-
-.reply-inline{ text-align:right; color:#ccc; }
 
 /*- Footer */
 #footer-columns .widget-container { font-size: 13px; }
