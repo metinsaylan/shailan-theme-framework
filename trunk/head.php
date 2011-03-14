@@ -20,6 +20,7 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
 	
 <!-- Paste HEAD scripts here -->
+<!-- Alternatively you can use wp_head hook. -->
 
 
 
@@ -28,8 +29,13 @@
 <!-- [End] Paste HEAD scripts here -->
 </head>
 <body <?php body_class(); ?>>
+
+<?php do_action('stf_body_top'); ?>
+
 <?php global $posts_displayed; $posts_displayed = array(); ?>
+
 <!-- Paste BODY scripts here -->
+<!-- Alternatively you can use stf_body_top hook. -->
 
 
 
