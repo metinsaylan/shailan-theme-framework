@@ -200,11 +200,11 @@ function stf_comments_link( $atts ){
 } 
 
 function stf_comment_count($args){
-	global $post, $id;	
+	global $post;	
 	
 	if ('open' == $post->comment_status) {
 		$link = get_comments_link();
-		$number = get_comments_number($id);
+		$number = get_comments_number( $post->ID );
 		
 		return '<span class="comments-count"><a href="'.$link.'" >' . $number . '</a></span>';
 	}
@@ -322,8 +322,7 @@ function stf_queryposts($atts){
    $output .= '<p class="error">[query] '.__("No posts found matching the arguments", "widgetbox").'</p>';
   endif;
 
-  $post = $backup;
-  wp_reset_query();
+	wp_reset_postdata();
 
   //$output = ob_get_contents();
   //ob_end_clean();
@@ -370,7 +369,7 @@ function stf_loop($atts){
 		)
 	);
 	
-	if('' == $template){ $template = "loop.php"; }	
+	if( '' == $template ){ $template = "loop.php"; }	
 	
 	ob_start();
 	 locate_template( array($template), true, false );
@@ -566,7 +565,7 @@ function custom_query_shortcode($atts) {
    $the_query = preg_replace('~&#0*([0-9]+);~e', 'chr(\\1)', $the_query);
 
    // query is made               
-   query_posts($the_query);
+   query_posts( $the_query );
    
    // Reset and setup variables
    $output = '';

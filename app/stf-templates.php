@@ -398,12 +398,15 @@ function theme_image($filename, $dimensions=NULL, $classname='', $alt='', $title
 } 
 
 function stf_comments(){
-	if( is_home() && "on" == stf_get_setting('enable_comments_on_home') ){
+	if( "on" == stf_get_setting('enable_comments_on_home') ){
 		global $withcomments;
 		$withcomments = true;
 		comments_template( '/inline-comments.php', true );
-	} elseif ( is_singular() AND comments_open() ){
+	} elseif ( ( is_single() || is_page() ) && comments_open() ){
 		comments_template( '', true ); 
+	} else {
+		echo "Else..";
+		//comments_template( '', true ); 
 	}
 }
 
