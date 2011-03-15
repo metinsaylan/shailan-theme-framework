@@ -1,3 +1,2 @@
-<div id="sidebar">
-	<?php stf_widgets( 'sidebar', '', 'default_sidebar_widgets' ); ?>
-</div>
+<?php stf_widget_area( 'sidebar' ); ?>
+<?php stf_widget_area( 'sidebar-2' ); ?>
