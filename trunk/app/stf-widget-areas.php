@@ -108,6 +108,11 @@ function stf_default_widget_areas(){
 			'name' => 'Sidebar',
 			'id' => 'sidebar',
 			'description' => ''),
+			
+		array(
+			'name' => 'Sidebar 2',
+			'id' => 'sidebar-2',
+			'description' => ''),
 
 		array(
 			'name' => 'Footer Column 1',

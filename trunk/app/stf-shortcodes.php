@@ -260,7 +260,7 @@ function stf_post_reply_link_shortcode( $atts ){
 	}	
 }
 
-function stf_views($atts){
+function stf_views($atts = null){
 	if( function_exists( 'the_views') ){
 		$view_count = get_post_meta( get_the_ID(), 'views', true);
 		return '<span class="views view-count">' . $view_count . '</span>';
