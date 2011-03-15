@@ -1,4 +1,4 @@
-<div class="entry-comments">
+<div <?php if( is_single() || is_page() ){ echo 'id="comments"'; } ?> class="entry-comments">
 <?php if ( post_password_required() ){ return; } ?>
 <?php /* Count the number of comments and trackbacks (or pings) */
 $ping_count = $comment_count = 0;
