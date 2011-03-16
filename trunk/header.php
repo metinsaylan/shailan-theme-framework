@@ -4,7 +4,7 @@
 <div id="header-wrapper">
 
 	<!-- Header -->
-	<div id="header" class="container_12 clearfix">
+	<div id="header" class="clearfix">
 		<?php stf_widget_area('header-top'); ?>
 		
 		<!-- Branding -->
@@ -15,9 +15,7 @@
 		
 		<!-- Banner Area -->
 		<div id="header-widgets">
-			
 			<?php stf_widgets('header'); ?>
-			
 		</div>
 		<!-- [End] Banner Area -->
 		

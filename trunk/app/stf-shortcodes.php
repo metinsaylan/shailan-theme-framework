@@ -44,8 +44,16 @@ function stf_permalink($atts){
 		'before' => '<span class="entry-permalink">',
 		'after' => '</span>',
 		'text' => __('Permalink'),
+		'single' => __('Permalink'),
+		'page' => __('Permalink'),
 		'class' => 'permalink'
 	), $atts));
+	
+	if( 'page' == get_post_type( get_the_ID() ) && is_page( get_the_ID() ) ){
+		$text = $page;
+	} elseif( is_single() ){
+		$text = $single;
+	}
 	
 	return $before . '<a href="' . get_permalink( get_the_ID() ) . '" class="' . $class . '" >' . $text . '</a>' . $after; 
 } 
