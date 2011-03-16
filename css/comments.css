@@ -18,7 +18,7 @@
 #respond, #comments-list #respond { overflow: hidden; padding: 15px; position: relative; }
 div.comment-body { background: #ffe; border: 1px solid #ccc; display: block; margin: 6px; min-height: 67px; overflow: hidden; padding: 8px; position: relative; }
 
-div.inline-comment{ background-color: #DDD; border-bottom: 1px solid #CCC; margin-top: 2px; padding: 5px 5px 4px; }
+div.inline-comment{ background-color: #E6E6E6; border-bottom: 1px solid #D6D6D6; margin-top: 2px; padding: 5px 5px 4px; }
 .inline-comment p{ margin:0; padding:0; }
 .inline-comment .comment-author-avatar { margin: 0; }
 div.comment-body-inline{ display:block; margin-left:45px; }
@@ -29,3 +29,10 @@ div.reply a:hover{ background: #f60; color:#fff; }
 .form-submit{ float: right; } 
 
 .reply-inline{ text-align:right; color:#ccc; }
+
+div.inline-comment a.comment-reply-link{
+	display: block;
+	float: right;
+	margin-top: 5px;
+	line-height: inherit; 
+}

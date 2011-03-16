@@ -4,9 +4,7 @@
 ?>
 
 	<li id="entry-<?php the_ID(); ?>">
-	
-		<a href="<?php the_permalink(); ?>" rel="bookmark" class="permalink"><?php the_title(); ?></a>
-		
+		<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 	</li>
 	
 <?php endwhile; ?>
