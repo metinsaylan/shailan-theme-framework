@@ -94,12 +94,27 @@ array( "type" => "open"),
 		"type" => "checkbox",
 		"std" => "on"),
 		
+
+array( "type" => "close"),
+
+
+array( "name" => "Page Elements",
+	"type" => "section"),
+	
+array( "type" => "open"),
+
 	array("name" => "Show comments on home page",
 		"desc" => "Enable commenting on home page.",
 		"id" => "enable_comments_on_home",
 		"type" => "checkbox",
 		"std" => "off"),
-	
+		
+	array("name" => "Show breadcrumbs",
+		"desc" => "Enable breadcrumbs on home page.",
+		"id" => "breadcrumbs_enabled",
+		"type" => "checkbox",
+		"std" => "off"),
+
 array( "type" => "close")
 
 );

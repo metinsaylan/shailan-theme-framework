@@ -228,14 +228,14 @@ class Shailan_Framework{
 
 $stf = new Shailan_Framework();
 
-function stf_get_setting( $key ){
+function stf_get_setting( $key, $default = FALSE ){
 	$settings = get_option('stf_settings');
 	
 	if(isset($settings[$key])){
 		$value = $settings[$key];
 		return $value;
 	} else {
-		return FALSE;
+		return $default;
 	}
 }
 

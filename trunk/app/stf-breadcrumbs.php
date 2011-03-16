@@ -6,6 +6,11 @@ function stf_wrapCurrent($link){
 function stf_breadcrumbs( $args = array() ) {
 	global $wp_query, $post;
 	
+	$enabled = stf_get_setting( 'breadcrumbs_enabled', 'on' );
+	if( 'on' != $enabled ){
+		exit;
+	}
+	
 	extract( wp_parse_args( $args, array( // Default options:
 	
 		'echo'		=> 1,
@@ -16,9 +21,7 @@ function stf_breadcrumbs( $args = array() ) {
 	
 	) ), EXTR_SKIP );
 	
-	
 	$home_link = "<span><a href=\"" . home_url( '/' ) . "\" title=\"". esc_attr( get_bloginfo( 'name', 'display' ) ) . "\" rel=\"home ". ((!is_front_page() || !is_home()) ? 'nofollow' : '') . "\">" . __('Home') . "</a></span>";
-	
 
 	if (!function_exists('yoast_get_category_parents')) {
 		function yoast_get_category_parents($id, $link = FALSE, $separator = '/', $nicename = FALSE){
