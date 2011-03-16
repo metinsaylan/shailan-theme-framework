@@ -32,7 +32,7 @@
 </head>
 <body <?php body_class(); ?>>
 
-<?php do_action('stf_body_top'); // [hook] ?>
+<?php do_action('stf_body_top'); // [hook] used for body scripts ?>
 
 <?php global $posts_displayed; $posts_displayed = array(); ?>
 
