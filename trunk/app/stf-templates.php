@@ -404,9 +404,6 @@ function stf_comments(){
 		comments_template( '/inline-comments.php', true );
 	} elseif ( ( is_single() || is_page() ) && comments_open() ){
 		comments_template( '', true ); 
-	} else {
-		echo "Else..";
-		//comments_template( '', true ); 
 	}
 }
 

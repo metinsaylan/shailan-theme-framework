@@ -4,7 +4,7 @@
 <div id="content-wrapper">
 
 	<!-- Page -->
-	<div id="page" class="container_12 clearfix">
+	<div id="page" class="clearfix">
 	
 		<!-- Billboard -->
 		<div id="billboard-wrapper" class="clearfix">
@@ -14,7 +14,7 @@
 		<!-- [End] Billboard -->
 
 		<!-- Content -->
-		<div id="content" class="grid_8 clearfix">
+		<div id="content" class="clearfix">
 			<?php stf_widget_area( 'before-content' ); ?>
 			
 			<!-- Main -->
@@ -28,7 +28,7 @@
 		<!-- [End] Content -->
 		
 		<!-- Sidebars -->
-		<div id="sidebars" class="grid_4">
+		<div id="sidebars" class="clearfix">
 			<?php get_sidebar() ?>
 		</div>		
 		<!-- [End] Sidebars -->
