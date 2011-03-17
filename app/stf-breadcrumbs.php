@@ -8,7 +8,7 @@ function stf_breadcrumbs( $args = array() ) {
 	
 	$enabled = stf_get_setting( 'breadcrumbs_enabled', 'on' );
 	if( 'on' != $enabled ){
-		exit;
+		return ''; 
 	}
 	
 	extract( wp_parse_args( $args, array( // Default options:
