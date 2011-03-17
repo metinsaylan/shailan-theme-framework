@@ -21,10 +21,11 @@
 		
 		<div class="clearboth"></div>
 		
-		<div id="header-bottom">
+		
 		<?php if(is_active_sidebar('header-bottom')){ ?>
 			<?php stf_widget_area('header-bottom'); ?>
 		<?php } else { ?>
+		<div id="header-bottom">
 			<div id="navigation">
 			<ul class="menu main-menu">
 			<?php 
@@ -64,8 +65,9 @@
 			</div>
 		
 			</div>
+			</div>
 		<?php } ?>
-		</div>
+
 	</div>
 	<!-- [End] Header -->
 	

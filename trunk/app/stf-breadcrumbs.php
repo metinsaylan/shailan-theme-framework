@@ -1,4 +1,4 @@
-<?php 
+<?php  
 
 function stf_wrapCurrent($link){
 	return "<span class='current'>".$link."</span>";
@@ -6,11 +6,9 @@ function stf_wrapCurrent($link){
 function stf_breadcrumbs( $args = array() ) {
 	global $wp_query, $post;
 	
-	$enabled = stf_get_setting( 'breadcrumbs_enabled', 'on' );
-	if( 'on' != $enabled ){
-		return ''; 
-		
-		echo $enabled;
+	$enabled = stf_get_setting( 'breadcrumbs_enabled' );
+	if( 'off' == $enabled ){
+		return '';
 	}
 	
 	extract( wp_parse_args( $args, array( // Default options:

@@ -6,9 +6,9 @@
  Author URL	: http://shailan.com
  Version	: 1.0
  Contact	: metinsaylan (at) gmail (dot) com
-*/
+*/ 
 
-global $stf;
+global $stf; 
 global $theme_data;
 
 /** CONSTANTS */
