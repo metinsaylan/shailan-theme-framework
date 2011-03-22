@@ -2,15 +2,20 @@
 
 /** DEFAULT FRAMEWORK OPTIONS */
 
-$font_families = array(
-	'"Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;',
-	'Futura, Century Gothic, AppleGothic, sans-serif;',
-	'DejaVu Sans, Bitstream Vera Sans, Segoe UI, Lucida Grande, Verdana, Tahoma, Arial, sans-serif;'
+$layouts = array(
+	'1c' => '1 Column',
+	'2cl' => '2 Columns Sidebar on Left',
+	'2cr' => '2 Columns Sidebar on Right',
+	'3cl' => '3 Columns Sidebars on Left',
+	'3cr' => '3 Columns Sidebars on Right',
+	'3cb' => '3 Columns Sidebars on Both Side'
 );
+
+$fonts = stf_get_fonts();
 
 $options = array (
 
-array( "name" => "Basic Options",
+array( "name" => "Basic",
 		"type" => "section"),
 		
 array( "type" => "open"),
@@ -20,6 +25,12 @@ array( "type" => "open"),
 		"id" => "stf_logo_url",
 		"std" => "",
 		"type" => "text"),
+		
+	array("name" => "Show breadcrumbs",
+		"desc" => "Enable breadcrumbs on home page.",
+		"id" => "breadcrumbs_enabled",
+		"type" => "checkbox",
+		"std" => "off"),
 
 	array(  "name" => "Entry header",
 		"desc" => "Entry header meta, shows right under the post title.",
@@ -39,21 +50,96 @@ array( "type" => "open"),
 		"std" => '[permalink] &middot; [cmnts] [edit before="&middot; "]',
 		"type" => "text"),
 		
-	array(  "name" => "Theme footer",
-		"desc" => "Displays at the bottom of site. You can use various shortcodes here.",
-		"id" => "stf_theme_footer",
-		"std" => "&copy; " . get_bloginfo('name'),
+	array("name" => "Show comments on home page",
+		"desc" => "Enable commenting on home page.",
+		"id" => "enable_comments_on_home",
+		"type" => "checkbox",
+		"std" => "off"),
+		
+	array(  "name" => "Comment count on homepage",
+		"desc" => "If comments on homepage is enabled, sets how many comments to display on home.",
+		"id" => "stf_homepage_comment_count",
+		"std" => 3,
 		"type" => "text"),
 		
 	array(  "name" => "Feed footer",
 		"desc" => "Displays after every post in the feed.",
 		"id" => "stf_feed_footer",
 		"std" => '<p><strong><em>This post is originally posted on <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>. <br />Visit <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> for more..</em></strong></p>',
-		"type" => "textarea"),
+		"type" => "html"),
+		
+	array(  "name" => "Theme footer",
+		"desc" => "Displays at the bottom of site. You can use various shortcodes here.",
+		"id" => "stf_theme_footer",
+		"std" => "&copy; " . get_bloginfo('name'),
+		"type" => "text"),
 
 array( "type" => "close"),
 
-array( "name" => "Advanced Options",
+array( "name" => "Layout",
+	"type" => "section"),
+array( "type" => "open"),
+	
+	array(
+		"name" => "Page layout",
+		"desc" => "Select page layout.",
+		"id" => "stf_layout",
+		"type" => "select",
+		"options" => $layouts,
+		"std" => "2cl"
+	),
+	
+	array(
+		"name" => "Page width",
+		"desc" => "Set full width in pixels",
+		"id" => "stf_page_width",
+		"type" => "text",
+		"std" => "980"
+	),
+	
+	array(
+		"name" => "Sidebar width",
+		"desc" => "Set sidebar width in pixels",
+		"id" => "stf_sidebar_width",
+		"type" => "text",
+		"std" => "300"
+	),
+	
+	array(
+		"name" => "Global spacing",
+		"desc" => "Set global spacing for the layout",
+		"id" => "stf_padding",
+		"type" => "text",
+		"std" => "20"
+	),
+
+array( "type" => "close"),
+
+array( "name" => "Fonts",
+	"type" => "section"),
+array( "type" => "open"),
+
+	array(
+		"name" => "Title font",
+		"desc" => "Select title font.",
+		"id" => "stf_title_font",
+		"type" => "select",
+		"options" => $fonts,
+		"std" => "futura"
+	),
+	
+	array(
+		"name" => "Regular text font",
+		"desc" => "Select font for regular text.",
+		"id" => "stf_base_font",
+		"type" => "select",
+		"options" => $fonts,
+		"std" => "lucida"
+	),
+	
+array( "type" => "close"),
+
+array( "name" => "Advanced",
 	"type" => "section"),
 	
 array( "type" => "open"),
@@ -94,26 +180,6 @@ array( "type" => "open"),
 		"type" => "checkbox",
 		"std" => "on"),
 		
-
-array( "type" => "close"),
-
-
-array( "name" => "Page Elements",
-	"type" => "section"),
-	
-array( "type" => "open"),
-
-	array("name" => "Show comments on home page",
-		"desc" => "Enable commenting on home page.",
-		"id" => "enable_comments_on_home",
-		"type" => "checkbox",
-		"std" => "off"),
-		
-	array("name" => "Show breadcrumbs",
-		"desc" => "Enable breadcrumbs on home page.",
-		"id" => "breadcrumbs_enabled",
-		"type" => "checkbox",
-		"std" => "off"),
 
 array( "type" => "close")
 

@@ -105,13 +105,13 @@ function stf_default_widget_areas(){
 			'description' => 'You should add a "the Loop" widget here to display posts.'),
 			
 		array(
-			'name' => 'Sidebar',
-			'id' => 'sidebar',
+			'name' => 'Primary Sidebar',
+			'id' => 'primary',
 			'description' => ''),
 			
 		array(
-			'name' => 'Sidebar 2',
-			'id' => 'sidebar-2',
+			'name' => 'Secondary Sidebar',
+			'id' => 'secondary',
 			'description' => ''),
 
 		array(

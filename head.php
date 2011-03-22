@@ -4,14 +4,13 @@
 	<title><?php wp_title( '&bull;', true, 'right' ); echo esc_html( get_bloginfo('name'), 1 ) ?></title>
 	<meta http-equiv="content-type" content="<?php bloginfo('html_type') ?>; charset=<?php bloginfo('charset') ?>" />
 	
-	<!-- Grid System -->
-	<?php stf_css('960'); ?>
+	<?php stf_layout(); ?>
 	
 	<!-- Framework styles -->
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/framework.css" />
 	
 	<!-- Stylesheet -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>" />
+	<link rel="stylesheet" type="text/css" href="<?php //bloginfo('stylesheet_url') ?>" />
 	
 	<?php wp_head(); // For plugins ?>
 

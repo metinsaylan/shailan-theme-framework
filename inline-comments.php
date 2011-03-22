@@ -6,10 +6,19 @@ foreach ( $comments as $comment )
  get_comment_type() == "comment" ? ++$comment_count : ++$ping_count;
 ?>
 
+<?php $total_pages = get_comment_pages_count(); if ( $total_pages > 1 ) : ?>
+	<div id="comments-nav-above" class="comments-navigation">
+				<div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
+	</div><!-- #comments-nav-above -->
+<?php endif; ?> 
+
 <?php if ( have_comments() ) : ?>
 <div class="inline-comments-list">
 <ul class="commentslist inlinecomments">
-	<?php wp_list_comments('type=comment&callback=stf_comment_inline'); ?>
+	<?php 
+		if( is_home() ){ $per_page = '&per_page=' . stf_get_setting('stf_homepage_comment_count', 3); } else { $per_page = ''; }
+		wp_list_comments('type=comment&callback=stf_comment_inline' . $per_page); 
+	?>
 </ul>
 </div>
 <?php endif; ?>
