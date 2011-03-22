@@ -26,7 +26,7 @@
 	<?php
 		foreach ($options as $field) {
 			if ( $field['type'] == "section" ) {
-				echo "<li><a href=\"#" . sanitize_title( $field['name'] ) . "\">".$field['name']."</a></li>";
+				echo "<li><a href=\"#" . sanitize_title( $field['name'] ) . "\" class=\"" . sanitize_title( $field['name'] ) . "\">".$field['name']."</a></li>";
 			}
 		}
 	?>
@@ -72,6 +72,26 @@ case 'textarea':
   
 <?php
 break;
+
+case 'html':
+?>
+
+<div class="ex_input ex_textarea">
+	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
+	
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $('#<?php echo $field['id']; ?>').wysiwyg();
+});
+</script>
+	
+ 	<textarea name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" cols="" rows=""><?php if ( $current[ $field['id'] ] != "") { echo stripslashes($current[ $field['id'] ] ); } else { echo $field['std']; } ?></textarea>
+ <small><?php echo $field['desc']; ?></small><div class="clear"></div>
+ 
+</div>
+  
+<?php
+break;
  
 case 'select':
 ?>
@@ -80,8 +100,8 @@ case 'select':
 	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
 	
 <select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>">
-<?php foreach ($field['options'] as $option) { ?>
-		<option <?php if ( isset($current[ $field['id'] ]) && $current[ $field['id'] ] == $option) { echo 'selected="selected"'; } ?>><?php echo $option; ?></option><?php } ?>
+<?php foreach ($field['options'] as $key=>$name) { ?>
+		<option <?php if ( isset($current[ $field['id'] ]) && $current[ $field['id'] ] == $key) { echo 'selected="selected"'; } ?> value="<?php echo $key;?>"><?php echo $name; ?></option><?php } ?>
 </select>
 
 	<small><?php echo $field['desc']; ?></small><div class="clear"></div>

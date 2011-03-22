@@ -7,19 +7,15 @@ get_header() ?>
 <!-- Content Wrapper -->
 <div id="content-wrapper">
 
-	<!-- Page -->
+	<?php get_template_part('billboard', 'index'); // BILLBOARD ?>
+
+	<!-- Page Layout -->
 	<div id="page" class="container_12 clearfix">
 	
-		<!-- Billboard -->
-		<div id="billboard-wrapper" class="clearfix">
-			<?php stf_breadcrumbs() ?>			
-			<?php stf_widget_area( 'billboard' ) ?>
-		</div>
-		<!-- [End] Billboard -->
-
-		<!-- Content -->
-		<div id="content" class="grid_8 clearfix">
-			<?php stf_widget_area( 'before-content' ); ?>
+		<div id="container">
+			<!-- Content -->
+			<div id="content" class="grid_8 clearfix">
+				<?php stf_widget_area( 'before-content' ); ?>
 			
 			<!-- Main -->
 			<div id="content-main">
@@ -88,11 +84,10 @@ get_header() ?>
 			<?php stf_widget_area( 'after-content' ); ?>
 		</div>
 		<!-- [End] Content -->
+		</div>
 		
 		<!-- Sidebars -->
-		<div id="sidebars" class="grid_4">
-			<?php get_sidebar() ?>
-		</div>		
+		<?php get_sidebar() ?>
 		<!-- [End] Sidebars -->
 		
 	</div>

@@ -9,7 +9,5 @@
 			<?php get_template_part('format', stf_post_format() ); ?>
 		</div>
 		<!-- [End] Post -->
-	
-		<?php stf_comments(); ?>
 	</div>
 <?php endwhile; /* End The Loop */ ?>

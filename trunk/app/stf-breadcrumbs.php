@@ -152,7 +152,7 @@ function stf_breadcrumbs( $args = array() ) {
 	}
 
 	if ( $echo ) {
-		echo $prefix. "<span class='breadcrumbs'>" . $output . "</span>" . $suffix;
+		echo "<div class='breadcrumbs'>" . $prefix . $output . $suffix . "</div>";
 	} else {
 		$prefix.$output.$suffix;
 	}

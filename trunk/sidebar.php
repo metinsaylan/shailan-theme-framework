@@ -1,2 +1,4 @@
-<?php stf_widget_area( 'sidebar' ); ?>
-<?php stf_widget_area( 'sidebar-2' ); ?>
+
+	<?php stf_widget_area( 'primary', 'sidebar' ); ?>
+
+	<?php stf_widget_area( 'secondary', 'sidebar' ); ?>

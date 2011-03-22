@@ -27,6 +27,8 @@
 		<?php stf_entry_footer_meta(); ?>
 	</div>
 	<!-- [End] Entry Footer -->
+	
+	<?php stf_comments(); ?>
 
 </div>
 
