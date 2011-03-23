@@ -510,6 +510,13 @@ a.share-button { display: inline; -moz-border-radius: 4px; -webkit-border-radius
 #authorbox .author-info{ padding:5px; padding-right:60px; }
 #authorbox { color:#888888; }
 
+/*- SIDEBAR & WIDGETS */
+.sidebar .widget-container {
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	border-bottom: 1px dotted #CCC;
+}
+
 /* Copyright */
 #theme-footer{ text-align: left; font-size: 12px; padding: 10px; }
 #theme-copyright{ 
