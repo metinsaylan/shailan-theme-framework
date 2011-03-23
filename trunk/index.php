@@ -3,34 +3,29 @@
 <!-- Content Wrapper -->
 <div id="content-wrapper">
 
-	<!-- Page -->
+	<?php get_template_part('billboard', 'index'); // BILLBOARD ?>
+
+	<!-- Page Layout -->
 	<div id="page" class="clearfix">
 	
-		<!-- Billboard -->
-		<div id="billboard-wrapper" class="clearfix">
-			<?php stf_breadcrumbs() ?>			
-			<?php stf_widget_area( 'billboard' ) ?>
-		</div>
-		<!-- [End] Billboard -->
-
-		<!-- Content -->
-		<div id="content" class="clearfix">
-			<?php stf_widget_area( 'before-content' ); ?>
-			
-			<!-- Main -->
-			<div id="content-main">
-				<?php stf_widgets( 'content' , array( 'stf_blog_posts', 'stf_navigation' ) ); ?>
+		<div id="container">
+			<!-- Content -->
+			<div id="content" class="clearfix">
+				<?php stf_widget_area( 'before-content' ); ?>
+				
+				<!-- Main -->
+				<div id="content-main">
+					<?php stf_widgets( 'content' , array( 'stf_blog_posts', 'stf_navigation' ) ); ?>
+				</div>
+				<!-- [End] Main -->
+				
+				<?php stf_widget_area( 'after-content' ); ?>
 			</div>
-			<!-- [End] Main -->
-			
-			<?php stf_widget_area( 'after-content' ); ?>
+			<!-- [End] Content -->
 		</div>
-		<!-- [End] Content -->
 		
 		<!-- Sidebars -->
-		<div id="sidebars" class="clearfix">
-			<?php get_sidebar() ?>
-		</div>		
+		<?php get_sidebar() ?>
 		<!-- [End] Sidebars -->
 		
 	</div>

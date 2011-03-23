@@ -6,9 +6,11 @@
  Author URL	: http://shailan.com
  Version	: 1.0
  Contact	: metinsaylan (at) gmail (dot) com
-*/ 
+*/
 
-global $stf; 
+
+global $stf;
+
 global $theme_data;
 
 /** CONSTANTS */
@@ -212,7 +214,6 @@ function stf_entry_pages_navigation(){
 		'link_after'	=> '</span>'
 	) ); 
 }
-
 function stf_entry_pages(){ stf_entry_pages_navigation(); }
 
 function stf_get_templates(){
@@ -398,12 +399,14 @@ function theme_image($filename, $dimensions=NULL, $classname='', $alt='', $title
 } 
 
 function stf_comments(){
-	if( "on" == stf_get_setting('enable_comments_on_home') ){
+	if( "on" == stf_get_setting('enable_comments_on_home') && comments_open() ){
 		global $withcomments;
-		$withcomments = true;
+		$withcomments = true;		
 		comments_template( '/inline-comments.php', true );
 	} elseif ( ( is_single() || is_page() ) && comments_open() ){
-		comments_template( '', true ); 
+		comments_template( '/inline-comments.php', true ); 
+	} else {
+		//comments_template( '', true ); 
 	}
 }
 
