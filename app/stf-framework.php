@@ -1,12 +1,14 @@
 <?php
 /** SHAILAN THEME FRAMEWORK 
- Author		: Matt Say 
+ Author		: Matt Say
+
  Author URL	: http://shailan.com
  Version	: 1.0
  Contact	: metinsaylan (at) gmail (dot) com
 */
 
 global $stf;
+global $stf_default_options;
 global $theme_data;
 global $stf_widget_areas; 
 
@@ -29,6 +31,7 @@ class Shailan_Framework{
 
 	function __construct(){
 		global $stf_widget_areas;
+		global $stf_default_options;
 		
 		$stf_widget_areas = array();
 		
@@ -53,7 +56,13 @@ class Shailan_Framework{
 		require_once( "stf-options.php" );
 		
 		$this->default_options = $options;
-		$this->settings = $this->get_settings();		
+		foreach( $options as $option ){
+			if( isset($option['id']) ){
+				$stf_default_options[ $option['id'] ] = $option['std'];
+			}
+		}
+		
+		$this->settings = $this->get_settings();
 		
 		add_action( 'admin_init', array(&$this, 'theme_admin_init') );
 		add_action( 'admin_menu', array(&$this, 'theme_admin_header') );
@@ -92,7 +101,6 @@ class Shailan_Framework{
 		}		
 	}
 	
-
 	function register_theme_options($options){
 		$this->default_options = $options;
 	}
@@ -107,6 +115,10 @@ class Shailan_Framework{
 		wp_enqueue_style("stf-options-page", STF_URL . "css/options.css", false, "1.0", "all");
 		wp_enqueue_style("stf-widgets-mod", STF_URL . "css/widgets.css", false, "1.0", "all");
 		wp_enqueue_style("stf-options-tabs", STF_URL . "css/options-tabs.css", false, "1.0", "all");
+		
+		wp_enqueue_script("jquery");
+		wp_enqueue_script("jwysiwyg", STF_URL . "scripts/jquery.wysiwyg.js", "jquery", "1.0", false);
+		wp_enqueue_style("jwysiwyg-css", STF_URL . "scripts/jquery.wysiwyg.css", false, "1.0", "all");
 
 	}
 	
@@ -122,14 +134,12 @@ class Shailan_Framework{
 				if(FALSE === $settings){ $settings = array(); }
 				
 				// Set updated values
-				foreach($this->default_options as $option){
-					
+				foreach($this->default_options as $option){					
 					if($option['type'] == 'checkbox' && empty( $_REQUEST[ $option['id'] ] )) {
 						$settings[ $option['id'] ] = 'off';
 					} else {
 						$settings[ $option['id'] ] = $_REQUEST[ $option['id'] ]; 
 					}
-					
 				}
 				
 				// Save the settings
@@ -165,15 +175,17 @@ class Shailan_Framework{
 	}
 	
 	function theme_admin_page(){
+	
 		$options = $this->default_options;
 		$current = $this->get_settings();
-		$title = $this->name . ' Theme Settings';		
+		$title = $this->name . ' Theme Settings';	
 		
 		$navigation = "";
 		$footer_text = "<a href=\"" . $this->theme['URI'] . "\">". $this->name . "</a> is powered by <a href=\"http://shailan.com/wordpress/themes/framework\" title=\"Shailan Theme Framework\">Shailan Theme Framework</a>";
 		
 		// Render theme options page
 		include_once( STF_APP . "stf-page-options.php" );
+		
 	}
 	
 	function framework_copyright(){ ?>
@@ -190,8 +202,19 @@ function stf_get_setting( $key, $default = FALSE ){
 	if(isset($settings[$key])){
 		$value = $settings[$key];
 		return $value;
-	} else {
+	} elseif(stf_get_default_setting( $key )) {
+		return stf_get_default_setting( $key );
+	} else { 	
 		return $default;
+	}
+}
+
+function stf_get_default_setting( $key ){
+	global $stf_default_options;
+	if( isset( $stf_default_options[$key] ) ){
+		return $stf_default_options[$key];
+	} else {
+		return FALSE;
 	}
 }
 
