@@ -16,7 +16,7 @@ foreach ( $comments as $comment )
 <div class="inline-comments-list">
 <ul class="commentslist inlinecomments">
 	<?php 
-		if( is_home() ){ $per_page = '&per_page=' . stf_get_setting('stf_homepage_comment_count', 3); } else { $per_page = ''; }
+		if( is_home() || is_search() || is_archive() ){ $per_page = '&per_page=' . stf_get_setting('stf_homepage_comment_count', 3); } else { $per_page = ''; }
 		wp_list_comments('type=comment&callback=stf_comment_inline' . $per_page); 
 	?>
 </ul>
