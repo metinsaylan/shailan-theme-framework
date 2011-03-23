@@ -39,9 +39,10 @@ function stf_layout(){
 ?><!-- Start of Smart Layout -->
 	<style type="text/css" media="all">
 	
-		div#header, div#billboard-wrapper, div#page, div#footer, div#theme-footer{
+		div#header, div#billboard-wrapper, div#page, div#footer, div#theme-footer, div#theme-copyright{
 			width: <?php echo $stf_page_width; ?>px; 
-			margin: 0 auto;
+			margin-right: auto;
+			margin-left: auto;
 		}
 		
 		div#page{ padding-top: <?php echo $stf_padding; ?>px; padding-bottom: <?php echo $stf_padding; ?>px; }
@@ -62,11 +63,6 @@ function stf_layout(){
 		* html .hentry img{width: <?php echo $post_width; ?>px}
 		.entry-wrap{ margin-bottom:<?php echo $stf_padding; ?>px; padding-bottom:<?php echo $stf_padding; ?>px }
 		.entry-thumb{ float:left; padding:0px; margin-left:<?php echo $thumbnail_margin; ?>px; }
-		
-		/* BOTTOM MARGINS */
-		div#primary .widget,
-		.entry-content
-		{ margin-bottom: <?php echo $stf_padding; ?>px; }
 		
 		.flushleft{ margin-left: -<?php echo $stf_padding; ?>px; }
 		.flushright{ margin-right: -<?php echo $stf_padding; ?>px; }
