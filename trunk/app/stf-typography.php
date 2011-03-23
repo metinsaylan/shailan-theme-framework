@@ -27,13 +27,13 @@ function stf_typography(){
 	<style type="text/css" media="all">
 	
 		<?php if( $base_font != "css" ){ ?>	
-		body, td, input, select{
+		body, td, textarea, input, select{
 			font-family: <?php echo $fonts[ $base_font ]; ?>;
 		}
 		<?php } ?>
 		
 		<?php if( $title_font != "css" ){ ?>	
-		h1, h2, h3, h4, h5, h6, .entry-title, .widget-title, .title, h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
+		#site-title, h1, h2, h3, h4, h5, h6, .entry-title, .widget-title, .title, h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
 			font-family: <?php echo $fonts[ $title_font ]; ?>;
 		}
 		<?php } ?>

@@ -73,7 +73,7 @@ case 'textarea':
 <?php
 break;
 
-case 'html':
+case 'htmlarea':
 ?>
 
 <div class="ex_input ex_textarea">
