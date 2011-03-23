@@ -7,3 +7,12 @@ AUTHOR: Matt Say
 AUTHOR URI: http://shailan.com
 TAGS: framework, all-widget, widgets, widget-areas, xhtml
 */
+
+@import url("fonts/shailan.fonts.css");
+
+#header #site-title{ 
+	font-family: 'LeagueGothicRegular';
+	font-size: 60px;
+	letter-spacing: 1px;
+	line-height: 48px;
+}

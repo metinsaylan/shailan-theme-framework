@@ -28,7 +28,13 @@
 		</div>
 		
 	<div id="theme-footer" class="clearfix">
-		<small><?php stf_theme_footer(); ?></small>
+		<div class="alignleft half-width">
+			<small><?php stf_theme_footer(); ?></small> 
+		</div>
+		
+		<div class="alignright half-width">
+			<a href="#header" class="jumper">Return to Top &uarr;</a>
+		</div>
 	</div>
 		
 	</div>

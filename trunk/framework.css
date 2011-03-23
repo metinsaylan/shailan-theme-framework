@@ -315,7 +315,16 @@ dd{ padding:10px 10px 10px 25px; }
 #branding{ padding:15px 25px 15px; }
 #header a{ color:#f90; }
 #page{ background:#fff; box-shadow:#ccc 0 0 4px; -webkit-box-shadow:#ccc 0 0 4px; -moz-box-shadow:#ccc 0 0 4px;}
-#footer{ background:#ddd; }
+#footer{
+	border-top:1px dashed #c9c9c9;
+	background: #EEEEEE;
+	background: -moz-linear-gradient(top, #FFFFFF 0%, #EEEEEE 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#EEEEEE));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#EEEEEE',GradientType=0 );
+	box-shadow: #CCC 0 2px 5px;
+	-webkit-box-shadow: #CCC 0 2px 5px;
+	-moz-box-shadow: #CCC 0 2px 5px;
+}
 
 /*- HEADER */
 #site-title { text-shadow: 1px 1px 1px rgba(125, 125, 125, 0.3); 
@@ -528,7 +537,7 @@ a.button, #comment-submit, div.nav-next a, div.nav-previous a {
 	background: #efefef;
 	background: -moz-linear-gradient(top, #efefef 0%, #DDD 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efefef), color-stop(100%,#DDD));
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#DDD',GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefef', endColorstr='#DDDDDD',GradientType=0 );
 	cursor: pointer;
 	box-shadow: #AAA 0 1px 3px;
 	-moz-box-shadow: #AAA 0 1px 3px;
@@ -539,7 +548,7 @@ a.button:hover, #comment-submit:hover,  div.nav-next a:hover, div.nav-previous a
 	background: #fff; 
 	background: -moz-linear-gradient(top, #fff 0%, #ddd 100%); 
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#ddd)); 
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#ddd',GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 );
 	color:#666; 
 	text-shadow:none; 
 	text-decoration:none; 	
@@ -549,8 +558,7 @@ a.button:active, #comment-submit:active,  div.nav-next a:active, div.nav-previou
 	background: #fff; 
 	background: -moz-linear-gradient(top, #ddd 0%, #fff 100%); 
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ddd), color-stop(100%,#fff)); 
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ddd', endColorstr='#fff',GradientType=0 );	
-
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#ffffff',GradientType=0 );
 	box-shadow: #AAA 0 0px 2px;
 	-moz-box-shadow: #AAA 0 0px 2px; 
 }
