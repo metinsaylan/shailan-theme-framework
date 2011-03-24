@@ -77,7 +77,7 @@ class STF_TableOfContents {
         }
         $tocid = $this->get_tocid($match[3]);
         $this->add_toc(intval($match[1]), $tocid, $match[3]);
-        return "<div class=\"return_to_top\"><a href=\"#header\" class=\"jumper\">Return to top &uarr;</a></div><h$match[1] id=\"$tocid\"$match[2]>$match[3]</h$match[1]>";
+        return "<div class=\"return_to_top\"><a href=\"#header\" class=\"jumper jump-to-top\"><span>&uarr;</span></a></div><h$match[1] id=\"$tocid\"$match[2]>$match[3]</h$match[1]>";
     }
     
     // "the_content" was originally designed to be a filter for "the_content" 
