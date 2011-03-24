@@ -467,7 +467,7 @@ function stf_pagerank($atts){
 
 }
 
-function stf_wrap_tag($atts, $content = null ){
+function stf_wrap_tag( $atts, $content = null ){
 $permalink_structure = get_option('permalink_structure');
 $tag_base = get_option( 'tag_base' );
 if($tag_base == '')	$tag_base = 'tag';
@@ -481,7 +481,7 @@ if($tag_base == '')	$tag_base = 'tag';
 }
 
 function stf_wrap_twitter_tag($atts, $content = null ){ return '<a href="https://twitter.com/search?q=%23'.$content.'" rel="nofollow">#'.$content.'</a>'; }
-function stf_dropcap($atts, $content = null ){ return '<span class="dropcap">'.$content.'</span>'; }
+function stf_dropcap($atts, $content = null ){ return '<span class="dropcap">'.do_shortcode($content).'</span>'; }
 function stf_is_home($atts, $content = null){ if(is_home()){ return do_shortcode($content); } else { return null; } }
 function stf_is_single($atts, $content = null){	if(is_single()){ return do_shortcode($content); } else { return null; } }
 function stf_is_search($atts, $content = null){	if(is_search()){ return do_shortcode($content); } else { return null; } }
@@ -600,6 +600,19 @@ function custom_query_shortcode($atts) {
 }
 
 
+/* DIALOG BOXES */
+function stf_note( $atts, $content = null ){ return '<div class="note">' . do_shortcode($content) . '</div>'; }
+function stf_alert( $atts, $content = null ){ return '<div class="alert">' . do_shortcode($content) . '</div>'; }
+function stf_warning( $atts, $content = null ){ return '<div class="warning">' . do_shortcode($content) . '</div>'; }
+function stf_info( $atts, $content = null ){ return '<div class="info">' . do_shortcode($content) . '</div>'; }
+function stf_success( $atts, $content = null ){ return '<div class="success">' . do_shortcode($content) . '</div>'; }
+
+function stf_marker( $atts, $content = null ){ return '<mark>' . do_shortcode($content) . '</mark>'; }
+function stf_marker_yellow( $atts, $content = null ){ return '<mark class="yellow">' . do_shortcode($content) . '</mark>'; }
+function stf_marker_orange( $atts, $content = null ){ return '<mark class="orange">' . do_shortcode($content) . '</mark>'; }
+
+function stf_seperator( $atts, $content = null ){ return '<div class="seperator"></div>'; }
+
 /* WIDGETS */
 add_shortcode('tag_cloud', 'stf_tags_shortcode');
 add_shortcode('query_posts', 'stf_queryposts');
@@ -609,11 +622,26 @@ add_shortcode('loop', 'stf_loop');
 /* MISC */
 add_shortcode('and', 'stf_and_shortcode');
 add_shortcode('dropcap', 'stf_dropcap');
+add_shortcode('hr', 'stf_seperator');
+add_shortcode('seperator', 'stf_seperator');
 add_shortcode('tag', 'stf_wrap_tag');
 add_shortcode('htag', 'stf_wrap_twitter_tag'); 
 add_shortcode('hashtag', 'stf_wrap_twitter_tag');
 add_shortcode('pagerank', 'stf_pagerank');
 add_shortcode('latest_tweet', 'stf_latest_tweet_shortcode');
+
+/* MARKERS */
+add_shortcode('mark', 'stf_marker');
+add_shortcode('marker', 'stf_marker');
+add_shortcode('mark_yellow', 'stf_marker_yellow');
+add_shortcode('mark_orange', 'stf_marker_orange');
+
+/* BOXES */
+add_shortcode('note', 'stf_note');
+add_shortcode('alert', 'stf_alert');
+add_shortcode('warning', 'stf_warning');
+add_shortcode('info', 'stf_info');
+add_shortcode('success', 'stf_success');
 
 /* THEME */
 add_shortcode('generator', 'stf_generator_link_shortcode');

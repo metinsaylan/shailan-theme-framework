@@ -8,11 +8,13 @@ AUTHOR URI: http://shailan.com
 TAGS: framework, all-widget, widgets, widget-areas, xhtml
 */
 
-@import url("fonts/shailan.fonts.css");
+@import url("fonts/delicious.css");
 
 #header #site-title{ 
 	font-family: 'Delicious';
-	font-size: 60px;
+	font-size: 48px;
 	letter-spacing: 1px;
-	line-height: 48px;
+	line-height: 32px;
+	padding-top:20px;
 }
+
