@@ -33,6 +33,7 @@ include_once('widgets/stf-pagenavi.php'); // POSTS NAVIGATION
 
 // Other interfaces
 include_once('stf-typography.php'); // TYPOGRAPHY
+include_once('stf-toc.php'); // TABLE OF CONTENT GENERATOR
 
 
 
