@@ -129,12 +129,28 @@ array( "type" => "open"),
 	),
 	
 	array(
+		"name" => "Title font size scale",
+		"desc" => "Scales title size according to this scale.",
+		"id" => "stf_title_font_scale",
+		"type" => "text",
+		"std" => "1"
+	),
+	
+	array(
 		"name" => "Regular text font",
 		"desc" => "Select font for regular text.",
 		"id" => "stf_base_font",
 		"type" => "select",
 		"options" => $fonts,
 		"std" => "lucida"
+	),
+	
+	array(
+		"name" => "Regular text font size",
+		"desc" => "Size of regular text (Eg. 12px or 1em).",
+		"id" => "stf_base_font_size",
+		"type" => "text",
+		"std" => "12px"
 	),
 	
 array( "type" => "close"),
