@@ -28,7 +28,9 @@ function stf_typography(){
 	$fonts = stf_get_fonts();
 	
 	$title_font = stf_get_setting( 'stf_title_font' );
+	$title_font_scale = stf_get_setting( 'stf_title_font_scale' );
 	$base_font = stf_get_setting( 'stf_base_font' );
+	$base_font_size = stf_get_setting( 'stf_base_font_size' );
 	
 	// Include font file if exists
 	$title_font_css = locate_template( "fonts/" . $title_font . ".css" );
@@ -49,6 +51,7 @@ function stf_typography(){
 		<?php if( $base_font != "css" ){ ?>	
 		body, td, textarea, input, select{
 			font-family: <?php echo $fonts[ $base_font ]; ?>;
+			font-size: <?php echo $base_font_size; ?>;
 		}
 		<?php } ?>
 		
@@ -56,6 +59,15 @@ function stf_typography(){
 		h1, h2, h3, h4, h5, h6, .entry-title, .widget-title, .title, h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
 			font-family: <?php echo $fonts[ $title_font ]; ?>;
 		}
+		<?php } ?>
+		
+		<?php if( is_numeric( $title_font_scale ) ){ ?>
+			h1{ font-size: <?php echo (2 * $title_font_scale ); ?>em; }
+			h2, h2.entry-title, h1.entry-title, .entry-title, .widget-title, .page-title, .widgettitle, .title { font-size: <?php echo (1.6 * $title_font_scale ); ?>em; }
+			h3{ font-size: <?php echo (1.3 * $title_font_scale ); ?>em; }
+			h4{ font-size: <?php echo (1.17 * $title_font_scale ); ?>em; }
+			h5{ font-size: <?php echo (1.1 * $title_font_scale ); ?>em; }
+			h6{ font-size: <?php echo (1.1 * $title_font_scale ); ?>em; }
 		<?php } ?>
 		
 	</style>

@@ -204,7 +204,7 @@ ul.horizontal li{ padding:3px 10px; } ul.horizontal li+li{ border-left:1px solid
 
 /* Check list */
 ul.ticks, ol.ticks{ list-style:none; padding-left:20px; }
-ul.ticks li{ background: url(images/icon-tick.gif) no-repeat 8px 3px; line-height: 30px; 
+ul.ticks li{ background: url(images/icon-tick.gif) 4px 50% no-repeat; line-height: 36px;
 	list-style: none; padding-left: 42px; }
 
 /*- ALIGNMENTS */
@@ -448,7 +448,17 @@ ul.main-menu li:hover{ background:#999; border-bottom:1px solid #999999; }
 .entry-content p { margin-bottom: 1em; }
 
 /*- TABLE OF CONTENTS */
-.return_to_top { float: right; }
+.return_to_top { 
+	text-align: right;
+	margin-bottom: -30px;
+	margin-top: 30px;
+	margin-right: 12px;
+	font-size: 11px; 
+	text-shadow: #AAA 0 0 1px;
+}
+.return_to_top a, a.jumper { color:#999; }
+.return_to_top a:hover, a.jumper:hover{ color:#f60; }
+
 
 /*- ENTRY PAGINATION */
 .entry-pages{ clear:both; padding: 15px 0; text-align: right; }
@@ -462,9 +472,23 @@ ul.main-menu li:hover{ background:#999; border-bottom:1px solid #999999; }
 .nav-previous{ float:left; } 
 .nav-next{ float:right; }
 
+/* ENTRY FORMATS */
+.format-aside { padding: 10px; 
+background: #EEE;
+border-bottom: 1px solid #DDD;
+border-right: 1px solid #DDD;
+border-top: 1px solid #F0F0F0;
+border-left: 1px solid #F0F0F0;
+font-style: italic; font-size: 0.9em; 
+border-radius: 8px;
+-moz-border-radius: 8px;
+-webkit-border-radius: 8px;
+color: #647; 
+text-shadow: white 1px 1px 0; }
+
 /*- COMMENTS */
 div#comments{ margin: 0 30px; }
-.comment-author-avatar { float: left; margin: 3px 6px 3px 3px; position: relative; z-index: 3; }
+
 ul.inlinecomments, ul.inlinecomments ul, ul.inlinecomments li{ padding:0; margin:0; list-style:none; }
 ul.inlinecomments ul{ margin-left:10px; }
 div.inline-comment{ 
@@ -477,15 +501,19 @@ div.inline-comment{
 }
 .byuser div.inline-comment{  }
 .inline-comment p{ margin:0; padding:0; }
-.inline-comment .comment-author-avatar { margin: 0; }
-div.comment-body-inline{ display:block; margin-left:45px; }
-div.comment-body-inline{ display:block; margin-left:45px; }
+
+span.comment-author{ font-weight:bold; }
+div.comment-author-avatar { float: right; margin: 0; position: relative; z-index: 3; }
+div.comment-text { padding: 3px; line-height: 1.5em; font-style: italic; }
+
+div.comment-body-inline{ display:block; }
 .reply-inline{ text-align:right; color:#ccc; }
 div.inline-comment a.comment-reply-link{
 	display: block;
 	float: right;
 	margin-top: 5px;
 	line-height: inherit; 
+	clear: right;
 }
 div.reply { left: 4px; position: absolute; top: 65px; width: 40px; text-align:center; }
 div.reply a{ background: #CCC; border-radius:4px; -moz-border-radius:4px; padding: 3px; color:#fff; }
