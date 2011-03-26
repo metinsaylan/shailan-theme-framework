@@ -97,6 +97,9 @@ pre, code{
 	box-shadow: inset #CCC 0 0 5px; 
 	-moz-box-shadow: inset #CCC 0 0 5px; 
 }
+
+.syntaxhighlighter code{ background: none; box-shadow: none; -moz-box-shadow: none; }
+
 pre { 
 	color: #666;
 	overflow-x: auto; 
@@ -166,7 +169,7 @@ h4 img, h5 img, h6 img {
 h2.entry-title, h1.entry-title, .entry-title, .widget-title, .page-title, .widgettitle, .title{ 
 	font: normal normal normal 20px/normal 'Ubuntu', GillSans, "Trebuchet MS", Calibri, sans-serif; 
 	text-shadow: rgba(0,0,0,0.1) 0px 0px 1px;
-	margin-bottom:0.67em;
+	margin-bottom:15px;
 	margin-top:0; 
 }
 
@@ -503,7 +506,7 @@ div.inline-comment{
 .inline-comment p{ margin:0; padding:0; }
 
 span.comment-author{ font-weight:bold; }
-div.comment-author-avatar { float: right; margin: 0; position: relative; z-index: 3; }
+div.comment-author-avatar { float: right; margin: 0; position: relative; z-index: 3; margin-left: 5px; }
 div.comment-text { padding: 3px; line-height: 1.5em; font-style: italic; }
 
 div.comment-body-inline{ display:block; }

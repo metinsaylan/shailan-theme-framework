@@ -1,22 +1,15 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-				<?php if ( ! empty( $post->post_parent ) ) : $parent = $post->post_parent; ?>
-					<p class="parent-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'twentyten' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
-						/* translators: %s - title of parent post */
-						printf( __( '<span class="meta-nav">&larr;</span> %s', 'twentyten' ), get_the_title( $post->post_parent ) );
-					?></a></p>
-				<?php endif; ?>
+	<?php if ( ! empty( $post->post_parent ) ) : $parent = $post->post_parent; ?>
+		<p class="parent-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'twentyten' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
+			/* translators: %s - title of parent post */
+			printf( __( '<span class="meta-nav">&larr;</span> %s', 'twentyten' ), get_the_title( $post->post_parent ) );
+		?></a></p>
+	<?php endif; ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<div class="entry-header">
-			<h1 class="entry-title">
-				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-			</h1>
-			
-			<div class="entry-meta">
-				<?php stf_entry_header(); ?>
-			</div>
-		</div><!-- .entry-header -->
+
+				<?php get_template_part('entry', 'header'); ?>
 	
 		<div class="entry-content">
 						<div class="entry-attachment">
@@ -101,9 +94,7 @@
 							<div class="nav-next"><?php next_image_link( false ); ?> &rarr;</div>
 						</div><!-- #nav-below -->
 						
-						<?php echo $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE post_parent = '$parent' AND post_type = 'attachment'" ); ?> resim.
-						
-						<?php the_views(); ?>
+						<?php echo $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE post_parent = '$parent' AND post_type = 'attachment'" ); ?> picture // <?php the_views(); ?>
 						
 						<div class="attachment-navi">
 							<?php	if ( count( $attachments ) > 1 ) {
@@ -129,9 +120,12 @@
 
 					</div><!-- .entry-content -->
 					
-		<div class="entry-footer">
-			<?php stf_entry_footer(); ?>
-		</div><!-- .entry-foot -->		
+	<!-- Entry Footer -->
+	<div class="entry-footer">
+		<?php stf_entry_footer_meta(); ?>
+	</div>
+	<!-- [End] Entry Footer -->
+	
 				</div><!-- #post-## -->
 
 <?php comments_template(); ?>
