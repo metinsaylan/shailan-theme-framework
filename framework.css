@@ -133,6 +133,12 @@ a { text-decoration: none; color:#2277dd; }
 a:visited { color:#642e8c; } 
 a:hover  { text-decoration:underline; }
 
+::selection{
+	background-color: #88DDFF;
+	color:#000; 
+	text-shadow: none; 
+}
+
 .entry-content a:link { border-bottom:1px dotted #ccc; padding:0 2px; }
 .entry-content a:hover { border-bottom:1px solid #aaa; }
 
@@ -451,6 +457,15 @@ ul.main-menu li:hover{ background:#999; border-bottom:1px solid #999999; }
 .entry-content p { margin-bottom: 1em; }
 
 /*- TABLE OF CONTENTS */
+.toc{ 
+	padding: 5px 16px;
+	background: #efefef; 
+	margin: 0 20px 30px;
+	border-bottom: 1px solid #ccc; 
+	border-radius: 12px; 
+	-webkit-border-radius:12px; 
+	-moz-border-radius:12px; } 
+.toc li{ line-height: 2.5em; margin:0; border-bottom: 1px solid #DDD; }
 .return_to_top { 
 	text-align: right;
 	margin-bottom: -30px;
@@ -476,18 +491,19 @@ ul.main-menu li:hover{ background:#999; border-bottom:1px solid #999999; }
 .nav-next{ float:right; }
 
 /* ENTRY FORMATS */
-.format-aside { padding: 10px; 
-background: #EEE;
-border-bottom: 1px solid #DDD;
-border-right: 1px solid #DDD;
-border-top: 1px solid #F0F0F0;
-border-left: 1px solid #F0F0F0;
-font-style: italic; font-size: 0.9em; 
-border-radius: 8px;
--moz-border-radius: 8px;
--webkit-border-radius: 8px;
-color: #647; 
-text-shadow: white 1px 1px 0; }
+.format-aside { padding: 4px; 
+	background: #EEE;
+	border-bottom: 1px solid #DDD;
+	border-right: 1px solid #DDD;
+	border-top: 1px solid #F0F0F0;
+	border-left: 1px solid #F0F0F0;
+	font-style: italic; font-size: 0.9em; 
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	color: #647; 
+	text-shadow: white 1px 1px 0; 
+}
 
 /*- COMMENTS */
 div#comments{ margin: 0 30px; }
