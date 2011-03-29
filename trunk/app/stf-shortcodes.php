@@ -317,6 +317,8 @@ function stf_queryposts($atts){
   $temp_link = '';
   
   if ($posts->have_posts()):
+  
+   $output = '<ul>';
    while ($posts->have_posts()):
     $posts->the_post();
     
@@ -325,6 +327,7 @@ function stf_queryposts($atts){
     $output .= "<li><a href='$temp_link'>$temp_title</a></li>";
 	
    endwhile;
+   $output .= '</ul>';
    
   else:
    $output .= '<p class="error">[query] '.__("No posts found matching the arguments", "widgetbox").'</p>';
@@ -600,6 +603,12 @@ function custom_query_shortcode($atts) {
 }
 
 
+/* LAYOUT BOXES */
+function stf_box_half( $atts, $content = null ){ return '<div class="half-width column">' . do_shortcode($content) . '</div>'; }
+function stf_box_onethird( $atts, $content = null ){ return '<div class="one-third column">' . do_shortcode($content) . '</div>'; }
+function stf_box_onefourth( $atts, $content = null ){ return '<div class="one-fourth column">' . do_shortcode($content) . '</div>'; }
+
+
 /* DIALOG BOXES */
 function stf_note( $atts, $content = null ){ return '<div class="note">' . do_shortcode($content) . '</div>'; }
 function stf_alert( $atts, $content = null ){ return '<div class="alert">' . do_shortcode($content) . '</div>'; }
@@ -607,10 +616,12 @@ function stf_warning( $atts, $content = null ){ return '<div class="warning">' .
 function stf_info( $atts, $content = null ){ return '<div class="info">' . do_shortcode($content) . '</div>'; }
 function stf_success( $atts, $content = null ){ return '<div class="success">' . do_shortcode($content) . '</div>'; }
 
+/* MARKERS */
 function stf_marker( $atts, $content = null ){ return '<mark>' . do_shortcode($content) . '</mark>'; }
 function stf_marker_yellow( $atts, $content = null ){ return '<mark class="yellow">' . do_shortcode($content) . '</mark>'; }
 function stf_marker_orange( $atts, $content = null ){ return '<mark class="orange">' . do_shortcode($content) . '</mark>'; }
 
+/* SEPERATORS */
 function stf_seperator( $atts, $content = null ){ return '<div class="seperator"></div>'; }
 
 /* WIDGETS */
@@ -624,6 +635,7 @@ add_shortcode('and', 'stf_and_shortcode');
 add_shortcode('dropcap', 'stf_dropcap');
 add_shortcode('hr', 'stf_seperator');
 add_shortcode('seperator', 'stf_seperator');
+add_shortcode('sep', 'stf_seperator');
 add_shortcode('tag', 'stf_wrap_tag');
 add_shortcode('htag', 'stf_wrap_twitter_tag'); 
 add_shortcode('hashtag', 'stf_wrap_twitter_tag');
@@ -642,6 +654,11 @@ add_shortcode('alert', 'stf_alert');
 add_shortcode('warning', 'stf_warning');
 add_shortcode('info', 'stf_info');
 add_shortcode('success', 'stf_success');
+
+/* LAYOUT BOXES */
+add_shortcode('half', 'stf_box_half');
+add_shortcode('one-third', 'stf_box_onethird');
+add_shortcode('one-fourth', 'stf_box_onefourth');
 
 /* THEME */
 add_shortcode('generator', 'stf_generator_link_shortcode');

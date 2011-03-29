@@ -538,19 +538,3 @@ function stf_pagination( $args = null ){
 		<?php
 	}
 }
-
-function stf_excerpt( $wordcount = null ){
-	global $post;
-	
-	if ( post_password_required($post) ){
-		echo "-- Password protected post --";
-	}
-	
-	$content = $post->post_content;	
-	$content = strip_tags(wp_kses_no_null(trim(do_shortcode($content) ) ) );
-	$content = explode(' ', $content);
-	$content = array_slice( $content, 0, $wordcount );
-	$content = implode(' ', $content );	
-	
-	echo $content;
-}

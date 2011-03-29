@@ -32,7 +32,7 @@
 			<small><?php stf_theme_footer(); ?></small> 
 		</div>
 		
-		<div class="alignright half-width">
+		<div class="alignright right half-width">
 			<a href="#header" class="jumper">Return to Top &uarr;</a>
 		</div>
 	</div>
