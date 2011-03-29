@@ -23,6 +23,7 @@ function stf_layout(){
 		$stf_sidebar_width = stf_get_setting('stf_sidebar_width');
 		$stf_padding = stf_get_setting('stf_padding');
 		
+		$stf_full_width = floor( $stf_page_width - 2 * $stf_padding ) ;
 		$stf_half_width = floor( ( $stf_page_width - 3 * $stf_padding ) / 2 );
 		$stf_one_third = floor( ( $stf_page_width - 4 * $stf_padding ) / 3 );
 		$stf_one_fourth = floor( ( $stf_page_width - 5 * $stf_padding ) / 4 );
@@ -54,8 +55,20 @@ function stf_layout(){
 		
 		/* FOOTER */
 		div#footer{ clear: both; margin-left: auto; margin-right: auto; padding-left:0; padding-right:0; }
+		
+		.row .row{ margin-left:-20px; }
 		.column{ float:left; display:inline; margin-left: <?php echo $stf_padding; ?>px; } 
+		.full-width{ width: <?php echo $stf_full_width; ?>px; }
+		.half-width{ width: <?php echo $stf_half_width; ?>px; }
+		.one-third{ width: <?php echo $stf_one_third; ?>px; }
+		.one-fourth{ width: <?php echo $stf_one_fourth; ?>px; }
+		
 		#footer .column { width: <?php echo $stf_one_third; ?>px; }
+		
+		#content .full-width{ width: <?php echo floor( $post_width - 2*$stf_padding ); ?>px; }
+		#content .half-width{ width: <?php echo floor( ( $post_width - 3*$stf_padding ) / 2 ); ?>px; }
+		#content .one-third{ width: <?php echo floor( ( $post_width - 4*$stf_padding ) / 3 ); ?>px; }
+		#content .one-fourth{ width: <?php echo floor( ( $post_width - 5*$stf_padding ) / 4 ); ?>px; }
 		
 		.hentry img{max-width: <?php echo $post_width; ?>px; height:auto; border:none; padding:0; } 
 		.wp-caption{max-width: <?php echo $post_width - 2 * $stf_padding; ?>px; height:auto; } 
