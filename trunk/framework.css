@@ -397,6 +397,7 @@ dd{ padding:10px 10px 10px 25px; }
 	font: normal normal normal 32px/normal 'Ubuntu', GillSans, "Trebuchet MS", Calibri, sans-serif; 
 	margin:0; 
 }  
+#site-title a{ color: #f90; }
 #site-description{ font-size:1.2em; font-style:italic; color: #96c; font-weight: bold; }
 #site-info a, #site-info a:hover { text-decoration: none; border:0; background:transparent; }
 
