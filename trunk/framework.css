@@ -370,6 +370,7 @@ dd{ padding:10px 10px 10px 25px; }
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#111111));
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#111111',GradientType=0 );
 	color:#ddd; }
+#header{ position:relative; }
 #branding{ padding:15px 25px 15px; }
 #page{ background:#fff; box-shadow:#ccc 0 0 4px; -webkit-box-shadow:#ccc 0 0 4px; -moz-box-shadow:#ccc 0 0 4px;}
 
@@ -405,10 +406,13 @@ dd{ padding:10px 10px 10px 25px; }
 #sub-navigation{ border-top:2px solid #666666; background:#ddd; clear:both; }
 #sub-navigation ul li a{ color:#777777; }
 
+
 ul.menu, ul.menu li { list-style:none; padding:0; margin:0; display:inline; }
 ul.menu li ul { display:none; }
-ul.menu li { display: block; float: left; margin-right: 2px; }
-ul.menu li a{ padding: 4px 10px; display: block; height: 14px; }
+ul.menu li { display: inline; }
+ul.menu li a{ padding: 4px 10px; }
+
+
 
 ul.main-menu li{ 
 	display: block;
@@ -449,6 +453,7 @@ ul.main-menu li:hover{ background:#999; border-bottom:1px solid #999999; }
 .breadcrumbs .current { color: #444444; font-weight:bold; }
 
 /*- ENTRY */
+.entry-thumbnail{ float:left; border:1px solid #ddd; padding:3px; margin:0 15px 0 15px; } 
 .entry-wrap{ border-bottom:1px dotted #ccc; }
 .entry-meta-header { line-height:26px; }
 .entry-content, .widget-container{ line-height: 26px; }
@@ -457,7 +462,7 @@ ul.main-menu li:hover{ background:#999; border-bottom:1px solid #999999; }
 	.entry-content p { margin-bottom: 1em; }
 
 .entry-controls{ text-align:right; }
-.entry-footer{ clear:both; text-align:right; margin: 0 10px 10px; padding: 5px; }
+.entry-footer{ clear:both; margin: 0 10px 10px; padding: 5px; }
 
 
 /*- TABLE OF CONTENTS */
