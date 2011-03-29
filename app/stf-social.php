@@ -143,34 +143,31 @@ require_once(ABSPATH . 'wp-includes/http.php');
 // TWITTER
 /** Gets latest tweet using json (src:)[http://yoast.com/display-latest-tweet/]*/
 function stf_get_latest_tweet($username){
+
 	$tweet = get_option("stf_lasttweet");
-	$url  = "http://twitter.com/statuses/user_timeline/".$username.".json?count=20";
+	
+	$url = "http://search.twitter.com/search.atom?q=from:" . $username . "&rpp=1";
+	
 	if ($tweet['lastcheck'] < ( mktime() - 60 ) ) {
-	  $snoopy = new Snoopy;
-	  $result = $snoopy->fetch($url);
-	  if ($result) {
-		$twitterdata   = json_decode($snoopy->results,true);
-		$i = 0;
-		while ($twitterdata[$i]['in_reply_to_user_id'] != '') {
-		  $i++;
-		}
-		$pattern  = '/\@([a-zA-Z]+)/';
-		$replace  = '<a href="http://twitter.com/'.strtolower('\1').'">@\1</a>';
-		$output   = preg_replace($pattern,$replace,$twitterdata[$i]["text"]);  
-		$output = make_clickable($output);
-	 
+
+		$feed = file_get_contents( $url );
+		$stepOne = explode("<content type=\"html\">", $feed);
+		$stepTwo = explode("</content>", $stepOne[1]);
+		$output = $stepTwo[0];
+		$output = str_replace("&lt;", "<", $output);
+		$output = str_replace("&gt;", ">", $output);
+		$output = str_replace("&quot;", '"', $output);
+		
 		$tweet['lastcheck'] = mktime();
-		$tweet['data']    = $output;
-		$tweet['rawdata']  = $twitterdata;
-		$tweet['followers'] = $twitterdata[0]['user']['followers_count'];
-		update_option('stf_lasttweet',$tweet);
-	  } else {
-		echo "Twitter API not responding.";
-	  }
+		$tweet['data'] = $output;
+		
+		update_option( 'stf_lasttweet', $tweet );
+		
 	} else {
 	  $output = $tweet['data'];
 	}
-	echo "<p>\"".$output."\"</p>";
+
+	return $output;
 }
 
 // TWITTER ANYWHERE
