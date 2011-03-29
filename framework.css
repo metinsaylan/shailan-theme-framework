@@ -175,8 +175,8 @@ h4 img, h5 img, h6 img {
 h2.entry-title, h1.entry-title, .entry-title, .widget-title, .page-title, .widgettitle, .title{ 
 	font: normal normal normal 20px/normal 'Ubuntu', GillSans, "Trebuchet MS", Calibri, sans-serif; 
 	text-shadow: rgba(0,0,0,0.1) 0px 0px 1px;
-	margin-bottom:0;
-	margin-top:0; 
+	margin-bottom: 0.67em;
+	margin-top: 0; 
 }
 
 span.alt {
