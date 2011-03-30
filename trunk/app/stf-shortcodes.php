@@ -287,7 +287,7 @@ function stf_queryposts($atts){
    'day' => '',
    'month' => '',
    'year' => '',
-   'count' => '5',
+   'count' => '-1', 
    'author_id' => '',
    'author_name' => '',
    'order_by' => 'date',
