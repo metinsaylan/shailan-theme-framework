@@ -9,3 +9,8 @@ p.caution{
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 }
+
+.include-template-widget, 
+#widgets-right .include-template-widget, 
+#widget-list .include-template-widget .widget-top, 
+#wp_inactive_widgets .include-template-widget{ border-color:#f90; }

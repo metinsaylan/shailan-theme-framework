@@ -26,6 +26,7 @@ class shailan_IncludeWidget extends WP_Widget {
 		$x = str_replace( $content, WP_CONTENT_URL, $dir );
 		
 		if(is_admin()){
+			wp_enqueue_script('shailan_IncludeWidget-scripts', $x . '/admin.js', 'jQuery', '', TRUE );
 			wp_enqueue_style('shailan_IncludeWidget-styles', $x . '/admin.css');
 		}
 		
