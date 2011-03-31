@@ -605,16 +605,39 @@ function custom_query_shortcode($atts) {
 
 /* LAYOUT BOXES */
 function stf_box_half( $atts, $content = null ){ return '<div class="half-width column">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('half', 'stf_box_half');
 function stf_box_onethird( $atts, $content = null ){ return '<div class="one-third column">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('one-third', 'stf_box_onethird');
 function stf_box_onefourth( $atts, $content = null ){ return '<div class="one-fourth column">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('one-fourth', 'stf_box_onefourth');
 
+/* FLOAT BOXES */
+function stf_box_alignright( $atts, $content = null ){ return '<div class="alignright">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('alignright', 'stf_box_alignright');
+function stf_box_alignleft( $atts, $content = null ){ return '<div class="alignleft">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('alignleft', 'stf_box_alignleft');
+function stf_clear( $atts, $content = null ){ return '<div class="clear"></div>'; }
+	add_shortcode('clear', 'stf_clear');
+
+/* TEXT ALIGNMENTS */
+function stf_box_right( $atts, $content = null ){ return '<div class="right">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('right', 'stf_box_right');
+function stf_box_left( $atts, $content = null ){ return '<div class="left">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('left', 'stf_box_left');
+function stf_box_center( $atts, $content = null ){ return '<div class="center">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('center', 'stf_box_center');
 
 /* DIALOG BOXES */
 function stf_note( $atts, $content = null ){ return '<div class="note">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('note', 'stf_note');
 function stf_alert( $atts, $content = null ){ return '<div class="alert">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('alert', 'stf_alert');
 function stf_warning( $atts, $content = null ){ return '<div class="warning">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('warning', 'stf_warning');
 function stf_info( $atts, $content = null ){ return '<div class="info">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('info', 'stf_info');
 function stf_success( $atts, $content = null ){ return '<div class="success">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('success', 'stf_success');
 
 /* MARKERS */
 function stf_marker( $atts, $content = null ){ return '<mark>' . do_shortcode($content) . '</mark>'; }
@@ -623,6 +646,10 @@ function stf_marker_orange( $atts, $content = null ){ return '<mark class="orang
 
 /* SEPERATORS */
 function stf_seperator( $atts, $content = null ){ return '<div class="seperator"></div>'; }
+	add_shortcode('hr', 'stf_seperator');
+	add_shortcode('seperator', 'stf_seperator');
+	add_shortcode('sep', 'stf_seperator');
+
 
 /* WIDGETS */
 add_shortcode('tag_cloud', 'stf_tags_shortcode');
@@ -633,9 +660,7 @@ add_shortcode('loop', 'stf_loop');
 /* MISC */
 add_shortcode('and', 'stf_and_shortcode');
 add_shortcode('dropcap', 'stf_dropcap');
-add_shortcode('hr', 'stf_seperator');
-add_shortcode('seperator', 'stf_seperator');
-add_shortcode('sep', 'stf_seperator');
+
 add_shortcode('tag', 'stf_wrap_tag');
 add_shortcode('htag', 'stf_wrap_twitter_tag'); 
 add_shortcode('hashtag', 'stf_wrap_twitter_tag');
@@ -647,18 +672,6 @@ add_shortcode('mark', 'stf_marker');
 add_shortcode('marker', 'stf_marker');
 add_shortcode('mark_yellow', 'stf_marker_yellow');
 add_shortcode('mark_orange', 'stf_marker_orange');
-
-/* BOXES */
-add_shortcode('note', 'stf_note');
-add_shortcode('alert', 'stf_alert');
-add_shortcode('warning', 'stf_warning');
-add_shortcode('info', 'stf_info');
-add_shortcode('success', 'stf_success');
-
-/* LAYOUT BOXES */
-add_shortcode('half', 'stf_box_half');
-add_shortcode('one-third', 'stf_box_onethird');
-add_shortcode('one-fourth', 'stf_box_onefourth');
 
 /* THEME */
 add_shortcode('generator', 'stf_generator_link_shortcode');
