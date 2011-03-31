@@ -30,6 +30,7 @@ include_once('widgets/stf-featuredposts.php'); // POSTS NAVIGATION
 include_once('widgets/stf-navigation.php'); // POSTS NAVIGATION
 //include_once('widgets/stf-seperator.php'); // SEPERATOR for COLUMNS
 include_once('widgets/stf-pagenavi.php'); // POSTS NAVIGATION
+include_once('widgets/include-template/include-template.php'); // INCLUDER
 
 // Other interfaces
 include_once('stf-typography.php'); // TYPOGRAPHY
