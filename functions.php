@@ -2,7 +2,7 @@
 
 define( 'STF_DEBUG', false );
 include_once('app/stf-framework.php'); // INCLUDE FRAMEWORK 
-
+  
 if(! function_exists('theme_setup')) {
 function theme_setup(){
 

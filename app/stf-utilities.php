@@ -197,6 +197,26 @@ function shailan_twitter_followers($twitter_id){
 	return $twitter['count'];
 }
 
+if(!function_exists('stf_get_files')){
+	function stf_get_files( $directory, $filter = array( "*" ) ){
+		$results = array(); // Result array
+		$filter = (array) $filter; // Cast to array if string given
+		$handler = opendir( $directory );
+		while ( $file = readdir($handler) ) {
+			if( is_dir( $file ) )
+				continue;
+		
+			$extension = end( explode( ".", $file ) ); // Eg. "*.jpg"
+			if ( $file != "." && $file != ".." && ( in_array( $extension, $filter ) || in_array( "*", $filter ) ) ) {
+				$results[] = $file;
+			}
+		}
+		closedir($handler);
+		return $results;
+	}
+}
+
+
 define("BY_EXTENSION", 1); 
 define("BY_EXPRESSION", 2); 
     
