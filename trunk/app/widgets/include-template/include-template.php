@@ -17,8 +17,16 @@ class shailan_IncludeWidget extends WP_Widget {
 		$this->WP_Widget('include', __('Include Template Widget'), $widget_ops);
 		$this->alt_option_name = 'include_template';	
 		
+		$path_parts = pathinfo(__FILE__);
+		$dir = $path_parts['dirname'];
+		$dir = str_replace('\\' ,'/', $dir);
+		$dir = preg_replace('|/+|', '/', $dir);
+		$content = preg_replace( '|/+|', '/', str_replace( '\\' ,'/', WP_CONTENT_DIR ) );
+
+		$x = str_replace( $content, WP_CONTENT_URL, $dir );
+		
 		if(is_admin()){
-			wp_enqueue_style('shailan_IncludeWidget-styles', $x . 'admin.css');
+			wp_enqueue_style('shailan_IncludeWidget-styles', $x . '/admin.css');
 		}
 		
 		$this->help_url = "http://shailan.com/wordpress/plugins/include-template-widget/help";
