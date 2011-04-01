@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP Login Widget
 Plugin URI: http://shailan.com/wordpress/plugins/login-widget
-Description: Login form
+Description: Add <strong>login form</strong> to your sidebar!
 Version: 1.0
 Author: Matt Say
 Author URI: http://shailan.com
