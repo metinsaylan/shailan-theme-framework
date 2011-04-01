@@ -28,7 +28,10 @@
 <!-- [End] Paste HEAD scripts here -->
 </head>
 <body <?php body_class(); ?>>
+
 <?php global $posts_displayed; $posts_displayed = array(); ?>
+<?php do_action('stf_body_top'); ?>
+
 <!-- Paste BODY scripts here -->
 
 
