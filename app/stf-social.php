@@ -30,7 +30,7 @@ function stf_get_shortlink($id = 0, $context = 'post', $allow_slugs = true){
 function hash_filter($var){ global $title; return (strpos($title, "#" . $var) === false); }
 	
 /* Generate and save a better tweet text & save it to post meta */
-function stf_generate_post_tweet($post_ID){
+function stf_generate_post_tweet( $post_ID , $wlink = true ){
 	global $post;
 	//echo $post_ID;
 	
@@ -86,6 +86,8 @@ function stf_generate_post_tweet($post_ID){
 		
 	// Remove already used hashtags
 	$hashtags = array_filter($hashtags, 'hash_filter');		
+	
+	if(!$wlink){ $link_length = 0; }
 		
 	$RT_offset = 35; // Add some space for replies & retweet
 	$allowed_length = 140 - $RT_offset - $link_length;
@@ -97,7 +99,7 @@ function stf_generate_post_tweet($post_ID){
 		$title = $temp;
 	}
 	
-	$title .= " " . $link;
+	if($wlink){ $title .= " " . $link; }
 	
 	// Why not save it for later use?
 	update_post_meta( $post_ID, 'stf_tweet_text', $title );

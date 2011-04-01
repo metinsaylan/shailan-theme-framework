@@ -457,7 +457,7 @@ h3.entry-title { font-size: 1.8em; text-transform: none; }
 
 .entry-meta-header { line-height:26px; }
 
-.entry-content{ padding: 0; }
+.entry-content{ clear:both; padding: 0; }
 	.entry-content p { margin-bottom: 1em; }
 
 .entry-controls{ text-align:right; }
@@ -702,7 +702,7 @@ a.button.large{ padding: 0 16px 0 10px; font-size: 24px; line-height: 2.5em; }
 a.button.large span.icon{ 
 	width: 48px; height: 48px;
 	display: block; float: left;
-	margin-top: 6px; margin-right: 6px;
+	margin-top: 6px; margin-right: 6px; 
 }
 
 a.button.download span.icon{ background: url(images/icon_download.png) 0 0 no-repeat; }
