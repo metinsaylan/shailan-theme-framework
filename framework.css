@@ -638,10 +638,11 @@ a.delicious { background: #eee url(images/share_delicious.gif) 2px 2px no-repeat
 	border-bottom: 1px dotted #CCC;
 }
 
-div.seperator{ 
-	margin: 2em 0;
+div.seperator {
+	margin-bottom: 2em;
 	border-bottom: 1px dotted #CCC;
 	clear: both;
+	padding-top: 2em;
 }
 
 /* Copyright */
@@ -697,6 +698,14 @@ a.button:active, #comment-submit:active,  div.nav-next a:active, div.nav-previou
 	-moz-box-shadow: #AAA 0 0px 2px; 
 }
 
+a.button.large{ padding: 0 16px 0 10px; font-size: 24px; line-height: 2.5em; }
+a.button.large span.icon{ 
+	width: 48px; height: 48px;
+	display: block; float: left;
+	margin-top: 6px; margin-right: 6px;
+}
+
+a.button.download span.icon{ background: url(images/icon_download.png) 0 0 no-repeat; }
 a.button.download:hover{
 	background: #FFEEDD; /* old browsers */
 	background: -moz-linear-gradient(top, #FFEEDD 0%, #9ECB2D 100%); /* firefox */
@@ -706,6 +715,7 @@ a.button.download:hover{
 	text-shadow:#9ecb2d 1px 1px 0;
 }
 
+a.button.demo span.icon{ background: url(images/icon_preview.png) 0 0 no-repeat; }
 a.button.demo:hover{
 	background: #FFEEDD; /* old browsers */
 	background: -moz-linear-gradient(top, #FFEEDD 0%, #FF9933 100%); /* firefox */
@@ -716,13 +726,11 @@ a.button.demo:hover{
 }
 
 /* Helpers */
-.hidden{ display:none; }
+.hidden, .hide{ display:none; }
 .pink{ background:#fee; }
 .br8 { -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px; }
-.small      { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
-.large      { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
-.hide       { display: none; }
-
+.small-title      { font-size: .8em; margin-bottom: 1.875em; line-height: 1.875em; }
+.large-title      { font-size: 1.2em; line-height: 2.5em; margin-bottom: 1.25em; }
 .quiet      { color: #666; }
 .loud       { color: #000; }
 
