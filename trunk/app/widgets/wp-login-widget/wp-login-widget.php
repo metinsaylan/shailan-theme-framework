@@ -13,8 +13,13 @@ if(! class_exists( 'shailan_LoginWidget' ) ){
 class shailan_LoginWidget extends WP_Widget {
 	/** constructor */
 	function shailan_LoginWidget() {
-		$widget_ops = array('classname' => 'stf_login', 'description' => __( 'Login Form' ) );
-		$this->WP_Widget('include', __('Login form for your blog'), $widget_ops);
+		
+		$widget_ops = array(
+			'classname' => 'stf_login', 
+			'description' => __( 'Login Form for your blog' ) 
+		);
+		
+		$this->WP_Widget( 'stf_login', __('Login form'), $widget_ops );
 		$this->alt_option_name = 'stf_login';	
 		
 		$path_parts = pathinfo(__FILE__);
@@ -24,10 +29,10 @@ class shailan_LoginWidget extends WP_Widget {
 		$content = preg_replace( '|/+|', '/', str_replace( '\\' ,'/', WP_CONTENT_DIR ) );
 		$x = str_replace( $content, WP_CONTENT_URL, $dir );
 		
-		if(is_admin()){
+		/*if( is_admin() ){*/
 			wp_enqueue_script('shailan_LoginWidget-scripts', $x . '/admin.js', 'jQuery', '', TRUE );
 			wp_enqueue_style('shailan_LoginWidget-styles', $x . '/admin.css');
-		}
+		/*}*/
 		
 		$this->help_url = "http://shailan.com/wordpress/plugins/login-widget/help";
 		
@@ -88,18 +93,21 @@ class shailan_LoginWidget extends WP_Widget {
 
 if( !function_exists('stf_loginform') ){
 	function stf_loginform(){
+		
+		$user_login = ( isset($_POST['log']) ) ? esc_attr( stripslashes( $_POST['log'] ) ) : '';
+		
 		echo '<div class="login-form-container">';
 		if (!(current_user_can('level_0'))){ ?>
 			<form action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
-			<input type="text" name="log" id="log" value="<?php echo wp_specialchars( stripslashes( $user_login ), 1 ) ?>" size="20" />
-			<input type="password" name="pwd" id="pwd" size="20" />
-			<input type="submit" name="submit" value="<?php _e('Send'); ?>" class="button" />
-				<p>
-				   <label for="rememberme"><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /><?php _e('Remember me'); ?></label>
-				   <input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
-				</p>
+				<div class="login-field"><input type="text" name="log" id="log" value="<?php echo $user_login; ?>" size="20" /></div>
+				<div class="login-field"><input type="password" name="pwd" id="pwd" size="20" /></div>
+				<div class="login-field"><input type="submit" name="submit" value="<?php _e('Send'); ?>" class="button" /></div>
+			
+				<div class="login-field"><label for="rememberme"><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /><?php _e('Remember me'); ?></label></div>
+				
+				<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
 			</form>
-			<a href="<?php echo get_option('home'); ?>/wp-login.php?action=lostpassword"><?php _e('Recover password'); ?></a>
+			<a href="<?php echo get_option('home'); ?>/wp-login.php?action=lostpassword" class="login-recover-link"><?php _e('Recover password'); ?></a>
 		<?php } else { ?>
 			<a href="<?php echo wp_logout_url(urlencode($_SERVER['REQUEST_URI'])); ?>"><?php _e('Logout'); ?></a> | <a href="<?php echo get_option('home'); ?>/wp-admin/"><?php _e('Admin'); ?></a>
 		<?php } 
