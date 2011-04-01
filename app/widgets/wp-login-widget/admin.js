@@ -3,6 +3,6 @@
 jQuery(document).ready(function()
 {
   
-  jQuery("div[id*='_include-']").addClass('include-template-widget');
+  jQuery("div[id*='_stf_login-']").addClass('wp-login-widget');
   
 });
