@@ -101,9 +101,9 @@ if( !function_exists('stf_loginform') ){
 			<form action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
 				<div class="login-field"><input type="text" name="log" id="log" value="<?php echo $user_login; ?>" size="20" /></div>
 				<div class="login-field"><input type="password" name="pwd" id="pwd" size="20" /></div>
-				<div class="login-field"><input type="submit" name="submit" value="<?php _e('Send'); ?>" class="button" /></div>
+				<div class="login-field"><input type="submit" name="submit" value="<?php _e('Login'); ?>" class="button" /></div>
 			
-				<div class="login-field"><label for="rememberme"><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /><?php _e('Remember me'); ?></label></div>
+				<div class="login-field"><label for="rememberme"><input name="rememberme" id="rememberme" type="checkbox" checked="checked" value="forever" /><?php _e('Remember me'); ?></label></div> 
 				
 				<input type="hidden" name="redirect_to" value="<?php echo $_SERVER['REQUEST_URI']; ?>" />
 			</form>
