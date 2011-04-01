@@ -3,7 +3,7 @@
 Plugin Name: Include Template Widget
 Plugin URI: http://shailan.com/wordpress/plugins/include-template-widget
 Description: Include any php file in your sidebar!
-Version: 1.0
+Version: 1.1
 Author: Matt Say
 Author URI: http://shailan.com
 */
