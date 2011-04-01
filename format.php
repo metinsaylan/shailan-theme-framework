@@ -1,6 +1,11 @@
-<!-- Post Thumbnail -->
-<?php stf_entry_thumbnail('home'); ?>
-<!-- [End] Post Thumbnail -->
+<?php // DISPLAY THUMBNAIL ON ARCHIVES & SEARCH ONLY
+	if( is_home() || is_archive() || is_search() || is_front_page() ) { ?>
+	
+	<!-- Post Thumbnail -->
+	<?php stf_entry_thumbnail('home'); ?>
+	<!-- [End] Post Thumbnail -->
+	
+<?php } ?>
 
 <div class="entry-body">
 
