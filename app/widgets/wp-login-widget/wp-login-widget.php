@@ -22,7 +22,6 @@ class shailan_LoginWidget extends WP_Widget {
 		$dir = str_replace('\\' ,'/', $dir);
 		$dir = preg_replace('|/+|', '/', $dir);
 		$content = preg_replace( '|/+|', '/', str_replace( '\\' ,'/', WP_CONTENT_DIR ) );
-
 		$x = str_replace( $content, WP_CONTENT_URL, $dir );
 		
 		if(is_admin()){
@@ -38,7 +37,7 @@ class shailan_LoginWidget extends WP_Widget {
 		
 	}
 
-	function widget($args, $instance) {	
+	function widget( $args, $instance ) {	
 		
 		extract( $args );
 		$widget_options = wp_parse_args( $instance, $this->widget_defaults );
