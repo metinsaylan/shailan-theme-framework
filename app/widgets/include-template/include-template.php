@@ -56,13 +56,13 @@ class shailan_IncludeWidget extends WP_Widget {
 		extract( $widget_options, EXTR_SKIP );
 		
 		$theme_dir = get_stylesheet_directory();  
-		$file = $theme_dir . $filename;
+		$file = $theme_dir . "/" . $filename;
 		
 		if( file_exists( $file ) ){ // File exists check.
 		
 		echo $before_widget; 
 		
-			if( $include_once ){
+			if( $include_once == "on" ){
 				include_once( $file );
 			} else {
 				include( $file );
