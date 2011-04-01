@@ -538,3 +538,27 @@ function stf_pagination( $args = null ){
 		<?php
 	}
 }
+
+function stf_archive_header(){
+	if( is_category() ){
+	
+		echo "<h1 class=\"page-title\">";
+		printf( __( 'Posts about <span class="alt">%s</span>', 'stf' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+		echo "</h1>";
+		
+		$category_description = category_description();
+		if ( ! empty( $category_description ) )
+			echo '<div class="archive-meta">' . $category_description . '</div>';
+			
+	} elseif ( is_tag() ){
+	
+		echo "<h1 class=\"page-title\">";
+			printf( __( 'Posts tagged <span class="alt">%s</span>', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+		echo "</h1>";
+	
+		$tag_description = tag_description();
+		if ( ! empty( $tag_description ) )
+			echo '<div class="archive-meta">' . $tag_description . '</div>';
+			
+	}
+}
