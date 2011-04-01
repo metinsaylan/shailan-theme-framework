@@ -1,15 +1,14 @@
 /*
 THEME NAME: Framework
 THEME URI: http://shailan.com
-DESCRIPTION: All-widget theme framework by shailan.
-VERSION: 1.0
+DESCRIPTION: Awesome <strong>all-widget theme framework</strong> by Shailan.
+VERSION: 1.1
 AUTHOR: Matt Say
 AUTHOR URI: http://shailan.com
 TAGS: framework, all-widget, widgets, widget-areas, xhtml
 */
 
 @import url("fonts/delicious.css");
-
 #header #site-title{ 
 	font-family: 'Delicious';
 	font-size: 42px;
