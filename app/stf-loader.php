@@ -28,9 +28,9 @@ include_once('widgets/stf-blog-posts.php'); // POSTS NAVIGATION
 include_once('widgets/stf-blog-title.php'); // BLOG TITLE
 include_once('widgets/stf-featuredposts.php'); // POSTS NAVIGATION
 include_once('widgets/stf-navigation.php'); // POSTS NAVIGATION
-//include_once('widgets/stf-seperator.php'); // SEPERATOR for COLUMNS
 include_once('widgets/stf-pagenavi.php'); // POSTS NAVIGATION
 include_once('widgets/include-template/include-template.php'); // INCLUDER
+include_once('widgets/wp-login-widget/wp-login-widget.php'); // LOGIN FORM
 
 // Other interfaces
 include_once('stf-typography.php'); // TYPOGRAPHY
