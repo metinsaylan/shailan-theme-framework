@@ -595,6 +595,9 @@ div.reply a:hover{ background: #f60; color:#fff; }
 	display: block;
 }
 
+#respond .subscribe-to-comments label { width: auto; float: none; display: inline; padding: 0; } 
+#subscribe { width: 25px; margin: 0 10px; }
+
 #respond input[type=text], textarea#comment{ border:1px solid #ddd; border-radius:4px; -moz-border-radius:4px; padding:3px; }
 #respond input[type=text]:focus, textarea#comment:focus{ border-color:#BBB; }
 #respond input[type="text"] { width: 50%; float:right; margin-right:1px; }
