@@ -649,6 +649,11 @@ function stf_seperator( $atts, $content = null ){ return '<div class="seperator"
 	add_shortcode('hr', 'stf_seperator');
 	add_shortcode('seperator', 'stf_seperator');
 	add_shortcode('sep', 'stf_seperator');
+	
+function stf_donate_shortcode( $atts, $content = null ){ 
+	$donate_code = get_option('shailan_donate_code');
+	return stripslashes($donate_code); 
+} add_shortcode('donate', 'stf_donate_shortcode');
 
 
 /* WIDGETS */
