@@ -74,7 +74,7 @@ function shailan_contactmethods( $contactmethods ) {
 
 /** Google Analytics Support */
 function shailan_google_analytics(){	
-	echo "\n\t" . stripslashes(stf_get_setting('shailan_analytics_code')) . "\n";
+	echo "\n\t" . stripslashes( stf_get_setting('shailan_analytics_code') ) . "\n";
 }; add_action('wp_head', 'shailan_google_analytics');
 
 /** Feed redirects */

@@ -302,6 +302,7 @@ function stf_posts( $number_of_posts = 0, $template = '',  $reset = false ){
 function stf_random_posts( $number_of_posts = 5, $template = '' ){
 	global $posts_displayed;
 
+	$posts_displayed = (array) $posts_displayed;
 	$sticky = get_option('sticky_posts');	
 	
 	// Change query
@@ -318,6 +319,7 @@ function stf_random_posts( $number_of_posts = 5, $template = '' ){
 
 function stf_most_viewed_posts( $number_of_posts = 5, $template = '' ){
 	global $posts_displayed;
+	$posts_displayed = (array) $posts_displayed;
 
 	if(function_exists('the_views')){
 	// Change query
