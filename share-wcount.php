@@ -8,7 +8,7 @@
 	?>
 
 	<div class="twitter-count">
-		<a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php echo $url; ?>" data-text="<?php echo $tweet ?>" data-count="vertical" data-via="shailancom">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+		<a href="http://twitter.com/share" class="twitter-share-button" data-text="<?php echo $tweet ?>" data-count="vertical" data-via="shailancom">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 	</div>
 
 	<div class="facebook-count">
