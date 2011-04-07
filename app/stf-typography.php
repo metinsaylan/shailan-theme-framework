@@ -36,16 +36,17 @@ function stf_typography(){
 	$title_font_css = locate_template( "fonts/" . $title_font . ".css" );
 	$title_font_css = str_replace( WP_CONTENT_DIR, WP_CONTENT_URL, $title_font_css );
 	if( FALSE != $title_font_css ){
-		echo "<link rel=\"stylesheet\" href=\"".$title_font_css."\" type=\"text/css\" charset=\"utf-8\">";
+		echo "\n\t<link rel=\"stylesheet\" href=\"".$title_font_css."\" type=\"text/css\" charset=\"utf-8\" />";
 	}
 	
 	$base_font_css = locate_template( "fonts/" . $base_font . ".css" );
 	$base_font_css = str_replace( WP_CONTENT_DIR, WP_CONTENT_URL, $base_font_css );
 	if( FALSE != $base_font_css ){
-		echo "<link rel=\"stylesheet\" href=\"".$base_font_css."\" type=\"text/css\" charset=\"utf-8\">";
+		echo "\n\t<link rel=\"stylesheet\" href=\"".$base_font_css."\" type=\"text/css\" charset=\"utf-8\" />";
 	}
 	
-?><!-- Start of STF Typography Styles -->
+?>	
+	<!-- Start of STF Typography Styles -->
 	<style type="text/css" media="all">
 	
 		<?php if( $base_font != "css" ){ ?>	
@@ -71,7 +72,7 @@ function stf_typography(){
 		<?php } ?>
 		
 	</style>
-	<!-- End of Smart Layout -->
+	<!-- End of STF Typography Styles -->
 		<?php
 		
 } add_action('wp_head', 'stf_typography');
