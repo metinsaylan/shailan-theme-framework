@@ -133,7 +133,7 @@ function stf_entry_header_meta(){
 	if(FALSE !== $meta){
 		echo "\n\t<!-- Entry Header Meta -->";
 		echo "\n\t<div class=\"entry-meta entry-meta-header\">\n\t\t";
-			echo do_shortcode( $meta );
+			echo do_shortcode( stripslashes($meta) );
 		echo "\n\t</div>";
 		echo "\n\t<!-- [End] Entry Header Meta -->\n";
 	}

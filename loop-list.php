@@ -3,7 +3,7 @@
 	$posts_displayed[] = $post->ID;
 ?>
 
-	<li id="entry-list-<?php the_ID(); ?>">
+	<li class="entry-<?php the_ID(); ?>">
 		<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
 	</li>
 	

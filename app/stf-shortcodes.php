@@ -28,7 +28,7 @@ function stf_tags_shortcode($args) {
 
 /** [and] : wraps ampersand to style it better */
 function stf_and_shortcode($args) {
-	$and = '<span class="amp">&</span>';
+	$and = '<span class="amp">&amp;</span>';
 	return $and;
 } 
 
@@ -664,6 +664,7 @@ add_shortcode('loop', 'stf_loop');
 
 /* MISC */
 add_shortcode('and', 'stf_and_shortcode');
+add_shortcode('amp', 'stf_and_shortcode');
 add_shortcode('dropcap', 'stf_dropcap');
 
 add_shortcode('tag', 'stf_wrap_tag');
