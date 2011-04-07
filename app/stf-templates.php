@@ -480,7 +480,7 @@ function stf_comment_inline( $comment, $args, $depth ) {
 					<em><?php _e( 'Your comment is awaiting moderation.', 'stf' ); ?></em>
 				<?php endif; ?>
 				
-				<span class="comment-author"><?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?></a></span> 
+				<span class="comment-author"><?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?></span> 
 				<div class="comment-text"><?php comment_text(); ?></div>
 				<div class="comment-meta commentmetadata">
 				  <span class="comment-date"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php
