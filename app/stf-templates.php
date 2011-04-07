@@ -196,7 +196,7 @@ function stf_entry_thumbnail( $size = 'thumbnail', $args = null ){
 		echo 	get_the_post_thumbnail( $post->ID, $size, $thumb_attr );
 		echo '</a></div>';
 	} else {
-		echo '<div class="thumb-wrap-' . $size . ' no-thumbnail default-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '"><img src="'. get_template_directory_uri() .'/images/blank.gif" /></a></div>';
+		echo '<div class="thumb-wrap-' . $size . ' no-thumbnail default-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '"><img src="'. get_template_directory_uri() .'/images/blank.gif" alt="No thumbnail" /></a></div>';
 	}
 }
 
