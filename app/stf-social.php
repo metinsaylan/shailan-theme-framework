@@ -156,9 +156,10 @@ function stf_get_latest_tweet($username){
 		$stepOne = explode("<content type=\"html\">", $feed);
 		$stepTwo = explode("</content>", $stepOne[1]);
 		$output = $stepTwo[0];
-		$output = str_replace("&lt;", "<", $output);
+		/* $output = str_replace("&lt;", "<", $output);
 		$output = str_replace("&gt;", ">", $output);
-		$output = str_replace("&quot;", '"', $output);
+		$output = str_replace("&quot;", '"', $output); */
+		$output = htmlspecialchars_decode ( $output , ENT_QUOTES );
 		
 		$tweet['lastcheck'] = mktime();
 		$tweet['data'] = $output;
