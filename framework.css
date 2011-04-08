@@ -535,7 +535,7 @@ div#comments{ margin: 0 30px; }
     border-radius: 10px;
     padding: 10px;
     box-shadow: inset #CCC 0 0 6px;
-	margin: 0 40px;
+	margin: 10px 0 0;
 }
 
 ul.inlinecomments, ul.inlinecomments ul, ul.inlinecomments li{ padding:0; margin:0; list-style:none; }
