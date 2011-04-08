@@ -77,7 +77,7 @@ a.edit-link,
 .comment-body-inline {
 	font-family: Verdana, Geneva, Tahoma, sans-serif; 
 	font-size: 11px;
-	color:#555555;
+	color:#888;
 }
 
 .comment-date { font-size:12px; }
@@ -456,6 +456,11 @@ ul.main-menu li:hover{ background:#999; border-bottom:1px solid #999999; }
 .entry-thumbnail{ float:left; border:1px solid #ddd; padding:3px; margin:0 15px 0 15px; } 
 .entry-wrap{ border-bottom:1px dotted #ccc; }
 
+.entry-title {
+	background: #EEE;
+	padding: 5px 10px 2px;
+	border-radius: 4px;
+}
 h3.entry-title { font-size: 1.8em; text-transform: none; }
 
 .entry-meta-header { line-height:26px; }
@@ -464,7 +469,7 @@ h3.entry-title { font-size: 1.8em; text-transform: none; }
 	.entry-content p { margin-bottom: 1em; }
 
 .entry-controls{ text-align:right; }
-.entry-footer{ clear:both; margin: 0 10px 10px; padding: 5px; overflow: hidden; }
+.entry-footer{ clear:both; padding-top: 10px; overflow: hidden; }
 
 /*- TABLE OF CONTENTS */
 .toc{ 
