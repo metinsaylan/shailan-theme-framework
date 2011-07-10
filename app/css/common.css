@@ -24,9 +24,9 @@ blockquote{
 	background:rgba(0,0,0,0.1); 
 	text-shadow: rgba(255,255,255,0) 1px 1px 0;
 	
-	border-radius:8px; 
-	-moz-border-radius:8px; 
-	-webkit-border-radius:8px;	
+	border-radius:6px; 
+	-moz-border-radius:6px; 
+	-webkit-border-radius:6px;	
 }
 blockquote.left { float: left; margin-left: 0; margin-right: 20px; text-align: right; width: 33%; }
 blockquote.right { float: right; margin-left: 20px; margin-right: 0; text-align: left; width: 33%; }
