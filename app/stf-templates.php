@@ -53,6 +53,10 @@ function stf_style( $name, $args = null, $echo = true ){
 	}
 }
 
+function stf_site_title(){
+	_stf_deprecated_function( __FUNCTION__, '1.1', 'stf_branding()' );
+	stf_branding();
+}
 
 function stf_branding(){
 	$logo_url = stf_get_setting('stf_logo_url');
@@ -129,6 +133,26 @@ function default_sidebar_widgets(){
 	// LINKS
 	the_widget('WP_Widget_Links');
 }}
+
+function stf_entry_title(){
+
+	if( is_single() || is_page() ){ 
+		$titleblock = "h1";
+	} elseif( is_home() ) {
+		$titleblock = "h2";
+	} elseif( is_archive() ){
+		$titleblock = "h3";
+	} else { 
+		$titleblock = "h2";
+	}
+	
+	?><!-- Entry Title -->
+	<<?php echo $titleblock; ?> class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'shailan' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" <?php if( 0 ): ?> xref="post#<?php the_ID(); ?>" class="ajax"<?php endif; ?>><?php the_title(); ?></a></<?php echo $titleblock; ?>>
+	<!-- [End] Entry Title -->
+	
+	<?php
+
+}
 
 /**
  * Returns entry header. Entry header can be changed via options.
@@ -660,4 +684,17 @@ function stf_stylesheets(){
 	<?php
 	
 	stf_colors();
+}
+
+function _stf_deprecated_function( $function, $version, $replacement=null ) {
+
+	do_action( 'deprecated_function_run', $function, $replacement, $version );
+
+	// Allow plugin to filter the output error trigger
+	if ( WP_DEBUG && apply_filters( 'deprecated_function_trigger_error', true ) ) {
+		if ( ! is_null($replacement) )
+			trigger_error( sprintf( __('%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.'), $function, $version, $replacement ) );
+		else
+			trigger_error( sprintf( __('%1$s is <strong>deprecated</strong> since version %2$s with no alternative available.'), $function, $version ) );
+	}
 }
