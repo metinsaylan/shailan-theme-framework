@@ -610,8 +610,7 @@ function stf_related_posts(){
 	}
 }
 
-function stf_google_translate(){
-	if( 'on' == stf_get_setting('stf_translate_enabled') ) { ?>
+function stf_google_translate(){ ?>
 	<!-- Google Translate Element -->
 	<div id="google_translate_element" style="display:block"></div><script>
 	function googleTranslateElementInit() {
@@ -628,5 +627,13 @@ function stf_google_translate(){
 	  ?>"}, "google_translate_element");
 	};</script>
 	<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-	<?php } 
+	<?php
+}
+
+function stf_framework_stylesheet(){
+	if( 'on' == stf_get_setting( 'use_framework_stylesheet', 'off' ) ){ ?>
+	<!-- Framework styles -->
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/style.css" />
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/ie.css" /><![endif]-->
+	<?php }
 }

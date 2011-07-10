@@ -15,11 +15,9 @@ function theme_setup(){
 	// Post Thumbnails & Custom Image Sizes
 	add_theme_support( 'post-thumbnails', array('post', 'page') ); // Add any other custom post types here
 	set_post_thumbnail_size( '200', '200', true );
-	add_image_size( 'home', 200, 200, true );
 	add_image_size( 'featured', 940, 320, true );
 	add_image_size( 'video-thumbnail', 120, 90, true );
 	add_image_size( 'medium-rectangle', 300, 250, true );
-	add_image_size( 'featured-small', 125, 125, true );
 
 	// Navigation Menus
 	add_theme_support('nav_menus');
@@ -30,6 +28,16 @@ function theme_setup(){
 	
 	// Editor Style
 	add_editor_style( '/css/editor-style.css' );
+	
+	// Enable custom background
+	add_custom_background();
+	
+	// Languages
+	load_theme_textdomain( 'darkside', TEMPLATEPATH . '/lang' );
+	$locale = get_locale();
+	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	if ( is_readable( $locale_file ) )
+		require_once( $locale_file );
 	
 	// Queue Scripts 
 	wp_enqueue_script( 'jquery' );
