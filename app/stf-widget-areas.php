@@ -110,13 +110,8 @@ function stf_default_widget_areas(){
 			'description' => ''),
 			
 		array(
-			'name' => 'Floating Bar1',
+			'name' => 'Floating Bar',
 			'id' => 'floatingbar',
-			'description' => ''),
-			
-		array(
-			'name' => 'Floating Bar2',
-			'id' => 'floatingbar2',
 			'description' => ''),
 
 		array(

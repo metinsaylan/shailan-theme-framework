@@ -127,7 +127,7 @@ array( "type" => "open"),
 		"id" => "stf_layout",
 		"type" => "select",
 		"options" => $layouts,
-		"std" => "2cr"
+		"std" => "3cb"
 	),
 	
 	array(
@@ -139,9 +139,17 @@ array( "type" => "open"),
 	),
 	
 	array(
-		"name" => "Sidebar width",
+		"name" => "Primary sidebar width",
 		"desc" => "Set sidebar width in pixels",
 		"id" => "stf_sidebar_width",
+		"type" => "text",
+		"std" => "160"
+	),
+	
+	array(
+		"name" => "Secondary sidebar width",
+		"desc" => "Set secondary sidebar width in pixels (Used only in 3 column layouts)",
+		"id" => "stf_secondary_width",
 		"type" => "text",
 		"std" => "300"
 	),

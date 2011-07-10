@@ -10,16 +10,12 @@
 	
 		<div id="container">
 			<!-- Content -->
-			<div id="content" class="clearfix">
-				<?php stf_widget_area( 'before-content' ); ?>
-				
+			<div id="content" class="clearfix">				
 				<!-- Main -->
 				<div id="content-main">
 					<?php stf_widgets( 'content' , array( 'stf_blog_posts', 'stf_navigation' ) ); ?>
 				</div>
 				<!-- [End] Main -->
-				
-				<?php stf_widget_area( 'after-content' ); ?>
 			</div>
 			<!-- [End] Content -->
 		</div>
