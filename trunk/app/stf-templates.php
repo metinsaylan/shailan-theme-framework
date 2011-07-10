@@ -37,8 +37,8 @@ function themeinfo($key){
 	}
 }
 
-function stf_css( $name, $args = null, $echo = true ){ stf_stylesheet( $name, $args, $echo ); }
-function stf_stylesheet( $name, $args = null, $echo = true ){
+function stf_css( $name, $args = null, $echo = true ){ stf_style( $name, $args, $echo ); }
+function stf_style( $name, $args = null, $echo = true ){
 	$defaults = array(
 		'id' => '',
 		'media' => 'all'
@@ -630,10 +630,18 @@ function stf_google_translate(){ ?>
 	<?php
 }
 
-function stf_framework_stylesheet(){
+function stf_stylesheets(){
+	
+	stf_layout();
+	
 	if( 'on' == stf_get_setting( 'use_framework_stylesheet', 'off' ) ){ ?>
 	<!-- Framework styles -->
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/style.css" />
 	<!--[if IE]><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/ie.css" /><![endif]-->
-	<?php }
+	<?php } ?>
+	
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>" />
+	
+	<?php
 }

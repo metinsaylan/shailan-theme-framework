@@ -20,7 +20,7 @@ include_once('stf-layout.php'); // POST FORMATS
 // WIDGETS
 function stf_widget_footer(){
 	echo "<div class=\"widget-control-actions\">
-		<p><small>Powered by <a href=\"http://shailan.com/wordpress/themes/framework/\">STF</a></small></p>
+		<p><small>Powered by <a href=\"http://shailan.com/wordpress/themes/framework/\">Shailan</a></small></p>
 		</div>";
 }
 
@@ -31,6 +31,7 @@ include_once('widgets/stf-pagenavi.php'); // PAGENAVI
 include_once('widgets/include-template/include-template.php'); // INCLUDER
 include_once('widgets/wp-login-widget/wp-login-widget.php'); // LOGIN FORM
 include_once('widgets/stf-latest-tweet.php'); // LATEST TWEET WIDGET
+include_once('widgets/stf-floating-sidebar.php'); // FLOAINGBAR WIDGET
 
 // Other interfaces
 include_once('stf-typography.php'); // TYPOGRAPHY

@@ -152,8 +152,8 @@ function stf_breadcrumbs( $args = array() ) {
 	}
 
 	if ( $echo ) {
-		echo $prefix . $output . $suffix;
+		echo '<div id="breadcrumbs">' . $prefix . $output . $suffix . '</div>';
 	} else {
-		return $prefix . $output . $suffix;
+		return '<div id="breadcrumbs">' . $prefix . $output . $suffix . '</div>';
 	}
 }

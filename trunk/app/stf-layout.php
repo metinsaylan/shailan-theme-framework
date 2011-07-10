@@ -5,14 +5,16 @@
 /** Set up content width */
 if ( ! isset( $content_width ) ){
 	$layout = stf_get_setting( 'stf_layout' ); 
-	$stf_page_width = get_option('stf_page_width');
-	$stf_sidebar_width = get_option('stf_sidebar_width');
-	$stf_padding = get_option('stf_padding');
+	$stf_page_width = stf_get_setting('stf_page_width');
+	$stf_sidebar_width = stf_get_setting('stf_sidebar_width');
+	$stf_secondary_width = stf_get_setting('stf_secondary_width');
+	$stf_padding = stf_get_setting('stf_padding');
+	$sidebars_total = ( $stf_sidebar_width + $stf_secondary_width );
 	
 	if( '1c' == $layout ){ $content_width = $stf_page_width; } 
 	if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $stf_sidebar_width - ( 1 * $stf_padding ); } 
-	if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 2 * $stf_padding ); } 
-	if( '3cb' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 2 * $stf_padding ) ; }
+	if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ); } 
+	if( '3cb' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ) ; }
 	
 }
 
@@ -21,25 +23,27 @@ function stf_layout(){
 	if( 'off' == stf_get_setting('stf_layout_enabled') )
 		return FALSE;
 
-		$layout = stf_get_setting( 'stf_layout' ); 
-
-		$stf_page_width = stf_get_setting('stf_page_width');
-		$stf_sidebar_width = stf_get_setting('stf_sidebar_width');
-		$stf_padding = stf_get_setting('stf_padding');
+	$layout = stf_get_setting( 'stf_layout' ); 
+	$stf_page_width = stf_get_setting('stf_page_width');
+	$stf_sidebar_width = stf_get_setting('stf_sidebar_width');
+	$stf_secondary_width = stf_get_setting('stf_secondary_width');
+	$stf_padding = stf_get_setting('stf_padding');
+	$sidebars_total = ( $stf_sidebar_width + $stf_secondary_width );
 		
-		$stf_full_width = floor( $stf_page_width ) ;
-		$stf_half_width = floor( ( $stf_page_width - 1 * $stf_padding ) / 2 );
-		$stf_one_third = floor( ( $stf_page_width - 2 * $stf_padding ) / 3 );
-		$stf_one_fourth = floor( ( $stf_page_width - 3 * $stf_padding ) / 4 );
+	$stf_full_width = floor( $stf_page_width ) ;
+	$stf_half_width = floor( ( $stf_page_width - 1 * $stf_padding ) / 2 );
+	$stf_one_third = floor( ( $stf_page_width - 2 * $stf_padding ) / 3 );
+	$stf_one_fourth = floor( ( $stf_page_width - 3 * $stf_padding ) / 4 );
 		
-		if( '1c' == $layout ){ $content_width = $stf_page_width; } 
-		if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $stf_sidebar_width - ( 1 * $stf_padding ); } 
-		if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 2 * $stf_padding ); } 
-		if( '3cb' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 2 * $stf_padding ) ; }
+	if( '1c' == $layout ){ $content_width = $stf_page_width; } 
+	if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $stf_sidebar_width - ( 1 * $stf_padding ); } 
+	if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ); } 
+	if( '3cb' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ) ; }
 		$post_width = $content_width;
 		
 		$content_margin = $stf_sidebar_width + $stf_padding;
-		$content_margin2 = 2 * $stf_sidebar_width + 2 * $stf_padding;
+		$content_margin2 = $sidebars_total + 2 * $stf_padding;
+		$content_margin3 = $stf_secondary_width + $stf_padding;
 		$secondary_widget_width = ($stf_sidebar_width>250 ? round(($stf_sidebar_width - 2*$stf_padding)/2) : $stf_sidebar_width);
 		
 		$thumbnail_margin = -90 - $stf_padding;
@@ -53,10 +57,7 @@ function stf_layout(){
 			margin-left: auto;
 		}
 		
-		div#page{ padding-top: <?php echo $stf_padding; ?>px; padding-bottom: <?php echo $stf_padding; ?>px; }
-		
-		/* SIDEBARS */
-		div.sidebar{ width: <?php echo $stf_sidebar_width; ?>px; }
+		div#page{ padding-top: <?php echo $stf_padding; ?>px; padding-bottom: <?php echo $stf_padding; ?>px; }		
 		
 		/* FOOTER */
 		div#footer{ clear: both; margin-left: auto; margin-right: auto; padding-left:0; padding-right:0; }
@@ -123,12 +124,13 @@ function stf_layout(){
 		}
 
 		div.sidebar {
+			width: <?php echo $stf_sidebar_width; ?>px;
 			float:right;
 			margin: 0;
 			margin-bottom:<?php echo $stf_padding; ?>px; 
 			margin-right: 0;
 		}
-
+		
 		div#secondary {
 			clear:right;
 		}
@@ -148,6 +150,7 @@ function stf_layout(){
 		}
 
 		div.sidebar {
+			width: <?php echo $stf_sidebar_width; ?>px;
 			float:left;
 			margin: 0;
 			margin-bottom:<?php echo $stf_padding; ?>px; 
@@ -176,12 +179,14 @@ function stf_layout(){
 			float:left;
 		}
 
-		div#primary {
+		div#primary {	
+			width: <?php echo $stf_sidebar_width; ?>px;
 			margin:0 0 0 -<?php echo $content_margin2 - $stf_padding; ?>px;
 		}
 
 		div#secondary {
-			margin:0 0 0 -<?php echo $stf_sidebar_width; ?>px;
+			width: <?php echo $stf_secondary_width; ?>px;
+			margin:0 0 0 -<?php echo $stf_secondary_width; ?>px;
 		}
 
 <?php } elseif ( '3cl' == $layout ){ ?>
@@ -202,6 +207,14 @@ function stf_layout(){
 			float:right;
 			margin-right: <?php echo $stf_padding; ?>px;
 		}
+		
+		div#primary {	
+			width: <?php echo $stf_sidebar_width; ?>px;
+		}
+		
+		div#secondary {
+			width: <?php echo $stf_secondary_width; ?>px;
+		}
 
 <?php } elseif ( '3cb' == $layout ){ ?>
 
@@ -213,7 +226,7 @@ function stf_layout(){
 		}
 
 		div#content {
-			margin:0 <?php echo $content_margin; ?>px;
+			margin:0 <?php echo $content_margin3; ?>px 0 <?php echo $content_margin; ?>px;
 		}
 
 		div.sidebar {
@@ -221,6 +234,7 @@ function stf_layout(){
 		}
 
 		div#primary {
+			width: <?php echo $stf_sidebar_width; ?>px;
 			margin:0 0 0 -<?php echo $stf_page_width ?>px;
 		}
 
@@ -230,7 +244,8 @@ function stf_layout(){
 		}
 
 		div#secondary {
-			margin:0 0 0 -<?php echo $stf_sidebar_width; ?>px; 
+			width: <?php echo $stf_secondary_width; ?>px;
+			margin:0 0 0 -<?php echo $stf_secondary_width; ?>px; 
 		}
 
 <?php } ?>
@@ -251,7 +266,8 @@ $layout = stf_get_setting( 'stf_layout' );
 if( strlen( $layout ) <= 1 ){
 	// Insert default options
 	stf_update_setting( 'stf_page_width', 980 );
-	stf_update_setting( 'stf_sidebar_width', 300 );
+	stf_update_setting( 'stf_sidebar_width', 160 );
+	stf_update_setting( 'stf_secondary_width', 160 );
 	stf_update_setting( 'stf_padding', 15 );
 	stf_update_setting( 'stf_layout', '2cr' );
 }

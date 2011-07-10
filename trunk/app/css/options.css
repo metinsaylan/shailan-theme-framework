@@ -81,10 +81,10 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 #options-tabs .button-primary:hover{ background-color: #298CBA; }
 #options-tabs .button-primary:active{ background-color: #21759B; }
 
-a.basic{ background-image: url('images/cog.png'); }
-a.layout{ background-image: url('images/layout_content.png'); }
-a.fonts{ background-image: url('images/font.png'); }
-a.advanced{ background-image: url('images/wrench_orange.png'); }
+.stf_options ul.tabs li a.basic{ padding-left: 30px; background-image: url('images/cog.png'); }
+.stf_options ul.tabs li a.layout{ padding-left: 30px; background-image: url('images/layout_content.png'); }
+.stf_options ul.tabs li a.fonts{ padding-left: 30px; background-image: url('images/font.png'); }
+.stf_options ul.tabs li a.advanced{ padding-left: 30px; background-image: url('images/wrench_orange.png'); }
 
 #options-tabs .wysiwyg{ float:left; padding:0; }
 #options-tabs .wysiwyg ul.panel li { background-color:transparent; }

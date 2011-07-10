@@ -68,6 +68,15 @@ class Shailan_Framework{
 		add_action( 'admin_menu', array(&$this, 'theme_admin_header') );
 		add_action( 'wp_footer', array(&$this, 'framework_copyright') );
 		
+		if(is_admin()) {
+			wp_enqueue_script( "jquery" );
+			wp_enqueue_script( "tweetable", get_template_directory_uri() . '/app/scripts/jquery.tweetable.js', 'jquery' );
+			wp_enqueue_style( "tweetable", get_template_directory_uri() . '/app/css/tweetable.css' );
+			wp_enqueue_style( "google-droid-sans", "http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&v1", false, "1.0", "all");
+			wp_enqueue_style( "stf-admin-styles", get_template_directory_uri() . "/app/css/admin.css", false, "1.0", "all");
+		}
+			
+		
 	}
 	
 	function Shailan_Framework(){ // PHP 4 Constructor
@@ -219,6 +228,13 @@ function stf_update_setting( $key, $value ){
 	update_option('stf_settings', $settings);
 }
 
+function stf_adminbar_button() {
+    global $wp_admin_bar, $wpdb;
+    if ( !is_super_admin() || !is_admin_bar_showing() )
+        return;
 
+    $wp_admin_bar->add_menu( array( 'parent' => 'appearance', 'title' => 'Theme Options', 'href' => admin_url('admin.php?page=stf-options') ) );
+}
+add_action( 'admin_bar_menu', 'stf_adminbar_button', 1000 );
 
 
