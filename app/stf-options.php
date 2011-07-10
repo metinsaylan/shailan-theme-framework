@@ -63,23 +63,23 @@ array( "type" => "open"),
 		"type" => "checkbox",
 		"std" => "off"),
 
-	/*array(  "name" => "Entry header",
+	array(  "name" => "Entry header",
 		"desc" => "Entry header meta, shows right under the post title.",
 		"id" => "stf_entry_header_meta",
 		"std" => "By [authorlink] on [date] [cmnts before='| '] [edit ]",
-		"type" => "text"),*/
+		"type" => "text"),
 		
-	/*array(  "name" => "Entry footer",
+	array(  "name" => "Entry footer",
 		"desc" => "Entry footer meta, shows below the post content.",
 		"id" => "stf_entry_footer_meta",
 		"std" => '[categories before="Filed in: "] [tags before="| Tagged: "]',
-		"type" => "text"),*/
+		"type" => "text"),
 		
-	/*array(  "name" => "Entry footer for short formats",
+	array(  "name" => "Entry footer for short formats",
 		"desc" => "Entry footer meta for short formats: link, status, aside, picture ",
 		"id" => "stf_entry_short_meta",
 		"std" => '[permalink] &middot; [cmnts] [edit before="&middot; "]',
-		"type" => "text"),*/
+		"type" => "text"),
 		
 	array("name" => "Show comments on home page",
 		"desc" => "Enable commenting on home page.",
