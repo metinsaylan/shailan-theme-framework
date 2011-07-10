@@ -54,21 +54,29 @@ function stf_style( $name, $args = null, $echo = true ){
 }
 
 
-function stf_site_title(){
+function stf_branding(){
 	$logo_url = stf_get_setting('stf_logo_url');
+	
+	?><!-- Branding -->
+		<div id="branding"> <?php
+	
 	if(strlen($logo_url)>0){ ?>
 		
 		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>"><img id="logo" src="<?php echo $logo_url ?>" alt="<?php bloginfo('name') ?>" title="<?php bloginfo('description') ?>" /></a>
+		
 		
 	<?php } else { ?>
 	
 		<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
 		<<?php echo $heading_tag; ?> id="site-title">
-			<span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>"><?php bloginfo( 'name' ); ?></a></span>
+			<span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>"><?php bloginfo( 'name' ); ?></a></span>
 		</<?php echo $heading_tag; ?>>
-		<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+		
+	<?php } ?>
 	
-	<?php }
+		</div>
+	<!-- [End] Branding -->
+	<?php 
 }
 
 /**
@@ -207,14 +215,16 @@ function stf_entry_thumbnail( $size = 'thumbnail', $args = null ){
  * @uses wp_link_pages()
  */
 function stf_entry_pages_navigation(){
+	echo "<div class=\"small alignright\">";
 	wp_link_pages( array(
 		'before'		=> '<div class="entry-pages"><span class="label">' . __('Pages:') . '</span>',
 		'after'			=> '</div>',
 		'link_before'	=> '<span class="page-number">',
 		'link_after'	=> '</span>'
 	) ); 
+	echo "</div>";
 }
-function stf_entry_pages(){ stf_entry_pages_navigation(); }
+function stf_entry_pages(){  stf_entry_pages_navigation(); }
 
 function stf_get_templates(){
 	global $wp_query;
@@ -632,16 +642,22 @@ function stf_google_translate(){ ?>
 
 function stf_stylesheets(){
 	
-	stf_layout();
+	stf_layout(); // Layout styles
 	
-	if( 'on' == stf_get_setting( 'use_framework_stylesheet', 'off' ) ){ ?>
+	if( 'on' == stf_get_setting( 'use_framework_stylesheet', 'off' ) || ! $stf->is_child ){ ?>
+
+	<!-- Common styles -->
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/common.css" />	
+	
 	<!-- Framework styles -->
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/style.css" />
 	<!--[if IE]><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/ie.css" /><![endif]-->
-	<?php } ?>
+	<?php } elseif( $stf->is_child ) ?>	
 	
 	<!-- Stylesheet -->
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>" />
 	
 	<?php
+	
+	stf_colors();
 }

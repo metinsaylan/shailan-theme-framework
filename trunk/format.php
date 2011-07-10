@@ -23,7 +23,7 @@
 	
 	?>
 		
-		<?php stf_entry_pages_navigation(); ?>
+		<?php stf_entry_pages(); ?>
 	</div>
 	<!-- [End] Entry Content -->
 

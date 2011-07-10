@@ -2,7 +2,7 @@
 class stf_floating_sidebar extends WP_Widget {
     function stf_floating_sidebar() {
 		$widget_ops = array('classname' => 'stf-floating-sidebar', 'description' => __( 'Displays widgets in a floating sidebar' ) );
-		$this->WP_Widget('stf-floating-sidebar', __('Floating sidebar'), $widget_ops);
+		$this->WP_Widget('stf-floating-sidebar', __('FloatingBar'), $widget_ops);
 		$this->alt_option_name = 'stf_floating_sidebar';	
 		
 		if ( is_active_widget(false, false, $this->id_base, true) ) {
@@ -27,7 +27,7 @@ class stf_floating_sidebar extends WP_Widget {
     }
 
 	function form($instance) {				
-		echo "Add widgets to floating sidebar to display them on floating sidebar.";
+		echo "Add widgets to FloatingBar to display them on your sidebar.";
 		
 		stf_widget_footer();
     }

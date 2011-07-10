@@ -34,11 +34,9 @@
 	<div id="header" class="clearfix">
 		<?php stf_widget_area('header-top'); ?>
 		
-		<!-- Branding -->
-		<div id="branding">
-			<?php stf_site_title(); ?>
-		</div>
-		<!-- [End] Branding -->
+		
+		<?php stf_branding(); ?>
+
 		
 		<!-- Banner Area -->
 		<div id="header-widgets">
