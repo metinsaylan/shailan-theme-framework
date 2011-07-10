@@ -243,3 +243,5 @@ ul.ticks li{ background: url(images/icon-tick.gif) 4px 50% no-repeat; line-heigh
 .widget-container {
 	margin-bottom: 1em;
 }
+
+.entry-footer{ clear:both; }
