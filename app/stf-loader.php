@@ -30,6 +30,7 @@ include_once('widgets/stf-navigation.php'); // OLDER / NEWER
 include_once('widgets/stf-pagenavi.php'); // PAGENAVI
 include_once('widgets/include-template/include-template.php'); // INCLUDER
 include_once('widgets/wp-login-widget/wp-login-widget.php'); // LOGIN FORM
+include_once('widgets/stf-latest-tweet.php'); // LATEST TWEET WIDGET
 
 // Other interfaces
 include_once('stf-typography.php'); // TYPOGRAPHY

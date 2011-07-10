@@ -39,12 +39,6 @@ array( "type" => "open"),
 		"std" => "shailancom",
 		"type" => "text"),
 		
-	array(  "name" => "Twitter balloon on header",
-		"desc" => "Displays your latest tweet on top of header",
-		"id" => "stf_twitter_enabled",
-		"type" => "checkbox",
-		"std" => "on" ),
-		
 	array(  "name" => "Facebook page URL",
 		"desc" => "URL of your facebook fan page",
 		"id" => "stf_facebook_URL",
