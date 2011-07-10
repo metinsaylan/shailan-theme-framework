@@ -9,13 +9,17 @@ if ( ! isset( $content_width ) ){
 	$stf_sidebar_width = get_option('stf_sidebar_width');
 	$stf_padding = get_option('stf_padding');
 	
-	if( '1c' == $layout ){ $content_width = $stf_page_width - 2 * $stf_padding; } 
-	if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $stf_sidebar_width - ( 3 * $stf_padding ); } 
-	if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 4 * $stf_padding ); } 
+	if( '1c' == $layout ){ $content_width = $stf_page_width; } 
+	if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $stf_sidebar_width - ( 1 * $stf_padding ); } 
+	if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 2 * $stf_padding ); } 
+	if( '3cb' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 2 * $stf_padding ) ; }
 	
 }
 
 function stf_layout(){
+
+	if( 'off' == stf_get_setting('stf_layout_enabled') )
+		return FALSE;
 
 		$layout = stf_get_setting( 'stf_layout' ); 
 
@@ -23,18 +27,19 @@ function stf_layout(){
 		$stf_sidebar_width = stf_get_setting('stf_sidebar_width');
 		$stf_padding = stf_get_setting('stf_padding');
 		
-		$stf_full_width = floor( $stf_page_width - 2 * $stf_padding ) ;
-		$stf_half_width = floor( ( $stf_page_width - 3 * $stf_padding ) / 2 );
-		$stf_one_third = floor( ( $stf_page_width - 4 * $stf_padding ) / 3 );
-		$stf_one_fourth = floor( ( $stf_page_width - 5 * $stf_padding ) / 4 );
+		$stf_full_width = floor( $stf_page_width ) ;
+		$stf_half_width = floor( ( $stf_page_width - 1 * $stf_padding ) / 2 );
+		$stf_one_third = floor( ( $stf_page_width - 2 * $stf_padding ) / 3 );
+		$stf_one_fourth = floor( ( $stf_page_width - 3 * $stf_padding ) / 4 );
 		
-		if( '1c' == $layout ){ $content_width = $stf_page_width - 2 * $stf_padding; } 
-		if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $stf_sidebar_width - ( 3 * $stf_padding ); } 
-		if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 4 * $stf_padding ); } 
+		if( '1c' == $layout ){ $content_width = $stf_page_width; } 
+		if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $stf_sidebar_width - ( 1 * $stf_padding ); } 
+		if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 2 * $stf_padding ); } 
+		if( '3cb' == $layout ){ $content_width = $stf_page_width - ( 2 * $stf_sidebar_width) - ( 2 * $stf_padding ) ; }
 		$post_width = $content_width;
 		
-		$content_margin = $stf_sidebar_width + 2*$stf_padding;
-		$content_margin2 = 2 * $stf_sidebar_width + 3 * $stf_padding;
+		$content_margin = $stf_sidebar_width + $stf_padding;
+		$content_margin2 = 2 * $stf_sidebar_width + 2 * $stf_padding;
 		$secondary_widget_width = ($stf_sidebar_width>250 ? round(($stf_sidebar_width - 2*$stf_padding)/2) : $stf_sidebar_width);
 		
 		$thumbnail_margin = -90 - $stf_padding;
@@ -70,11 +75,10 @@ function stf_layout(){
 		#content .one-third{ width: <?php echo floor( ( $post_width - 4*$stf_padding ) / 3 ); ?>px; }
 		#content .one-fourth{ width: <?php echo floor( ( $post_width - 5*$stf_padding ) / 4 ); ?>px; }
 		
-		.hentry img{max-width: <?php echo $post_width; ?>px; height:auto; border:none; padding:0; } 
-		.wp-caption{max-width: <?php echo $post_width - 2 * $stf_padding; ?>px; height:auto; } 
-		.hentry .wp-caption img{max-width: <?php echo $post_width - 2 * $stf_padding; ?>px; height:auto; border:none; padding:0; } 
+		.hentry img{max-width: <?php echo $post_width - 50; ?>px; height:auto; border:none; padding:0; } 
+		.wp-caption{max-width: <?php echo $post_width - 50 - 2 * $stf_padding; ?>px; height:auto; } 
+		.hentry .wp-caption img{max-width: <?php echo $post_width - 50 - 2 * $stf_padding; ?>px; height:auto; border:none; padding:0; } 
 		* html .hentry img{width: <?php echo $post_width; ?>px}
-		.entry-wrap{ margin-bottom:<?php echo $stf_padding; ?>px; padding-bottom:<?php echo $stf_padding; ?>px }
 		.entry-thumb{ float:left; padding:0px; margin-left:<?php echo $thumbnail_margin; ?>px; }
 		
 		.flushleft{ margin-left: -<?php echo $stf_padding; ?>px; }
@@ -91,17 +95,17 @@ function stf_layout(){
 		}
 		
 		div#content {
-			margin:0 <?php echo $stf_padding; ?>px;
+			margin:0;
 		}
 		
 		div#primary {
 			clear:both;
+			margin-right: <?php echo $stf_padding; ?>px;
 		}
 
 		div.sidebar {
 			float:left;
-			margin-left: <?php echo $stf_padding; ?>px;
-			width:<?php echo $stf_half_width; ?>px;
+			width: <?php echo $stf_half_width; ?>px;
 		}
 
 <?php } elseif( '2cr' == $layout ){ ?>
@@ -110,19 +114,19 @@ function stf_layout(){
 		
 		div#container {
 			float:left;
-			margin: 0px -<?php echo $content_margin; ?>px 0px 0px;
+			margin: 0 -<?php echo $content_margin; ?>px 0 0;
 			width:100%;
 		}
 
 		div#content {
-			margin:0px <?php echo $content_margin; ?>px 0px <?php echo $stf_padding; ?>px;
+			margin:0 <?php echo $content_margin; ?>px 0 0;
 		}
 
 		div.sidebar {
 			float:right;
-			margin:0px;
+			margin: 0;
 			margin-bottom:<?php echo $stf_padding; ?>px; 
-			margin-right:<?php echo $stf_padding; ?>px;
+			margin-right: 0;
 		}
 
 		div#secondary {
@@ -140,14 +144,14 @@ function stf_layout(){
 		}
 
 		div#content {
-			margin:0 <?php echo $stf_padding; ?>px 0 <?php echo $content_margin; ?>px;
+			margin:0 0 0 <?php echo $content_margin; ?>px;
 		}
 
 		div.sidebar {
 			float:left;
-			margin:0px;
+			margin: 0;
 			margin-bottom:<?php echo $stf_padding; ?>px; 
-			margin-left:<?php echo $stf_padding; ?>px;
+			margin-left: 0;
 		}
 
 		div#secondary {
@@ -165,7 +169,7 @@ function stf_layout(){
 		}
 
 		div#content {
-			margin:0 <?php echo $content_margin2; ?>px 0 <?php echo $stf_padding; ?>px;
+			margin:0 <?php echo $content_margin2; ?>px 0 0;
 		}
 
 		div.sidebar {
@@ -177,7 +181,7 @@ function stf_layout(){
 		}
 
 		div#secondary {
-			margin:0 0 0 -<?php echo $stf_sidebar_width + $stf_padding; ?>px;
+			margin:0 0 0 -<?php echo $stf_sidebar_width; ?>px;
 		}
 
 <?php } elseif ( '3cl' == $layout ){ ?>
@@ -191,7 +195,7 @@ function stf_layout(){
 		}
 
 		div#content {
-			margin:0 <?php echo $stf_padding; ?>px 0 <?php echo $content_margin2; ?>px;
+			margin:0 0 0 <?php echo $content_margin2; ?>px;
 		}
 
 		div.sidebar {
@@ -217,19 +221,21 @@ function stf_layout(){
 		}
 
 		div#primary {
-			margin:0 0 0 -<?php echo $stf_page_width - $stf_padding; ?>px;
+			margin:0 0 0 -<?php echo $stf_page_width ?>px;
 		}
 
 		* html div#primary {
-			left:<?php echo $stf_padding; ?>px;
+			left: 0;
 			position:relative;
 		}
 
 		div#secondary {
-			margin:0 0 0 -<?php echo $stf_sidebar_width + $stf_padding; ?>px; 
+			margin:0 0 0 -<?php echo $stf_sidebar_width; ?>px; 
 		}
 
 <?php } ?>
+
+		.sidebarless div#content { margin: 0; }
 		
 	</style>
 	<!-- End of Smart Layout -->

@@ -144,13 +144,12 @@ require_once(ABSPATH . 'wp-includes/http.php');
 
 // TWITTER
 /** Gets latest tweet using json (src:)[http://yoast.com/display-latest-tweet/]*/
-function stf_get_latest_tweet($username){
+function stf_get_latest_tweet( $username ){
 
 	$tweet = get_option("stf_lasttweet");
-	
 	$url = "http://search.twitter.com/search.atom?q=from:" . $username . "&rpp=1";
 	
-	if ($tweet['lastcheck'] < ( mktime() - 60 ) ) {
+	if ( $tweet['lastcheck'] < ( mktime() - 60 ) ) {
 
 		$feed = file_get_contents( $url );
 		$stepOne = explode("<content type=\"html\">", $feed);
@@ -167,9 +166,9 @@ function stf_get_latest_tweet($username){
 		update_option( 'stf_lasttweet', $tweet );
 		
 	} else {
-	  $output = $tweet['data'];
-	}
+		$output = $tweet['data'];
 
+	}
 	return $output;
 }
 

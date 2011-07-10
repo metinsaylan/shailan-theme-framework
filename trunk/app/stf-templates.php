@@ -196,7 +196,7 @@ function stf_entry_thumbnail( $size = 'thumbnail', $args = null ){
 		echo 	get_the_post_thumbnail( $post->ID, $size, $thumb_attr );
 		echo '</a></div>';
 	} else {
-		echo '<div class="thumb-wrap-' . $size . ' no-thumbnail default-thumbnail"><a href="'.get_permalink( $post->ID ).'" title="' . the_title_attribute( array('echo' => 0 ) ) . '"><img src="'. get_template_directory_uri() .'/images/blank.gif" alt="No thumbnail" /></a></div>';
+		echo '<!-- no thumbnail -->';
 	}
 }
 
@@ -428,15 +428,15 @@ function stf_comment( $comment, $args, $depth ) {
 		
 		<div class="comment-body">
 			<?php if ( $comment->comment_approved == '0' ) : ?>
-				<em><?php _e( 'Your comment is awaiting moderation.', 'stf' ); ?></em>
+				<em><?php _e( 'Your comment is awaiting moderation.', 'freshmilk' ); ?></em>
 			<br />
 			<?php endif; ?>
 			<div class="comment-meta commentmetadata">
 			  <span class="comment-author"><?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?></a></span>
 			  <span class="comment-date"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php
 					/* translators: 1: date, 2: time */
-					printf( __( '<span title="at %2$s">%1$s</span>', 'stf' ), get_comment_date('M j, Y'),  get_comment_time() ); ?></a></span>
-				<?php edit_comment_link( __( 'edit', 'stf' ), '<span class="comment-edit-link">', '</span>' );	?>
+					printf( __( '<span title="at %2$s">%1$s</span>' ), get_comment_date('M j, Y'),  get_comment_time() ); ?></a></span>
+				<?php edit_comment_link( __( 'edit' ), '<span class="comment-edit-link">', '</span>' );	?>
 			</div><!-- .comment-meta .commentmetadata -->
 			<div class="comment-text"><?php comment_text(); ?></div>
 		</div>
@@ -454,7 +454,7 @@ function stf_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'stf' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'edit', 'stf' ), '<span class="comment-edit-link">', '</span>' );	?></p>
+		<p><?php _e( 'Pingback:', 'freshmilk' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'edit' ), '<span class="comment-edit-link">', '</span>' );	?></p>
 	<?php
 			break;
 	endswitch;
@@ -477,7 +477,7 @@ function stf_comment_inline( $comment, $args, $depth ) {
 			
 			<div class="comment-body-inline">
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'stf' ); ?></em>
+					<em><?php _e( 'Your comment is awaiting moderation.', 'freshmilk' ); ?></em>
 				<?php endif; ?>
 				
 				<span class="comment-author"><?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?></span> 
@@ -485,8 +485,8 @@ function stf_comment_inline( $comment, $args, $depth ) {
 				<div class="comment-meta commentmetadata">
 				  <span class="comment-date"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php
 						/* translators: 1: date, 2: time */
-						printf( __( '<span title="at %2$s">%1$s</span>', 'stf' ), get_comment_date('M j, Y'),  get_comment_time() ); ?></a></span>
-				  <?php edit_comment_link( __( 'edit', 'stf' ), '<span class="comment-edit-link">', '</span>' );	?>
+						printf( __( '<span title="at %2$s">%1$s</span>' ), get_comment_date('M j, Y'),  get_comment_time() ); ?></a></span>
+				  <?php edit_comment_link( __( 'edit' ), '<span class="comment-edit-link">', '</span>' );	?>
 				  <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 				</div><!-- .comment-meta .commentmetadata -->
 
@@ -502,7 +502,7 @@ function stf_comment_inline( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'stf' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'stf'), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'freshmilk' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('Edit'), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;
@@ -518,14 +518,14 @@ function stf_show_comment_form() {
 
 function stf_post_reply_link(){
 	if ( ! post_password_required() )
-		echo post_reply_link( array( 'before' => ' | ', 'after' => '',  'reply_text' => __( 'Reply', 'stf' ), 'add_below' => 'entry' ), get_the_id() );
+		echo post_reply_link( array( 'before' => ' | ', 'after' => '',  'reply_text' => __( 'Reply' ), 'add_below' => 'entry' ), get_the_id() );
 }
 
 function stf_pagination( $args = null ){
 	
 	extract( wp_parse_args( $args, array(
-		'label_next' => __( '<span class="meta-nav">&larr;</span> Older posts', 'stf' ),
-		'label_previous' => __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'stf' )
+		'label_next' => __( '<span class="meta-nav">&larr;</span> Older posts' ),
+		'label_previous' => __( 'Newer posts <span class="meta-nav">&rarr;</span>' )
 	) ) ) ;
 
 	if(function_exists('wp_pagenavi')) {
@@ -545,7 +545,7 @@ function stf_archive_header(){
 	if( is_category() ){
 	
 		echo "<h1 class=\"page-title\">";
-		printf( __( 'Posts about <span class="alt">%s</span>', 'stf' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+		printf( __( 'Posts about <span class="alt">%s</span>' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 		echo "</h1>";
 		
 		$category_description = category_description();
@@ -555,7 +555,7 @@ function stf_archive_header(){
 	} elseif ( is_tag() ){
 	
 		echo "<h1 class=\"page-title\">";
-			printf( __( 'Posts tagged <span class="alt">%s</span>', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+			printf( __( 'Posts tagged <span class="alt">%s</span>' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 		echo "</h1>";
 	
 		$tag_description = tag_description();
@@ -563,4 +563,70 @@ function stf_archive_header(){
 			echo '<div class="archive-meta">' . $tag_description . '</div>';
 			
 	}
+}
+
+function stf_latest_tweet(){
+	if( 'on' == stf_get_setting('stf_twitter_enabled') ) { ?>
+	<div id="latest-tweet">
+		<span>			
+			<?php 
+				$twitter_username = stf_get_setting( 'stf_twitter_username' ); 
+				if($twitter_username == ''){ 
+					echo "Enter your twitter username in settings to display your latest tweet.";
+				} else {
+					echo stf_get_latest_tweet( $twitter_username ); 
+				}
+			?>
+		</span>
+	</div>
+<?php } 
+}
+
+function stf_related_posts(){
+	global $post;
+	$tags = wp_get_post_tags($post->ID);
+	if ($tags) {
+		echo "<ul>";
+		$search = '';
+		foreach($tags as $t){
+			$search .= $t->term_id . ',';
+		}
+		$search = substr( $search, 0, -1); // remove last comma
+	  $args=array(
+		'tag__in' => $search,
+		'post__not_in' => array($post->ID),
+		'showposts'=>5,
+		'ignore_sticky_posts'=>1
+	   );
+	   
+	  $my_query = new WP_Query($args);
+	  if( $my_query->have_posts() ) {
+		while ($my_query->have_posts()) : $my_query->the_post(); ?>
+		  <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+		  <?php
+		endwhile;
+	  }
+	  echo "</ul>";
+	}
+}
+
+function stf_google_translate(){
+	if( 'on' == stf_get_setting('stf_translate_enabled') ) { ?>
+	<!-- Google Translate Element -->
+	<div id="google_translate_element" style="display:block"></div><script>
+	function googleTranslateElementInit() {
+	  new google.translate.TranslateElement({pageLanguage: "<?php
+	  
+	  $locale = get_locale();
+	  if( false !== strpos($locale, '_')){
+		$locale = explode('_', $locale);
+		$locale = $locale[0];
+	  }
+	  
+	  echo $locale;
+	  
+	  ?>"}, "google_translate_element");
+	};</script>
+	<script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<?php } 
 }

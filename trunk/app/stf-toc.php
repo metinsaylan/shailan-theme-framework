@@ -110,7 +110,19 @@ class STF_TableOfContents {
 
 add_filter('the_posts', array(new STF_TableOfContents, 'the_posts'));
 
-function stf_toc( $args ){ global $post; return $post->post_toc; }
+function stf_toc( $args ){
+	global $post; 
+	if(! empty( $post->post_toc ) ) {
+		return $post->post_toc;
+	} else {
+		$toc = new STF_TableOfContents();
+		$toc->postid = $post->ID;
+        $toc->post_content = $toc->the_content( $post->post_content );
+        $post->post_toc = $toc->get_toc();
+		
+		return $post->post_toc;
+	}
+}
 add_shortcode('toc', 'stf_toc');
 
 ?>

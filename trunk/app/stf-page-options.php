@@ -1,6 +1,6 @@
 <?php ?>
 
-<div class="wrap ex_wrap">
+<div class="wrap stf_wrap">
 	<?php screen_icon(); ?>
 	<h2><?php echo esc_html( $title ); ?></h2>
 	
@@ -17,7 +17,7 @@
 	<?php if(STF_DEBUG){ echo "<pre>" . print_r($current, true) . "</pre>"; } ?>
 	<!-- [End] Debug info -->
 
-<div class="ex_opts">
+<div class="stf_opts">
 <form method="post">
 <div id="options-tabs">
 
@@ -50,7 +50,7 @@ switch ( $field['type'] ) {
 	
 	case 'text': ?>
 
-<div class="ex_input ex_text">
+<div class="stf_input stf_text">
 	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
  	<input name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" value="<?php if ( isset($current[ $field['id'] ]) && $current[ $field['id'] ] != "") { echo esc_html(stripslashes($current[ $field['id'] ] ) ); } ?>" />
 	<small><?php echo $field['desc']; ?></small>
@@ -63,7 +63,7 @@ break;
 case 'textarea':
 ?>
 
-<div class="ex_input ex_textarea">
+<div class="stf_input stf_textarea">
 	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
  	<textarea name="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" cols="" rows=""><?php if ( $current[ $field['id'] ] != "") { echo stripslashes($current[ $field['id'] ] ); } else { echo $field['std']; } ?></textarea>
  <small><?php echo $field['desc']; ?></small><div class="clear"></div>
@@ -76,7 +76,7 @@ break;
 case 'htmlarea':
 ?>
 
-<div class="ex_input ex_textarea">
+<div class="stf_input stf_textarea">
 	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
 	
 <script type="text/javascript">
@@ -96,7 +96,7 @@ break;
 case 'select':
 ?>
 
-<div class="ex_input ex_select">
+<div class="stf_input stf_select">
 	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
 	
 <select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>">
@@ -112,7 +112,7 @@ break;
 case "checkbox":
 ?>
 
-<div class="ex_input ex_checkbox">
+<div class="stf_input stf_checkbox">
 	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
 	
 	<input type="checkbox" name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" value="on" <?php checked($current[ $field['id'] ], "on") ?> />
@@ -124,10 +124,10 @@ case "section":
 
 ?>
 
-<div class="ex_section tab_content" id="<?php echo sanitize_title( $field['name'] ); ?>">
-<!-- <div class="ex_title"><h3><?php echo $field['name']; ?></h3><span class="submit">
+<div class="stf_section tab_content" id="<?php echo sanitize_title( $field['name'] ); ?>">
+<!-- <div class="stf_title"><h3><?php echo $field['name']; ?></h3><span class="submit">
 </span><div class="clear"></div></div> -->
-<div class="ex_options">
+<div class="stf_options">
 
  
 <?php break;

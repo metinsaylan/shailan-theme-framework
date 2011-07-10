@@ -15,11 +15,50 @@ function stf_get_fonts(){
 		'ubuntu' => "'Ubuntu', GillSans, 'Trebuchet MS', Calibri, sans-serif",
 		'bebas' => "'BebasNeueRegular', GillSans, 'Trebuchet MS', Calibri, sans-serif",
 		'cartogothic' => "'CartoGothicStdBook', Futura, Century Gothic, AppleGothic, sans-serif",
-		'miso' => "'MisoBold', Futura, Century Gothic, AppleGothic, sans-serif",
-		'quicksand' => "'QuicksandBold', GillSans, 'Trebuchet MS', Calibri, sans-serif",
+		'miso' => "'MisoRegular', Futura, Century Gothic, AppleGothic, sans-serif",
+		'misobold' => "'MisoBold', Futura, Century Gothic, AppleGothic, sans-serif",
+		'quicksand' => "'QuicksandBook', GillSans, 'Trebuchet MS', Calibri, sans-serif",
+		'quicksandbold' => "'QuicksandBold', GillSans, 'Trebuchet MS', Calibri, sans-serif",
+		'quicksanddash' => "'QuicksandDash', GillSans, 'Trebuchet MS', Calibri, sans-serif",
 		'junction' => "'junctionregularRegular', GillSans, 'Trebuchet MS', Calibri, sans-serif",
 		'league' => "'LeagueGothicRegular', GillSans, 'Trebuchet MS', Calibri, sans-serif;",
-		'puritan' => "'Puritan20Normal', GillSans, 'Trebuchet MS', Calibri, sans-serif"
+		'puritan' => "'Puritan20Normal', GillSans, 'Trebuchet MS', Calibri, sans-serif",
+		'droid' => "'Droid Serif', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif",
+		'droidsans' => "'Droid Sans', GillSans, 'Trebuchet MS', Calibri, sans-serif",
+		'rocksalt' => "'Rock Salt', GillSans, 'Trebuchet MS', Calibri, sans-serif",
+		'goudy' => "'Goudy Bookletter 1911', serif",
+		'copse' => "'Copse', serif",
+		'molengo' => "'Molengo', serif"
+	);
+}
+
+function stf_get_font_names(){
+	return array(
+		'css' => "Default in Stylesheet",
+		'georgia' => "Georgia - serif",
+		'gillsans' => "GillSans - sans serif",
+		'lucida' => "Lucida Grande - sans serif",
+		'helvetica' => "Helvetica Neue - sans serif",
+		'futura' => "Futura - sans serif",
+		'trebuchet' => "Trebuchet MS - sans serif",
+		'dejavu' => "DejaVu Sans - sans serif",
+		'ubuntu' => "Ubuntu - sans serif",
+		'bebas' => "BebasNeueRegular - gothic",
+		'cartogothic' => "CartoGothicStdBook - gothic",
+		'miso' => "Miso - gothic",
+		'misobold' => "MisoBold - gothic",
+		'quicksand' => "Quicksand - gothic",
+		'quicksandbold' => "Quicksand Bold - gothic",
+		'quicksanddash' => "Quicksand Dashed - gothic",
+		'junction' => "Junction - sans serif",
+		'league' => "LeagueGothicRegular - gothic",
+		'puritan' => "Puritan - sans serif",
+		'droid' => "Droid - serif",
+		'droidsans' => "DroidSans - sans-serif",
+		'rocksalt' => "Rock Salt - comic",
+		'goudy' => "Goudy Bookletter 1911 - serif",
+		'copse' => "Copse - serif",
+		'molengo' => "Molengo - sans serif"
 	);
 }
 
@@ -57,7 +96,7 @@ function stf_typography(){
 		<?php } ?>
 		
 		<?php if( $title_font != "css" ){ ?>	
-		h1, h2, h3, h4, h5, h6, .entry-title, .widget-title, .title, h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
+		h1, h2, h3, h4, h5, h6, #site-title, .entry-title, .widget-title, .title, h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
 			font-family: <?php echo $fonts[ $title_font ]; ?>;
 		}
 		<?php } ?>

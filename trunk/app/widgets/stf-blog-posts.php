@@ -3,7 +3,7 @@ class stf_blog_posts extends WP_Widget {
     /** constructor */
     function stf_blog_posts() {
 		$widget_ops = array('classname' => 'blog-posts', 'description' => __( 'Posts on your blog' ) );
-		$this->WP_Widget('stf-blog-posts', __('# the Loop'), $widget_ops);
+		$this->WP_Widget('stf-blog-posts', __('Default Loop'), $widget_ops);
 		$this->alt_option_name = 'stf_blog_posts';	
     }
 
