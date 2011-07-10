@@ -193,7 +193,7 @@ class Shailan_Framework{
 	}
 	
 	function framework_copyright(){ ?>
-		<div id="theme-copyright"><small>Powered by <a href="http://wordpress.org" rel="external" target="_blank">Wordpress</a> <span class="amp">&</span> <a href="http://shailan.com/wordpress/themes/darkside" title="Wordpress themes, plugins, widgets and more" rel="external" target="_blank">Darkside</a></small></div>
+		<div id="theme-copyright"><small>Powered by <a href="http://wordpress.org" rel="external" target="_blank">Wordpress</a> <span class="amp">&</span> <a href="http://shailan.com/wordpress/themes/framework" title="Wordpress themes, plugins, widgets and more" rel="external" target="_blank">Shailan</a></small></div>
 	<?php }
 	
 };
