@@ -16,7 +16,7 @@ function stf_breadcrumbs( $args = array() ) {
 		'echo'		=> 1,
 		'prefix'	=> '',
 		'suffix'	=> '',
-		'seperator' => ' <span class=\"seperator\">&raquo;</span> ',
+		'seperator' => ' <span class="seperator">&raquo;</span> ',
 		'hometext'	=> 'Welcome to <strong>' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</strong>'
 	
 	) ), EXTR_SKIP );
@@ -152,8 +152,8 @@ function stf_breadcrumbs( $args = array() ) {
 	}
 
 	if ( $echo ) {
-		echo "<div class='breadcrumbs'>" . $prefix . $output . $suffix . "</div>";
+		echo $prefix . $output . $suffix;
 	} else {
-		$prefix.$output.$suffix;
+		return $prefix . $output . $suffix;
 	}
 }

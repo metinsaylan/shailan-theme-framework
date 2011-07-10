@@ -11,7 +11,7 @@
 class stf_featured extends WP_Widget {
     function stf_featured() {
 		$widget_ops = array('classname' => 'stf-featured-posts', 'description' => __( 'Custom query widget' ) );
-		$this->WP_Widget('stf-featured-posts', __('# STF Loop'), $widget_ops);
+		$this->WP_Widget('stf-featured-posts', __('Loop Da Loop'), $widget_ops);
 		$this->alt_option_name = 'stf_featured_posts';	
 		
 		$this->widget_defaults = array(

@@ -7,17 +7,16 @@
  Contact	: metinsaylan (at) gmail (dot) com
 */
 
-/** RSS Footer Text */
+/** RSS Footer Text
 function shailan_postrss($content) {
 	$feed_footer = stf_get_setting('stf_feed_footer');
 	if(is_feed() && !empty($feed_footer)){
 		$content = $content . '<br />' .  $feed_footer . '';
-	}
-	
+	}	
 	return $content;
 }
 add_filter('the_excerpt_rss', 'shailan_postrss');
-add_filter('the_content', 'shailan_postrss');
+add_filter('the_content', 'shailan_postrss'); */
 
 /** RSS Feed Thumbnails */
 function shailan_rss_post_thumbnail($content) {

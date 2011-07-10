@@ -89,15 +89,8 @@ class Shailan_Framework{
 			// Save the settings
 			update_option('stf_settings', $settings);
 		} else { // Options exist, update if necessary
-			$ver = $settings['stf_version'];
-			
-			if($ver != $this->version){ // Update needed
-				// TODO : add updates here.
-				
-				return $settings;				
-			} else { // Everythings gonna be alright. Return.
-				return $settings;
-			} 
+			// Everythings gonna be alright. Return.
+			return $settings;
 		}		
 	}
 	
@@ -123,6 +116,7 @@ class Shailan_Framework{
 	}
 	
 	function theme_admin_header(){
+		global $menu;
 	
 		if ( @$_GET['page'] == "stf-options" ) {
 		
@@ -170,7 +164,8 @@ class Shailan_Framework{
 			}
 		}
 
-		add_submenu_page('themes.php', $this->name . " Options", "Theme Options", "administrator", "stf-options", array(&$this, 'theme_admin_page'));	
+		$menu[56] = array( '', 'read', 'separator1', '', 'wp-menu-separator' );
+		add_menu_page( $this->name . " Options", $this->name, "administrator", "stf-options", array(&$this, 'theme_admin_page'), get_template_directory_uri() . "/app/css/images/layout_content.png", 57 );
 		
 	}
 	
@@ -189,7 +184,7 @@ class Shailan_Framework{
 	}
 	
 	function framework_copyright(){ ?>
-		<div id="theme-copyright"><small>Powered by <a href="http://wordpress.org" rel="external" target="_blank">Wordpress</a> <span class="amp">&</span> <a href="http://shailan.com/wordpress/themes/framework" title="Wordpress themes, plugins, widgets and more" rel="external" target="_blank">Framework Theme</a></small></div>
+		<div id="theme-copyright"><small>Powered by <a href="http://wordpress.org" rel="external" target="_blank">Wordpress</a> <span class="amp">&</span> <a href="http://shailan.com/wordpress/themes/darkside" title="Wordpress themes, plugins, widgets and more" rel="external" target="_blank">Darkside</a></small></div>
 	<?php }
 	
 };

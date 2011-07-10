@@ -85,11 +85,6 @@ function stf_default_widget_areas(){
 			'description' => 'Widgets over the header area'),
 			
 		array(
-			'name' => 'Header',
-			'id' => 'header',
-			'description' => 'Next to site title'),
-			
-		array(
 			'name' => 'Header bottom',
 			'id' => 'header-bottom',
 			'description' => 'Widgets under the header area'),		
@@ -112,6 +107,16 @@ function stf_default_widget_areas(){
 		array(
 			'name' => 'Secondary Sidebar',
 			'id' => 'secondary',
+			'description' => ''),
+			
+		array(
+			'name' => 'Floating Bar1',
+			'id' => 'floatingbar',
+			'description' => ''),
+			
+		array(
+			'name' => 'Floating Bar2',
+			'id' => 'floatingbar2',
 			'description' => ''),
 
 		array(

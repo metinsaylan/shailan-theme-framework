@@ -1,6 +1,7 @@
 <?php 
 
 /** DEFAULT FRAMEWORK OPTIONS */
+global $stf;
 
 $layouts = array(
 	'1c' => '1 Column',
@@ -11,18 +12,48 @@ $layouts = array(
 	'3cb' => '3 Columns Sidebars on Both Side'
 );
 
-$fonts = stf_get_fonts();
+$fonts = stf_get_font_names();
 
 $options = array (
 
-array( "name" => "Basic",
+array( "name" => __( "Basic", 'freshmilk' ),
 		"type" => "section"),
 		
 array( "type" => "open"),
 
-	array(  "name" => "Logo url",
+	array(  "name" => __("Logo url", 'freshmilk'),
 		"desc" => "URL of your logo image. (Eg:" . trailingslashit(get_bloginfo('template_directory')) . "images/logo.png)",
 		"id" => "stf_logo_url",
+		"std" => "",
+		"type" => "text"),
+		
+	array(  "name" => __("Site RSS URL", 'freshmilk'),
+		"desc" => "Will be used to display your latest tweet on header",
+		"id" => "stf_rss_url",
+		"std" => get_bloginfo('rss2_url'),
+		"type" => "text"),
+		
+	array(  "name" => __("Twitter username", 'freshmilk'),
+		"desc" => "Will be used to display your latest tweet on header",
+		"id" => "stf_twitter_username",
+		"std" => "shailancom",
+		"type" => "text"),
+		
+	array(  "name" => "Twitter balloon on header",
+		"desc" => "Displays your latest tweet on top of header",
+		"id" => "stf_twitter_enabled",
+		"type" => "checkbox",
+		"std" => "on" ),
+		
+	array(  "name" => "Facebook page URL",
+		"desc" => "URL of your facebook fan page",
+		"id" => "stf_facebook_URL",
+		"std" => "",
+		"type" => "text"),
+		
+	array(  "name" => "Subscribe using Email URL",
+		"desc" => "Feedburner URL for e-mail or any other e-mail subscription site URL",
+		"id" => "stf_subscribe_URL",
 		"std" => "",
 		"type" => "text"),
 		
@@ -30,25 +61,31 @@ array( "type" => "open"),
 		"desc" => "Enable breadcrumbs on home page.",
 		"id" => "breadcrumbs_enabled",
 		"type" => "checkbox",
+		"std" => "off"),	
+		
+	array("name" => "Use Framework Stylesheet",
+		"desc" => "Enables use of master stylesheet.",
+		"id" => "use_framework_stylesheet",
+		"type" => "checkbox",
 		"std" => "off"),
 
-	array(  "name" => "Entry header",
+	/*array(  "name" => "Entry header",
 		"desc" => "Entry header meta, shows right under the post title.",
 		"id" => "stf_entry_header_meta",
 		"std" => "By [authorlink] on [date] [cmnts before='| '] [edit ]",
-		"type" => "text"),
+		"type" => "text"),*/
 		
-	array(  "name" => "Entry footer",
+	/*array(  "name" => "Entry footer",
 		"desc" => "Entry footer meta, shows below the post content.",
 		"id" => "stf_entry_footer_meta",
 		"std" => '[categories before="Filed in: "] [tags before="| Tagged: "]',
-		"type" => "text"),
+		"type" => "text"),*/
 		
-	array(  "name" => "Entry footer for short formats",
+	/*array(  "name" => "Entry footer for short formats",
 		"desc" => "Entry footer meta for short formats: link, status, aside, picture ",
 		"id" => "stf_entry_short_meta",
 		"std" => '[permalink] &middot; [cmnts] [edit before="&middot; "]',
-		"type" => "text"),
+		"type" => "text"),*/
 		
 	array("name" => "Show comments on home page",
 		"desc" => "Enable commenting on home page.",
@@ -60,13 +97,14 @@ array( "type" => "open"),
 		"desc" => "If comments on homepage is enabled, sets how many comments to display on home.",
 		"id" => "stf_homepage_comment_count",
 		"std" => 3,
-		"type" => "text"),
+		"type" => "select",
+		"options" => array("3" => "3", "5" => "5", "10" => "10")),
 		
-	array(  "name" => "Feed footer",
+	/*array(  "name" => "Feed footer",
 		"desc" => "Displays after every post in the feed.",
 		"id" => "stf_feed_footer",
 		"std" => '<p><strong><em>This post is originally posted on <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>. <br />Visit <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> for more..</em></strong></p>',
-		"type" => "htmlarea"),
+		"type" => "htmlarea"),*/
 		
 	array(  "name" => "Site Footer Text",
 		"desc" => "Displays at the bottom of site. You can use various shortcodes here.",
@@ -76,9 +114,18 @@ array( "type" => "open"),
 
 array( "type" => "close"),
 
+
 array( "name" => "Layout",
 	"type" => "section"),
 array( "type" => "open"),
+
+	array(
+		"name" => "Enable Custom Layout",
+		"desc" => "This option enables controls on this page to change your site's layout.",
+		"id" => "stf_layout_enabled",
+		"type" => "checkbox",
+		"std" => "on"
+	),
 	
 	array(
 		"name" => "Page layout",
@@ -86,7 +133,7 @@ array( "type" => "open"),
 		"id" => "stf_layout",
 		"type" => "select",
 		"options" => $layouts,
-		"std" => "2cl"
+		"std" => "2cr"
 	),
 	
 	array(
@@ -125,15 +172,16 @@ array( "type" => "open"),
 		"id" => "stf_title_font",
 		"type" => "select",
 		"options" => $fonts,
-		"std" => "futura"
+		"std" => "bebas"
 	),
 	
 	array(
 		"name" => "Title font size scale",
 		"desc" => "Scales title size according to this scale.",
 		"id" => "stf_title_font_scale",
-		"type" => "text",
-		"std" => "1"
+		"type" => "select",
+		"std" => "1",
+		"options" => array( "1.2" => "1.2x", "1.3" => "1.3x", "1.5" => "1.5x", "2" => "2x")
 	),
 	
 	array(
@@ -149,8 +197,9 @@ array( "type" => "open"),
 		"name" => "Regular text font size",
 		"desc" => "Size of regular text (Eg. 12px or 1em).",
 		"id" => "stf_base_font_size",
-		"type" => "text",
-		"std" => "12px"
+		"type" => "select",
+		"std" => "1",
+		"options" => array( "12px" => "12px", "13px" => "13px", "14px" => "14px", "15px" => "15px", "16px" => "16px", "18px" => "18px")
 	),
 	
 array( "type" => "close"),

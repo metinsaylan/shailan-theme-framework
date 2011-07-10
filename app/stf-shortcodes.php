@@ -39,7 +39,7 @@ function stf_and_shortcode($args) {
 function stf_the_ID($args){ return '<span class="meta_ID">' . get_the_ID() . '</span>'; } 
 
 /** [permalink] */
-function stf_permalink($atts){ 
+function stf_permalink( $atts = array() ){ 
 	extract(shortcode_atts( array(
 		'before' => '<span class="entry-permalink">',
 		'after' => '</span>',
@@ -219,11 +219,11 @@ function stf_comment_count($args){
 } 
 
 // [shortlink text="shortlink" title="twit this" before="Get the " after="!"]
-function stf_the_shortlink($args){ 
+function stf_the_shortlink( $args = array() ){ 
 	global $post;
 
 	$defaults = array(
-		'text' => _e('Shortlink'),
+		'text' => __('Shortlink'),
 		'title' => ''
 	);	
 	$args = wp_parse_args( $args, $defaults );
@@ -240,7 +240,7 @@ function stf_the_shortlink($args){
 
 } 
 
-function stf_edit_link_shortcode($atts){
+function stf_edit( $atts = array() ){
 	extract(shortcode_atts( array(
 		'before' => '',
 		'after' => '',
@@ -255,25 +255,48 @@ function stf_edit_link_shortcode($atts){
 }
 
 // Returns post reply link
-function stf_post_reply_link_shortcode( $atts ){
+function stf_reply( $atts ){
+	global $post;
+	
 	extract(shortcode_atts( array(
 		'before' => '',
 		'after' => '',
-		'text' => __('Reply', 'stf')
+		'text' => __('Reply')
 	), $atts));
 	
-	if ( ! post_password_required() ){
+	if( comments_open( $post->ID ) && ! post_password_required() ){
 		$link = get_post_reply_link( array( 'before' => $before, 'after' => $after,  'reply_text' => $text, 'add_below' => 'entry' ), get_the_id() );
 		return $link;
-	}	
+	}
 }
 
 function stf_views($atts = null){
-	if( function_exists( 'the_views') ){
-		$view_count = get_post_meta( get_the_ID(), 'views', true);
-		return '<span class="views view-count">' . $view_count . '</span>';
-	}
+	extract(shortcode_atts( array(
+		'before' => '',
+		'single' => __('view', 'darkside'),
+		'plural' => __('views', 'darkside'),
+		'after' => ''
+	), $atts));
+
+	$view_count = get_post_meta( get_the_ID(), 'views', true);
+	
+	if( $view_count == 0 ) return '';
+	if( $view_count == 1 ) return $before . '<span class="views view-count">' . $view_count . ' ' . $single . '</span> ' . $after;
+	if( $view_count > 1 ) return $before . '<span class="views view-count">' . $view_count . ' ' . $plural . '</span> ' . $after;
 }
+
+function increment_views( $content ){
+	if(function_exists('the_views'))
+		return false;
+	
+	if( is_single() || is_page() ){
+		$view_count = get_post_meta( get_the_ID(), 'views', true);
+		update_post_meta( get_the_ID(), 'views', $view_count + 1, $view_count );
+	}
+	
+	return $content;
+	
+} add_filter( 'the_content', 'increment_views' );
 
 
 // TODO : [permalink]
@@ -330,7 +353,7 @@ function stf_queryposts($atts){
    $output .= '</ul>';
    
   else:
-   $output .= '<p class="error">[query] '.__("No posts found matching the arguments", "widgetbox").'</p>';
+   $output .= '<p class="error">[query] '.__("No posts found matching the arguments", "freshmilk").'</p>';
   endif;
 
 	wp_reset_postdata();
@@ -506,7 +529,7 @@ function stf_generator_link_shortcode($atts, $content = null){
 		'class' => 'generator-link'
 	), $atts));
 	
-	return "<span class=\"" . $class . "\"><a href=\"http://wordpress.org/\" title=\"" . __( 'WordPress', 'stf' ) . "\" rel=\"generator external nofollow\">" . __( 'WordPress', 'stf' ) . "</a></span>";
+	return "<span class=\"" . $class . "\"><a href=\"http://wordpress.org/\" title=\"" . __( 'WordPress' ) . "\" rel=\"generator external nofollow\">" . __( 'WordPress' ) . "</a></span>";
 }
 
 function stf_theme_link_shortcode($atts, $content = null){	
@@ -705,8 +728,8 @@ add_shortcode('cmnts', 'stf_comments_link');
 add_shortcode('comment_count', 'stf_comment_count');
 add_shortcode('the_shortlink', 'stf_the_shortlink'); 
 add_shortcode('shortlink', 'stf_the_shortlink');
-add_shortcode('edit', 'stf_edit_link_shortcode');
-add_shortcode('reply', 'stf_post_reply_link_shortcode');
+add_shortcode('edit', 'stf_edit');
+add_shortcode('reply', 'stf_reply');
 add_shortcode('views', 'stf_views');
 add_shortcode('permalink', 'stf_permalink');
 add_shortcode('back', 'stf_back_to_parent_shortcode');
