@@ -164,6 +164,44 @@ array( "type" => "open"),
 
 array( "type" => "close"),
 
+array( "name" => "Colors",
+	"type" => "section"),
+array( "type" => "open"),
+
+	array(
+		"name" => "Enable Custom Colors",
+		"desc" => "This option enables use of custom colors.",
+		"id" => "stf_colors_enabled",
+		"type" => "checkbox",
+		"std" => "on"
+	),
+
+	array(
+		"name" => "Background color",
+		"desc" => "Background color value (Eg. #ffffff)",
+		"id" => "stf_background_color",
+		"type" => "text",
+		"std" => "#ffffff"
+	),
+	
+	array(
+		"name" => "Text Color",
+		"desc" => "Site text color value (Eg. #444444)",
+		"id" => "stf_text_color",
+		"type" => "text",
+		"std" => "#444444"
+	),
+	
+	array(
+		"name" => "Title Color",
+		"desc" => "Site title color value (Eg. #555555)",
+		"id" => "stf_title_color",
+		"type" => "text",
+		"std" => "#555555"
+	),
+
+array( "type" => "close"),
+
 array( "name" => "Fonts",
 	"type" => "section"),
 array( "type" => "open"),
