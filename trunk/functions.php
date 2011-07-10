@@ -33,17 +33,18 @@ function theme_setup(){
 	add_custom_background();
 	
 	// Languages
-	load_theme_textdomain( 'darkside', TEMPLATEPATH . '/lang' );
+	load_theme_textdomain( 'stf', TEMPLATEPATH . '/lang' );
 	$locale = get_locale();
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
 	
-	if(!is_admin()){
+	if( !is_admin() ){
 		// Queue Scripts 
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/js/theme.js', 'jquery' );
-		wp_enqueue_script( 'jumper', get_template_directory_uri() . '/js/shailan.jumper.js', 'jquery' );
+		wp_enqueue_script( 'jumper', get_template_directory_uri() . '/app/scripts/shailan.jumper.js', 'jquery' );
+		wp_enqueue_script( 'tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltip.js' );
 		wp_enqueue_script( 'cycle', 'http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js', array( 'jquery') );
 	}
 
