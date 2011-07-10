@@ -5,9 +5,6 @@
 // Animated Scrolling
 jQuery(document).ready(function() {
 	jQuery("#" + elemID).anchorAnimate();
-	/* jQuery(window).scroll(function() {
-		jQuery('#' + elemID).css('top', jQuery(this).scrollTop() + "px");
-	}); */
 });
 
 /* Animated scrolling */
