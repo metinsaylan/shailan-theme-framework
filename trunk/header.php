@@ -33,11 +33,8 @@
 	<!-- Header -->
 	<div id="header" class="clearfix">
 		<?php stf_widget_area('header-top'); ?>
-		
-		
 		<?php stf_branding(); ?>
 
-		
 		<!-- Banner Area -->
 		<div id="header-widgets">
 			<?php stf_widgets('header'); ?>
@@ -45,9 +42,7 @@
 		<!-- [End] Banner Area -->
 		
 		<div class="clearboth"></div>
-		
 		<?php stf_widget_area('header-bottom'); ?>
-
 	</div>
 	<!-- [End] Header -->
 	
