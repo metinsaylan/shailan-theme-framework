@@ -8,10 +8,6 @@ AUTHOR URI: http://shailan.com
 TAGS: framework, all-widget, widgets, widget-areas, xhtml
 */
 
-@import url('http://fonts.googleapis.com/css?family=Ubuntu');
-@charset "utf-8";
-
-
 /* Tables */ 
 .entry-content table, .widget_calendar table{ margin-bottom:1em; border-collapse: collapse; border-spacing:0; border: 1px solid #EFEFEF; }
 .widget_calendar table caption{ border-top:1px solid #ddd; border-bottom:3px double #ddd; background:#eee; }
