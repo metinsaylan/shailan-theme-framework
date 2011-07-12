@@ -665,6 +665,7 @@ function stf_google_translate(){ ?>
 }
 
 function stf_stylesheets(){
+	global $stf;
 	
 	stf_layout(); // Layout styles
 	
