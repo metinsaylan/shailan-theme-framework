@@ -33,6 +33,7 @@ include_once('widgets/include-template/include-template.php'); // INCLUDER
 include_once('widgets/wp-login-widget/wp-login-widget.php'); // LOGIN FORM
 include_once('widgets/stf-latest-tweet.php'); // LATEST TWEET WIDGET
 include_once('widgets/stf-floating-sidebar.php'); // FLOAINGBAR WIDGET
+include_once('widgets/stf-sidebar-tabs.php'); // TABS WIDGET
 
 // Other interfaces
 include_once('stf-typography.php'); // TYPOGRAPHY

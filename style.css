@@ -161,6 +161,11 @@ body .hasCountdown{ border:1px solid #ccc; border-radius: 10px; background:#ddd;
 body .countdown_amount{  }
 body .countdown_descr{  }
 
+/*- WP GREET */
+#content .greet_block { }
+#content .greet_text { }
+#content .greet_block_close { }
+
 /*- PAGERANK */
 .pagerank{ background: #EFEFEF; border: 1px solid #CCC; font-size: 10px; height: 16px; line-height: 10px; padding: 2px 3px; text-align: center;
     width: 32px; border-radius:3px; margin-bottom: 5px;} 
@@ -173,10 +178,49 @@ mark.orange, .highlight.orange { background: #FF9B30; text-shadow: #EE8A20 1px 1
 mark.yellow, .highlight.yellow { background: #FFEC16; text-shadow: #EEDB05 1px 1px 0; }
 
 /*- HEADER */
-#branding { margin: 10px 0 15px; }
-	#site-title{ font-size:36px; }
+#header { position:relative; }
+	#branding { margin: 10px 0 15px; }
+		#site-title{ font-size:36px; }
+	#searchform-wrapper{ 
+		position: absolute;
+		right: 0px;
+		top: 0px; 
+	}
 
+#content div.wpcf7{ margin:30px auto; width:400px; }
+#s, .wpcf7-text, .wpcf7 textarea {
+	border: 1px solid #ccc;
+	line-height: 24px;
+	font-size: 20px;
+	background: #181818;
+	color: #999;
+	padding: 3px 10px;
+	/*width: 378px;*/
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	
+	box-shadow: inset #ccc 0 0 2px;
+	-moz-box-shadow: inset #ccc 0 0 2px;
+}
 
+#s{ 
+	font-size:14px; width:100px; 	
+	-webkit-transition: width .4s ease-in-out;
+	-moz-transition: width .4s ease-in-out;
+	-o-transition: width .4s ease-in-out;
+	background: url('images/search_bg.png') 3px 2px no-repeat;
+}
+#s:active, #s:focus{ width:210px; }
+#s:focus{ border:1px solid #789; 
+	color: #555;
+	background: url('images/search_bg_glow.png') 3px 2px no-repeat; }
+
+input.wpcf7-submit { 
+	float: right; 
+	font-size: 18px;
+	font-weight: normal; 
+}
 
 /*- BREADCRUMBS */
 #breadcrumbs { 
@@ -456,3 +500,22 @@ line-height: 22px; margin-right: 15px; }
 	text-shadow: white 0 1px 0;
 }
 #respond input[aria-required="true"], input[type="text"].required{ background: #fff url(images/required.gif) 99% 3px no-repeat; }
+
+/*- SIDEBAR & WIDGETS */
+.sidebar ul{ list-style:none; padding: 0; margin:0; margin-bottom:1em; border-top:2px solid #ddd; }
+.sidebar li{ 
+	line-height:2.5em;
+	border-bottom:1px solid #ddd;
+	list-style:none;
+	padding: 0 0 0 10px;
+	margin: 0;
+	background: #efefef;
+	-webkit-transition: background .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out;
+	-o-transition: background .2s ease-in-out;
+}
+.sidebar li a{ color:#888 }
+.sidebar li:hover{ background: #e6e6e6; }
+.sidebar li:hover a{ color: #555; }
+.sidebar li ul{ margin:0; border-top:1px solid #333; padding:0 0 0 10px; }
+.sidebar li ul li:last-child{ border:0; }

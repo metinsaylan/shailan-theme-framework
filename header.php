@@ -33,7 +33,8 @@
 	<!-- Header -->
 	<div id="header" class="clearfix">
 		<?php stf_widget_area('header-top'); ?>
-		<?php stf_branding(); ?>		
+		<?php stf_branding(); ?>
+		<div id="searchform-wrapper"><?php get_search_form(); ?></div>
 		<?php stf_widget_area('header-bottom'); ?>
 	</div>
 	<!-- [End] Header -->
