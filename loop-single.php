@@ -21,10 +21,6 @@
 		</div>
 		<!-- [End] Entry Content -->
 
-		<?php get_template_part('ads', 'bottom'); ?>
-		<?php get_template_part('share', 'single'); ?>
-		<?php get_template_part('author', 'single'); ?>
-
 		<?php get_template_part('entry', 'footer'); ?>
 		
 	</div>

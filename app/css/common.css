@@ -142,8 +142,8 @@ dd{ padding:10px 10px 10px 25px; }
 .center{ text-align:center; }
 
 .tcenter, .aligncenter{ display:block; clear:both; margin:15px auto; }
-.tright, .alignright{ float:right; margin-left:15px; }
-.tleft, .alignleft{ float:left; margin-right:15px; }
+.tright, .alignright{ float:right; margin:0 0 1.3em 1em; }
+.tleft, .alignleft{ float:left; margin:0 1em 1.3em 0; }
 .alignnone{ float:none; }
 
 .thumb.tleft, .wp-caption.alignleft, img.alignleft, img[align="left"] { 

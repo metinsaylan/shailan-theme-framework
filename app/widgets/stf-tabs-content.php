@@ -42,7 +42,8 @@
 				if( function_exists('blc_latest_comments') ){
 					blc_latest_comments( 6, 4, true, "<li class='alternate'>", "</li>", true, 15, "#444444", "#BBBBBB");
 				} else {
-					the_widget('WP_Widget_Recent_Comments'); 
+					$args = array('title'=>'', 'number'=>8);
+					the_widget('WP_Widget_Recent_Comments', $args); 
 				} 
 		   ?>
 		   </ul>
