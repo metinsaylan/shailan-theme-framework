@@ -121,18 +121,18 @@ dd{ padding:10px 10px 10px 25px; }
 .clearright{ clear:right; }
 
 /* Clearfix */
-.clearfix:after {
+.clearfix:after, blockquote:after {
 	clear: both;
 	content: ".";
 	display: block;
 	height: 0;
 	visibility: hidden;
 }
-* html > body .clearfix {
+* html > body .clearfix, * html > body  blockquote {
 	display: block;
 	width: 100%;
 }
-* html .clearfix {
+* html .clearfix, * html blockquote {
 	height: 1%;
 }
 

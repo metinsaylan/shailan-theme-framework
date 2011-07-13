@@ -97,10 +97,13 @@ class STF_TableOfContents {
     }
 
     function the_posts($posts) {
+		if(is_home())
+			return $posts;
+	
         for ($i = 0; $i < sizeof($posts); $i ++) {
             $post = &$posts[$i];
             $this->postid = $post->ID;
-            $post->post_content = $this->the_content($post->post_content);
+            $post->post_content = $this->the_content( $post->post_content );
             $post->post_toc = $this->get_toc();
         }
         return $posts;

@@ -5,7 +5,7 @@
 		<h2><?php the_title(); ?></h2>
 		
 		<div id="gallery-<?php the_ID(); ?>" class="gallery-container">
-			<ul class="gallery-display">
+			<ul class="gallery-display clearfix">
 		<?php
 			$args = array( 'post_type' => 'attachment', 'numberposts' => 3, 'post_status' => null, 'post_parent' => $post->ID, 'orderby' => 'rand' ); 
 			$attachments = get_posts($args);
@@ -13,7 +13,6 @@
 				foreach ( $attachments as $attachment ) {
 					echo "<li>";
 						echo wp_get_attachment_link( $attachment->ID, array(150, 125), true, false);
-						echo $attachment->post_status;
 					echo "</li>";
 				}
 			}

@@ -175,7 +175,7 @@ function shailan_feedburner_count($feedburner_id, $display = false){
 }	
 
 /** Twitter follower count */
-function shailan_twitter_followers($twitter_id){
+function shailan_twitter_followers( $twitter_id ){
 	$opt_key = 'shailan_twitter_followers_' . $twitter_id;
 	$twitter = maybe_unserialize(get_option( $opt_key ));
 	$last_check = $twitter['lastcheck'];
