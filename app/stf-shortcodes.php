@@ -158,7 +158,7 @@ function stf_tags($args){
 	global $post;
 	
 	$defaults = array(
-		'before' => '',
+		'before' => __('Tags: '),
 		'after' => '',
 		'separator' => ', ',
 		'lastseparator' => ' ' . __('and') . ' '
