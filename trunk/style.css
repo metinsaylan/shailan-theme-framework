@@ -19,6 +19,7 @@ a:hover  { text-decoration:none; color:#7af; }
 pre, code { background:#e0e0e0; font-size: 12px; }
 pre{ border:1px solid #fff; box-shadow:inset #ccc 1px 1px 1px, inset #ccc -1px -1px 1px; }
 h3 { margin: 1.5em 0 0.5em; }
+blockquote { background: transparent; border-left: 2px solid #DDD; padding-left: 20px; margin-left: 10px; font-family: 'Crimson Text', serif; font-size:18px; }
 
 /*- SMALL TEXT */
 .entry-footer, 
@@ -188,13 +189,13 @@ mark.yellow, .highlight.yellow { background: #FFEC16; text-shadow: #EEDB05 1px 1
 	#breadcrumbs .current { color: #999; }
 
 /*- ENTRY */
-.hentry{ margin:0 0 1em; padding:1em; border-radius:10px; 
+.hentry{ margin:0; padding:1em; border-radius:10px; 
 	/* box-shadow: #ccc 0 2px 3px; */
 }
 .entry-wrap {
 	border-bottom: 2px dotted #e6e6e6;
 	margin-bottom: 1.5em;
-	padding-bottom: 0;
+	padding-bottom: 1.5em;
 }
 .entry-content:hover{ color:#555; }
 .entry-footer, .entry-controls { color: #AAA; margin-top:1em; margin-bottom: 0; }
@@ -293,10 +294,40 @@ a.delicious, a.delicious:hover { background: url(images/share_delicious.gif) no-
 /*- ENTRY FORMATS */
 .format-link  .entry-content p { margin:0; }
 .format-audio  .entry-content p { margin:0; }
+
+.format-quote .entry-content blockquote{  
+	background: #EFEFEF;
+	border: 1px solid white;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	box-shadow: #DDD 0 1px 3px;
+	-moz-box-shadow: #DDD 0 1px 3px;
+	-webkit-box-shadow: #DDD 0 1px 3px;
+	
+	overflow:
+}
+blockquote cite{ float:right; }
+blockquote cite:before{ content: '- '; }
+
 .format-quote  .entry-content p { margin:0; }
+
 .format-image  .entry-content p { margin:0; }
 .format-aside .entry-content{ font-family: 'Crimson Text', serif; font-style: italic; font-size:18px; }
+
 .format-status .author-avatar{ float:left; margin-right:10px; }
+
+ul.gallery-display{ margin: 1.5em 0; padding:0; }
+.gallery-display li {
+list-style: none;
+float: left;
+padding: 10px;
+background: #DDD;
+margin: 4px;
+border-radius: 6px;
+width: 169px;
+text-align: center;
+}
 
 
 /*- SHARE */
@@ -321,6 +352,7 @@ div#comments{ }
 
 ul.inlinecomments, ul.inlinecomments ul, ul.inlinecomments li{ padding:0; margin:0; list-style:none; }
 ul.inlinecomments ul{ margin-left:10px; }
+div.inline-comments-list { margin: 1em 0 1em 2em; }
 div.inline-comment{ 
     background-color: #e6e6e6;
 	border:1px solid #fff; box-shadow:inset #ddd 1px 1px 1px, inset #ddd -1px -1px 1px;
