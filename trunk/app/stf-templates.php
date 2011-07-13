@@ -514,13 +514,14 @@ function stf_comment_inline( $comment, $args, $depth ) {
 					<em><?php _e( 'Your comment is awaiting moderation.', 'freshmilk' ); ?></em>
 				<?php endif; ?>
 				
-				<span class="comment-author"><?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?></span> 
-				<div class="comment-text"><?php comment_text(); ?></div>
-				<div class="comment-meta commentmetadata">
-				  <span class="comment-date"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php
+				<span class="comment-author"><?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?></span> <span class="comment-date"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php
 						/* translators: 1: date, 2: time */
 						printf( __( '<span title="at %2$s">%1$s</span>' ), get_comment_date('M j, Y'),  get_comment_time() ); ?></a></span>
-				  <?php edit_comment_link( __( 'edit' ), '<span class="comment-edit-link">', '</span>' );	?>
+				
+				<?php edit_comment_link( __( 'edit' ), ' <span class="comment-edit-link">', '</span>' );	?>
+				
+				<div class="comment-text"><?php comment_text(); ?></div>
+				<div class="comment-meta commentmetadata">
 				  <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 				</div><!-- .comment-meta .commentmetadata -->
 
