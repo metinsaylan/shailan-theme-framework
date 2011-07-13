@@ -54,7 +54,9 @@
 		   <?php
 		   
 				$args = array(
-					'title_li' => ''
+					'title_li' => '',
+					'hierarchical' => 'false',
+					'depth' => 1
 				);
 		   
 				wp_list_categories( $args );

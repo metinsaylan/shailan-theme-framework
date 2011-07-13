@@ -63,13 +63,13 @@ function stf_layout(){
 		div#footer{ clear: both; margin-left: auto; margin-right: auto; padding-left:0; padding-right:0; }
 		
 		.row .row{ margin-left:-20px; }
-		.column{ float:left; display:inline; margin-left: <?php echo $stf_padding; ?>px; } 
+		.column{ float:left; display:inline; margin-right: <?php echo $stf_padding; ?>px; } 
 		.full-width{ width: <?php echo $stf_full_width; ?>px; }
 		.half-width{ width: <?php echo $stf_half_width; ?>px; }
 		.one-third{ width: <?php echo $stf_one_third; ?>px; }
 		.one-fourth{ width: <?php echo $stf_one_fourth; ?>px; }
 		
-		#footer .column { width: <?php echo $stf_one_third; ?>px; }
+		/* #footer .column { width: <?php echo $stf_one_third; ?>px; } */
 		
 		#content .full-width{ width: <?php echo floor( $post_width - 2*$stf_padding ); ?>px; }
 		#content .half-width{ width: <?php echo floor( ( $post_width - 3*$stf_padding ) / 2 ); ?>px; }
