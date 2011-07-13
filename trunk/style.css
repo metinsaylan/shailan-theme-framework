@@ -187,8 +187,8 @@ mark.yellow, .highlight.yellow { background: #FFEC16; text-shadow: #EEDB05 1px 1
 	#breadcrumbs .current { color: #999; }
 
 /*- ENTRY */
-.hentry{ background:#fff; margin:0 0 1em; padding:1em; border-radius:10px; 
-	box-shadow: #ccc 0 2px 3px; 
+.hentry{ margin:0 0 1em; padding:1em; border-radius:10px; 
+	/* box-shadow: #ccc 0 2px 3px; */
 }
 .entry-wrap {
 	border-bottom: 2px dotted #e6e6e6;
@@ -222,6 +222,9 @@ mark.yellow, .highlight.yellow { background: #FFEC16; text-shadow: #EEDB05 1px 1
 	-webkit-transform: rotate(-5deg);
 	box-shadow: #CCC 1px 1px 2px;
 }
+
+.avatar{ border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; }
+
 #authorbox .author-info {
 	padding: 5px;
 	padding-left: 60px;
@@ -285,6 +288,8 @@ a.delicious, a.delicious:hover { background: url(images/share_delicious.gif) no-
 .format-quote  .entry-content p { margin:0; }
 .format-image  .entry-content p { margin:0; }
 .format-aside .entry-content{ font-family: 'Crimson Text', serif; font-style: italic; font-size:18px; }
+.format-status .author-avatar{ float:left; margin-right:10px; }
+
 
 /*- SHARE */
 div.share {
