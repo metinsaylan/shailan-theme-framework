@@ -94,15 +94,15 @@
 							<div class="nav-next"><?php next_image_link( false ); ?> &rarr;</div>
 						</div><!-- #nav-below -->
 						
-						<?php echo $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE post_parent = '$parent' AND post_type = 'attachment'" ); ?> picture // <?php the_views(); ?>
+						<?php echo $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE post_parent = '$parent' AND post_type = 'attachment'" ); ?> picture // <?php echo stf_views(); ?>
 						
 						<div class="attachment-navi">
-							<?php	if ( count( $attachments ) > 1 ) {
+							<?php	if ( count( $prev_attachments ) > 1 ) {
 								foreach($prev_attachments as $key=>$link){
 									echo " <a href=\"".$link['URL']."\">" . $link['id'] . "</a> ";
 								}
 							}	?> <strong><?php echo $current_id; ?></strong> 
-							<?php	if ( count( $attachments ) > 1 ) {
+							<?php	if ( count( $next_attachments ) > 1 ) {
 								foreach($next_attachments as $key=>$link){
 									echo " <a href=\"".$link['URL']."\">" . $link['id'] . "</a> ";
 								}

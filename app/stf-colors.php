@@ -14,7 +14,7 @@ function stf_colors(){
 ?><!-- STF Custom colors -->
 	<style type="text/css" media="all">
 	
-		body, td, textarea, input, select{ 
+		body, textarea, input, select{ 
 			background-color: <?php echo $background; ?>; }
 			
 		body, td, textarea, input, select {

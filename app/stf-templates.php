@@ -456,7 +456,7 @@ function stf_comment( $comment, $args, $depth ) {
 		<div class="arrow"></div>		
 		<div class="comment-author-avatar vcard">
 			<a href="<?php echo get_comment_author_url( get_comment_ID() ); ?>" rel="external nofollow" title="<?php echo comment_author(); ?>">
-				<?php echo get_avatar( $comment, 40 ); ?>
+				<?php echo get_avatar( $comment, 50 ); ?>
 			</a>
 		</div><!-- .comment-author .vcard -->
 		
@@ -505,7 +505,7 @@ function stf_comment_inline( $comment, $args, $depth ) {
 			<div class="arrow"></div>		
 			<div class="comment-author-avatar vcard">
 				<a href="<?php echo get_comment_author_url( get_comment_ID() ); ?>" rel="external nofollow" title="<?php echo comment_author(); ?>">
-					<?php echo get_avatar( $comment, 40 ); ?>
+					<?php echo get_avatar( $comment, 50 ); ?>
 				</a>
 			</div><!-- .comment-author .vcard -->
 			
