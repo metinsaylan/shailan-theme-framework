@@ -1,8 +1,11 @@
 /* Tabs CSS */
-#sidebar-tabs { background: #efefef; 
-    box-shadow: inset #CCC 0 0 6px;
-    -webkit-box-shadow: inset #CCC 0 0 6px;
-    -moz-box-shadow: inset #CCC 0 0 6px;
+#sidebar-tabs {
+	background: #efefef; 
+	border:1px solid #ddd;
+    box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    -o-box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    -moz-box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    -webkit-box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
     padding: 5px; border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; margin-bottom: 20px; }
 div.tabs-container{ border-bottom:1px solid #ccc; /*margin-bottom:10px;*/ }
 ul.tabs, ul.ajax-tabs { margin: 0; padding: 0; border:0; float: left; list-style: none; height: 37px; width: 100%; }

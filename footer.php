@@ -8,15 +8,15 @@
 		<div class="row clearfix">
 		<!-- Footer Columns -->
 		
-			<div id="footer-column-1" class="column">
+			<div id="footer-column-1" class="one-third column sidebar">
 				<?php stf_widgets('footer-column-1'); ?>
 			</div>
 			
-			<div id="footer-column-2" class="column">
+			<div id="footer-column-2" class="one-third column sidebar">
 				<?php stf_widgets('footer-column-2'); ?>
 			</div>
 			
-			<div id="footer-column-3" class="column">
+			<div id="footer-column-3" class="one-third column last sidebar">
 				<?php stf_widgets('footer-column-3'); ?>
 			</div>
 			
@@ -28,12 +28,14 @@
 		</div>
 		
 	<div id="theme-footer" class="clearfix">
-		<div class="alignleft half-width">
-			<small><?php stf_theme_footer(); ?></small> 
-		</div>
+		<div class="row clearfix">
+			<div class="half-width column">
+				<small><?php stf_theme_footer(); ?></small> 
+			</div>
 		
-		<div class="alignright right half-width">
-			<a href="#header" class="jumper">Return to Top &uarr;</a>
+			<div class="half-width column last right">
+				<small><a href="#header" class="jumper">Return to Top &uarr;</a></small>
+			</div>
 		</div>
 	</div>
 		
