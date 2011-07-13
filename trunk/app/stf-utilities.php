@@ -116,7 +116,7 @@ function shailan_excerpt_length($length) {
  
 /** Excerpt More text */
 function stf_more( $more_fallback = '' ) {
-	$more = ' <a href="'. get_permalink() . '">';
+	$more = ' <a href="'. get_permalink() . '" class="read-more">';
 	$more_text = stf_get_setting('shailan_more');
 	$more_text = preg_replace('#%title%#i', get_the_title(), $more_text);
 	

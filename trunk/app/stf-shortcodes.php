@@ -273,6 +273,7 @@ function stf_reply( $atts ){
 function stf_views($atts = null){
 	extract(shortcode_atts( array(
 		'before' => '',
+		'freshtext' => __('Fresh', 'stf'),
 		'single' => __('view', 'darkside'),
 		'plural' => __('views', 'darkside'),
 		'after' => ''
@@ -280,7 +281,7 @@ function stf_views($atts = null){
 
 	$view_count = get_post_meta( get_the_ID(), 'views', true);
 	
-	if( $view_count == 0 ) return '';
+	if( $view_count == 0 ) return $before . '<span class="views view-count">' . $freshtext . '</span> ' . $after;;
 	if( $view_count == 1 ) return $before . '<span class="views view-count">' . $view_count . ' ' . $single . '</span> ' . $after;
 	if( $view_count > 1 ) return $before . '<span class="views view-count">' . $view_count . ' ' . $plural . '</span> ' . $after;
 }
