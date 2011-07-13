@@ -25,7 +25,7 @@
 </div>
 <!-- [End] Entry Footer -->
 
-<?php if( is_single() || is_page() || is_attachment() ) { ?>
+<?php if( is_single() ) { ?>
 	<!-- Entry Footer -->
 	<div class="explore clearfix">
 		<div id="related-posts">

@@ -5,10 +5,11 @@ class stf_sidebar_tabs extends WP_Widget {
 		$this->WP_Widget('stf-sidebar-tabs', __('Sidebar Tabs'), $widget_ops);
 		$this->alt_option_name = 'stf_sidebar_tabs';	
 		
-		if ( is_active_widget(false, false, $this->id_base, true) ) {
+		if ( is_active_widget(false, false, $this->id_base, true) && !is_admin() ) {
 			wp_enqueue_script('jquery');
 			wp_enqueue_script('shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltips.js', 'jquery');
 			wp_enqueue_script('shailan.tabs', get_template_directory_uri() . '/app/scripts/shailan.tabs.js', 'jquery');
+			wp_enqueue_style( 'shailan.tabs', get_template_directory_uri() . '/app/css/shailan.tabs.css' );
 		}
     }
 

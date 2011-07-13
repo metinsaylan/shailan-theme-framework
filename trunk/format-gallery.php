@@ -22,10 +22,7 @@
 		
 		<a class="read-more" href="<?php the_permalink(); ?>"><?php _e('View all &rarr;'); ?></a>
 	</div>
-	
-	<div class="entry-controls">
-		<?php stf_entry_short_meta(); ?>	
-	</div>
+	<?php get_template_part('entry', 'footer'); ?>	
 	
 </div>
 <div class="clear"></div>
