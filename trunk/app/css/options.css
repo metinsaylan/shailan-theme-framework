@@ -18,7 +18,7 @@
 
 .stf_opts input[type="text"], .stf_opts select{ width:250px; font-size:12px; padding:4px; color:#333; line-height:1em;	background:#efefef; }
 .stf_input input:focus, .stf_input textarea:focus{ background:#fff; }
-.stf_input textarea{ width:250px; height:135px; font-size:12px; padding:4px; color:#333; line-height:1.5em; background:#efefef;
+.stf_input textarea{ width:490px; height:150px; font-size:12px; padding:4px; color:#333; line-height:1.5em; background:#efefef;
 }
 .stf_table th, .stf_table td{ border:1px solid #bbb; padding:10px; text-align:center; }
 .stf_table th, .stf_table td.feature{ border-color:#ccc; }

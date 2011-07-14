@@ -30,8 +30,8 @@
 </div>
 
 <div class="navigation clearfix">
-	<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '<span class="nav-arrow-left">&larr;</span>', 'Previous post link', 'twentyten' ) . '</span> %title' ); ?></div>
-	<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '<span class="nav-arrow-left">&rarr;</span>', 'Next post link', 'twentyten' ) . '</span>' ); ?></div>
+	<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '<span class="nav-arrow-left">&larr;</span>', 'Previous post link', 'stf' ) . '</span> %title' ); ?></div>
+	<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '<span class="nav-arrow-left">&rarr;</span>', 'Next post link', 'stf' ) . '</span>' ); ?></div>
 </div>
 
 <?php endwhile; /* End The Loop */ ?>

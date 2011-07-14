@@ -1,8 +1,8 @@
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
-		<h1 class="entry-title"><?php _e( 'Not Found', 'twentyten' ); ?></h1>
+		<h1 class="entry-title"><?php _e( 'Not Found', 'stf' ); ?></h1>
 		<div class="entry-content">
-			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'twentyten' ); ?></p>
+			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'stf' ); ?></p>
 			<?php get_search_form(); ?>
 		</div><!-- .entry-content -->
 	</div><!-- #post-0 -->
@@ -10,7 +10,7 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<?php if ( in_category( _x('gallery', 'gallery category slug', 'twentyten') ) ) : ?>
+	<?php if ( in_category( _x('gallery', 'gallery category slug', 'stf') ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php get_template_part('entry', 'header'); ?>
 
@@ -28,8 +28,8 @@
 						<div class="gallery-thumb">
 							<a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 						</div><!-- .gallery-thumb -->
-						<p><em><?php printf( __( 'This gallery contains <a %1$s>%2$s photos</a>.', 'twentyten' ),
-								'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
+						<p><em><?php printf( __( 'This gallery contains <a %1$s>%2$s photos</a>.', 'stf' ),
+								'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'stf' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
 								$total_images
 							); ?></em></p>
 				<?php endif; ?>
@@ -38,16 +38,16 @@
 			</div><!-- .entry-content -->
 
 			<div class="entry-utility">
-				<a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'twentyten'), 'category' ); ?>" title="<?php esc_attr_e( 'View posts in the Gallery category', 'twentyten' ); ?>"><?php _e( 'More Galleries', 'twentyten' ); ?></a>
+				<a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'stf'), 'category' ); ?>" title="<?php esc_attr_e( 'View posts in the Gallery category', 'stf' ); ?>"><?php _e( 'More Galleries', 'stf' ); ?></a>
 				<span class="meta-sep">|</span>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
-				<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'stf' ), __( '1 Comment', 'stf' ), __( '% Comments', 'stf' ) ); ?></span>
+				<?php edit_post_link( __( 'Edit', 'stf' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
 
 <?php /* How to display posts in the asides category */ ?>
 
-	<?php elseif ( in_category( _x('asides', 'asides category slug', 'twentyten') ) ) : ?>
+	<?php elseif ( in_category( _x('asides', 'asides category slug', 'stf') ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<?php if ( is_archive() || is_search() ) : // Display excerpts for archives and search. ?>
@@ -56,7 +56,7 @@
 			</div><!-- .entry-summary -->
 		<?php else : ?>
 			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'stf' ) ); ?>
 			</div><!-- .entry-content -->
 		<?php endif; ?>
 
@@ -75,8 +75,8 @@
 			</div><!-- .entry-summary -->
 	<?php else : ?>
 			<div class="entry-content">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'stf' ) ); ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'stf' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 	

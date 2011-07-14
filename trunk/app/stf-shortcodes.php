@@ -274,8 +274,8 @@ function stf_views($atts = null){
 	extract(shortcode_atts( array(
 		'before' => '',
 		'freshtext' => __('Fresh', 'stf'),
-		'single' => __('view', 'darkside'),
-		'plural' => __('views', 'darkside'),
+		'single' => __('view', 'stf'),
+		'plural' => __('views', 'stf'),
 		'after' => ''
 	), $atts));
 
@@ -354,7 +354,7 @@ function stf_queryposts($atts){
    $output .= '</ul>';
    
   else:
-   $output .= '<p class="error">[query] '.__("No posts found matching the arguments", "freshmilk").'</p>';
+   $output .= '<p class="error">[query] '.__("No posts found matching the arguments", 'stf').'</p>';
   endif;
 
 	wp_reset_postdata();

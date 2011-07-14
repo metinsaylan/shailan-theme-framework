@@ -53,7 +53,7 @@ class stf_blog_title extends WP_Widget {
 			$title = '<a href="'. $the_permalink .'">'. $title .'</a>';
 			$tagline = 'on <a href="'.get_bloginfo('url').'" rel="home">'. get_bloginfo( 'name' ) . '</a>'; 
 		} elseif ( is_search() ) {
-			$title = sprintf( __('Search Results for \'%s\'','k2_domain'), esc_attr( get_search_query() ) );
+			$title = sprintf( __('Search Results for \'%s\'','stf'), esc_attr( get_search_query() ) );
 			$tagline = 'on <a href="'.get_bloginfo('url').'" rel="home">'. get_bloginfo( 'name' ) . '</a>'; 
 		} elseif ( is_404() ) {
 			$titles = array('Four-O-Four = Not found', 'Oops. Not found!', 'Something is missing..', 'What is that?', 'LOST', 'It never existed!');
@@ -67,13 +67,13 @@ class stf_blog_title extends WP_Widget {
 				the_post();
 				
 				if ( is_day() ) {
-					$title = get_the_time( __('F jS, Y','k2_domain') );
+					$title = get_the_time( __('F jS, Y','stf') );
 					$tagline = 'Daily archives on <a href="'.get_bloginfo('url').'" rel="home">'. get_bloginfo( 'name' ) . '</a>'; 
 				} elseif ( is_month() ) {
-					$title = get_the_time( __('F, Y','k2_domain') );
+					$title = get_the_time( __('F, Y','stf') );
 					$tagline = 'Monthly archives on <a href="'.get_bloginfo('url').'" rel="home">'. get_bloginfo( 'name' ) . '</a>'; 
 				} elseif ( is_year() ) {
-					$title = get_the_time( __('Y','k2_domain') );
+					$title = get_the_time( __('Y','stf') );
 					$tagline = 'Yearly archives on <a href="'.get_bloginfo('url').'" rel="home">'. get_bloginfo( 'name' ) . '</a>'; 
 				}
 				rewind_posts();			

@@ -1,9 +1,9 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 	<?php if ( ! empty( $post->post_parent ) ) : $parent = $post->post_parent; ?>
-		<p class="parent-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'twentyten' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
+		<p class="parent-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'stf' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
 			/* translators: %s - title of parent post */
-			printf( __( '<span class="meta-nav">&larr;</span> %s', 'twentyten' ), get_the_title( $post->post_parent ) );
+			printf( __( '<span class="meta-nav">&larr;</span> %s', 'stf' ), get_the_title( $post->post_parent ) );
 		?></a></p>
 	<?php endif; ?>
 
@@ -115,8 +115,8 @@
 						</div><!-- .entry-attachment -->
 						<div class="entry-caption"><?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?></div>
 
-<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentyten' ) ); ?>
-<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'stf' ) ); ?>
+<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'stf' ), 'after' => '</div>' ) ); ?>
 
 					</div><!-- .entry-content -->
 					
