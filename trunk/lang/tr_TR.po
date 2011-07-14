@@ -1,0 +1,532 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: stf\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-14 15:51+0200\n"
+"PO-Revision-Date: 2011-07-14 16:36+0200\n"
+"Last-Translator: Metin Saylan <metinsaylan@gmail.com>\n"
+"Language-Team: shailan <matt@shailan.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_x;esc_html__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: C:\\wamp\\www\\wp3\\wp-content\\themes\\shailan-theme-framework\n"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/author-single.php:11
+msgid " posts"
+msgstr " yazı"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:11
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Bu yazı parola korumalıdır. Yorumları görebilmek için lütfen parola giriniz."
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:32
+#, php-format
+msgid "<span>%d</span> Comments"
+msgstr "<span>%d</span> Yorum"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:32
+msgid "<span>One</span> Comment"
+msgstr "<span>Bir</span> Yorum"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:61
+#, php-format
+msgid "<span>%d</span> Trackbacks"
+msgstr "<span>%d</span> Geri izleme"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:61
+msgid "<span>One</span> Trackback"
+msgstr "<span>Bir</span> Geri izleme"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:79
+#, php-format
+msgid "You must be <a href=\"%s\" title=\"Log in\">logged in</a> to post a comment."
+msgstr "Yorum yazabilmek için <a href=\"%s\" title=\"Giriş yap\">giriş</a> yapmış olmalısınız."
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:88
+#, php-format
+msgid "<span class=\"loggedin\">Logged in as <strong><a href=\"%1$s\" title=\"Logged in as %2$s\">%2$s</a></strong>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Log out of this account\">( log out )</a></span>"
+msgstr "<span class=\"loggedin\"><strong><a href=\"%1$s\" title=\"%2$s olarak giriş yapıldı\">%2$s</a> olarak giriş yapıldı</strong>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Bu hesaptan çıkış yap\">( çıkış )</a></span>"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:95
+msgid "Your email is <em>never</em> published nor shared."
+msgstr "Email adresiniz <em>asla</em> yayınlanmaz ve paylaşılmaz."
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:95
+msgid "Required fields are marked <span class=\"required\">*</span>"
+msgstr "Gerekli alanlar <span class=\"required\">*</span> ile işaretlenmiştir"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:98
+msgid "Name"
+msgstr "İsim"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:98
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:103
+msgid "<span class=\"required\">*</span>"
+msgstr "<span class=\"required\">*</span>"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:103
+msgid "Email"
+msgstr "Email"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:108
+msgid "Website"
+msgstr "Web sitesi"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:115
+msgid "Comment"
+msgstr "Yorum"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:121
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes:"
+msgstr "Aşağıdaki <abbr title=\"HyperText Markup Language\">HTML</abbr> etiketleri ve özelliklerini kullanabilirsiniz:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/comments.php:126
+msgid "Post Comment"
+msgstr "Yorum Ekle"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/entry-footer.php:10
+msgid "Tags"
+msgstr "Etiketler"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/entry-footer.php:32
+msgid "Related Posts"
+msgstr "İlgili yazılar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/format-gallery.php:21
+msgid "View all &rarr;"
+msgstr "Tümünü gör &rarr;"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/header.php:10
+#, php-format
+msgid "%s latest posts"
+msgstr "En son %s yazı"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/header.php:11
+#, php-format
+msgid "%s latest comments"
+msgstr "Son %s yorum"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/inline-comments.php:32
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/inline-comments.php:36
+msgid "Reply"
+msgstr "Cevapla"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/inline-comments.php:34
+#, php-format
+msgid "Required fields are marked %s"
+msgstr "Gerekli alanlar %s ile işaretlenmiştir"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/loop-attachment.php:4
+#, php-format
+msgid "Return to %s"
+msgstr "%s e geri gön"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/loop-attachment.php:6
+#, php-format
+msgid "<span class=\"meta-nav\">&larr;</span> %s"
+msgstr "<span class=\"meta-nav\">&larr;</span> %s"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/loop-attachment.php:118
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Devamını oku <span class=\"meta-nav\">&rarr;</span>"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/loop-attachment.php:119
+msgid "Pages:"
+msgstr "Sayfalar:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/loop-page.php:23
+#, php-format
+msgid "Continue reading \"%s\" &rarr;"
+msgstr "Okumaya devam \"%s\" &rarr;"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/loop-single.php:33
+msgid "<span class=\"nav-arrow-left\">&larr;</span>"
+msgstr "<span class=\"nav-arrow-left\">&larr;</span>"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/loop-single.php:34
+msgid "<span class=\"nav-arrow-left\">&rarr;</span>"
+msgstr "<span class=\"nav-arrow-left\">&rarr;</span>"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/page-columns.php:15
+msgid "Home"
+msgstr "Anasayfa"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/searchform.php:3
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/searchform.php:4
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/searchform.php:5
+msgid "Search"
+msgstr "Ara"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-breadcrumbs.php:91
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-breadcrumbs.php:95
+msgid "Date"
+msgstr "Tarih"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-breadcrumbs.php:98
+msgid "Author"
+msgstr "Yazar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-breadcrumbs.php:104
+msgid "Taxonomy"
+msgstr "Taksonomi"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-options.php:19
+msgid "Basic"
+msgstr "Temel"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-options.php:24
+msgid "Logo url"
+msgstr "Logo URLsi"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-options.php:30
+msgid "Site RSS URL"
+msgstr "Site RSS URLsi"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-options.php:36
+msgid "Twitter username"
+msgstr "Twitter kullanıcı adı"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:46
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:47
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:48
+msgid "Permalink"
+msgstr "Kalıcı bağlantı"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:161
+msgid "Tags: "
+msgstr "Etiketler:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:164
+msgid "and"
+msgstr "ve"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:184
+msgid "Leave a comment"
+msgstr "Bir yorum ekle"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:185
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:200
+msgid "1 Comment"
+msgstr "1 Yorum"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:186
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:196
+msgid "% Comments"
+msgstr "% Yorum"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:198
+msgid "No Comments"
+msgstr "Yorum yok"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:226
+msgid "Shortlink"
+msgstr "Kısa bağlantı"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:247
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:540
+msgid "Edit"
+msgstr "Düzenle"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:276
+msgid "Fresh"
+msgstr "Yeni"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:277
+msgid "view"
+msgstr "hit"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:278
+msgid "views"
+msgstr "hit"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:357
+msgid "No posts found matching the arguments"
+msgstr "Aramanıza uygun bir yazı bulunamadı"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-shortcodes.php:533
+msgid "WordPress"
+msgstr "Wordpress"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:119
+msgid "Recent Posts"
+msgstr "En Son Yazılar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:124
+msgid "Recent Comments"
+msgstr "En Son Yorumlar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:465
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:514
+msgid "Your comment is awaiting moderation."
+msgstr "Yorumunuz moderasyon için beklemektedir."
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:472
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:519
+#, php-format
+msgid "<span title=\"at %2$s\">%1$s</span>"
+msgstr "<span title=\"at %2$s\">%1$s</span>"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:473
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:491
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:521
+msgid "edit"
+msgstr "düzenle"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:491
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:540
+msgid "Pingback:"
+msgstr "Geribağlantı:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:562
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Önceki yazılar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:563
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Sonraki yazılar <span class=\"meta-nav\">&rarr;</span>"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:583
+#, php-format
+msgid "Posts about <span class=\"alt\">%s</span>"
+msgstr "<span class=\"alt\">%s</span> Hakkındaki Yazılar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:593
+#, php-format
+msgid "Posts tagged <span class=\"alt\">%s</span>"
+msgstr "<span class=\"alt\">%s</span> Etiketli Yazılar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:698
+#, php-format
+msgid "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
+msgstr "%1$s, versiyon %2$s ile <strong>kullanımdan kalktı</strong>! Onun yerine %3$s kullanın."
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-templates.php:700
+#, php-format
+msgid "%1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
+msgstr "%1$s, versiyon %2$s ile herhangi bir alternatifi olmadan <strong>kullanımdan kalktı</strong>."
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/stf-widget-areas.php:40
+#, php-format
+msgid "Sidebar %d"
+msgstr "Yançubuk %d"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-posts.php:5
+msgid "Posts on your blog"
+msgstr "Blogunuzdaki yazılar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-posts.php:6
+msgid "Default Loop"
+msgstr "Varsayılan Döngü"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-posts.php:86
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:149
+msgid "Title:"
+msgstr "Başlık:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-title.php:5
+msgid "Automatic title widget"
+msgstr "Otomatik başlık widgeti"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-title.php:6
+msgid "# Blog Title"
+msgstr "Blog Başlığı"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-title.php:56
+#, php-format
+msgid "Search Results for '%s'"
+msgstr " '%s' için Arama Sonuçları"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-title.php:70
+msgid "F jS, Y"
+msgstr "F jS, Y"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-title.php:73
+msgid "F, Y"
+msgstr "F, Y"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-title.php:76
+msgid "Y"
+msgstr "Y"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-title.php:148
+msgid "Logo URL:"
+msgstr "Logo URLsi"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-blog-title.php:152
+msgid "Dynamic titles"
+msgstr "Dinamik başlıklar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-custom-loop.php:13
+msgid "Custom loop widget"
+msgstr "Özel döngü widgeti"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-custom-loop.php:14
+msgid "Custom Loop"
+msgstr "Özel Döngü"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:13
+msgid "Custom query widget"
+msgstr "Özel döngü widgeti"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:14
+msgid "Loop Da Loop"
+msgstr "Loop Da Loop"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:151
+msgid "Filter:"
+msgstr "Filtre:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:160
+msgid "Category:"
+msgstr "Kategori:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:174
+msgid "Order By:"
+msgstr "Sıralama ölçütü:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:188
+msgid "Order:"
+msgstr "Sıralama:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:193
+msgid "Template:"
+msgstr "Şablon:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:213
+msgid "Number of items:"
+msgstr "Gösterilecek yazı adedi:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-featuredposts.php:214
+msgid "Number of items to be displayed"
+msgstr "Gösterilecek eleman adedi"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-floating-sidebar.php:4
+msgid "Displays widgets in a floating sidebar"
+msgstr "Widget'leri yüzer barda gösterir"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-floating-sidebar.php:5
+msgid "FloatingBar"
+msgstr "YüzerBar"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-latest-tweet.php:4
+msgid "Displays your latest tweet"
+msgstr "En son tweet'inizi gösterir"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-latest-tweet.php:5
+msgid "Latest Tweet"
+msgstr "Güncel tweet"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-latest-tweet.php:25
+msgid "Follow"
+msgstr "Takip et"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-navigation.php:13
+msgid "Older/Newer posts navigation"
+msgstr "Önceki/Sonraki yazılar tuşu"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-navigation.php:14
+msgid "# Older/Newer"
+msgstr "Önceki / Sonraki"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-pagenavi.php:5
+msgid "Pagination by LesterChan"
+msgstr "LesterChan tarafından PageNavi"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-pagenavi.php:6
+msgid "# Pagenavi"
+msgstr "Sayfalandırma"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-seperator.php:6
+msgid "Horizontal Seperator for Columns"
+msgstr "Sütunlar için ayıraç"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-seperator.php:7
+msgid "# Seperator"
+msgstr "Ayıraç"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-sidebar-tabs.php:4
+msgid "Content tabs for your site"
+msgstr "Siteniz için içerik sekmeleri"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/stf-sidebar-tabs.php:5
+msgid "Sidebar Tabs"
+msgstr "İçerik Sekmeleri"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/include-template/include-template.php:16
+msgid "Include Template"
+msgstr "PHP Şablonu"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/include-template/include-template.php:17
+msgid "Include Template Widget"
+msgstr "PHP Şablon widgeti"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/include-template/include-template.php:96
+msgid "Template file:"
+msgstr "Şablon:"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/include-template/include-template.php:113
+msgid "Include once"
+msgstr "Bir kere dahil et"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/templates/loop-twentyten.php:3
+msgid "Not Found"
+msgstr "Bulunamadı"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/templates/loop-twentyten.php:5
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Üzgünüz, fakat bu arşiv için hiç sonuç bulunamadı. Belki arama yaparak birşeyler bulabilirsiniz."
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/templates/loop-twentyten.php:13
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/templates/loop-twentyten.php:41
+msgid "gallery"
+msgstr "galeri"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/templates/loop-twentyten.php:31
+#, php-format
+msgid "This gallery contains <a %1$s>%2$s photos</a>."
+msgstr "Bu galeri <a %1$s>%2$s fotoğraf</a> içermektedir."
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/templates/loop-twentyten.php:41
+msgid "More Galleries"
+msgstr "Daha fazla galeri"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/templates/loop-twentyten.php:50
+msgid "asides"
+msgstr "asides"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/wp-login-widget/wp-login-widget.php:19
+msgid "Login Form for your blog"
+msgstr "Blog üye giriş formu"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/wp-login-widget/wp-login-widget.php:22
+msgid "Login form"
+msgstr "Giriş formu"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/wp-login-widget/wp-login-widget.php:104
+msgid "Login"
+msgstr "Giriş"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/wp-login-widget/wp-login-widget.php:106
+msgid "Remember me"
+msgstr "Beni hatırla"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/wp-login-widget/wp-login-widget.php:110
+msgid "Recover password"
+msgstr "Parola geri alma"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/wp-login-widget/wp-login-widget.php:112
+msgid "Logout"
+msgstr "Çıkış yap"
+
+#: C:\wamp\www\wp3\wp-content\themes\shailan-theme-framework/app/widgets/wp-login-widget/wp-login-widget.php:112
+msgid "Admin"
+msgstr "Yönetim"
+
