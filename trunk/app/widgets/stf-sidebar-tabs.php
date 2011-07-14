@@ -17,6 +17,8 @@ class stf_sidebar_tabs extends WP_Widget {
     function widget($args, $instance) {		
         extract( $args );
 		
+		echo "tabs";
+		
 		// Include the widget content
 		include('stf-tabs-content.php');
         
@@ -34,5 +36,4 @@ class stf_sidebar_tabs extends WP_Widget {
 
 } 
 
-// register widget
 add_action('widgets_init', create_function('', 'return register_widget("stf_sidebar_tabs");'));

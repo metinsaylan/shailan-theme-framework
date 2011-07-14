@@ -7,6 +7,21 @@
  Contact	: metinsaylan (at) gmail (dot) com
 */
 
+/* Head codes */
+function stf_head_codes(){
+	echo "\n\t" . stripslashes( stf_get_setting('shailan_head_scripts') ) . "\n";
+} add_action('wp_head', 'stf_head_codes');
+
+/* Body codes */
+function stf_body_codes(){
+	echo "\n\t" . stripslashes( stf_get_setting('shailan_body_scripts') ) . "\n";
+} add_action('wp_head', 'stf_body_codes');
+
+add_filter('the_excerpt_rss', 'do_shortcode');
+
+add_action('init', 'enable_page_excerpts');
+function enable_page_excerpts() { add_post_type_support('page', 'excerpt'); }
+
 /** RSS Footer Text
 function shailan_postrss($content) {
 	$feed_footer = stf_get_setting('stf_feed_footer');

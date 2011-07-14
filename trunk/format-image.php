@@ -1,4 +1,4 @@
-<div class="entry-body">
+<div class="entry-body clearfix">
 	<!-- Entry Content -->
 	<div class="entry-content center">
 		<?php the_content( stf_more() ); ?>
@@ -7,4 +7,3 @@
 	
 	<?php get_template_part('entry', 'footer'); ?>	
 </div>
-<div class="clear"></div>

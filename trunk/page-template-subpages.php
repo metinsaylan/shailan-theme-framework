@@ -16,7 +16,6 @@ get_header(); ?>
 		<div id="container">
 			<!-- Content -->
 			<div id="content" class="clearfix">
-				<?php stf_widget_area( 'before-content' ); ?>
 				
 				<!-- Main -->
 				<div id="content-main">
@@ -46,7 +45,7 @@ get_header(); ?>
 				);
 				
 				query_posts( $args );
-				include( 'loop.php' );
+				include( 'loop-subpages.php' );
 				wp_reset_query();
 			
 			?>
@@ -59,8 +58,6 @@ get_header(); ?>
 			
 					</div>
 				<!-- [End] Main -->
-				
-				<?php stf_widget_area( 'after-content' ); ?>
 			</div>
 			<!-- [End] Content -->
 		</div>

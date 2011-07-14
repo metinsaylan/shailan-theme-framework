@@ -1,6 +1,4 @@
-<div class="entry-body">
-
-	
+<div class="entry-body clearfix">
 	<div class="gallery-wrap">
 		<h2><?php the_title(); ?></h2>
 		
@@ -23,6 +21,4 @@
 		<a class="read-more" href="<?php the_permalink(); ?>"><?php _e('View all &rarr;'); ?></a>
 	</div>
 	<?php get_template_part('entry', 'footer'); ?>	
-	
 </div>
-<div class="clear"></div>

@@ -1,3 +1,5 @@
+<?php echo "OK"; ?>
+
 <div id="sidebar-tabs" class="clearfix">
 	<ul class="tabs">
 		<li><a href="#featured"><img src="<?php bloginfo('template_directory'); ?>/images/icons/featured.png" class="tooltip" title="Featured posts" alt="Featured" /></a></li>

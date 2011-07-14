@@ -288,7 +288,7 @@ function stf_views($atts = null){
 
 function stf_increment_views( $content ){
 	if(function_exists('the_views'))
-		return false;
+		return $content;
 	
 	if( is_single() || is_page() ){
 		$view_count = get_post_meta( get_the_ID(), 'views', true);

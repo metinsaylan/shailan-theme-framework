@@ -98,6 +98,7 @@ function stf_typography(){
 		<?php if( $title_font != "css" ){ ?>	
 		h1, h2, h3, h4, h5, h6, #site-title, .entry-title, .widget-title, .title, h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
 			font-family: <?php echo $fonts[ $title_font ]; ?>;
+			line-height: 1em;
 		}
 		<?php } ?>
 		
