@@ -147,7 +147,7 @@ function stf_entry_title(){
 	}
 	
 	?><!-- Entry Title -->
-	<<?php echo $titleblock; ?> class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'shailan' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" <?php if( 0 ): ?> xref="post#<?php the_ID(); ?>" class="ajax"<?php endif; ?>><?php the_title(); ?></a></<?php echo $titleblock; ?>>
+	<<?php echo $titleblock; ?> class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'stf' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" <?php if( 0 ): ?> xref="post#<?php the_ID(); ?>" class="ajax"<?php endif; ?>><?php the_title(); ?></a></<?php echo $titleblock; ?>>
 	<!-- [End] Entry Title -->
 	
 	<?php
@@ -462,7 +462,7 @@ function stf_comment( $comment, $args, $depth ) {
 		
 		<div class="comment-body">
 			<?php if ( $comment->comment_approved == '0' ) : ?>
-				<em><?php _e( 'Your comment is awaiting moderation.', 'freshmilk' ); ?></em>
+				<em><?php _e( 'Your comment is awaiting moderation.', 'stf' ); ?></em>
 			<br />
 			<?php endif; ?>
 			<div class="comment-meta commentmetadata">
@@ -488,7 +488,7 @@ function stf_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'freshmilk' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'edit' ), '<span class="comment-edit-link">', '</span>' );	?></p>
+		<p><?php _e( 'Pingback:', 'stf' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'edit' ), '<span class="comment-edit-link">', '</span>' );	?></p>
 	<?php
 			break;
 	endswitch;
@@ -511,7 +511,7 @@ function stf_comment_inline( $comment, $args, $depth ) {
 			
 			<div class="comment-body-inline">
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'freshmilk' ); ?></em>
+					<em><?php _e( 'Your comment is awaiting moderation.', 'stf' ); ?></em>
 				<?php endif; ?>
 				
 				<span class="comment-author"><?php printf( '<cite class="fn">%s</cite>', get_comment_author_link() ); ?></span> <span class="comment-date"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php
@@ -537,7 +537,7 @@ function stf_comment_inline( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'freshmilk' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('Edit'), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'stf' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('Edit'), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;

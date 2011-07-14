@@ -328,7 +328,7 @@ height: 26px;
 
 h2.entry-title{ margin:0 0 0.6em 0; }
 
-.entry-content:hover{ color:#555; -webkit-transition:.5s; }
+.entry-content{ color:#555; }
 .entry-footer, .entry-controls { color: #AAA; margin-top:1em; margin-bottom: 0; }
 	.entry-footer a, .entry-controls a{ color: #aaa; }
 	.entry-footer a:hover, .entry-controls a:hover{ color: #7af; }
@@ -355,11 +355,17 @@ h2.entry-title{ margin:0 0 0.6em 0; }
 .entry-pages a:hover .page-number { background: #999999; color: white; }
 .entry-attachment, p.attachment{ text-align:center; }
 
-.read-more {
+a.read-more {
 	float: right;
-	background: #E6E6E6;
+	background: #DDD;
 	padding: 2px 5px;
 	border-radius: 4px;
+	-webkit-transition: background .2s ease-in-out;
+	color: #888;
+}
+a.read-more:hover {
+	background: #666;
+	color: white;
 }
 
 /*- AUTHOR */

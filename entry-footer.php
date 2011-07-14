@@ -29,7 +29,7 @@
 	<!-- Entry Footer -->
 	<div class="explore clearfix">
 		<div id="related-posts">
-			<h4 class="mt0 mb1"><?php _e('Related Posts', 'darkside'); ?></h4>
+			<h4 class="mt0 mb1"><?php _e('Related Posts', 'stf'); ?></h4>
 			<?php 
 				if(function_exists('related_posts')){ 
 					related_posts();

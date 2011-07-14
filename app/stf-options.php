@@ -16,24 +16,24 @@ $fonts = stf_get_font_names();
 
 $options = array (
 
-array( "name" => __( "Basic", 'freshmilk' ),
+array( "name" => __( "Basic", 'stf' ),
 		"type" => "section"),
 		
 array( "type" => "open"),
 
-	array(  "name" => __("Logo url", 'freshmilk'),
+	array(  "name" => __("Logo url", 'stf'),
 		"desc" => "URL of your logo image. (Eg:" . trailingslashit(get_bloginfo('template_directory')) . "images/logo.png)",
 		"id" => "stf_logo_url",
 		"std" => "",
 		"type" => "text"),
 		
-	array(  "name" => __("Site RSS URL", 'freshmilk'),
+	array(  "name" => __("Site RSS URL", 'stf'),
 		"desc" => "Will be used to display your latest tweet on header",
 		"id" => "stf_rss_url",
 		"std" => get_bloginfo('rss2_url'),
 		"type" => "text"),
 		
-	array(  "name" => __("Twitter username", 'freshmilk'),
+	array(  "name" => __("Twitter username", 'stf'),
 		"desc" => "Will be used to display your latest tweet on header",
 		"id" => "stf_twitter_username",
 		"std" => "shailancom",

@@ -27,7 +27,7 @@ get_header(); ?>
 
 			<div class="entry-content">
 			<?php the_content( ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
+			<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'stf' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 			
 			<?php get_template_part('entry', 'footer'); ?>
