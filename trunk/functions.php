@@ -27,7 +27,7 @@ function theme_setup(){
 	add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video', 'audio' ) );
 	
 	// Editor Style
-	add_editor_style( '/css/editor-style.css' );
+	add_editor_style( '/app/css/editor.css' );
 	
 	// Enable custom background
 	add_custom_background();
