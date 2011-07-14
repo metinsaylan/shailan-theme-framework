@@ -13,7 +13,7 @@
 	<?php } ?>
 	
 	<div class="entry-controls alignright">
-		<?php if( is_archive() || is_search() ){  
+		<?php if( is_archive() || is_search() || in_array( stf_post_format() , array('aside', 'image', 'video', 'gallery', 'quote', 'status') )){  
 			echo stf_permalink();
 			echo " &middot;";
 		} ?>

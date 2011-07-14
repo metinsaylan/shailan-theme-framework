@@ -1,5 +1,3 @@
-<?php echo "OK"; ?>
-
 <div id="sidebar-tabs" class="clearfix">
 	<ul class="tabs">
 		<li><a href="#featured"><img src="<?php bloginfo('template_directory'); ?>/images/icons/featured.png" class="tooltip" title="Featured posts" alt="Featured" /></a></li>
@@ -20,7 +18,7 @@
 	
 		<?php if(function_exists('stats_get_csv')){ 
 		
-		$top_posts = stats_get_csv( 'postviews', "days=7&limit=15" );
+		$top_posts = stats_get_csv( 'postviews', "days=15&limit=15" );
 		
 		?> <div id="popular" class="tab_content">
 		<ul>
