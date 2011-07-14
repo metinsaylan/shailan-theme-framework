@@ -6,10 +6,5 @@
 		<?php the_content( stf_more() ); ?>
 	</div>
 	
-	<div class="entry-controls">
-		<?php stf_entry_short_meta(); ?>	
-	</div>
-
+	<?php get_template_part('entry', 'footer'); ?>	
 </div>
-
-<div class="clear"></div>

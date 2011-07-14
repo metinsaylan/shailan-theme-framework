@@ -304,6 +304,12 @@ height: 26px;
 	margin-bottom: 1.5em;
 	padding-bottom: 1.5em;
 }
+
+.entry-thumbnail {
+	float: left;
+	margin-right: 1em;
+}
+
 h2.entry-title{ margin:0 0 0.6em 0; }
 
 .entry-content:hover{ color:#555; -webkit-transition:.5s; }
@@ -311,6 +317,13 @@ h2.entry-title{ margin:0 0 0.6em 0; }
 	.entry-footer a, .entry-controls a{ color: #aaa; }
 	.entry-footer a:hover, .entry-controls a:hover{ color: #7af; }
 	.entry-controls{ text-align:right; }
+	
+.seperator {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-bottom: 2px dotted #DDD;
+	clear: both;
+}
 	
 /*- ENTRY PAGINATION */
 .entry-pages{ clear:both; padding: 15px 0; text-align: right; font-size:12px; }

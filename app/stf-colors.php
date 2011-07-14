@@ -17,6 +17,8 @@ function stf_colors(){
 		body, textarea, input, select{ 
 			background-color: <?php echo $background; ?>; }
 			
+		input[type="image"]{ background-color:transparent; }
+			
 		body, td, textarea, input, select {
 			color: <?php echo $stf_text_color; ?>;
 		}

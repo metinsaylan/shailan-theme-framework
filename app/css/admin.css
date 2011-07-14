@@ -54,7 +54,7 @@ a.helplink{ color:#666; text-decoration:none; }
 	line-height: 24px;
 }
 .stf_options small:hover{ color:#444; }
-.stf_options input[type="text"], .stf_options select{ width:250px; font-size:12px; padding:4px; color:#333; line-height:1em;	background:#efefef; float:left; }
+.stf_options input[type="text"], .stf_options select, .stf_options textarea{ width:250px; font-size:12px; padding:4px; color:#333; line-height:1em;	background:#efefef; float:left; }
 .stf_options input[type="checkbox"]{ float:left; margin:5px 0; }
 .stf_input input:focus, .stf_input textarea:focus{ background:#fff; }
 .stf_input textarea{ width:250px; height:135px; font-size:12px; padding:4px; color:#333; line-height:1.5em; background:#efefef;

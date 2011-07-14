@@ -62,7 +62,7 @@ array( "type" => "open"),
 		"id" => "use_framework_stylesheet",
 		"type" => "checkbox",
 		"std" => "off"),
-
+/*
 	array(  "name" => "Entry header",
 		"desc" => "Entry header meta, shows right under the post title.",
 		"id" => "stf_entry_header_meta",
@@ -80,7 +80,7 @@ array( "type" => "open"),
 		"id" => "stf_entry_short_meta",
 		"std" => '[permalink] &middot; [cmnts] [edit before="&middot; "]',
 		"type" => "text"),
-		
+	*/	
 	array("name" => "Show comments on home page",
 		"desc" => "Enable commenting on home page.",
 		"id" => "enable_comments_on_home",
@@ -248,6 +248,18 @@ array( "name" => "Advanced",
 	"type" => "section"),
 	
 array( "type" => "open"),
+
+	array(  "name" => "<code>&lt;head&gt;</code> codex",
+		"desc" => "Codes in this area will be automatically put in <code>&lt;head&gt;</code> part of your site.",
+		"id" => "shailan_head_scripts",
+		"std" => "",
+		"type" => "textarea"),
+		
+	array(  "name" => "<code>&lt;body&gt;</code> codex",
+		"desc" => "Codes in this area will be automatically put in <code>&lt;body&gt;</code> part of your site.",
+		"id" => "shailan_body_scripts",
+		"std" => "",
+		"type" => "textarea"),
 	
 	array(  "name" => "Google Analytics Code",
 		"desc" => " Google Analytics Code. Will be automatically put in your <strong><em>header</em></strong>.",

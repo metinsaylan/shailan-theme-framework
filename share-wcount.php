@@ -7,6 +7,8 @@
 		$tweet = stf_generate_post_tweet( $id, false );
 	?>
 
+	<div class="plusone-count"><g:plusone size="tall"></g:plusone></div>
+	
 	<div class="twitter-count">
 		<a href="http://twitter.com/share" class="twitter-share-button" data-text="<?php echo $tweet ?>" data-count="vertical" data-via="shailancom">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 	</div>
