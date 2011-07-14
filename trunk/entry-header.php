@@ -28,4 +28,4 @@
 </div>
 <!-- [End] Entry Header -->
 
-<?php get_template_part('share', 'horizontal'); ?>
+<?php if( is_single() || is_page() || is_attachment() ) get_template_part('share', 'horizontal'); ?>

@@ -7,12 +7,7 @@
 		
 		<!-- Put your ad code below to show at the top of pages -->
 		
-		
-		
-		
-		
-		
-				<?php //echo do_shortcode('[adsense type="medium-rectangle"]'); ?>
+				<?php echo do_shortcode('[adsense type="medium-rectangle" channel="4146640651"]'); ?>
 		</div>
 		<!-- [End] Advertisement -->
 		
@@ -27,16 +22,9 @@
 	<!-- No thumbnail exists -->
 	
 		<!-- Advertisement -->
-		<div class="teaser-ads alignright">
-		
+		<div class="teaser-ads alignleft">
 		<!-- Put your ad code below to show at the end of pages -->
-		
-		
-		
-		
-		
-		
-			<?php //echo do_shortcode('[adsense type="medium-rectangle"]'); ?>
+			<?php echo do_shortcode('[adsense type="medium-rectangle" channel="3912711549"]'); ?>
 		</div>
 		<!-- [End] Advertisement -->
 		

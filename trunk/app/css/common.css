@@ -225,7 +225,7 @@ ul.horizontal li{ padding:3px 10px; } ul.horizontal li+li{ border-left:1px solid
 
 /* Check list */
 ul.ticks, ol.ticks{ list-style:none; padding-left:20px; }
-ul.ticks li{ background: url(images/icon-tick.gif) 4px 50% no-repeat; line-height: 36px;
+ul.ticks li{ background: url(images/tick.gif) 4px 50% no-repeat; line-height: 36px;
 	list-style: none; padding-left: 42px; }
 	
 /*- FIXES */

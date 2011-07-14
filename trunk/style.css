@@ -128,7 +128,11 @@ a.button:active, #comment-submit:active,  div.nav-next a:active, div.nav-previou
 	-moz-box-shadow: #AAA 0 0px 2px; 
 }
 
-a.button.large{ padding: 0 16px 0 10px; font-size: 24px; line-height: 2.5em; }
+a.button.large{
+	padding: 0 12px 0 9px;
+	font-size: 24px;
+	line-height: 2.4em;
+}
 a.button.large span.icon{ 
 	width: 48px; height: 48px;
 	display: block; float: left;
@@ -319,8 +323,8 @@ h2.entry-title{ margin:0 0 0.6em 0; }
 	.entry-controls{ text-align:right; }
 	
 .seperator {
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
 	border-bottom: 2px dotted #DDD;
 	clear: both;
 }
@@ -387,17 +391,19 @@ a.delicious, a.delicious:hover { background: url(images/share_delicious.gif) no-
 /*- TABLE OF CONTENTS */
 .toc{ 
 	padding: 10px;
-	background: #EEE;
+	background: #efefef; 
+	border:1px solid #ddd;
 	margin: 0 0 20px 15px;
-	border: 1px solid white;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
 	float: right;
-	font-size: 0.8em;
-	box-shadow: #999 0 0 5px;
-	-webkit-box-shadow: #999 0 0 5px;
-	-moz-box-shadow: #999 0 0 5px;
+	font-size: 1em;
+	box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    -o-box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    -moz-box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    -webkit-box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+	
 } 
 .toc ol{ margin:0 }
 .toc li{ line-height: 2em; margin:0; }
@@ -435,7 +441,7 @@ blockquote cite:before{ content: '- '; }
 .format-quote  .entry-content p { margin:0; }
 
 .format-image  .entry-content p { margin:0; }
-.format-aside .entry-content{ font-family: 'Crimson Text', serif; font-style: italic; font-size:18px; }
+.format-aside .entry-content{ font-style: italic; font-size:13px; }
 
 .format-status .author-avatar{ float:left; margin-right:10px; }
 
@@ -456,9 +462,6 @@ text-align: center;
 div.share {
 	float: right;
 	padding: 3px 10px 0;
-	background: #EEE;
-	border-radius: 15px;
-	box-shadow: #CCC 0 1px 2px;
 }
 
 .facebook-count, .twitter-count, .plusone-count{ display:block; width:56px; overflow:hidden; float:right; }
@@ -468,6 +471,16 @@ div.share {
 .navigation{ margin:15px auto; padding:10px; }
 .nav-previous{ float:left; } 
 .nav-next{ float:right; }
+
+/*- EXPLORE */
+#related-posts {
+	float: right;
+	width: 260px;
+}
+
+#related-posts li{ font-style:italic; }
+#related-posts li a{ color:#888; }
+#related-posts li a:hover{ color:#555; text-decoration:underline; }
 
 /*- COMMENTS */
 div#comments{ }
@@ -597,6 +610,10 @@ line-height: 22px; margin-right: 15px; }
 .sidebar li ul{ margin:0; border-top:1px solid #ddd; padding:0 0 0 10px; }
 .sidebar li ul li:last-child{ border:0; }
 
+.stf-featured-posts .hentry{ padding:0; }
+.featured-post img.wp-post-image { border: 2px solid #999; }
+.featured-entry-title, .featured-entry-title a { color: #999; }
+
 /*- FOOTER */
 
 #footer-wrapper {
@@ -613,3 +630,7 @@ color: #DDD;
 background: white;
 width: 100%;
 }
+
+/*- HELPERS */
+.mt0 { margin-top: 0; }
+.mb1 { margin-bottom: 1em; }

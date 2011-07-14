@@ -42,10 +42,10 @@ function theme_setup(){
 	if( !is_admin() ){
 		// Queue Scripts 
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/js/theme.js', 'jquery' );
-		wp_enqueue_script( 'jumper', get_template_directory_uri() . '/app/scripts/shailan.jumper.js', 'jquery' );
-		wp_enqueue_script( 'tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltip.js' );
-		wp_enqueue_script( 'cycle', 'http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js', array( 'jquery') );
+		// wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/js/theme.js', 'jquery' );
+		wp_enqueue_script( 'shailan.jumper', get_template_directory_uri() . '/app/scripts/shailan.jumper.js', 'jquery' );
+		wp_enqueue_script( 'shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltips.js', 'jquery' );
+		// wp_enqueue_script( 'cycle', 'http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js', array( 'jquery') );
 	}
 
 } add_action('after_setup_theme', 'theme_setup');
