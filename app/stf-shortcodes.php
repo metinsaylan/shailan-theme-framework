@@ -286,7 +286,7 @@ function stf_views($atts = null){
 	if( $view_count > 1 ) return $before . '<span class="views view-count">' . $view_count . ' ' . $plural . '</span> ' . $after;
 }
 
-function increment_views( $content ){
+function stf_increment_views( $content ){
 	if(function_exists('the_views'))
 		return false;
 	
@@ -297,7 +297,7 @@ function increment_views( $content ){
 	
 	return $content;
 	
-} add_filter( 'the_content', 'increment_views' );
+} add_filter( 'the_content', 'stf_increment_views' );
 
 
 // TODO : [permalink]
