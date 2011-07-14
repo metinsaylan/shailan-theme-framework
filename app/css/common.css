@@ -234,7 +234,7 @@ ul.ticks li{ background: url(images/tick.gif) 4px 50% no-repeat; line-height: 36
 	margin-bottom: 0.5em;
 }
 
-.hentry, .widget {
+.hentry {
 	padding-bottom: 1.4em;
 	margin-bottom: 2em;
 	border-bottom: 1px solid #EEE;
