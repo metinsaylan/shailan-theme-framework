@@ -6,6 +6,7 @@ function stf_get_fonts(){
 	return array(
 		'css' => "Use fonts defined in stylesheet",
 		'georgia' => "Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif",
+		'delicious' => "Delicious, 'Trebuchet MS', Calibri, sans-serif",
 		'gillsans' => "GillSans, 'Trebuchet MS', Calibri, sans-serif",
 		'lucida' => "'Lucida Grande', Lucida, Helvetica, Arial, sans-serif",
 		'helvetica' => "'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif",
@@ -18,7 +19,6 @@ function stf_get_fonts(){
 		'miso' => "'MisoRegular', Futura, Century Gothic, AppleGothic, sans-serif",
 		'misobold' => "'MisoBold', Futura, Century Gothic, AppleGothic, sans-serif",
 		'quicksand' => "'QuicksandBook', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'quicksandbold' => "'QuicksandBold', GillSans, 'Trebuchet MS', Calibri, sans-serif",
 		'quicksanddash' => "'QuicksandDash', GillSans, 'Trebuchet MS', Calibri, sans-serif",
 		'junction' => "'junctionregularRegular', GillSans, 'Trebuchet MS', Calibri, sans-serif",
 		'league' => "'LeagueGothicRegular', GillSans, 'Trebuchet MS', Calibri, sans-serif;",
@@ -35,30 +35,30 @@ function stf_get_fonts(){
 function stf_get_font_names(){
 	return array(
 		'css' => "Default in Stylesheet",
-		'georgia' => "Georgia - serif",
-		'gillsans' => "GillSans - sans serif",
-		'lucida' => "Lucida Grande - sans serif",
-		'helvetica' => "Helvetica Neue - sans serif",
-		'futura' => "Futura - sans serif",
-		'trebuchet' => "Trebuchet MS - sans serif",
-		'dejavu' => "DejaVu Sans - sans serif",
-		'ubuntu' => "Ubuntu - sans serif",
-		'bebas' => "BebasNeueRegular - gothic",
-		'cartogothic' => "CartoGothicStdBook - gothic",
-		'miso' => "Miso - gothic",
-		'misobold' => "MisoBold - gothic",
-		'quicksand' => "Quicksand - gothic",
-		'quicksandbold' => "Quicksand Bold - gothic",
-		'quicksanddash' => "Quicksand Dashed - gothic",
-		'junction' => "Junction - sans serif",
-		'league' => "LeagueGothicRegular - gothic",
-		'puritan' => "Puritan - sans serif",
-		'droid' => "Droid - serif",
-		'droidsans' => "DroidSans - sans-serif",
-		'rocksalt' => "Rock Salt - comic",
-		'goudy' => "Goudy Bookletter 1911 - serif",
-		'copse' => "Copse - serif",
-		'molengo' => "Molengo - sans serif"
+		'georgia' => "Georgia - Serif",
+		'delicious' => "Delicious - Sans"
+		'gillsans' => "GillSans - Sans",
+		'lucida' => "Lucida Grande - Sans",
+		'helvetica' => "Helvetica Neue - Sans",
+		'futura' => "Futura - Sans",
+		'trebuchet' => "Trebuchet MS - Sans",
+		'dejavu' => "DejaVu Sans - Sans",
+		'ubuntu' => "Ubuntu - Sans",
+		'bebas' => "BebasNeueRegular - Gothic",
+		'cartogothic' => "CartoGothicStdBook - Gothic",
+		'miso' => "Miso - Gothic",
+		'misobold' => "MisoBold - Gothic",
+		'quicksand' => "Quicksand - Gothic",
+		'quicksanddash' => "Quicksand Dashed - Gothic",
+		'junction' => "Junction - Sans",
+		'league' => "LeagueGothicRegular - Gothic",
+		'puritan' => "Puritan - Sans",
+		'droid' => "Droid - Serif",
+		'droidsans' => "DroidSans - Sans",
+		'rocksalt' => "Rock Salt - Comic",
+		'goudy' => "Goudy Bookletter 1911 - Serif",
+		'copse' => "Copse - Serif",
+		'molengo' => "Molengo - Sans"
 	);
 }
 
@@ -72,13 +72,13 @@ function stf_typography(){
 	$base_font_size = stf_get_setting( 'stf_base_font_size' );
 	
 	// Include font file if exists
-	$title_font_css = locate_template( "fonts/" . $title_font . ".css" );
+	$title_font_css = locate_template( "app/fonts/" . $title_font . ".css" );
 	$title_font_css = str_replace( WP_CONTENT_DIR, WP_CONTENT_URL, $title_font_css );
 	if( FALSE != $title_font_css ){
 		echo "\n\t<link rel=\"stylesheet\" href=\"".$title_font_css."\" type=\"text/css\" charset=\"utf-8\" />";
 	}
 	
-	$base_font_css = locate_template( "fonts/" . $base_font . ".css" );
+	$base_font_css = locate_template( "app/fonts/" . $base_font . ".css" );
 	$base_font_css = str_replace( WP_CONTENT_DIR, WP_CONTENT_URL, $base_font_css );
 	if( FALSE != $base_font_css ){
 		echo "\n\t<link rel=\"stylesheet\" href=\"".$base_font_css."\" type=\"text/css\" charset=\"utf-8\" />";
