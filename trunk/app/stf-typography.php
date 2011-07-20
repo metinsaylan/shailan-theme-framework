@@ -36,7 +36,7 @@ function stf_get_font_names(){
 	return array(
 		'css' => "Default in Stylesheet",
 		'georgia' => "Georgia - Serif",
-		'delicious' => "Delicious - Sans"
+		'delicious' => "Delicious - Sans",
 		'gillsans' => "GillSans - Sans",
 		'lucida' => "Lucida Grande - Sans",
 		'helvetica' => "Helvetica Neue - Sans",
