@@ -10,7 +10,8 @@ TAGS: framework, all-widget, widgets, widget-areas, xhtml, light, white, gray, o
 
 @import url('http://fonts.googleapis.com/css?family=Crimson+Text:400italic&v2');
 
-body{ background:#efefef; text-shadow:#efefef 0 0 1px; color:#555; }
+html{ -webkit-font-smoothing: antialiased; }
+body{ background:#fff; text-shadow:#efefef 0 0 1px; color:#555; }
 
 /*- GENERALS */
 a { color: #69f; text-shadow:#eeeeff 0 0 1px; } 
