@@ -75,6 +75,10 @@ class Shailan_Framework{
 			wp_enqueue_style( "google-droid-sans", "http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&v1", false, "1.0", "all");
 			wp_enqueue_style( "stf-admin-styles", get_template_directory_uri() . "/app/css/admin.css", false, "1.0", "all");
 		}
+		
+		add_image_size( 'featured', 940, 320, true );
+		add_image_size( 'video-thumbnail', 120, 90, true );
+		add_image_size( 'medium-rectangle', 300, 250, true );
 			
 		
 	}

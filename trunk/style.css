@@ -225,6 +225,7 @@ mark.orange, .highlight.orange { background: #FF9B30; text-shadow: #EE8A20 1px 1
 mark.yellow, .highlight.yellow { background: #FFEC16; text-shadow: #EEDB05 1px 1px 0; }
 
 /*- HEADER */
+#header-wrapper { background:#fff; padding: 3px; }
 #header { position:relative; }
 	#branding { margin: 10px 0 15px; }
 		#site-title{ font-size:36px; line-height: 1; margin:10px 0 1em 0; letter-spacing: 1px; }
