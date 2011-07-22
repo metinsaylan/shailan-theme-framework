@@ -1,5 +1,14 @@
 <?php 
 
+if( is_admin() ){
+	global $wp_styles;
+	if ( !is_a($wp_styles, 'WP_Styles') )
+		$wp_styles = new WP_Styles();
+	$wp_styles->remove('wp-admin');
+	wp_dequeue_style('wp-admin');
+	wp_enqueue_style('wp-admin', get_template_directory_uri() . '/css/wp-admin.css', array(), '20110711');
+}
+
 define( 'STF_DEBUG', false );
 include_once('app/stf-framework.php'); // INCLUDE FRAMEWORK 
   
@@ -15,9 +24,6 @@ function theme_setup(){
 	// Post Thumbnails & Custom Image Sizes
 	add_theme_support( 'post-thumbnails', array('post', 'page') ); // Add any other custom post types here
 	set_post_thumbnail_size( '200', '200', true );
-	add_image_size( 'featured', 940, 320, true );
-	add_image_size( 'video-thumbnail', 120, 90, true );
-	add_image_size( 'medium-rectangle', 300, 250, true );
 
 	// Navigation Menus
 	add_theme_support('nav_menus');
