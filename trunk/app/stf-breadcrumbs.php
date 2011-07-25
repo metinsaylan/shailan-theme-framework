@@ -11,13 +11,15 @@ function stf_breadcrumbs( $args = array() ) {
 		return '';
 	}
 	
+	$welcome_text = stf_get_setting( 'welcome_message' );
+	
 	extract( wp_parse_args( $args, array( // Default options:
 	
 		'echo'		=> 1,
 		'prefix'	=> '',
 		'suffix'	=> '',
 		'seperator' => ' <span class="seperator">&raquo;</span> ',
-		'hometext'	=> 'Welcome to <strong>' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</strong>'
+		'hometext'	=> $welcome_text
 	
 	) ), EXTR_SKIP );
 	

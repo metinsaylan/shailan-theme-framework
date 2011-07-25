@@ -1,6 +1,7 @@
 <?php 
 
-if( is_admin() ){
+//if( is_admin() ){
+if( 0 ){
 	global $wp_styles;
 	if ( !is_a($wp_styles, 'WP_Styles') )
 		$wp_styles = new WP_Styles();

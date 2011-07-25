@@ -57,6 +57,12 @@ array( "type" => "open"),
 		"type" => "checkbox",
 		"std" => "off"),	
 		
+	array(  "name" => __("Welcome message", 'stf'),
+		"desc" => "Will be shown instead of breadcrumbs on homepage.",
+		"id" => "welcome_message",
+		"std" => 'Welcome to <strong>' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '</strong>',
+		"type" => "text"),
+		
 	array("name" => "Use Framework Stylesheet",
 		"desc" => "Enables use of master stylesheet.",
 		"id" => "use_framework_stylesheet",
