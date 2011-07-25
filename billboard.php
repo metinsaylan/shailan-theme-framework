@@ -12,7 +12,7 @@
 			<a href="http://twitter.com/<?php echo stf_get_setting( 'stf_twitter_username' ); ?>" target="_blank" rel="nofollow"><img src="<?php bloginfo('template_directory'); ?>/images/subscribe/twitter.png"  class="tooltip" title="<?php printf( __( 'Follow %s on Twitter!', 'stf' ), get_bloginfo('name') ); ?>" alt="Twitter" /></a>
 		</li>
 		<li class="subscribe-icon facebook">
-			<a href="<?php echo stf_get_setting( 'stf_facebook_URL' ); ?>" target="_blank" rel="nofollow"><img src="<?php bloginfo('template_directory'); ?>/images/subscribe/facebook.png" class="tooltip" title="<?php printf( __( 'Like % on Facebook!', 'stf' ), get_bloginfo('name') ); ?>" alt="Facebook"  /></a>
+			<a href="<?php echo stf_get_setting( 'stf_facebook_URL' ); ?>" target="_blank" rel="nofollow"><img src="<?php bloginfo('template_directory'); ?>/images/subscribe/facebook.png" class="tooltip" title="<?php printf( __( 'Like %s on Facebook!', 'stf' ), get_bloginfo('name') ); ?>" alt="Facebook"  /></a>
 		</li>
 		<li class="subscribe-icon email">
 			<a href="<?php echo stf_get_setting( 'stf_subscribe_URL' ); ?>" target="_blank" rel="nofollow"><img src="<?php bloginfo('template_directory'); ?>/images/subscribe/mail.png" class="tooltip" title="<?php _e('Subscribe using email..'); ?>" alt="e-mail"  /></a>
