@@ -1,37 +1,12 @@
-<?php get_header() ?>
-
-<!-- Content Wrapper -->
-<div id="content-wrapper">
-
-	<?php get_template_part('billboard', 'index'); // BILLBOARD ?>
-
-	<!-- Page Layout -->
-	<div id="page" class="clearfix">
-	
-		<div id="container">
-			<!-- Content -->
-			<div id="content" class="clearfix">
-				<?php stf_widget_area( 'before-content' ); ?>
-				
-				<!-- Main -->
-				<div id="content-main">
-					<?php get_template_part('loop', 'single'); ?>
-				</div>
-				<!-- [End] Main -->
-				
-				<?php stf_widget_area( 'after-content' ); ?>
-			</div>
-			<!-- [End] Content -->
-		</div>
-		
-		<!-- Sidebars -->
-		<?php get_sidebar() ?>
-		<!-- [End] Sidebars -->
-		
-	</div>
-	<!-- [End] Page -->
-		
+<?php get_header(); ?>
+<!-- PAGE START -->
+<div id="page" class="clearfix">
+	<div id="container">
+		<div id="content" role="main">
+		<?php stf_content(); ?>
+		</div><!-- #content -->
+	</div><!-- #primary -->
+<?php get_sidebar(); ?>
 </div>
-<!-- [End] Content Wrapper -->
-
-<?php get_footer() ?>
+<!--/ PAGE END -->
+<?php get_footer(); ?>
