@@ -1,37 +1,27 @@
-<?php get_header() ?>
-
-<!-- Content Wrapper -->
-<div id="content-wrapper">
-
-	<?php get_template_part('billboard', 'index'); // BILLBOARD ?>
-
-	<!-- Page Layout -->
-	<div id="page" class="clearfix">
-	
-		<div id="container">
-			<!-- Content -->
-			<div id="content" class="clearfix">
-				<?php stf_widget_area( 'before-content' ); ?>
-				
-				<!-- Main -->
-				<div id="content-main">
-					<?php stf_widgets( 'content' , array( 'stf_blog_posts', 'stf_navigation' ) ); ?>
-				</div>
-				<!-- [End] Main -->
-				
-				<?php stf_widget_area( 'after-content' ); ?>
-			</div>
-			<!-- [End] Content -->
-		</div>
-		
-		<!-- Sidebars -->
-		<?php get_sidebar() ?>
-		<!-- [End] Sidebars -->
-		
-	</div>
-	<!-- [End] Page -->
-		
+<?php get_header(); ?>
+<!-- PAGE START -->
+<div id="page" class="clearfix">
+	<div id="container">
+		<div id="content" role="main">
+		<?php if ( have_posts() ) :
+			while ( have_posts() ) : the_post();
+				get_template_part( 'content', get_post_format() );
+				// TODO : ADD NAVIGATION
+			endwhile;
+		else : ?>
+		<article id="post-0" class="post no-results not-found">
+			<header class="entry-header">
+				<h1 class="entry-title"><?php _e( 'Nothing Found', 'stf' ); ?></h1>
+			</header><!-- .entry-header -->
+			<div class="entry-content">
+				<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'stf' ); ?></p>
+				<?php get_search_form(); ?>
+			</div><!-- .entry-content -->
+		</article><!-- #post-0 -->
+		<?php endif; ?>
+		</div><!-- #content -->
+	</div><!-- #primary -->
+<?php get_sidebar(); ?>
 </div>
-<!-- [End] Content Wrapper -->
-
-<?php get_footer() ?>
+<!--/ PAGE END -->
+<?php get_footer(); ?>
