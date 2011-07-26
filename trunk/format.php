@@ -1,11 +1,9 @@
-<?php // DISPLAY THUMBNAIL ON ARCHIVES & SEARCH ONLY
-	if( is_home() || is_archive() || is_search() || is_front_page() ) { ?>
-	
-	<!-- Post Thumbnail -->
-	<?php stf_entry_thumbnail('home'); ?>
-	<!-- [End] Post Thumbnail -->
-	
-<?php } ?>
+<?php 
+	if( is_home() || is_archive() || is_search() || is_front_page() ) {
+		// DISPLAY THUMBNAIL ON ARCHIVES & SEARCH ONLY
+		stf_entry_thumbnail( array(80,80) );
+	} 
+?>
 
 <div class="entry-body">
 
