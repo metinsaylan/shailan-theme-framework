@@ -41,3 +41,5 @@
 	
 </div>
 <!-- [End] Header Wrapper -->
+
+<?php get_template_part('billboard', 'index'); // BILLBOARD ?>

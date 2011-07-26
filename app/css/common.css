@@ -219,6 +219,10 @@ img.wp-smiley { border: none !important; padding: 0 0 0 5px !important; margin: 
 .top        { margin-top:0; padding-top:0; }
 .bottom     { margin-bottom:0; padding-bottom:0; }
 
+/*- HELPERS */
+.mt0 { margin-top: 0; }
+.mb1 { margin-bottom: 1em; }
+
 /* Horizontal lists */
 ul.horizontal, ul.horizontal li { list-style:none; margin:0; padding:0; display:inline; }
 ul.horizontal li{ padding:3px 10px; } ul.horizontal li+li{ border-left:1px solid #999; }

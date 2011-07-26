@@ -1,5 +1,4 @@
-<!-- Entry Footer -->
-<div class="entry-footer clearfix">
+<footer class="entry-meta">
 	<?php if( is_single() || is_page() || is_attachment() ) { ?>
 		<?php get_template_part('share', 'single'); ?>
 		<?php get_template_part('author', 'single'); ?>
@@ -22,25 +21,17 @@
 		<?php echo stf_edit( array( 'before' => '&middot; ' ) ); ?>
 	</div>
 	
-</div>
-<!-- [End] Entry Footer -->
+</footer><!-- #entry-meta -->
 
 <?php if( is_single() ) { ?>
-	<!-- Entry Footer -->
-	<div class="explore clearfix">
-		<div id="related-posts">
-			<h4 class="mt0 mb1"><?php _e('Related Posts', 'stf'); ?></h4>
-			<?php 
-				if(function_exists('related_posts')){ 
-					related_posts();
-				} else {
-					stf_related_posts();
-				} 
-			?>
-		</div>
-		<div id="post-bottom-ads">
-			<?php echo do_shortcode('[adsense type="medium-rectangle"]'); ?>				
-		</div>
+	<div id="related-posts">
+		<h4 class="mt0 mb1"><?php _e('Related Posts', 'stf'); ?></h4>
+		<?php 
+			if(function_exists('related_posts')){ 
+				related_posts();
+			} else {
+				stf_related_posts();
+			} 
+		?>
 	</div>
-	<!-- [End] Entry Footer -->	
 <?php } ?>
