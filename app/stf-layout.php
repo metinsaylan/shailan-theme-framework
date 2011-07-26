@@ -256,6 +256,7 @@ function stf_layout(){
 	<!-- End of Smart Layout -->
 		<?php
 		
+	return TRUE;
 }
 
 // Hook it up.

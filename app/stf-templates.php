@@ -689,7 +689,10 @@ function stf_google_translate(){ ?>
 function stf_stylesheets(){
 	global $stf;
 	
-	stf_layout(); // Layout styles
+	if( !stf_layout() ){ ?>
+<!-- Default Layout -->
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/default-layout.css" />	
+	<?php }
 	
 	if( 'on' == stf_get_setting( 'use_framework_stylesheet', 'off' ) || ! $stf->is_child ){ ?>
 
@@ -701,7 +704,7 @@ function stf_stylesheets(){
 	<!--[if IE]><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/ie.css" /><![endif]-->
 	<?php } elseif( $stf->is_child ) ?>	
 	
-	<!-- Stylesheet -->
+	<!-- Theme Stylesheet -->
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>" />
 	
 	<?php

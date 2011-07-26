@@ -1,4 +1,4 @@
-<footer class="entry-meta">
+<footer class="entry-meta clearfix">
 	<?php if( is_single() || is_page() || is_attachment() ) { ?>
 		<?php get_template_part('share', 'single'); ?>
 		<?php get_template_part('author', 'single'); ?>
@@ -22,16 +22,3 @@
 	</div>
 	
 </footer><!-- #entry-meta -->
-
-<?php if( is_single() ) { ?>
-	<div id="related-posts">
-		<h4 class="mt0 mb1"><?php _e('Related Posts', 'stf'); ?></h4>
-		<?php 
-			if(function_exists('related_posts')){ 
-				related_posts();
-			} else {
-				stf_related_posts();
-			} 
-		?>
-	</div>
-<?php } ?>

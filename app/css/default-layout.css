@@ -1,0 +1,126 @@
+div#header,div#billboard-wrapper,div#page,div#footer,div#theme-copyright {
+width:1120px;
+margin-right:auto;
+margin-left:auto;
+}
+
+div#page {
+padding-top:20px;
+padding-bottom:20px;
+}
+
+div#footer {
+clear:both;
+margin-left:auto;
+margin-right:auto;
+padding-left:0;
+padding-right:0;
+}
+
+.column {
+float:left;
+display:inline;
+margin-right:20px;
+}
+
+.full-width {
+width:1120px;
+}
+
+.half-width {
+width:550px;
+}
+
+.one-third {
+width:360px;
+}
+
+.one-fourth {
+width:265px;
+}
+
+#content .full-width {
+width:630px;
+}
+
+#content .half-width {
+width:305px;
+}
+
+#content .one-third {
+width:196px;
+}
+
+#content .one-fourth {
+width:142px;
+}
+
+.hentry img {
+max-width:620px;
+height:auto;
+border:none;
+padding:0;
+}
+
+.wp-caption {
+max-width:580px;
+height:auto;
+}
+
+.hentry .wp-caption img {
+max-width:580px;
+height:auto;
+border:none;
+padding:0;
+}
+
+* html .hentry img {
+width:670px;
+}
+
+.entry-thumb {
+float:left;
+margin-left:-110px;
+padding:0;
+}
+
+.flushright {
+margin-right:-20px;
+}
+
+.flush {
+margin-left:-20px;
+margin-right:-20px;
+width:1120px;
+}
+
+div#container {
+float:left;
+width:100%;
+}
+
+div#content {
+margin:0 450px 0 0;
+}
+
+div.sidebar {
+float:left;
+}
+
+div#primary {
+width:160px;
+margin:0 0 0 -430px;
+}
+
+div#secondary {
+width:250px;
+margin:0 0 0 -250px;
+}
+
+.sidebarless div#content {
+margin:0;
+}
+
+.row .row,.flushleft {
+margin-left:-20px;
+}

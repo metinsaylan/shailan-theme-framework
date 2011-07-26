@@ -15,8 +15,22 @@
 			</div><!-- .entry-summary -->
 		<?php else : ?>
 			<div class="entry-content">
-					<?php the_content( stf_more( ) ); ?>
-					<?php stf_entry_pages(); ?>
+				<?php the_content( stf_more( ) ); ?>
+				<?php stf_entry_pages(); ?>
+				
+			<?php if( is_single() ) { ?>
+			<div id="related-posts clearfix">
+				<h4 class="mt0 mb1"><?php _e('Related Posts', 'stf'); ?></h4>
+				<?php 
+					if(function_exists('related_posts')){ 
+						related_posts();
+					} else {
+						stf_related_posts();
+					} 
+				?>
+			</div>
+			<?php } ?>
+				
 			</div><!-- .entry-content -->
 		<?php endif; ?>
 
