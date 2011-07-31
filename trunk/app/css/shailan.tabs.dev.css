@@ -1,0 +1,23 @@
+/* Tabs CSS */
+#sidebar-tabs {
+	background: #efefef; 
+	border:1px solid #ddd;
+    box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    -o-box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    -moz-box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    -webkit-box-shadow: inset #fff 1px 1px 0px, inset #fff -1px -1px 0px;
+    padding: 5px; border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; margin-bottom: 20px; }
+div.tabs-container{ border-bottom:1px solid #ccc; /*margin-bottom:10px;*/ }
+ul.tabs, ul.ajax-tabs { margin: 0; padding: 0; border:0; float: left; list-style: none; height: 37px; width: 100%; }
+ul.tabs{ border-bottom: 1px solid #ccc; margin: 0; border-left: 1px solid #CCC; } 
+ul.tabs li, ul.ajax-tabs li{ float: left; margin: 0; padding: 0; height: 36px; line-height: 23px; border: 1px solid #ccc; border-left: none;
+    margin-bottom: -1px; overflow: hidden; position: relative; background: #e0e0e0; }
+ul.tabs li a, ul.ajax-tabs li a { text-decoration: none; color: #000; display: block; font-size: 11px; padding: 3px; border: 1px solid #fff;
+    outline: none; font-family: Verdana, Tahoma, Geneva, sans-serif;
+} ul.tabs li a:hover, ul.ajax-tabs li a:hover{ background: #ccc; }
+html ul.tabs li.active, html ul.tabs li.active a:hover,
+html ul.ajax-tabs li.active, html ul.ajax-tabs li.active a:hover  { background: #eee; border-bottom: 1px solid #eee; }
+ul.tabs li.active, ul.ajax-tabs li.active { border-top: 2px solid #F60; height: 36px; }
+.tab_container { border: none; overflow: hidden; clear: both; float: left; 
+    width: 100%; background: #EEEEEE; }
+.tab_content { padding: 18px 10px; }

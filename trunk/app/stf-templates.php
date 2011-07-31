@@ -456,7 +456,7 @@ function theme_image($filename, $dimensions=NULL, $classname='', $alt='', $title
 } 
 
 function stf_comments(){
-	if( "on" == stf_get_setting('enable_comments_on_home') && comments_open() ){
+	if( "on" == stf_get_setting('enable_comments_on_home') && comments_open() && is_home() ){
 		global $withcomments;
 		$withcomments = true;		
 		comments_template( '/inline-comments.php', true );
@@ -687,9 +687,14 @@ function stf_google_translate(){ ?>
 }
 
 function stf_stylesheets(){
-	global $stf;
+	global $stf, $content_width;
 	
-	if( !stf_layout() ){ ?>
+	if( !stf_layout() ){ 
+	
+		$content_width = '642';
+	
+	
+	?>
 <!-- Default Layout -->
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/default-layout.css" />	
 	<?php }
