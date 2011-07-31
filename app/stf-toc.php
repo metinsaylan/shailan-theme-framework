@@ -24,7 +24,7 @@ class STF_TableOfContents {
         if (!isset($this->toc))
             return '';
 
-        $html = "<a name=\"contents\"></a><div class=\"toc\">\n";
+        $html = "<a name=\"contents\"></a><div id=\"toc\" class=\"toc\">\n";
         $permalink = get_permalink( $this->postid );
         for ($i = 0; $i < sizeof( $this->toc ); $i ++) {
             list($pagenum, $level, $tocid, $text) = $this->toc[$i];
@@ -77,7 +77,7 @@ class STF_TableOfContents {
         }
         $tocid = $this->get_tocid($match[3]);
         $this->add_toc(intval($match[1]), $tocid, $match[3]);
-        return "<div class=\"return_to_top\"><a href=\"#header\" class=\"jumper jump-to-top\"><span>&uarr;</span></a></div><h$match[1] id=\"$tocid\"$match[2]>$match[3]</h$match[1]>";
+        return "<div class=\"return_to_top\"><a href=\"#toc\" class=\"jumper jump-to-top\"><span>&uarr;</span></a></div><h$match[1] id=\"$tocid\"$match[2]>$match[3]</h$match[1]>";
     }
     
     // "the_content" was originally designed to be a filter for "the_content" 
