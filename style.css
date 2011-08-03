@@ -11,7 +11,10 @@ TAGS: framework, all-widget, widgets, widget-areas, xhtml, light, white, gray, o
 @import url('http://fonts.googleapis.com/css?family=Crimson+Text:400italic&v2');
 
 html{ -webkit-font-smoothing: antialiased; }
-body{ background:#fff; text-shadow:#efefef 0 0 1px; color:#555; }
+body{ 
+	background:#fff; 
+	text-shadow:rgba(0,0,0,0.2) 0 0 1px; 
+	color:#555; }
 
 /*- GENERALS */
 a { color: #69f; text-shadow:#eeeeff 0 0 1px; } 
@@ -239,6 +242,7 @@ mark.yellow, .highlight.yellow { background: #FFEC16; text-shadow: #EEDB05 1px 1
 input[type="text"], input[type="password"], #s, .wpcf7-text, .wpcf7 textarea {
 	border: 1px solid #ccc;
 	line-height: 24px;
+	height: 24px;
 	font-size: 20px;
 	background: #e6e6e6;
 	color: #999;
@@ -260,9 +264,9 @@ input[type="text"], input[type="password"], #s, .wpcf7-text, .wpcf7 textarea {
 	background: url('images/search.png') 4px 5px no-repeat;
 }
 #s:active, #s:focus{ width:210px; }
-#s:focus{ border:1px solid #789; 
+#s:focus{ border:1px solid #aaa; 
 	color: #555;
-	background: url('images/search.png') 4px 5px no-repeat; }
+	background: #ffe url('images/search.png') 4px 5px no-repeat; }
 
 input.wpcf7-submit { 
 	float: right; 
@@ -335,13 +339,11 @@ h2.entry-title{ margin:0 0 0.6em 0; }
 .entry-content p{ margin-bottom:1.5em; }
 .entry-content p:first-line{ text-indent:20px; }
 
-
-
-.entry-meta{ clear: both; }
-.entry-meta, .entry-controls { color: #AAA; margin-top:1em; margin-bottom: 0; }
+.entry-meta{ clear: both; margin-top:1em; margin-bottom: 0; }
+.entry-meta, .entry-controls { color: #AAA; }
 	.entry-meta a, .entry-controls a{ color: #aaa; }
 	.entry-meta a:hover, .entry-controls a:hover{ color: #7af; }
-	.entry-controls{ text-align:right; }
+	.entry-controls{ float:right; text-align:right; margin:0; padding:0; }
 	
 .entry-content ul, .entry-content ol{ margin-top: 1em; } 
 .entry-content ul li, .entry-content ol li{ line-height: 2em; } 
@@ -354,9 +356,9 @@ h2.entry-title{ margin:0 0 0.6em 0; }
 }
 	
 /*- ENTRY PAGINATION */
-.entry-pages{ clear:both; padding: 15px 0; text-align: right; font-size:12px; }
+.entry-pages{ clear:both; padding: 0; text-align: right; font-size:12px; }
 .entry-pages a, .entry-pages a:hover { background:transparent; border:0; }
-.entry-pages span.label { color:#999999; font-style:italic; } 
+.entry-pages span.label { color:#AAAAAA; } 
 .entry-pages .page-number { background:#dddddd; margin-left:6px; padding: 1px 4px; 
 	border-radius: 15px; color: #888; border:none; }
 

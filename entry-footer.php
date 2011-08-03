@@ -1,4 +1,4 @@
-<footer class="entry-meta clearfix">
+<div class="entry-meta clearfix">
 	<?php if( is_single() || is_page() || is_attachment() ) { ?>
 		<?php get_template_part('share', 'single'); ?>
 		<?php get_template_part('author', 'single'); ?>
@@ -11,7 +11,7 @@
 		</div>
 	<?php } ?>
 	
-	<div class="entry-controls alignright">
+	<div class="entry-controls">
 		<?php if( is_archive() || is_search() || in_array( stf_post_format() , array('aside', 'image', 'video', 'gallery', 'quote', 'status') )){  
 			echo stf_permalink();
 			echo " &middot;";
@@ -21,4 +21,4 @@
 		<?php echo stf_edit( array( 'before' => '&middot; ' ) ); ?>
 	</div>
 	
-</footer><!-- #entry-meta -->
+</div><!-- #entry-meta -->

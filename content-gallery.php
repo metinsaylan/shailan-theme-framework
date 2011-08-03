@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <div class="entry-body">
 	<div class="gallery-wrap">
 		<h2><?php the_title(); ?></h2>
@@ -23,4 +23,4 @@
 	</div>
 	<?php get_template_part('entry', 'footer'); ?>
 </div>
-</article><!-- #post-<?php the_ID(); ?> -->
+</div><!-- #post-<?php the_ID(); ?> -->

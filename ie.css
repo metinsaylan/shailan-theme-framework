@@ -1,5 +1,3 @@
 /* IE STYLE FIXES */
-.wp-caption{ border: 1px solid #DDDDDD; }
-#respond{ border:1px solid #ddd; }
 a.button:hover, #comment-submit:hover,  div.nav-next a:hover, div.nav-previous a:hover { border-color:#ddd; }
 a.button:active, #comment-submit:active,  div.nav-next a:active, div.nav-previous a:active { border-color:#ccc; }

@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php 
 	if( is_home() || is_archive() || is_search() || is_front_page() ) {
 		// DISPLAY THUMBNAIL ON ARCHIVES & SEARCH ONLY
@@ -39,4 +39,4 @@
 	<?php stf_comments(); ?>
 
 </div>
-</article><!-- #post-<?php the_ID(); ?> -->
+</div><!-- #post-<?php the_ID(); ?> -->

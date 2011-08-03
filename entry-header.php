@@ -8,7 +8,7 @@
 	
 ?>
 
-<header class="entry-header">
+<div class="entry-header">
 
 	<?php if( is_single() || is_page() || is_attachment() ) { 
 		get_template_part('share', 'single'); // Share buttons 
@@ -20,4 +20,4 @@
 
 	<?php if( is_single() || is_page() || is_attachment() ) get_template_part('share', 'horizontal'); ?>
 	
-</header><!-- .entry-header -->
+</div><!-- .entry-header -->
