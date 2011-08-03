@@ -34,7 +34,7 @@
 			</div>
 		
 			<div class="half-width column last right">
-				<small><a href="#header" class="jumper">Return to Top &uarr;</a></small>
+				<small><a href="#top" class="jumper">Return to Top &uarr;</a></small>
 			</div>
 		</div>
 	</div>

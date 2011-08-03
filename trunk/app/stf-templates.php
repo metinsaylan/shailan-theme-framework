@@ -260,14 +260,12 @@ function stf_entry_thumbnail( $size = 'thumbnail', $args = null ){
  * @uses wp_link_pages()
  */
 function stf_entry_pages_navigation(){
-	echo "<div class=\"small alignright\">";
 	wp_link_pages( array(
 		'before'		=> '<div class="entry-pages"><span class="label">' . __('Pages:') . '</span>',
 		'after'			=> '</div>',
 		'link_before'	=> '<span class="page-number">',
 		'link_after'	=> '</span>'
 	) ); 
-	echo "</div>";
 }
 function stf_entry_pages(){  stf_entry_pages_navigation(); }
 
@@ -711,6 +709,10 @@ function stf_stylesheets(){
 	
 	<!-- Theme Stylesheet -->
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>" />
+	
+	<?php if( file_exists( get_stylesheet_directory_uri() . '/ie.css' ) ){
+		echo '<!--[if IE]><link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() .'/ie.css" /><![endif]-->';
+	} ?>
 	
 	<?php
 	
