@@ -20,8 +20,8 @@ function stf_content(){
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post();
 			get_template_part( 'content', get_post_format() );
-			// TODO : ADD NAVIGATION
 		endwhile;
+		stf_pagination();		
 	else : ?>
 		<article id="post-0" class="post no-results not-found">
 			<header class="entry-header">
@@ -575,7 +575,7 @@ function stf_post_reply_link(){
 		echo post_reply_link( array( 'before' => ' | ', 'after' => '',  'reply_text' => __( 'Reply' ), 'add_below' => 'entry' ), get_the_id() );
 }
 
-function stf_pagination( $args = null ){
+function stf_simple_pagination( $args = null ){
 	
 	extract( wp_parse_args( $args, array(
 		'label_next' => __( '<span class="meta-nav">&larr;</span> Older posts' ),
