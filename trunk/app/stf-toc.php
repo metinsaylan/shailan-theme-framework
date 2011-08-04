@@ -24,7 +24,7 @@ class STF_TableOfContents {
         if (!isset($this->toc))
             return '';
 
-        $html = "<a name=\"contents\"></a><div id=\"toc\" class=\"toc\">\n";
+        $html = "";
         $permalink = get_permalink( $this->postid );
         for ($i = 0; $i < sizeof( $this->toc ); $i ++) {
             list($pagenum, $level, $tocid, $text) = $this->toc[$i];
@@ -65,7 +65,7 @@ class STF_TableOfContents {
             $html .= "</li></ol>";
         }
         
-        $this->toccache = $html . '</div>';
+        $this->toccache = $html . '';
         return $this->toccache;
     }
     
@@ -113,17 +113,27 @@ class STF_TableOfContents {
 
 add_filter('the_posts', array(new STF_TableOfContents, 'the_posts'));
 
-function stf_toc( $args ){
+function stf_toc( $atts, $content = null ){
 	global $post; 
+	
+	extract(shortcode_atts( array(
+		'type' => 'floatright',
+		'title' => __('Contents', 'stf')
+	), $atts));
+	
+	$title = "<strong>" . $title . "</strong>";
+	$open = "<a name=\"contents\"></a><div id=\"toc\" class=\"toc toc-".$type."\">\n" . $title;
+	$close = "</div>";
+	
 	if(! empty( $post->post_toc ) ) {
-		return $post->post_toc;
+		return  $open . $post->post_toc . $close;
 	} else {
 		$toc = new STF_TableOfContents();
 		$toc->postid = $post->ID;
         $toc->post_content = $toc->the_content( $post->post_content );
         $post->post_toc = $toc->get_toc();
-		
-		return $post->post_toc;
+	
+		return $open . $post->post_toc . $close;
 	}
 }
 add_shortcode('toc', 'stf_toc');
