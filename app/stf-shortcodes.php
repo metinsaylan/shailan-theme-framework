@@ -562,7 +562,7 @@ function stf_back_to_parent_shortcode($atts){
 		if( $parent_title != the_title( '','',false ) ) {
 
 		extract(shortcode_atts( array(
-			'class' => 'read-more',
+			'class' => 'back-to-parent',
 			'title' => get_bloginfo('description'),
 			'before_link' => '&larr; Back to ',
 			'after_link' => '',
@@ -572,7 +572,7 @@ function stf_back_to_parent_shortcode($atts){
 	
 	
 		
-			echo $before . '<a class="'.$class.'" href="' . get_permalink( $post->post_parent ) . '" title="' . $parent_title . '">' . $before_link . $parent_title . $after_link . '</a>' . $after; } 
+		return $before . '<a class="'.$class.'" href="' . get_permalink( $post->post_parent ) . '" title="' . $parent_title . '">' . $before_link . $parent_title . $after_link . '</a>' . $after; } 
 	}
 }
 

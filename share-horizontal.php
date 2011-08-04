@@ -5,8 +5,20 @@
 		$title = get_the_title();
 		$url = stf_get_shortlink();
 		$tweet = stf_generate_post_tweet( $id );
+		
+		$context = 'post';
+		if( is_page() ) $context = 'page';
+		if( is_attachment() ) $context = 'file';
+		if( get_post_format() == 'link' ) $context = 'link';		
+		if( get_post_format() == 'gallery' ) $context = 'gallery';		
+		if( get_post_format() == 'image' ) $context = 'image';		
+		if( get_post_format() == 'quote' ) $context = 'quote';		
+		if( get_post_format() == 'chat' ) $context = 'chat';		
+		if( get_post_format() == 'video' ) $context = 'video';		
+		if( get_post_format() == 'audio' ) $context = 'audio';		
+		
 	?>
-	<div class="share-label">Like this post?</div>
+	<div class="share-label">Like this <?php echo $context; ?>?</div>
 	
 	<div class="share-button tweet-button">
 		<!-- tweet -->
