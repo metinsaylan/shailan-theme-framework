@@ -51,7 +51,7 @@ function stf_layout(){
 ?><!-- Start of Smart Layout -->
 	<style type="text/css" media="all">
 	
-		div#header, div#billboard-wrapper, div#page, div#footer, div#theme-copyright{
+		div#header, div#billboard, div#page, div#footer, div#theme-copyright{
 			width: <?php echo $stf_page_width; ?>px; 
 			margin-right: auto;
 			margin-left: auto;
@@ -123,7 +123,7 @@ function stf_layout(){
 			margin:0 <?php echo $content_margin; ?>px 0 0;
 		}
 
-		div.sidebar {
+		div#primary, div#secondary {
 			width: <?php echo $stf_sidebar_width; ?>px;
 			float:right;
 			margin: 0;

@@ -261,7 +261,7 @@ input[type="text"], input[type="password"], #s, .wpcf7-text, .wpcf7 textarea {
 	-moz-transition: width .4s ease-in-out;
 	-o-transition: width .4s ease-in-out;
 	padding-left:26px;
-	background: url('images/search.png') 4px 5px no-repeat;
+	background: #ffe url('images/search.png') 4px 5px no-repeat;
 }
 #s:active, #s:focus{ width:210px; }
 #s:focus{ border:1px solid #aaa; 
