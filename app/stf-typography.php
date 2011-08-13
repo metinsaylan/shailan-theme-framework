@@ -96,7 +96,7 @@ function stf_typography(){
 		<?php } ?>
 		
 		<?php if( $title_font != "css" ){ ?>	
-		h1, h2, h3, h4, h5, h6, #site-title, .entry-title, .widget-title, .title, h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
+		h1, h2, h3, h4, h5, h6, #site-title, .widget-title, .title, h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
 			font-family: <?php echo $fonts[ $title_font ]; ?>;
 			line-height: 1em;
 		}
@@ -104,7 +104,7 @@ function stf_typography(){
 		
 		<?php if( is_numeric( $title_font_scale ) ){ ?>
 			h1{ font-size: <?php echo (2 * $title_font_scale ); ?>em; }
-			h2, h2.entry-title, h1.entry-title, .entry-title, .widget-title, .page-title, .widgettitle, .title { font-size: <?php echo (1.6 * $title_font_scale ); ?>em; }
+			h2, h2.entry-title, h1.entry-title, h3.entry-title, .widget-title, .page-title, .widgettitle, .title { font-size: <?php echo (1.6 * $title_font_scale ); ?>em; }
 			h3{ font-size: <?php echo (1.3 * $title_font_scale ); ?>em; }
 			h4{ font-size: <?php echo (1.17 * $title_font_scale ); ?>em; }
 			h5{ font-size: <?php echo (1.1 * $title_font_scale ); ?>em; }
