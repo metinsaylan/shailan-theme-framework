@@ -7,6 +7,7 @@
  Contact	: metinsaylan (at) gmail (dot) com
 */
 
+ob_start();
 include_once('stf-widget-areas.php'); // GENERIC FUNCTIONS
 include_once('stf-utilities.php'); // GENERIC FUNCTIONS
 include_once('stf-shortcodes.php'); // SHORTCODES
@@ -18,6 +19,7 @@ include_once('stf-social.php'); // SOCIAL
 include_once('stf-post-formats.php'); // POST FORMATS
 include_once('stf-layout.php'); // LAYOUT MANAGER
 include_once('stf-colors.php'); // CUSTOM COLORS MANAGER
+ob_end_clean();
 
 // WIDGETS
 function stf_widget_footer(){
@@ -26,6 +28,7 @@ function stf_widget_footer(){
 		</div>";
 }
 
+ob_start();
 include_once('widgets/stf-blog-posts.php'); // BLOG POSTS
 include_once('widgets/stf-featuredposts.php'); // LOOP DA LOOP
 include_once('widgets/stf-navigation.php'); // OLDER / NEWER
@@ -40,6 +43,7 @@ include_once('widgets/stf-nivo-slider.php'); // NIVO SLIDER WIDGET
 // Other interfaces
 include_once('stf-typography.php'); // TYPOGRAPHY
 include_once('stf-toc.php'); // TABLE OF CONTENT GENERATOR
+ob_end_clean();
 
 
 

@@ -253,7 +253,16 @@ function stf_get_first_image_src ( $postID , $size = 'full' ){
 			
 		}
 	} else {
-		return FALSE;
+		$first_img = '';
+		ob_start();
+		ob_end_clean();
+		$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+		$first_img = $matches [1] [0];
+
+		if(empty($first_img)){
+			$first_img = FALSE;
+		}
+		return $first_img;
 	}
 }
 
