@@ -106,7 +106,7 @@ case 'textarea':
 
 <div class="stf_input stf_textarea clearfix">
 	<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
- 	<textarea name="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" cols="" rows=""><?php if ( $current[ $field['id'] ] != "") { echo stripslashes($current[ $field['id'] ] ); } else { echo $field['std']; } ?></textarea>
+ 	<textarea name="<?php echo $field['id']; ?>" type="<?php echo $field['type']; ?>" cols="" rows=""><?php if ( isset($current[ $field['id'] ]) && $current[ $field['id'] ] != "") { echo stripslashes($current[ $field['id'] ] ); } else { echo $field['std']; } ?></textarea>
  <small><?php echo $field['desc']; ?></small>
  
  </div>
