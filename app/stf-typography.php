@@ -27,14 +27,12 @@ function stf_get_fonts(){
 		'helvetica' => array( 
 			"name"	=> "Helvetica Neue",
 			"css"	=> "'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif",
-			"src"	=> ""
-		)
+			"src"	=> "" ),
 		
 		'futura' => array (
 			"name"	=> "Futura/Century Gothic",
 			"css"	=> "Futura, Century Gothic, AppleGothic, sans-serif",
-			"src"	=> ""
-		)
+			"src"	=> "" ),
 		
 		'trebuchet' => array(
 			"name"	=> "Trebuchet MS",
@@ -49,29 +47,30 @@ function stf_get_fonts(){
 		'ubuntu' => array(
 			"name" 	=> "Ubuntu",
 			"css"	=> "'Ubuntu', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-			"src"	=> "" ),
+			"src"	=> "Ubuntu" ),
 			
 		'droid' => array(
 			"name"	=> "Droid Serif",
 			"css"	=> "'Droid Serif', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif",
-			"src"	=> "" ),
+			"src"	=> "Droid+Serif" ),
 			
 		'droidsans' => array(
 			"name"	=> "Droid Sans",
 			"css"	=> "'Droid Sans', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-			"src"	=> "" ),
+			"src"	=> "Droid+Sans" ),
 			
 		'rocksalt' => array(
 			"name"	=> "Rock Salt",
 			"css"	=> "'Rock Salt', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-			"src"	=> "" ),
+			"src"	=> "Rock+Salt" ),
 			
 		'copse' => array(
 			"name"	=> "Copse",
 			"css"	=> "'Copse', serif",
-			"src"	=> "" ),
+			"src"	=> "Copse" ),
 			
-		"puritan" => array( "name" => "Puritan", "css" => "'Puritan', sans-serif", "src" => "Puritan" )
+		"puritan" => array( "name" => "Puritan", "css" => "'Puritan', sans-serif", "src" => "Puritan" ),
+		"oswald" => array( "name" => "Oswald", "css" => "'Oswald', sans-serif", "src" => "Oswald" )
 		
 	);
 }
@@ -110,7 +109,8 @@ function stf_typography(){
 	if( $title_font != "css" ){ 
 		$title_font = $fonts[$title_font];
 		if( $title_font["src"] != "" ){ 
-			$import .= "|" . $title_font["src"];
+			if( "" != $import ) $import .= "|" . $title_font["src"];
+			else $import = $title_font["src"];
 		}
 	}
 	
