@@ -12,7 +12,11 @@ $layouts = array(
 	'3cb' => '3 Columns Sidebars on Both Side'
 );
 
-$fonts = stf_get_font_names();
+$fonts = array();
+$fonts_data = stf_get_fonts();
+foreach($fonts_data as $key=>$values){
+	$fonts[$key] = $values["name"];
+}
 
 $options = array (
 
