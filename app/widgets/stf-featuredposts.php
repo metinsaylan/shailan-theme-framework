@@ -107,6 +107,8 @@ class stf_featured extends WP_Widget {
 		}
 
 		echo "\n\t<!-- Featured Posts Query: ";
+			echo "\n\t" . $template;
+		
 			print_r($fquery);
 		echo " -->\n";
 		
@@ -122,9 +124,11 @@ class stf_featured extends WP_Widget {
 			// Locate template
 			include($template); // not once
 		
+		} elseif( file_exists( get_template_directory() . '/app/widgets/templates/' . $template ) ) {
+			include( get_template_directory() . '/app/widgets/templates/' . $template );
 		} else {
 			// Default template	
-			include('templates/loop-list.php');
+			include( get_template_directory() . '/app/widgets/templates/loop-list.php' );
 		}
 		
 		echo '</div>';

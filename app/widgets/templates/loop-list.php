@@ -1,4 +1,4 @@
-<ul id="featured-posts">
+<ul id="loop-da-loop loop-list">
 	<?php while ( have_posts() ) : the_post(); ?>				
 	<li class="fpost"><span class="fpost-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span></li>
 	<?php endwhile; ?>
