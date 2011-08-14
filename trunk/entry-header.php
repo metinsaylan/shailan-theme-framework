@@ -1,6 +1,6 @@
 <?php 
 
-	if( is_single() || is_page() ){ 
+	if( is_singular() ){ 
 		$titleblock = "h1";
 	} else { 
 		$titleblock = "h2";

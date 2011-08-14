@@ -336,19 +336,16 @@ function stf_posts( $number_of_posts = 0, $template = '',  $reset = false ){
 			)
 		); }
 	
-	// Load template if given
-	if('' != $template){
-		locate_template( array($template), true, false );
-	} else { 
+	// Load template
+	if('' != $template && file_exists( $template )){
+		// Locate template
+		include( $template ); // not once
 	
-		$templates = stf_get_templates();
-	
-		if ( have_posts() ): 
-			locate_template( $templates, true, false ); 
-		else: 
-			define('PAGE_NOT_FOUND', true); 
-			locate_template( array('loop-404.php'), true, false );
-		endif; 
+	} elseif( file_exists( get_template_directory() . '/app/widgets/templates/' . $template ) ) {
+		include( get_template_directory() . '/app/widgets/templates/' . $template );
+	} else {
+		// Default template	
+		include( get_template_directory() . '/app/widgets/templates/loop-list.php' );
 	}
 }
 
