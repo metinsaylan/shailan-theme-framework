@@ -1,64 +1,78 @@
 <?php 
 
 /** Typography setup */
-
 function stf_get_fonts(){
 	return array(
-		'css' => "Use fonts defined in stylesheet",
-		'georgia' => "Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif",
-		'delicious' => "Delicious, 'Trebuchet MS', Calibri, sans-serif",
-		'gillsans' => "GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'lucida' => "'Lucida Grande', Lucida, Helvetica, Arial, sans-serif",
-		'helvetica' => "'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif",
-		'futura' => "Futura, Century Gothic, AppleGothic, sans-serif",
-		'trebuchet' => "'Trebuchet MS',Helvetica,Jamrul,sans-serif",
-		'dejavu' => "'DejaVu Sans', 'Bitstream Vera Sans', 'Segoe UI', 'Lucida Grande', Verdana, Tahoma, Arial, sans-serif",
-		'ubuntu' => "'Ubuntu', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'bebas' => "'BebasNeueRegular', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'cartogothic' => "'CartoGothicStdBook', Futura, Century Gothic, AppleGothic, sans-serif",
-		'miso' => "'MisoRegular', Futura, Century Gothic, AppleGothic, sans-serif",
-		'misobold' => "'MisoBold', Futura, Century Gothic, AppleGothic, sans-serif",
-		'quicksand' => "'QuicksandBook', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'quicksanddash' => "'QuicksandDash', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'junction' => "'junctionregularRegular', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'league' => "'LeagueGothicRegular', GillSans, 'Trebuchet MS', Calibri, sans-serif;",
-		'puritan' => "'Puritan20Normal', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'droid' => "'Droid Serif', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif",
-		'droidsans' => "'Droid Sans', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'rocksalt' => "'Rock Salt', GillSans, 'Trebuchet MS', Calibri, sans-serif",
-		'goudy' => "'Goudy Bookletter 1911', serif",
-		'copse' => "'Copse', serif",
-		'molengo' => "'Molengo', serif"
-	);
-}
-
-function stf_get_font_names(){
-	return array(
-		'css' => "Default in Stylesheet",
-		'georgia' => "Georgia - Serif",
-		'delicious' => "Delicious - Sans",
-		'gillsans' => "GillSans - Sans",
-		'lucida' => "Lucida Grande - Sans",
-		'helvetica' => "Helvetica Neue - Sans",
-		'futura' => "Futura - Sans",
-		'trebuchet' => "Trebuchet MS - Sans",
-		'dejavu' => "DejaVu Sans - Sans",
-		'ubuntu' => "Ubuntu - Sans",
-		'bebas' => "BebasNeueRegular - Gothic",
-		'cartogothic' => "CartoGothicStdBook - Gothic",
-		'miso' => "Miso - Gothic",
-		'misobold' => "MisoBold - Gothic",
-		'quicksand' => "Quicksand - Gothic",
-		'quicksanddash' => "Quicksand Dashed - Gothic",
-		'junction' => "Junction - Sans",
-		'league' => "LeagueGothicRegular - Gothic",
-		'puritan' => "Puritan - Sans",
-		'droid' => "Droid - Serif",
-		'droidsans' => "DroidSans - Sans",
-		'rocksalt' => "Rock Salt - Comic",
-		'goudy' => "Goudy Bookletter 1911 - Serif",
-		'copse' => "Copse - Serif",
-		'molengo' => "Molengo - Sans"
+		'css' => array( 
+			"name" => "Default",
+			"css" => "Use fonts defined in stylesheet",
+			"src" => ""
+			),
+			
+		'georgia' => array(
+			"name" => "Georgia/Palatino",
+			"css" => "Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif",
+			"src" => "" ),
+			
+		'gillsans' => array(
+			"name"	=> "Gillsans/Trebuchet MS",
+			"css"	=>"GillSans, 'Trebuchet MS', Calibri, sans-serif",
+			"src"	=> "" ),
+			
+		'lucida' => array (
+			"name"	=> "Lucida Grande",
+			"css"	=> "'Lucida Grande', Lucida, Helvetica, Arial, sans-serif",
+			"src"	=> "" ),
+			
+		'helvetica' => array( 
+			"name"	=> "Helvetica Neue",
+			"css"	=> "'Helvetica Neue', Arial, Helvetica, 'Nimbus Sans L', sans-serif",
+			"src"	=> ""
+		)
+		
+		'futura' => array (
+			"name"	=> "Futura/Century Gothic",
+			"css"	=> "Futura, Century Gothic, AppleGothic, sans-serif",
+			"src"	=> ""
+		)
+		
+		'trebuchet' => array(
+			"name"	=> "Trebuchet MS",
+			"css"	=> "'Trebuchet MS',Helvetica,Jamrul,sans-serif",
+			"src"	=> "" ),
+			
+		'dejavu' => array(
+			"name" => "DejaVu Sans",
+			"css" => "'DejaVu Sans', 'Bitstream Vera Sans', 'Segoe UI', 'Lucida Grande', Verdana, Tahoma, Arial, sans-serif",
+			"src"	=> "" ),
+			
+		'ubuntu' => array(
+			"name" 	=> "Ubuntu",
+			"css"	=> "'Ubuntu', GillSans, 'Trebuchet MS', Calibri, sans-serif",
+			"src"	=> "" ),
+			
+		'droid' => array(
+			"name"	=> "Droid Serif",
+			"css"	=> "'Droid Serif', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif",
+			"src"	=> "" ),
+			
+		'droidsans' => array(
+			"name"	=> "Droid Sans",
+			"css"	=> "'Droid Sans', GillSans, 'Trebuchet MS', Calibri, sans-serif",
+			"src"	=> "" ),
+			
+		'rocksalt' => array(
+			"name"	=> "Rock Salt",
+			"css"	=> "'Rock Salt', GillSans, 'Trebuchet MS', Calibri, sans-serif",
+			"src"	=> "" ),
+			
+		'copse' => array(
+			"name"	=> "Copse",
+			"css"	=> "'Copse', serif",
+			"src"	=> "" ),
+			
+		"puritan" => array( "name" => "Puritan", "css" => "'Puritan', sans-serif", "src" => "Puritan" )
+		
 	);
 }
 
@@ -84,20 +98,40 @@ function stf_typography(){
 		echo "\n\t<link rel=\"stylesheet\" href=\"".$base_font_css."\" type=\"text/css\" charset=\"utf-8\" />";
 	}
 	
+	$import = "";
+	
+	if( $base_font != "css" ){ 
+		$base_font = $fonts[$base_font];
+		if( $base_font["src"] != "" ){ 
+			$import = $base_font["src"];
+		}
+	}
+	
+	if( $title_font != "css" ){ 
+		$title_font = $fonts[$title_font];
+		if( $title_font["src"] != "" ){ 
+			$import .= "|" . $title_font["src"];
+		}
+	}
+	
+	
 ?>	
 	<!-- Start of STF Typography Styles -->
 	<style type="text/css" media="all">
+		<?php if( $import != "" ){
+			echo "@import url(http://fonts.googleapis.com/css?family=". $import .");";
+		} ?>
 	
 		<?php if( $base_font != "css" ){ ?>	
 		body, td, textarea, input, select{
-			font-family: <?php echo $fonts[ $base_font ]; ?>;
+			font-family: <?php echo $base_font[ "css" ]; ?>;
 			font-size: <?php echo $base_font_size; ?>;
 		}
 		<?php } ?>
 		
 		<?php if( $title_font != "css" ){ ?>	
 		h1, h2, h3, h4, h5, h6, #site-title, .widget-title, .title, h2.entry-title, h1.entry-title, .widget-title, .page-title, .widgettitle{
-			font-family: <?php echo $fonts[ $title_font ]; ?>;
+			font-family: <?php echo $title_font[ "css" ]; ?>;
 			line-height: 1em;
 		}
 		<?php } ?>
