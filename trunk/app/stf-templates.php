@@ -10,7 +10,6 @@
 
 
 global $stf;
-
 global $theme_data;
 
 /** CONSTANTS */
@@ -690,7 +689,7 @@ function stf_stylesheets(){
 	
 	
 	?>
-<!-- Default Layout -->
+	<!-- Default Layout -->
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/default-layout.css" />	
 	<?php }
 	
