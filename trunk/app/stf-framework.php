@@ -66,7 +66,7 @@ class Shailan_Framework{
 		
 		add_action( 'admin_init', array(&$this, 'theme_admin_init') );
 		add_action( 'admin_menu', array(&$this, 'theme_admin_header') );
-		add_action( 'wp_footer', array(&$this, 'framework_copyright') );
+		// add_action( 'wp_footer', array(&$this, 'framework_copyright') );
 		
 		if(is_admin()) {
 			wp_enqueue_script( "jquery" );
