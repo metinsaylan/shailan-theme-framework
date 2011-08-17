@@ -31,5 +31,5 @@ function stf_colors(){
 	<!-- End of STF Custom colors -->
 		<?php
 		
-}
+} add_action( 'wp_head', 'stf_colors' ); // Hook this to head
 

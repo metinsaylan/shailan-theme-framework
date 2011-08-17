@@ -712,8 +712,6 @@ function stf_stylesheets(){
 	} ?>
 	
 	<?php
-	
-	stf_colors();
 }
 
 function _stf_deprecated_function( $function, $version, $replacement=null ) {
