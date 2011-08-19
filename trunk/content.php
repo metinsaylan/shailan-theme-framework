@@ -1,6 +1,6 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php 
-	if( is_home() || is_archive() || is_search() || is_front_page() ) {
+	if( is_home() || is_archive() || is_search() ) {
 		// DISPLAY THUMBNAIL ON ARCHIVES & SEARCH ONLY
 		stf_entry_thumbnail( );
 	} 
