@@ -3,15 +3,8 @@
 /* Template Name: Links Page */
 
 get_header() ?>
-
-<!-- Content Wrapper -->
 <div id="content-wrapper">
-
-	<?php get_template_part('billboard', 'index'); // BILLBOARD ?>
-
-	<!-- Page Layout -->
 	<div id="page" class="container_12 clearfix">
-	
 		<div id="container">
 			<!-- Content -->
 			<div id="content" class="grid_8 clearfix">

@@ -4,20 +4,10 @@
 */
 
 get_header(); ?>
-
-<!-- Content Wrapper -->
 <div id="content-wrapper">
-
-	<?php get_template_part('billboard', 'index'); // BILLBOARD ?>
-
-	<!-- Page Layout -->
 	<div id="page" class="clearfix">
-	
 		<div id="container">
-			<!-- Content -->
 			<div id="content" class="clearfix">
-				
-				<!-- Main -->
 				<div id="content-main">
 
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -61,15 +51,7 @@ get_header(); ?>
 			</div>
 			<!-- [End] Content -->
 		</div>
-		
-		<!-- Sidebars -->
 		<?php get_sidebar() ?>
-		<!-- [End] Sidebars -->
-		
 	</div>
-	<!-- [End] Page -->
-		
 </div>
-<!-- [End] Content Wrapper -->
-
 <?php get_footer() ?>

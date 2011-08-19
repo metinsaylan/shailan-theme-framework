@@ -4,13 +4,7 @@
 */
 
 get_header(); ?>
-
-<!-- Content Wrapper -->
 <div id="content-wrapper">
-
-	<?php get_template_part('billboard', 'index'); // BILLBOARD ?>
-
-	<!-- Page Layout -->
 	<div id="page" class="clearfix">
 	
 		<div id="container">
@@ -52,7 +46,6 @@ get_header(); ?>
 		</div>
 		
 		<?php get_template_part('share', 'single'); ?>
-		
 		<?php stf_comments(); ?>
 				
 	<?php endwhile; // end of the loop. ?>
@@ -71,6 +64,4 @@ get_header(); ?>
 	<!-- [End] Page -->
 		
 </div>
-<!-- [End] Content Wrapper -->
-
 <?php get_footer() ?>
