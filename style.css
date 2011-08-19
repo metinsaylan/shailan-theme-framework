@@ -245,7 +245,7 @@ input[type="text"], input[type="password"], #s, .wpcf7-text, .wpcf7 textarea {
 	font-size: 16px;
 	background: #fff;
 	color: #999;
-	padding: 3px 10px;
+	padding: 3px 5px;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -253,6 +253,8 @@ input[type="text"], input[type="password"], #s, .wpcf7-text, .wpcf7 textarea {
 	box-shadow: inset #ccc 0 0 2px;
 	-moz-box-shadow: inset #ccc 0 0 2px;
 }
+
+.wpcf7 textarea{ height:150px; }
 
 #s{ 
 	font-size:14px; width:100px; 	
