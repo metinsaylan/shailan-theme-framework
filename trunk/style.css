@@ -303,7 +303,7 @@ input.wpcf7-submit {
 	position: absolute;
 	left: auto;
 	right: 0;
-	top: 0;
+	bottom: 0;
 }
 .subscribe-icons {
 	padding: 0;
@@ -329,7 +329,7 @@ height: 26px;
 
 
 /*- ENTRY */
-.hentry{ margin:0; padding:0 0 1em; border-radius:10px; }
+.hentry{ margin:0; padding:0 0 1em; }
 /* .home .hentry{ margin:0; border-radius:10px; } */
 .hentry {
 	border-bottom: 2px dotted #e6e6e6;
