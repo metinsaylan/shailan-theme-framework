@@ -209,6 +209,14 @@ array( "type" => "open"),
 		"type" => "text",
 		"std" => "#555555"
 	),
+	
+	array(
+		"name" => "Link Color",
+		"desc" => "Site link color value (Eg. #2277dd)",
+		"id" => "stf_link_color",
+		"type" => "text",
+		"std" => "#2277dd"
+	),
 
 array( "type" => "close"),
 

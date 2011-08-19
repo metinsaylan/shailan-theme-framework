@@ -71,10 +71,10 @@ function stf_layout(){
 		
 		/* #footer .column { width: <?php echo $stf_one_third; ?>px; } */
 		
-		#content .full-width{ width: <?php echo floor( $post_width - 2*$stf_padding ); ?>px; }
-		#content .half-width{ width: <?php echo floor( ( $post_width - 3*$stf_padding ) / 2 ); ?>px; }
-		#content .one-third{ width: <?php echo floor( ( $post_width - 4*$stf_padding ) / 3 ); ?>px; }
-		#content .one-fourth{ width: <?php echo floor( ( $post_width - 5*$stf_padding ) / 4 ); ?>px; }
+		#content .full-width{ width: <?php echo floor( $post_width - 1*$stf_padding ); ?>px; }
+		#content .half-width{ width: <?php echo floor( ( $post_width - 2*$stf_padding ) / 2 ); ?>px; }
+		#content .one-third{ width: <?php echo floor( ( $post_width - 3*$stf_padding ) / 3 ); ?>px; }
+		#content .one-fourth{ width: <?php echo floor( ( $post_width - 4*$stf_padding ) / 4 ); ?>px; }
 		
 		.hentry img{max-width: <?php echo $post_width - 50; ?>px; height:auto; border:none; padding:0; } 
 		.wp-caption{max-width: <?php echo $post_width - 50 - 2 * $stf_padding; ?>px; height:auto; } 

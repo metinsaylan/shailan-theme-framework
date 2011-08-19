@@ -70,6 +70,11 @@ function stf_get_fonts(){
 			"src"	=> "Copse" ),
 			
 		"puritan" => array( "name" => "Puritan", "css" => "'Puritan', sans-serif", "src" => "Puritan" ),
+		"anton" => array( "name" => "Anton", "css" => "'Anton', sans-serif", "src" => "Anton" ),
+		"voltaire" => array( "name" => "Voltaire", "css" => "'Voltaire', sans-serif", "src" => "Voltaire" ),
+		"gloria" => array( "name" => "Gloria Hallelujah", "css" => "'Gloria Hallelujah', sans-serif", "src" => "Gloria+Hallelujah" ),
+		"bowlby" => array( "name" => "Bowlby One SC", "css" => "'Bowlby One SC', sans-serif", "src" => "Bowlby+One+SC" ),
+		"sixcaps" => array( "name" => "Six Caps", "css" => "'Six Caps', sans-serif", "src" => "Six+Caps" ),
 		"oswald" => array( "name" => "Oswald", "css" => "'Oswald', sans-serif", "src" => "Oswald" )
 		
 	);
