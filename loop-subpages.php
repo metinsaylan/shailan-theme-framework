@@ -3,7 +3,6 @@
 	$posts_displayed[] = $post->ID;
 ?>
 	<div class="entry-wrap">
-		<!-- Post -->
 		<div id="subpage-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 		
 			<!-- Post Thumbnail -->
@@ -28,16 +27,8 @@
 				</div>
 				<!-- [End] Entry Content -->
 
-				<!-- Entry Footer -->
-				<div class="entry-footer right">
-					<?php echo stf_views(); ?>
-				</div>
-				<!-- [End] Entry Footer -->
-
+				<?php get_template_part('entry', 'footer'); ?>
 			</div>
 		</div>
-		<!-- [End] Post -->
-	
-		<?php //stf_comments(); ?>
 	</div>
 <?php endwhile; /* End The Loop */ ?>
