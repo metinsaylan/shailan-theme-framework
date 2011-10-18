@@ -2,13 +2,13 @@
 
 <div id="page" class="clearfix">
 
-	<div id="breadcrumbs-wrapper">
-		<?php stf_breadcrumbs() ?>	
-	</div>
-	
 	<div id="container">
 		<div id="content" role="main">
+		
+		<?php do_action('before_content'); ?>
 		<?php stf_content(); ?>
+		<?php do_action('after_content'); ?>
+		
 		</div>
 	</div>
 	

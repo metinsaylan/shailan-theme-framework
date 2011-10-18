@@ -25,8 +25,7 @@
 <div id="top"></div>
 
 <?php global $posts_displayed; $posts_displayed = array(); ?>
-
-<?php do_action('stf_body_top'); ?>
+<?php do_action('body_top'); ?>
 
 <!-- Paste BODY scripts here -->
 
