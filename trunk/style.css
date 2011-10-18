@@ -17,7 +17,7 @@ body{
 	color:#555; }
 
 /*- GENERALS */
-a { color: #69f; text-shadow:#eeeeff 0 0 1px; } 
+a { color: #69f; } 
 a:visited { color: #7af;  } 
 a:hover  { text-decoration:none; color:#7af; } 
 pre, code { background:#e0e0e0; font-size: 12px; }

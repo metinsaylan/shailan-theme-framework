@@ -12,19 +12,19 @@ global $stf_default_options;
 global $theme_data;
 global $stf_widget_areas; 
 
-define('STF_DIRECTORY', dirname(__FILE__) . '/');
+define('STF_DIR', dirname(__FILE__) . '/');
 
 $url = get_template_directory_uri();
 
-$dir = str_replace('\\' ,'/', STF_DIRECTORY); 
+$dir = str_replace('\\' ,'/', STF_DIR); 
 $dir = preg_replace('|/+|', '/', $dir);
 $dir = basename($dir);
 
 if ( 0 === strpos($url, 'http') && is_ssl() ){
 	$url = str_replace( 'http://', 'https://', $url );} 
 
-define('STF_URL', $url . '/app/');
-define('STF_APP', STF_DIRECTORY );
+define( 'TEMPLATE_URL', $url );
+define( 'STF_URL', $url . '/app/' );
 
 // Framework class
 class Shailan_Framework{
@@ -66,15 +66,8 @@ class Shailan_Framework{
 		
 		add_action( 'admin_init', array(&$this, 'theme_admin_init') );
 		add_action( 'admin_menu', array(&$this, 'theme_admin_header') );
-		// add_action( 'wp_footer', array(&$this, 'framework_copyright') );
 		
-		if(is_admin()) {
-			wp_enqueue_script( "jquery" );
-			wp_enqueue_script( "tweetable", get_template_directory_uri() . '/app/scripts/jquery.tweetable.js', 'jquery' );
-			wp_enqueue_style( "tweetable", get_template_directory_uri() . '/app/css/tweetable.css' );
-			wp_enqueue_style( "google-droid-sans", "http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&v1", false, "1.0", "all");
-			wp_enqueue_style( "stf-admin-styles", get_template_directory_uri() . "/app/css/admin.css", false, "1.0", "all");
-		}
+		add_action( 'init', array(&$this, 'enqueue_scripts') );
 		
 		add_image_size( 'featured', 940, 320, true );
 		add_image_size( 'video-thumbnail', 120, 90, true );
@@ -85,6 +78,16 @@ class Shailan_Framework{
 	
 	function Shailan_Framework(){ // PHP 4 Constructor
 		$this->__construct();
+	}
+	
+	function enqueue_scripts(){
+		if( is_admin() ) {
+			wp_enqueue_script( "jquery" );
+			wp_enqueue_script( "tweetable", get_template_directory_uri() . '/app/scripts/jquery.tweetable.js', 'jquery' );
+			wp_enqueue_style( "tweetable", get_template_directory_uri() . '/app/css/tweetable.css' );
+			wp_enqueue_style( "google-droid-sans", "http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&v1", false, "1.0", "all");
+			wp_enqueue_style( "stf-admin-styles", get_template_directory_uri() . "/app/css/admin.css", false, "1.0", "all");
+		}
 	}
 	
 	function get_settings(){
@@ -191,8 +194,8 @@ class Shailan_Framework{
 		$navigation = "";
 		$footer_text = "<a href=\"" . $this->theme['URI'] . "\">". $this->name . "</a> is powered by <a href=\"http://shailan.com/wordpress/themes/framework\" title=\"Shailan Theme Framework\">Shailan Theme Framework</a>";
 		
-		// Render theme options page
-		include_once( STF_APP . "stf-page-options.php" );
+		// Render theme options page		
+		include_once( STF_DIR . "stf-page-options.php" );
 		
 	}
 	

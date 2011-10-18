@@ -87,7 +87,7 @@ function stf_typography(){
 	$title_font = stf_get_setting( 'stf_title_font' );
 	$title_font_scale = stf_get_setting( 'stf_title_font_scale' );
 	$base_font = stf_get_setting( 'stf_base_font' );
-	$base_font_size = stf_get_setting( 'stf_base_font_size' );
+	$base_font_size = min( stf_get_setting( 'stf_base_font_size' ), 4);
 	
 	// Include font file if exists
 	$title_font_css = locate_template( "app/fonts/" . $title_font . ".css" );
