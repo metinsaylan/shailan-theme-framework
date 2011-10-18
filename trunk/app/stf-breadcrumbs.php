@@ -18,7 +18,7 @@ function stf_breadcrumbs( $args = array() ) {
 		'echo'		=> 1,
 		'prefix'	=> '',
 		'suffix'	=> '',
-		'seperator' => ' <span class="seperator">&raquo;</span> ',
+		'seperator' => ' <span class="sep">&raquo;</span> ',
 		'hometext'	=> $welcome_text
 	
 	) ), EXTR_SKIP );
