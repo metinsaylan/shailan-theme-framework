@@ -16,11 +16,11 @@ class stf_latest_tweet_widget extends WP_Widget {
 		if ( isset($title) )
 			echo $before_title . $title . $after_title;
 				
-			if(function_exists('wp_pagenavi')) {
-				stf_latest_tweet();
-			} 
-			
 			$twitter_username = stf_get_setting( 'stf_twitter_username' ); 
+			
+			if(function_exists('stf_latest_tweet')) {
+				echo stf_get_latest_tweet( $twitter_username ) ;
+			} 
 			
 			echo "<a class=\"stf-latest-tweet-follow\" href=\"http://twitter.com/".$twitter_username."\" rel=\"external nofollow\" target=\"_blank\">" . __('Follow') . ' ' . $twitter_username . "</a>";
 			

@@ -73,7 +73,8 @@ function stf_get_fonts(){
 		"anton" => array( "name" => "Anton", "css" => "'Anton', sans-serif", "src" => "Anton" ),
 		"voltaire" => array( "name" => "Voltaire", "css" => "'Voltaire', sans-serif", "src" => "Voltaire" ),
 		"gloria" => array( "name" => "Gloria Hallelujah", "css" => "'Gloria Hallelujah', sans-serif", "src" => "Gloria+Hallelujah" ),
-		"bowlby" => array( "name" => "Bowlby One SC", "css" => "'Bowlby One SC', sans-serif", "src" => "Bowlby+One+SC" ),
+		"bowlbysc" => array( "name" => "Bowlby One SC", "css" => "'Bowlby One SC', sans-serif", "src" => "Bowlby+One+SC" ),
+		"bowlby" => array( "name" => "Bowlby One", "css" => "'Bowlby One', sans-serif", "src" => "Bowlby+One" ),
 		"sixcaps" => array( "name" => "Six Caps", "css" => "'Six Caps', sans-serif", "src" => "Six+Caps" ),
 		"oswald" => array( "name" => "Oswald", "css" => "'Oswald', sans-serif", "src" => "Oswald" )
 		

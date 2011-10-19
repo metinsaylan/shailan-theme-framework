@@ -12,7 +12,9 @@ function theme_setup(){
 
 	// Navigation Menus
 	add_theme_support('nav_menus');
-	register_nav_menu('header', 'Header Navigation');
+	register_nav_menu( 'top-navigation', 'Top Navigation' );
+	register_nav_menu( 'header', 'Header Navigation' );
+	register_nav_menu( 'footer', 'Footer Navigation' );
 
 	// Post Formats
 	add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video', 'audio' ) );
