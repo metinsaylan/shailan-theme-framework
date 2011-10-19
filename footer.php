@@ -8,15 +8,15 @@
 		<div class="row clearfix">
 		<!-- Footer Columns -->
 		
-			<div id="footer-column-1" class="one-third column sidebar">
+			<div id="footer-column-1" class="one-third column">
 				<?php stf_widgets('footer-column-1'); ?>
 			</div>
 			
-			<div id="footer-column-2" class="one-third column sidebar">
+			<div id="footer-column-2" class="one-third column">
 				<?php stf_widgets('footer-column-2'); ?>
 			</div>
 			
-			<div id="footer-column-3" class="one-third column last sidebar">
+			<div id="footer-column-3" class="one-third column last">
 				<?php stf_widgets('footer-column-3'); ?>
 			</div>
 			

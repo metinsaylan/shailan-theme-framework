@@ -230,41 +230,6 @@ if(!function_exists('stf_get_files')){
 	}
 }
 
-function stf_get_first_image_src ( $postID , $size = 'full' ){					
-	global $post;
-	
-	$args = array(
-		'numberposts' => 1,
-		'order'=> 'ASC',
-		'post_mime_type' => 'image',
-		'post_parent' => $post->ID,
-		'post_status' => null,
-		'post_type' => 'attachment'
-	);
-	
-	$attachments = get_children( $args );
-	
-	if ($attachments) {
-		foreach($attachments as $attachment) {
-		
-			$image_attributes = wp_get_attachment_image_src( $attachment->ID, $size )  ? wp_get_attachment_image_src( $attachment->ID, $size ) : wp_get_attachment_image_src( $attachment->ID, 'full' );
-				
-			return $image_attributes[0];
-			
-		}
-	} else {
-		$first_img = '';
-		ob_start();
-		ob_end_clean();
-		$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-		$first_img = $matches [1] [0];
-
-		if(empty($first_img)){
-			$first_img = FALSE;
-		}
-		return $first_img;
-	}
-}
 
 define("BY_EXTENSION", 1); 
 define("BY_EXPRESSION", 2); 

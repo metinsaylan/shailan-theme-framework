@@ -34,15 +34,16 @@
 
 <!-- Header Wrapper -->
 <div id="header-wrapper">
+
 	<!-- Header -->
 	<div id="header" class="clearfix">
-		<?php stf_widget_area('header-top'); ?>
 		<?php stf_branding(); ?>
 		<div id="searchform-wrapper"><?php get_search_form(); ?></div>
 		<?php get_template_part('subscribe'); ?>
 		<?php stf_widget_area('header-bottom'); ?>
 	</div>
 	<!-- [End] Header -->
+	
 </div>
 <!-- [End] Header Wrapper -->
 

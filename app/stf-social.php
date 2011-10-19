@@ -147,17 +147,12 @@ require_once(ABSPATH . 'wp-includes/http.php');
 function stf_get_latest_tweet( $username ){
 
 	$tweet = get_option("stf_lasttweet");
-	$url = "http://search.twitter.com/search.atom?q=from:" . $username . "&rpp=1";
-	
+	$format='json'; // set format
+
 	if ( $tweet['lastcheck'] < ( mktime() - 60 ) ) {
 
-		$feed = file_get_contents( $url );
-		$stepOne = explode("<content type=\"html\">", $feed);
-		$stepTwo = explode("</content>", $stepOne[1]);
-		$output = $stepTwo[0];
-		/* $output = str_replace("&lt;", "<", $output);
-		$output = str_replace("&gt;", ">", $output);
-		$output = str_replace("&quot;", '"', $output); */
+		$latest_tweet = json_decode(file_get_contents("http://api.twitter.com/1/statuses/user_timeline/{$username}.{$format}"));
+		$output = $latest_tweet[0]->text; // show latest tweet
 		$output = htmlspecialchars_decode ( $output , ENT_QUOTES );
 		
 		$tweet['lastcheck'] = mktime();
@@ -167,7 +162,6 @@ function stf_get_latest_tweet( $username ){
 		
 	} else {
 		$output = $tweet['data'];
-
 	}
 	return $output;
 }
