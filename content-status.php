@@ -7,4 +7,7 @@
 		<?php stf_entry_pages(); ?>
 	</div><!-- .entry-content -->
 	<?php get_template_part('entry', 'footer'); ?>
+	
+	<?php stf_comments(); ?>
+	
 </div><!-- #post-<?php the_ID(); ?> -->

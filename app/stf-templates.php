@@ -1,10 +1,41 @@
 <?php 
 
+/** SHAILAN THEME FRAMEWORK 
+ File 		: shailan-templates.php
+ Author		: Matt Say
+ Author URL	: http://shailan.com
+ Version	: 1.0
+ Contact	: metinsaylan (at) gmail (dot) com
+*/
+
+
 global $stf;
+
 global $theme_data;
 
 /** CONSTANTS */
 define('THEME_IMAGES_DIRECTORY', trailingslashit(get_bloginfo('stylesheet_directory')) . 'images');
+
+function stf_content(){
+	if ( have_posts() ) :
+		while ( have_posts() ) : the_post();
+			get_template_part( 'content', get_post_format() );
+		endwhile;
+		stf_pagination();		
+	else : ?>
+		<article id="post-0" class="post no-results not-found">
+			<header class="entry-header">
+				<h1 class="entry-title"><?php _e( 'Nothing Found', 'stf' ); ?></h1>
+			</header><!-- .entry-header -->
+			<div class="entry-content">
+				<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'stf' ); ?></p>
+				<?php get_search_form(); ?>
+			</div><!-- .entry-content -->
+		</article><!-- #post-0 -->
+	<?php endif;
+}
+
+
 
 /**
  * Returns theme info if exists. 
@@ -24,6 +55,22 @@ function themeinfo($key){
 	} else {
 		trigger_error("Key '" . $key . "' for themeinfo doesn't exist"  , E_USER_ERROR);
 		return FALSE;
+	}
+}
+
+function stf_css( $name, $args = null, $echo = true ){ stf_style( $name, $args, $echo ); }
+function stf_style( $name, $args = null, $echo = true ){
+	$defaults = array(
+		'id' => '',
+		'media' => 'all'
+	);
+	$args = wp_parse_args( $args, $defaults );
+	extract($args);
+	
+	if($echo){
+		echo "<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" />\n ";
+	} else {
+		return "<link rel=\"stylesheet\" id=\"$id\"  href=\"" . STF_URL . "css/$name.css\" type=\"text/css\" media=\"$media\" />\n ";
 	}
 }
 
@@ -289,16 +336,19 @@ function stf_posts( $number_of_posts = 0, $template = '',  $reset = false ){
 			)
 		); }
 	
-	// Load template
-	if('' != $template && file_exists( $template )){
-		// Locate template
-		include( $template ); // not once
+	// Load template if given
+	if('' != $template){
+		locate_template( array($template), true, false );
+	} else { 
 	
-	} elseif( file_exists( get_template_directory() . '/app/widgets/templates/' . $template ) ) {
-		include( get_template_directory() . '/app/widgets/templates/' . $template );
-	} else {
-		// Default template	
-		include( get_template_directory() . '/app/widgets/templates/loop-list.php' );
+		$templates = stf_get_templates();
+	
+		if ( have_posts() ): 
+			locate_template( $templates, true, false ); 
+		else: 
+			define('PAGE_NOT_FOUND', true); 
+			locate_template( array('loop-404.php'), true, false );
+		endif; 
 	}
 }
 
@@ -586,11 +636,15 @@ function stf_latest_tweet(){
 <?php } 
 }
 
-function stf_related_posts(){
-	global $post;
-	$tags = wp_get_post_tags($post->ID);
+function stf_related_posts( $number = 6 ){
+	global $post, $posts_displayed, $sticky;
+	
+	$posts_displayed = (array) $posts_displayed;
+	$sticky = get_option('sticky_posts');
+	
+	$tags = wp_get_post_tags( $post->ID );
 	if ($tags) {
-		echo "<ul>";
+		
 		$search = '';
 		foreach($tags as $t){
 			$search .= $t->term_id . ',';
@@ -599,19 +653,45 @@ function stf_related_posts(){
 	  $args=array(
 		'tag__in' => $search,
 		'post__not_in' => array($post->ID),
-		'showposts'=>5,
+		'showposts' => $number,
 		'ignore_sticky_posts'=>1
 	   );
 	   
-	  $my_query = new WP_Query($args);
-	  if( $my_query->have_posts() ) {
-		while ($my_query->have_posts()) : $my_query->the_post(); ?>
-		  <li><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-		  <?php
-		endwhile;
-	  }
-	  echo "</ul>";
+		$my_query = new WP_Query($args);
+		if( $my_query->have_posts() ) { 
+			echo '<div id="related-posts" class="clearfix"><h4 class="mt0 mb1">' . _('Related Posts', 'stf') . '</h4>';
+			echo "<ul>";
+			while ($my_query->have_posts()) : $my_query->the_post(); ?>
+			  <li class="clearfix"><?php the_post_thumbnail( array(40, 40) ); ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+			  <?php
+			endwhile;
+			echo "</ul>";
+			echo '</div>';
+		} else {
+	  
+			$args = array(
+				'ignore_sticky_posts'=>1,
+				'post__not_in' => array_merge( $sticky, $posts_displayed ),
+				'posts_per_page' => $number,
+				'orderby'=>'rand'
+			);
+			
+			$my_query = new WP_Query($args);
+
+			if( $my_query->have_posts() ) {
+				echo '<div id="related-posts" class="clearfix"><h4 class="mt0 mb1">' . _('Related Posts', 'stf') . '</h4>';
+				echo "<ul>";
+				while ($my_query->have_posts()) : $my_query->the_post(); ?>
+					<li class="clearfix"><?php the_post_thumbnail( array(40, 40) ); ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+					  <?php
+				endwhile;
+				echo "</ul>";
+				echo '</div>';
+			}
+		}
 	}
+	
+	wp_reset_postdata();
 }
 
 function stf_google_translate(){ ?>
@@ -643,7 +723,7 @@ function stf_stylesheets(){
 	
 	
 	?>
-	<!-- Default Layout -->
+<!-- Default Layout -->
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/default-layout.css" />	
 	<?php }
 	
@@ -665,6 +745,8 @@ function stf_stylesheets(){
 	} ?>
 	
 	<?php
+	
+	stf_colors();
 }
 
 function _stf_deprecated_function( $function, $version, $replacement=null ) {
