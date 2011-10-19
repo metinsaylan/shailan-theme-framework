@@ -71,15 +71,15 @@ array( "type" => "open"),
 		"desc" => "Enables use of master stylesheet.",
 		"id" => "use_framework_stylesheet",
 		"type" => "checkbox",
-		"std" => "off"),
-/*
-	array(  "name" => "Entry header",
+		"std" => "on"),
+
+	array(  "name" => "Entry header meta",
 		"desc" => "Entry header meta, shows right under the post title.",
 		"id" => "stf_entry_header_meta",
 		"std" => "By [authorlink] on [date] [cmnts before='| '] [edit ]",
 		"type" => "text"),
 		
-	array(  "name" => "Entry footer",
+	array(  "name" => "Entry footer meta",
 		"desc" => "Entry footer meta, shows below the post content.",
 		"id" => "stf_entry_footer_meta",
 		"std" => '[categories before="Filed in: "] [tags before="| Tagged: "]',
@@ -90,7 +90,7 @@ array( "type" => "open"),
 		"id" => "stf_entry_short_meta",
 		"std" => '[permalink] &middot; [cmnts] [edit before="&middot; "]',
 		"type" => "text"),
-	*/	
+		
 	array("name" => "Show comments on home page",
 		"desc" => "Enable commenting on home page.",
 		"id" => "enable_comments_on_home",
