@@ -1,6 +1,6 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php 
-	if( is_home() || is_archive() || is_search() ) {
+	if( is_home() || is_archive() || is_search() || is_front_page() ) {
 		// DISPLAY THUMBNAIL ON ARCHIVES & SEARCH ONLY
 		stf_entry_thumbnail( );
 	} 
@@ -18,18 +18,7 @@
 				<?php the_content( stf_more( ) ); ?>
 				<?php stf_entry_pages(); ?>
 				
-			<?php if( is_single() ) { ?>
-			<div id="related-posts clearfix">
-				<h4 class="mt0 mb1"><?php _e('Related Posts', 'stf'); ?></h4>
-				<?php 
-					if(function_exists('related_posts')){ 
-						related_posts();
-					} else {
-						stf_related_posts();
-					} 
-				?>
-			</div>
-			<?php } ?>
+				<?php if( is_single() ) { stf_related_posts(); } ?>
 				
 			</div><!-- .entry-content -->
 		<?php endif; ?>

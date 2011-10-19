@@ -3,7 +3,8 @@
 	<?php
 		$id = get_the_ID();
 		$title = get_the_title();
-		$url = stf_get_shortlink();
+		// $url = stf_get_shortlink();
+		$url = get_permalink();
 		$tweet = stf_generate_post_tweet( $id );
 		
 		$context = 'post';

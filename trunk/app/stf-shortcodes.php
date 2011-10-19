@@ -273,7 +273,7 @@ function stf_reply( $atts ){
 function stf_views($atts = null){
 	extract(shortcode_atts( array(
 		'before' => '',
-		'freshtext' => __('Fresh', 'stf'),
+		'freshtext' => __('', 'stf'),
 		'single' => __('view', 'stf'),
 		'plural' => __('views', 'stf'),
 		'after' => ''
