@@ -3,6 +3,12 @@
 /** DEFAULT FRAMEWORK OPTIONS */
 global $stf;
 
+$stf_color_schemes = array(
+	'default' => get_template_directory_uri() . '/app/colorschemes/default.css',
+	'freshmilk' => get_template_directory_uri() . '/app/colorschemes/freshmilk.css',
+	'darkshine' => get_template_directory_uri() . '/app/colorschemes/darkshine.css'
+);
+
 $layouts = array(
 	'1c' => '1 Column',
 	'2cl' => '2 Columns Sidebar on Left',
@@ -16,6 +22,11 @@ $fonts = array();
 $fonts_data = stf_get_fonts();
 foreach($fonts_data as $key=>$values){
 	$fonts[$key] = $values["name"];
+}
+
+$cschemes = array();
+foreach($stf_color_schemes as $k=>$v){
+	$cschemes[$v] = $k;
 }
 
 $options = array (
@@ -137,7 +148,7 @@ array( "type" => "open"),
 		"id" => "stf_layout",
 		"type" => "select",
 		"options" => $layouts,
-		"std" => "3cb"
+		"std" => "2cr"
 	),
 	
 	array(
@@ -153,7 +164,7 @@ array( "type" => "open"),
 		"desc" => "Set sidebar width in pixels",
 		"id" => "stf_sidebar_width",
 		"type" => "text",
-		"std" => "160"
+		"std" => "300"
 	),
 	
 	array(
@@ -161,7 +172,7 @@ array( "type" => "open"),
 		"desc" => "Set secondary sidebar width in pixels (Used only in 3 column layouts)",
 		"id" => "stf_secondary_width",
 		"type" => "text",
-		"std" => "300"
+		"std" => "160"
 	),
 	
 	array(
@@ -178,12 +189,22 @@ array( "name" => "Colors",
 	"type" => "section"),
 array( "type" => "open"),
 
+	
+	array(
+		"name" => "Color scheme",
+		"desc" => "Select a base color scheme.",
+		"id" => "stf_colorscheme",
+		"type" => "select",
+		"options" => $cschemes,
+		"std" => get_template_directory_uri() . "/app/colorschemes/default.css"
+	),
+
 	array(
 		"name" => "Enable Custom Colors",
 		"desc" => "This option enables use of custom colors.",
 		"id" => "stf_colors_enabled",
 		"type" => "checkbox",
-		"std" => "on"
+		"std" => "off"
 	),
 
 	array(
@@ -191,7 +212,7 @@ array( "type" => "open"),
 		"desc" => "Background color value (Eg. #ffffff)",
 		"id" => "stf_background_color",
 		"type" => "text",
-		"std" => "#ffffff"
+		"std" => "#222222"
 	),
 	
 	array(
@@ -199,7 +220,7 @@ array( "type" => "open"),
 		"desc" => "Site text color value (Eg. #444444)",
 		"id" => "stf_text_color",
 		"type" => "text",
-		"std" => "#444444"
+		"std" => "#888888"
 	),
 	
 	array(
@@ -207,7 +228,7 @@ array( "type" => "open"),
 		"desc" => "Site title color value (Eg. #555555)",
 		"id" => "stf_title_color",
 		"type" => "text",
-		"std" => "#555555"
+		"std" => "#666666"
 	),
 	
 	array(
@@ -215,7 +236,7 @@ array( "type" => "open"),
 		"desc" => "Site link color value (Eg. #2277dd)",
 		"id" => "stf_link_color",
 		"type" => "text",
-		"std" => "#2277dd"
+		"std" => "#778899"
 	),
 
 array( "type" => "close"),
@@ -230,7 +251,7 @@ array( "type" => "open"),
 		"id" => "stf_title_font",
 		"type" => "select",
 		"options" => $fonts,
-		"std" => "bebas"
+		"std" => "oswald"
 	),
 	
 	array(
@@ -238,8 +259,8 @@ array( "type" => "open"),
 		"desc" => "Scales title size according to this scale.",
 		"id" => "stf_title_font_scale",
 		"type" => "select",
-		"std" => "1",
-		"options" => array( "1.2" => "1.2x", "1.3" => "1.3x", "1.5" => "1.5x", "2" => "2x")
+		"std" => "1.3",
+		"options" => array( "1" => "1x", "1.1" => "1.1x", "1.2" => "1.2x", "1.3" => "1.3x", "1.5" => "1.5x", "2" => "2x")
 	),
 	
 	array(
@@ -248,7 +269,7 @@ array( "type" => "open"),
 		"id" => "stf_base_font",
 		"type" => "select",
 		"options" => $fonts,
-		"std" => "lucida"
+		"std" => "georgia"
 	),
 	
 	array(
@@ -256,8 +277,8 @@ array( "type" => "open"),
 		"desc" => "Size of regular text (Eg. 12px or 1em).",
 		"id" => "stf_base_font_size",
 		"type" => "select",
-		"std" => "1",
-		"options" => array( "12px" => "12px", "13px" => "13px", "14px" => "14px", "15px" => "15px", "16px" => "16px", "18px" => "18px")
+		"std" => "13px",
+		"options" => array( "11px" => "11px", "12px" => "12px", "13px" => "13px", "14px" => "14px", "15px" => "15px", "16px" => "16px", "18px" => "18px")
 	),
 	
 array( "type" => "close"),

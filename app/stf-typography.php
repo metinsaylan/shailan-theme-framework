@@ -69,6 +69,8 @@ function stf_get_fonts(){
 			"css"	=> "'Copse', serif",
 			"src"	=> "Copse" ),
 			
+		"cabin" => array( "name" => "Cabin", "css" => "'Cabin', sans-serif", "src" => "Cabin" ),
+		"opensans" => array( "name" => "Open Sans", "css" => "'Open Sans', sans-serif", "src" => "Open+Sans" ),
 		"puritan" => array( "name" => "Puritan", "css" => "'Puritan', sans-serif", "src" => "Puritan" ),
 		"anton" => array( "name" => "Anton", "css" => "'Anton', sans-serif", "src" => "Anton" ),
 		"voltaire" => array( "name" => "Voltaire", "css" => "'Voltaire', sans-serif", "src" => "Voltaire" ),

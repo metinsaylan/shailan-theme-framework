@@ -1,0 +1,102 @@
+#site-title { font-size:36px; letter-spacing:1px }
+
+#authorbox .author-info, .entry-meta, li.comment, .format-aside .entry-content,.return_to_top { font-family: Arial, sans-serif; font-size:85% }
+
+#breadcrumbs a:hover,#related-posts li a:hover
+{
+  text-decoration:underline
+}
+
+#cancel-comment-reply-link
+{
+  font-weight:400;
+  text-transform:none
+}
+
+#related-posts li { font-style:italic }
+#reply-title { font-size:120% }
+#s { font-size:14px }
+#tooltip
+{
+  white-space:nowrap
+}
+
+.entry-content td.label,.widget_calendar td.label,th[scope="row"],.wp-pagenavi span.current,span.comment-author
+{
+  font-weight:700
+}
+
+.entry-pages,div.comment-text,pre,code
+{
+  font-size:12px
+}
+
+.pagerank,.wp-pagenavi
+{
+  font-size:10px
+}
+
+.pagination
+{
+  font-size:11px
+}
+
+.pagination span,.pagination a,.wp-pagenavi a,.wp-pagenavi span,a.button:hover,#comment-submit:hover,div.nav-next a:hover,div.nav-previous a:hover,a.share-button:hover
+{
+  text-decoration:none
+}
+
+.share-label,input[type="text"],input[type="password"],#s,.wpcf7-text,.wpcf7 textarea
+{
+  font-size:16px
+}
+
+.sub-title
+{
+  font-size:12px;
+  text-transform:uppercase
+}
+
+.toc-floatright
+{
+  font-size:1em
+}
+
+a.button,#comment-submit,div.nav-next a,div.nav-previous a
+{
+  font-size:.9em;
+  font-weight:700
+}
+
+a.button.large
+{
+  font-size:24px
+}
+
+a.read-more
+{
+  font-size:small
+}
+
+a.share-button
+{
+  font-family:Monaco, Consolas, "Andale Mono", "Dejavu Sans Mono", monospace;
+  font-size:12px
+}
+
+blockquote
+{
+  font-family:'Crimson Text', serif;
+  font-size:18px
+}
+
+input.wpcf7-submit
+{
+  font-size:18px;
+  font-weight:400
+}
+
+span.comment-author cite
+{
+  font-style:normal
+}

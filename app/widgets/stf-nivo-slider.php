@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 class stf_nivo_slider extends WP_Widget {
 	/** constructor */
@@ -127,7 +127,7 @@ function widget($args, $instance) {
 	$(window).load(function() {
 		$('#slideshow-<?php echo $this->number; ?>').nivoSlider({
 			controlNav:true,
-			directionNav:false,
+			directionNav:true,
 			animSpeed:500,
 			pauseTime:<?php echo $pauseTime; ?>
 		});
