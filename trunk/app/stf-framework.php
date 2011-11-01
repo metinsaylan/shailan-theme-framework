@@ -73,7 +73,6 @@ class Shailan_Framework{
 		add_image_size( 'video-thumbnail', 120, 90, true );
 		add_image_size( 'medium-rectangle', 300, 250, true );
 			
-		
 	}
 	
 	function Shailan_Framework(){ // PHP 4 Constructor
@@ -165,6 +164,8 @@ class Shailan_Framework{
 				// Start a new settings array
 				$settings = array();
 				
+				delete_option('stf_settings');
+				
 				// Set standart values
 				foreach($this->default_options as $option){
 					$settings[$option['id']] = $option['std']; }
@@ -175,7 +176,7 @@ class Shailan_Framework{
 				// Update instance settings array
 				$this->settings = $settings;
 				
-				header("Location: admin.php?page=theme-options&reset=true");
+				header("Location: admin.php?page=stf-options&reset=true");
 				die;
 			}
 		}
@@ -243,5 +244,3 @@ function stf_adminbar_button() {
     $wp_admin_bar->add_menu( array( 'parent' => 'appearance', 'title' => 'Theme Options', 'href' => admin_url('admin.php?page=stf-options') ) );
 }
 add_action( 'admin_bar_menu', 'stf_adminbar_button', 1000 );
-
-

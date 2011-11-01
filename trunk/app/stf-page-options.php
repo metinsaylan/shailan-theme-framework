@@ -15,7 +15,7 @@
 <div id="shailancom">
 
 	<div id="donate">
-	This plugin is FREE, </br> If you like it, please support it. <br />
+	This theme is FREE, </br> If you like it, please support it. <br />
 		<div class="center">
 			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 			<input type="hidden" name="cmd" value="_s-xclick" />
@@ -196,8 +196,10 @@ case "section":
 </div>
 </div>
 
-
-
+<?php if(WPDEBUG){ ?>
+	<h4>Current settings: </h4>
+	<pre><?php print_r($current); ?></pre>
+<?php } ?>
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
