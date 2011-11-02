@@ -45,3 +45,16 @@ function template_enqueue_scripts(){
 		wp_enqueue_script( 'shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltips.js', 'jquery' );
 	}
 }
+
+function top_nav_callback(){
+	$args = array(
+	'sort_column' => 'menu_order, post_title',
+	'menu_class'  => 'dropdown dropdown-horizontal',
+	'include'     => '',
+	'exclude'     => '',
+	'link_before' => '',
+	'depth'		  => 3,
+	'link_after'  => '' );
+	
+	wp_page_menu( $args );
+}

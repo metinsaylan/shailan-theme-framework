@@ -1,8 +1,14 @@
 <!-- Primary Sidebar -->
 <div id="primary" class="sidebar">
-	<?php if( !dynamic_sidebar( 'primary' ) ){ ?>
+	<?php if( !dynamic_sidebar( 'primary' ) ){ 
 	
-	No widget.
+	/* Sidebar tabs */
+	include_once('/app/widgets/stf-tabs-content.php');
+	
+	
+	?>
+	
+	
 	
 	<?php } ?>
 </div>

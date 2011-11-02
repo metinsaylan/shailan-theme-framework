@@ -6,7 +6,7 @@
 	<?php } ?>
 	
 	<div class="entry-info alignleft">
-		<?php echo stf_tags( array( "before"=>"#", "separator"=>", #", "after"=>"." ) ); ?>
+		<?php stf_entry_footer_meta(); ?>
 	</div>
 	
 	<div class="entry-controls">

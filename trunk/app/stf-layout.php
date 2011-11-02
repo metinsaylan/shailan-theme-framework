@@ -3,20 +3,17 @@
 /** Smart Layout (content widths & paddings) */
 
 /** Set up content width */
-if ( ! isset( $content_width ) ){
-	$layout = stf_get_setting( 'stf_layout' ); 
-	$stf_page_width = stf_get_setting('stf_page_width');
-	$stf_sidebar_width = stf_get_setting('stf_sidebar_width');
-	$stf_secondary_width = stf_get_setting('stf_secondary_width');
-	$stf_padding = stf_get_setting('stf_padding');
-	$sidebars_total = ( $stf_sidebar_width + $stf_secondary_width );
-	
-	if( '1c' == $layout ){ $content_width = $stf_page_width; } 
-	if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $stf_sidebar_width - ( 1 * $stf_padding ); } 
-	if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ); } 
-	if( '3cb' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ) ; }
-	
-}
+$layout = stf_get_setting( 'stf_layout' ); 
+$stf_page_width = stf_get_setting('stf_page_width');
+$stf_sidebar_width = stf_get_setting('stf_sidebar_width');
+$stf_secondary_width = stf_get_setting('stf_secondary_width');
+$stf_padding = stf_get_setting('stf_padding');
+$sidebars_total = ( $stf_sidebar_width + $stf_secondary_width );
+
+if( '1c' == $layout ){ $content_width = $stf_page_width; } 
+if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $stf_sidebar_width - ( 1 * $stf_padding ); } 
+if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ); } 
+if( '3cb' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ) ; }
 
 function stf_layout(){
 
@@ -51,7 +48,7 @@ function stf_layout(){
 ?><!-- Start of Smart Layout -->
 	<style type="text/css" media="all">
 	
-		div#header, div#billboard, div#page, div#footer, div#theme-copyright{
+		div#header, div#billboard, div#page, div#footer, div#theme-copyright, div#topnav{
 			width: <?php echo $stf_page_width; ?>px; 
 			margin-right: auto;
 			margin-left: auto;
