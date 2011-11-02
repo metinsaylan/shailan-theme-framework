@@ -13,7 +13,8 @@
 	<span class="category-title"><?php 
 		global $post;
 		$categories = get_the_category( $post->ID );
-		echo $categories[0]->name;
+		if($categories)
+			echo $categories[0]->name;
 	?></span> 	
 
 	<!-- Entry Title -->
