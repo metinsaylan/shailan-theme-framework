@@ -1,6 +1,9 @@
 <div id="sidebar-tabs" class="clearfix">
 	<ul class="tabs">
+		<?php if ( term_exists( 'featured' , 'category' ) ) { ?>
 		<li><a href="#featured"><img src="<?php bloginfo('template_directory'); ?>/images/icons/featured.png" class="tooltip" title="Featured posts" alt="Featured" /></a></li>
+		<?php } ?>
+		
 		<?php if( function_exists('stats_get_csv') ){ ?> <li><a href="#popular"><img src="<?php bloginfo('template_directory'); ?>/images/icons/popular.png"  class="tooltip" title="Popular posts" alt="Popular" /></a></li> <?php } ?>
 		<li><a href="#recent-entries"><img src="<?php bloginfo('template_directory'); ?>/images/icons/recent.png"  class="tooltip" title="Recent Posts" alt="Recent" /></a></li>
 		<li><a href="#recent-comments"><img src="<?php bloginfo('template_directory'); ?>/images/icons/comments.png"  class="tooltip" title="Recent Comments" alt="Comments" /></a></li>
@@ -8,6 +11,7 @@
 	</ul>
 	<div class="tab_container">
 	
+		<?php if ( term_exists( 'featured' , 'category' ) ) { ?>	
 		<div id="featured" class="tab_content">
 			<ul>
 			<?php 
@@ -15,6 +19,7 @@
 			?>
 			</ul>
 		</div>
+		<?php } ?>
 	
 		<?php if(function_exists('stats_get_csv')){ 
 		
@@ -42,7 +47,7 @@
 				if( function_exists('blc_latest_comments') ){
 					blc_latest_comments( 6, 4, true, "<li class='alternate'>", "</li>", true, 15, "#444444", "#BBBBBB");
 				} else {
-					$args = array('title'=>'', 'number'=>8);
+					$args = array('title'=>' ', 'number'=>8);
 					the_widget('WP_Widget_Recent_Comments', $args); 
 				} 
 		   ?>

@@ -64,6 +64,18 @@ blockquote{
   box-shadow:#CCC 1px 1px 2px
 }
 
+/*- SIDEBAR */
+.sidebar li {
+  -moz-transition:background .2s ease-in-out;
+  -o-transition:background .2s ease-in-out;
+  -webkit-transition:background .2s ease-in-out;
+  border-bottom:1px solid #ddd
+}
+.sidebar li ul{ border-top:1px solid #ddd }
+.sidebar li ul li:last-child { border:0 }
+.sidebar li:hover { background:#efefef }
+.sidebar ul{ border-top:2px solid #ddd }
+
 #breadcrumbs
 {
   color:#bbb
@@ -336,33 +348,7 @@ blockquote{
   text-shadow:#FFF 1px 1px 0
 }
 
-.sidebar li
-{
-  -moz-transition:background .2s ease-in-out;
-  -o-transition:background .2s ease-in-out;
-  -webkit-transition:background .2s ease-in-out;
-  border-bottom:1px solid #ddd
-}
 
-.sidebar li ul
-{
-  border-top:1px solid #ddd
-}
-
-.sidebar li ul li:last-child
-{
-  border:0
-}
-
-.sidebar li:hover
-{
-  background:#e6e6e6
-}
-
-.sidebar ul
-{
-  border-top:2px solid #ddd
-}
 
 .stf_share:hover .share-label
 {

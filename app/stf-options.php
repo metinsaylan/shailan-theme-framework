@@ -93,7 +93,7 @@ array( "type" => "open"),
 	array(  "name" => "Entry footer meta",
 		"desc" => "Entry footer meta, shows below the post content.",
 		"id" => "stf_entry_footer_meta",
-		"std" => '[categories before="Filed in: "] [tags before="| Tagged: "]',
+		"std" => '[categories before="Filed in: "] [tags before="<br />Tagged: "]',
 		"type" => "text"),
 		
 	array(  "name" => "Entry footer for short formats",
@@ -259,7 +259,7 @@ array( "type" => "open"),
 		"desc" => "Scales title size according to this scale.",
 		"id" => "stf_title_font_scale",
 		"type" => "select",
-		"std" => "1.2",
+		"std" => "1.1",
 		"options" => array( "1" => "1x", "1.1" => "1.1x", "1.2" => "1.2x", "1.3" => "1.3x", "1.5" => "1.5x", "2" => "2x")
 	),
 	

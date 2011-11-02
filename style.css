@@ -19,7 +19,7 @@ z-index: 45;
 border-bottom: 1px solid #AABBCE;
 }
 
-#topnav{ width:980px; margin:0 auto; text-align:right; }
+#topnav{ text-align:right; }
 
 div.dropdown ul, ul.dropdown,
 div.dropdown ul li, ul.dropdown li,

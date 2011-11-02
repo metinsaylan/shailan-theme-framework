@@ -81,12 +81,21 @@ class Shailan_Framework{
 	
 	function enqueue_scripts(){
 		if( is_admin() ) {
+		
 			wp_enqueue_script( "jquery" );
 			wp_enqueue_script( "tweetable", get_template_directory_uri() . '/app/scripts/jquery.tweetable.js', 'jquery' );
 			wp_enqueue_style( "tweetable", get_template_directory_uri() . '/app/css/tweetable.css' );
 			wp_enqueue_style( "google-droid-sans", "http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold&v1", false, "1.0", "all");
 			wp_enqueue_style( "stf-admin-styles", get_template_directory_uri() . "/app/css/admin.css", false, "1.0", "all");
+		
+		} else {
+		 
+			wp_enqueue_script('jquery');
+			wp_enqueue_script('shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltips.js', 'jquery');
+			wp_enqueue_script('shailan.tabs', get_template_directory_uri() . '/app/scripts/shailan.tabs.js', 'jquery');
+			wp_enqueue_style( 'shailan.tabs', get_template_directory_uri() . '/app/css/shailan.tabs.css' );
 		}
+		
 	}
 	
 	function get_settings(){

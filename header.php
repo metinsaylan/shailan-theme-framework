@@ -35,7 +35,8 @@
 			'menu_class'      => 'dropdown dropdown-horizontal', 
 			'menu_id'         => 'top-navigation',
 			'items_wrap'      => '<ul id=\"%1$s\" class=\"%2$s\">%3$s</ul>',
-			'depth'           => 3
+			'depth'           => 3,
+			'fallback_cb'	  => 'top_nav_callback'
 		);
 		
 		wp_nav_menu( $args ); ?>
