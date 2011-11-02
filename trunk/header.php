@@ -15,11 +15,7 @@
 	<!--[if lt IE 9]>
 		<script src="<?php echo get_template_directory_uri(); ?>/app/scripts/html5.js" type="text/javascript"></script>
 	<![endif]-->
-	
-<!-- Paste HEAD scripts here -->
 
-
-<!-- [End] Paste HEAD scripts here -->
 </head>
 <body <?php body_class(); ?>>
 <div id="top"></div>
@@ -27,13 +23,24 @@
 <?php global $posts_displayed; $posts_displayed = array(); ?>
 <?php do_action('body_top'); ?>
 
-<!-- Paste BODY scripts here -->
-
-
-<!-- [End] Paste BODY scripts here -->
-
 <!-- Header Wrapper -->
 <div id="header-wrapper">
+
+	<div id="topnav-wrap">
+	<div id="topnav">
+		<?php 
+		
+		$args = array(
+			'theme_location'  => 'top-navigation',
+			'menu_class'      => 'dropdown dropdown-horizontal', 
+			'menu_id'         => 'top-navigation',
+			'items_wrap'      => '<ul id=\"%1$s\" class=\"%2$s\">%3$s</ul>',
+			'depth'           => 3
+		);
+		
+		wp_nav_menu( $args ); ?>
+	</div>
+	</div>
 
 	<!-- Header -->
 	<div id="header" class="clearfix">

@@ -10,6 +10,38 @@ TAGS: framework, all-widget, widgets, widget-areas, xhtml, light, white, gray, o
 
 @import url('http://fonts.googleapis.com/css?family=Crimson+Text:400italic&v2');
 
+#topnav-wrap {
+background: #333;
+color: #888;
+text-shadow: none;
+position: relative;
+z-index: 45;
+border-bottom: 1px solid #AABBCE;
+}
+
+#topnav{ width:980px; margin:0 auto; text-align:right; }
+
+div.dropdown ul, ul.dropdown,
+div.dropdown ul li, ul.dropdown li,
+div.dropdown ul li ul, ul.dropdown li ul
+ { list-style: none; margin: 0; padding: 0; }
+ 
+ul.dropdown.dropdown-horizontal,
+ul.dropdown.dropdown-horizontal li,
+div.dropdown.dropdown-horizontal ul,
+div.dropdown.dropdown-horizontal ul li
+ { display: inline; }
+
+ul.dropdown.dropdown-horizontal ul,
+div.dropdown.dropdown-horizontal ul ul
+ { display: none; }
+ 
+ul.dropdown.dropdown-horizontal li a,
+div.dropdown.dropdown-horizontal ul li a
+ { padding: 5px 10px; line-height:30px; color:#aaa; }
+ 
+
+
 html{ -webkit-font-smoothing: antialiased; }
 
 #authorbox {
@@ -61,10 +93,9 @@ padding-top: 2em;
 }
 #header {
 position: relative;
+height: 90px;
 }
-#header-wrapper {
-padding: 3px;
-}
+
 #page #searchform {
 margin-bottom: 20px;
 padding: 15px;
