@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
 		jQuery("body").append("<div id='tooltip'>"+ c +"<span class='tooltip-arrow'></span></div>");								 
 		tip = jQuery("#tooltip");
 		
-		tip.fadeTo("fast", "0.7");	
+		tip.fadeTo("fast", "0.9");	
 
 	}, function() {
 
