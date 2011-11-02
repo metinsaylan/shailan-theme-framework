@@ -21,34 +21,35 @@ border-bottom: 1px solid #AABBCE;
 
 #topnav{ text-align:right; }
 
-div.dropdown ul, ul.dropdown,
-div.dropdown ul li, ul.dropdown li,
-div.dropdown ul li ul, ul.dropdown li ul
+div.ddmenu ul, ul.ddmenu,
+div.ddmenu ul li, ul.ddmenu li,
+div.ddmenu ul li ul, ul.ddmenu li ul
  { list-style: none; margin: 0; padding: 0; }
  
-ul.dropdown.dropdown-horizontal,
-ul.dropdown.dropdown-horizontal li,
-div.dropdown.dropdown-horizontal ul,
-div.dropdown.dropdown-horizontal ul li
+ul.ddmenu,
+ul.ddmenu li,
+div.ddmenu ul,
+div.ddmenu ul li
  { display: inline; }
 
-ul.dropdown.dropdown-horizontal ul,
-div.dropdown.dropdown-horizontal ul ul
+ul.ddmenu ul,
+div.ddmenu ul ul
  { display: none; }
  
-ul.dropdown.dropdown-horizontal li a,
-div.dropdown.dropdown-horizontal ul li a
+ul.ddmenu li a,
+div.ddmenu ul li a
  { padding: 5px 10px; line-height:30px; color:#aaa; }
- 
 
 
 html{ -webkit-font-smoothing: antialiased; }
 
 #header {
 	position: relative;
-	height: 75px;
-	padding: 20px 0 16px;
+	padding: 20px 0 0;
 }
+
+#header .widget-container{ margin:0; }
+
 #header #searchform-wrapper {
 	margin-top: 6px;
 }
@@ -222,6 +223,13 @@ width: 25px;
 -webkit-border-radius: 5px;
 border-radius: 5px;
 }
+
+
+/*- ENTRY */
+
+.entry-header{ margin-bottom:20px; position:relative; }
+.entry-header .category-title{ text-transform:uppercase; color:#bbb; font-size:11px; font-weight:bold; }
+
 .entry-attachment, p.attachment {
 text-align: center;
 }

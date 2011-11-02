@@ -4,9 +4,9 @@
 global $stf;
 
 $stf_color_schemes = array(
-	'default' => get_template_directory_uri() . '/app/colorschemes/default.css',
-	'freshmilk' => get_template_directory_uri() . '/app/colorschemes/freshmilk.css',
-	'darkshine' => get_template_directory_uri() . '/app/colorschemes/darkshine.css'
+	'default' => get_template_directory_uri() . '/app/colors/default.css',
+	'freshmilk' => get_template_directory_uri() . '/app/colors/freshmilk.css',
+	'darkshine' => get_template_directory_uri() . '/app/colors/darkshine.css'
 );
 
 $layouts = array(
@@ -93,7 +93,7 @@ array( "type" => "open"),
 	array(  "name" => "Entry footer meta",
 		"desc" => "Entry footer meta, shows below the post content.",
 		"id" => "stf_entry_footer_meta",
-		"std" => '[categories before="Filed in: "] [tags before="<br />Tagged: "]',
+		"std" => '[tags before="Tags: #" separator=", #" ]',
 		"type" => "text"),
 		
 	array(  "name" => "Entry footer for short formats",
@@ -251,7 +251,7 @@ array( "type" => "open"),
 		"id" => "stf_title_font",
 		"type" => "select",
 		"options" => $fonts,
-		"std" => "rocksalt"
+		"std" => "gloria"
 	),
 	
 	array(
@@ -277,7 +277,7 @@ array( "type" => "open"),
 		"desc" => "Size of regular text (Eg. 12px or 1em).",
 		"id" => "stf_base_font_size",
 		"type" => "select",
-		"std" => "12px",
+		"std" => "14px",
 		"options" => array( "11px" => "11px", "12px" => "12px", "13px" => "13px", "14px" => "14px", "15px" => "15px", "16px" => "16px", "18px" => "18px")
 	),
 	
