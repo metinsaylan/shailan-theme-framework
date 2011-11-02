@@ -196,7 +196,7 @@ case "section":
 </div>
 </div>
 
-<?php if(WPDEBUG){ ?>
+<?php if(WP_DEBUG){ ?>
 	<h4>Current settings: </h4>
 	<pre><?php print_r($current); ?></pre>
 <?php } ?>

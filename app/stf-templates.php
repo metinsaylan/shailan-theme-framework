@@ -74,11 +74,6 @@ function stf_style( $name, $args = null, $echo = true ){
 	}
 }
 
-function stf_site_title(){
-	_stf_deprecated_function( __FUNCTION__, '1.1', 'stf_branding()' );
-	stf_branding();
-}
-
 function stf_branding(){
 	$logo_url = stf_get_setting('stf_logo_url');
 	
@@ -123,37 +118,6 @@ function stf_widgets( $id, $default_widgets = array(), $callback = null ){
 		}
 	}
 }
-
-/**
- * Return a set of default sidebar widgets. Can be used to fill in default sidebars.
- *
- * @since 1.0.0
- * @uses the_widget() to show widgets.
- */
-if(!function_exists('default_sidebar_widgets')){
-function default_sidebar_widgets(){
-	// SEARCH
-	the_widget('WP_Widget_Search', 'title=&');
-	// RECENT POSTS
-	the_widget('WP_Widget_Recent_Posts', array(
-		'widget_id' => null,
-		'title' => __('Recent Posts'),
-		'number' => '7'));
-	// COMMENTS
-	the_widget('WP_Widget_Recent_Comments', array(
-		'widget_id' => null,
-		'title' => __('Recent Comments'),
-		'number' => '7'));
-	// ARCHIVES
-	the_widget('WP_Widget_Archives', array(
-		'widget_id' => null,
-		'count' => 1,
-		'dropdown' => 0));
-	// TAG CLOUD
-	the_widget('WP_Widget_Tag_Cloud');
-	// LINKS
-	the_widget('WP_Widget_Links');
-}}
 
 function stf_entry_title(){
 
@@ -201,11 +165,11 @@ function stf_entry_header_meta(){
 function stf_entry_footer_meta(){
 	$meta = stf_get_setting('stf_entry_footer_meta');
 	if(FALSE !== $meta){
-		echo "\n\t<!-- Entry Footer Meta -->";
-		echo "\n\t<div class=\"entry-meta entry-meta-footer\">\n\t\t";
+		/*echo "\n\t<!-- Entry Footer Meta -->";
+		echo "\n\t<div class=\"entry-meta entry-meta-footer\">\n\t\t";*/
 		echo do_shortcode( stripslashes($meta) );
-		echo "\n\t</div>";
-		echo "\n\t<!-- [End] Entry Footer Meta -->\n";
+		/*echo "\n\t</div>";
+		echo "\n\t<!-- [End] Entry Footer Meta -->\n";*/
 	}
 }
 
