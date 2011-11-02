@@ -44,6 +44,44 @@ div.dropdown.dropdown-horizontal ul li a
 
 html{ -webkit-font-smoothing: antialiased; }
 
+#header {
+	position: relative;
+	height: 75px;
+	padding: 20px 0 16px;
+}
+#header #searchform-wrapper {
+	margin-top: 6px;
+}
+
+/*- SUBSCRIBE */
+#subscribe-right {
+	bottom: 0;
+	left: auto;
+	position: absolute;
+	right: 0;
+}
+
+.subscribe-icons {
+	margin: 0;
+	padding: 0;
+}
+.subscribe-icons li {
+	display: inline;
+	list-style: none;
+	margin: 0;
+	margin-left: 15px;
+	padding: 0;
+}
+
+.subscribe-label.first-child {
+	display: none;
+}
+
+li.subscribe-icon img {
+	height: 32px;
+	width: 32px;
+}
+
 #authorbox {
 -moz-border-radius: 4px;
 border-radius: 4px;
@@ -63,9 +101,7 @@ padding: 0;
 #billboard-wrapper {
 position: relative;
 }
-#branding {
-margin: 10px 0 15px;
-}
+
 #breadcrumbs {
 margin-bottom: 10px;
 padding: 5px 0;
@@ -91,10 +127,7 @@ width: 400px;
 #footer-wrapper {
 padding-top: 2em;
 }
-#header {
-position: relative;
-height: 90px;
-}
+
 
 #page #searchform {
 margin-bottom: 20px;
@@ -171,22 +204,18 @@ margin: 10px 0 1em 0;
 margin: 0 10px;
 width: 25px;
 }
-#subscribe-right {
-bottom: 0;
-left: auto;
-position: absolute;
-right: 0;
-}
+
+
 #tooltip {
--moz-border-radius: 3px;
--webkit-border-radius: 3px;
-border-radius: 3px;
-display: none;
-opacity: 0.9;
-padding: 3px 8px;
-position: absolute;
-white-space: nowrap;
-z-index: 1000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	display: none;
+	opacity: 0.9;
+	padding: 3px 8px;
+	position: absolute;
+	white-space: nowrap;
+	z-index: 1000;
 }
 .avatar {
 -moz-border-radius: 5px;
@@ -419,17 +448,7 @@ padding: 0;
 display: block;
 margin-bottom: 15px;
 }
-.subscribe-icons {
-margin: 0;
-padding: 0;
-}
-.subscribe-icons li {
-display: inline;
-list-style: none;
-margin: 0;
-margin-right: 15px;
-padding: 0;
-}
+
 .subscribe-label.first-child {
 vertical-align: top;
 }
@@ -624,10 +643,7 @@ height: 20px;
 line-height: 20px;
 padding: 3px 5px;
 }
-li.subscribe-icon img {
-height: 26px;
-width: 26px;
-}
+
 td#next {
 text-align: right;
 }
