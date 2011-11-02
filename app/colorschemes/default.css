@@ -1,8 +1,11 @@
 /* GENERALS */
 
 body { 
-  background:#fff; color:#555;
-  text-shadow:rgba(0,0,0,0.2) 0 0 1px;
+	background:#fff; color:#555;
+	text-shadow:rgba(0,0,0,0.2) 0 0 1px;
+	font-smooth:always;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke: 1px transparent;
 }
 
 a{ color:#27d; }
@@ -23,12 +26,24 @@ blockquote{
 #header-wrapper { background: #789; }
 #site-title a { color: white; }
 
+#s{
+	-moz-transition:width .4s ease-in-out;
+	-o-transition:width .4s ease-in-out;
+	-webkit-transition:width .4s ease-in-out;
+	background: #DDD url(images/search.png) 3px 50% no-repeat;
+	padding-left: 26px;
+	color: #666;
+	border: 1px solid black;
+	font-size: 12px;
+	height: 18px;
+	line-height: 16px;
+}
 
-
-
-
-
-
+#s:focus
+{
+  background:#fff url(images/search.png) 3px 50% no-repeat;
+  color:#555
+}
 
 /* ENTRY */
 
@@ -138,20 +153,7 @@ blockquote{
   color:#999
 }
 
-#s
-{
-  -moz-transition:width .4s ease-in-out;
-  -o-transition:width .4s ease-in-out;
-  -webkit-transition:width .4s ease-in-out;
-  background:#ffe url(images/search.png) 4px 5px no-repeat
-}
 
-#s:focus
-{
-  background:#ffe url(images/search.png) 4px 5px no-repeat;
-  border:1px solid #aaa;
-  color:#555
-}
 
 #tooltip
 {
