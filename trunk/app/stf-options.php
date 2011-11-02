@@ -251,7 +251,7 @@ array( "type" => "open"),
 		"id" => "stf_title_font",
 		"type" => "select",
 		"options" => $fonts,
-		"std" => "oswald"
+		"std" => "rocksalt"
 	),
 	
 	array(
@@ -259,7 +259,7 @@ array( "type" => "open"),
 		"desc" => "Scales title size according to this scale.",
 		"id" => "stf_title_font_scale",
 		"type" => "select",
-		"std" => "1.3",
+		"std" => "1.2",
 		"options" => array( "1" => "1x", "1.1" => "1.1x", "1.2" => "1.2x", "1.3" => "1.3x", "1.5" => "1.5x", "2" => "2x")
 	),
 	
@@ -269,7 +269,7 @@ array( "type" => "open"),
 		"id" => "stf_base_font",
 		"type" => "select",
 		"options" => $fonts,
-		"std" => "georgia"
+		"std" => "cabin"
 	),
 	
 	array(
@@ -277,7 +277,7 @@ array( "type" => "open"),
 		"desc" => "Size of regular text (Eg. 12px or 1em).",
 		"id" => "stf_base_font_size",
 		"type" => "select",
-		"std" => "13px",
+		"std" => "12px",
 		"options" => array( "11px" => "11px", "12px" => "12px", "13px" => "13px", "14px" => "14px", "15px" => "15px", "16px" => "16px", "18px" => "18px")
 	),
 	
