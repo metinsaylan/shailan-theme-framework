@@ -24,15 +24,15 @@
 <?php do_action('body_top'); ?>
 
 <!-- Header Wrapper -->
-<div id="header-wrapper">
+<div id="header-wrapper" class="clearfix">
 
 	<div id="topnav-wrap">
 	<div id="topnav">
 		<?php 
 		
 		$args = array(
-			'theme_location'  => 'top-navigation',
-			'menu_class'      => 'dropdown dropdown-horizontal', 
+			'theme_location'  => 'topnav',
+			'menu_class'      => 'ddmenu', 
 			'menu_id'         => 'top-navigation',
 			'items_wrap'      => '<ul id=\"%1$s\" class=\"%2$s\">%3$s</ul>',
 			'depth'           => 3,
@@ -48,9 +48,12 @@
 		<?php stf_branding(); ?>
 		<div id="searchform-wrapper"><?php get_search_form(); ?></div>
 		<?php get_template_part('subscribe'); ?>
-		<?php stf_widget_area('header-bottom'); ?>
 	</div>
 	<!-- [End] Header -->
+	
+	<div id="menu-wrap">
+		<?php stf_widget_area('header-bottom'); ?>
+	</div>
 	
 </div>
 <!-- [End] Header Wrapper -->

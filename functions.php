@@ -12,8 +12,8 @@ function theme_setup(){
 
 	// Navigation Menus
 	add_theme_support('nav_menus');
-	register_nav_menu( 'top-navigation', 'Top Navigation' );
-	register_nav_menu( 'header', 'Header Navigation' );
+	register_nav_menu( 'topnav', 'Top Navigation' );
+	register_nav_menu( 'primary', 'Header Navigation' );
 	register_nav_menu( 'footer', 'Footer Navigation' );
 
 	// Post Formats
@@ -43,18 +43,44 @@ function template_enqueue_scripts(){
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'shailan.jumper', get_template_directory_uri() . '/app/scripts/shailan.jumper.js', 'jquery' );
 		wp_enqueue_script( 'shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltips.js', 'jquery' );
+		wp_enqueue_script( 'shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.dropdown.js', 'jquery' );
 	}
 }
 
 function top_nav_callback(){
 	$args = array(
 	'sort_column' => 'menu_order, post_title',
-	'menu_class'  => 'dropdown dropdown-horizontal',
+	'menu_class'  => 'ddmenu',
 	'include'     => '',
 	'exclude'     => '',
 	'link_before' => '',
-	'depth'		  => 3,
+	'depth'		  => 4,
 	'link_after'  => '' );
 	
 	wp_page_menu( $args );
+}
+
+function nav_callback(){
+	$args = array(
+    'orderby'            => 'name',
+    'order'              => 'ASC',
+    'style'              => 'list',
+    'show_count'         => 0,
+    'hide_empty'         => 1,
+    'use_desc_for_title' => 0,
+    'exclude'            => '',
+    'exclude_tree'       => '',
+    'include'            => '',
+    'hierarchical'       => true,
+    'title_li'           => '',
+    'echo'               => 1,
+    'depth'              => 4,
+    'current_category'   => 1,
+    'pad_counts'         => 0,
+    'taxonomy'           => 'category',
+    'number'             => 12
+	);
+	echo "<ul class=\"ddmenu\">";
+		wp_list_categories( $args );
+	echo "</ul>";
 }
