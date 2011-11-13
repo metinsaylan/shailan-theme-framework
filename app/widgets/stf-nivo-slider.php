@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class stf_nivo_slider extends WP_Widget {
 	/** constructor */
