@@ -1,22 +1,20 @@
-<div class="entry-meta clearfix">
-	<?php if( is_single() ) { ?>
-		<?php get_template_part('share', 'single'); ?>
-		<?php get_template_part('author', 'single'); ?>
-		<div class="clear"></div>
-	<?php } ?>
-	
-	<div class="entry-info alignleft">
-		<?php stf_entry_footer_meta(); ?>
+<div class="entry-footer clearfix">
+	<div class="footer-meta">
+		<?php 
+			the_tags( '#', ', #', '' );
+		 ?>
 	</div>
 	
 	<div class="entry-controls">
-		<?php if( is_archive() || is_search() || in_array( stf_post_format() , array('aside', 'image', 'video', 'gallery', 'quote', 'status') )){  
-			echo stf_permalink();
-			echo " &middot;";
-		} ?>
 		<?php echo stf_views(); ?>
 		<?php echo stf_reply( array( 'before' => '&middot; ' ) ); ?>
-		<?php echo stf_edit( array( 'before' => '&middot; ' ) ); ?>
+		
+		<a href="<?php the_permalink(); ?>" class="permalink tooltip" title="<?php the_title_attribute( array('before' => 'Permalink to ', 'after' => '')); ?>"><?php the_title(); ?></a>
+
+		<?php edit_post_link( 'edit post', '<span class="edit-link tooltip" title="Edit post" >', '</span>' ); ?>
+		
 	</div>
-	
 </div><!-- #entry-meta -->
+
+
+

@@ -281,9 +281,9 @@ function stf_views($atts = null){
 
 	$view_count = get_post_meta( get_the_ID(), 'views', true);
 	
-	if( $view_count == 0 ) return $before . '<span class="views view-count">' . $freshtext . '</span> ' . $after;;
-	if( $view_count == 1 ) return $before . '<span class="views view-count">' . $view_count . ' ' . $single . '</span> ' . $after;
-	if( $view_count > 1 ) return $before . '<span class="views view-count">' . $view_count . ' ' . $plural . '</span> ' . $after;
+	if( $view_count == 0 ) return $before . '<span class="post-views"><span class="view-count">' . $freshtext . '</span></span>' . $after;
+	if( $view_count == 1 ) return $before . '<span class="post-views"><span class="view-count">' . $view_count . '</span> <span class="view-noun">' . $single . '</span></span>' . $after;
+	if( $view_count > 1 ) return $before . '<span class="post-views"><span class="view-count">' . $view_count . '</span> <span class="view-noun">' . $plural . '</span></span>' . $after;
 }
 
 function stf_increment_views( $content ){

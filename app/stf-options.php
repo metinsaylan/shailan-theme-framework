@@ -4,9 +4,9 @@
 global $stf;
 
 $stf_color_schemes = array(
-	'default' => get_template_directory_uri() . '/app/colors/default.css',
-	'freshmilk' => get_template_directory_uri() . '/app/colors/freshmilk.css',
-	'darkshine' => get_template_directory_uri() . '/app/colors/darkshine.css'
+	'default' => get_template_directory_uri() . '/app/css/default.css',
+	'freshmilk' => get_template_directory_uri() . '/app/css/freshmilk.css',
+	'darkshine' => get_template_directory_uri() . '/app/css/darkshine.css'
 );
 
 $layouts = array(
@@ -87,13 +87,13 @@ array( "type" => "open"),
 	array(  "name" => "Entry header meta",
 		"desc" => "Entry header meta, shows right under the post title.",
 		"id" => "stf_entry_header_meta",
-		"std" => "By [authorlink] on [date] [cmnts before='| '] [edit ]",
+		"std" => "By [authorlink] on [date] [cmnts before='| ']",
 		"type" => "text"),
 		
 	array(  "name" => "Entry footer meta",
 		"desc" => "Entry footer meta, shows below the post content.",
 		"id" => "stf_entry_footer_meta",
-		"std" => '[tags before="Tags: #" separator=", #" ]',
+		"std" => '',
 		"type" => "text"),
 		
 	array(  "name" => "Entry footer for short formats",
@@ -196,7 +196,7 @@ array( "type" => "open"),
 		"id" => "stf_colorscheme",
 		"type" => "select",
 		"options" => $cschemes,
-		"std" => get_template_directory_uri() . "/app/colorschemes/default.css"
+		"std" => get_template_directory_uri() . "/app/css/default.css"
 	),
 
 	array(
@@ -328,7 +328,7 @@ array( "type" => "open"),
 		"desc" => "Displayed if a post content is trimmed",
 		"id" => "shailan_more",
 		"type" => "text",
-		"std" => "read on &rarr;"),
+		"std" => "Read More &rarr;"),
 
 	array("name" => "Use categories for post formats",
 		"desc" => "Use common categories for post format display. Supports asides, gallery, and more.",

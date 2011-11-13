@@ -90,10 +90,17 @@ class Shailan_Framework{
 		
 		} else {
 		 
-			wp_enqueue_script('jquery');
-			wp_enqueue_script('shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltips.js', 'jquery');
-			wp_enqueue_script('shailan.tabs', get_template_directory_uri() . '/app/scripts/shailan.tabs.js', 'jquery');
+		 	wp_enqueue_script( 'jquery' );
+			wp_enqueue_script( 'scriptaculous' );
+			wp_enqueue_script( 'shailan.jumper', get_template_directory_uri() . '/app/scripts/shailan.jumper.js', 'jquery' );
+			wp_enqueue_script( 'shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltips.js', 'jquery' );
+			wp_enqueue_script( 'shailan.tabs', get_template_directory_uri() . '/app/scripts/shailan.tabs.js', 'jquery');
+			wp_enqueue_script( 'hoverIntent', get_template_directory_uri() . '/app/scripts/hoverIntent.js', 'jquery');
+			wp_enqueue_script( 'shailan.dropdown', get_template_directory_uri() . '/app/scripts/shailan.dropdown.js', array('jquery', 'hoverIntent') );
+			
 			wp_enqueue_style( 'shailan.tabs', get_template_directory_uri() . '/app/css/shailan.tabs.css' );
+			wp_enqueue_style( 'shailan.dropdown', get_template_directory_uri() . '/app/css/shailan.dropdown.css' );
+			
 		}
 		
 	}

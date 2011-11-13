@@ -48,7 +48,7 @@ function stf_layout(){
 ?><!-- Start of Smart Layout -->
 	<style type="text/css" media="all">
 	
-		div#header, div#billboard, div#page, div#footer, div#theme-copyright, div#topnav, div#menu{
+		div#header, div#billboard, div#page, div#footer, div#theme-copyright, div#topnav, div#header-bottom{
 			width: <?php echo $stf_page_width; ?>px; 
 			margin-right: auto;
 			margin-left: auto;
