@@ -1,6 +1,7 @@
 #site-title { font-size:36px; letter-spacing:1px }
 
-#authorbox .author-info, .entry-meta, li.comment, .format-aside .entry-content,.return_to_top { font-family: Arial, sans-serif; font-size:85% }
+#authorbox .author-info, .entry-meta, li.comment, .format-aside .entry-content,.return_to_top { 
+	font-family: Arial, sans-serif; font-size:12px }
 
 #breadcrumbs a:hover,#related-posts li a:hover
 {
@@ -26,20 +27,14 @@
   font-weight:700
 }
 
-.entry-pages,div.comment-text,pre,code
+.pagination, .entry-footer, .pagerank,.wp-pagenavi{ font-size:12px; }
+
+pre,code, .pagination a, .pagination span, .entry-pages a, .entry-pages span.page-number
 {
-  font-size:12px
+	font-family:Monaco, Consolas, "Andale Mono", "Dejavu Sans Mono", monospace;
+	font-size:12px
 }
 
-.pagerank,.wp-pagenavi
-{
-  font-size:10px
-}
-
-.pagination
-{
-  font-size:11px
-}
 
 .pagination span,.pagination a,.wp-pagenavi a,.wp-pagenavi span,a.button:hover,#comment-submit:hover,div.nav-next a:hover,div.nav-previous a:hover,a.share-button:hover
 {
@@ -48,7 +43,8 @@
 
 .share-label,input[type="text"],input[type="password"],#s,.wpcf7-text,.wpcf7 textarea
 {
-  font-size:16px
+  font-size:12px;
+  line-height: 25px;
 }
 
 .sub-title

@@ -5,13 +5,13 @@ body {
 	text-shadow:rgba(0,0,0,0.2) 0 0 1px;
 	font-smooth:always;
 	-webkit-font-smoothing: antialiased;
-	-webkit-text-stroke: 1px transparent;
+	/* -webkit-text-stroke: 1px transparent; */
 }
 
 a{ color:#27d; }
 a:hover{ color:#7af; text-decoration:none; }
 pre,code { background:#e0e0e0; font-size:12px; }
-pre { border:1px solid #fff; box-shadow:inset #ccc 1px 1px 1px, inset #ccc -1px -1px 1px; }
+pre { border:1px solid #fff; box-shadow:inset #bbb 1px 1px 2px, inset #bbb -1px -1px 2px; text-shadow:none; }
 code{ background:#E6E6E6; border:1px solid #DDD; box-shadow:inset #DDD 0 0 8px }
 
 blockquote{
@@ -30,7 +30,7 @@ blockquote{
 	-moz-transition:width .4s ease-in-out;
 	-o-transition:width .4s ease-in-out;
 	-webkit-transition:width .4s ease-in-out;
-	background: #DDD url(images/search.png) 3px 50% no-repeat;
+	background: #DDD url(../images/search.png) 3px 50% no-repeat;
 	padding-left: 26px;
 	color: #666;
 	border: 1px solid black;
@@ -41,17 +41,130 @@ blockquote{
 
 #s:focus
 {
-  background:#fff url(images/search.png) 3px 50% no-repeat;
+  background:#fff url(../images/search.png) 3px 50% no-repeat;
   color:#555
 }
 
 #menu-wrap{ background:#222; border-top:1px solid #000; }
 
-/* ENTRY */
+/* TOPNAV */
 
+/* ENTRY */
+.hentry{ border:1px solid #ddd; box-shadow: #ddd 0 1px 4px; }
+.entry-title { display:block; border-bottom: 1px solid #DDD; padding: 0px 0px 15px; }
+
+.share-horizontal {
+background: #EEE;
+border-radius: 4px;
+}
+
+.entry-content table,.widget_calendar table {
+  border:1px solid #e6e6e6
+}
+
+.entry-content td,.widget_calendar td {
+  border-color:#ddd;
+  border-style:solid;
+  border-width:0 0 1px
+}
+
+.entry-content tr,.widget_calendar tr {
+  border-bottom:1px solid #ddd
+}
+
+.entry-content tr.alternate,tr.alt,.widget_calendar tr.alternate,tr.alt {
+  background:#e8e8e8
+}
+
+.entry-content tr:hover,.widget_calendar tr:hover {
+  -webkit-transition:.5s;
+  background:#fff8e5
+}
+
+/* ENTRY-PAGES */
+.entry-pages .page-number {
+  background:#ddd;
+  border:none;
+  color:#888
+}
+
+.entry-pages a .page-number {
+  background:#ccc;
+  color:#FFF
+}
+
+.entry-pages a,.entry-pages a:hover
+{
+  background:transparent;
+  border:0
+}
+
+.entry-pages a:hover .page-number
+{
+  background:#999;
+  color:#FFF
+}
+
+/* ENTRY-FOOTER */
 .entry-meta { color: #aaa; }
 .entry-meta  a { color: #999; }
 .entry-meta  a:hover { color: #27d; text-decoration: underline; }
+
+.post-views {
+padding-left: 20px;
+background: url(../images/icon-views-light.png) 0px 50% no-repeat;
+} .view-noun{ display:none; }
+
+a.read-more{
+background: #eeeeee; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #eeeeee 0%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#eeeeee), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(45deg,  #eeeeee 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg,  #eeeeee 0%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg,  #eeeeee 0%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(45deg,  #eeeeee 0%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+border-bottom-left-radius: 3px;
+border-top-left-radius: 3px;
+box-shadow: #ddd 0 1px 4px;
+color:#999;
+margin-bottom:8px;
+}
+a.read-more:hover{
+background: #888888;
+background: -moz-linear-gradient(45deg,  #888888 0%, #bbbbbb 100%);
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#888888), color-stop(100%,#bbbbbb));
+background: -webkit-linear-gradient(45deg,  #888888 0%,#bbbbbb 100%);
+background: -o-linear-gradient(45deg,  #888888 0%,#bbbbbb 100%);
+background: -ms-linear-gradient(45deg,  #888888 0%,#bbbbbb 100%);
+background: linear-gradient(45deg,  #888888 0%,#bbbbbb 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', endColorstr='#bbbbbb',GradientType=1 );
+border:1px solid #888;
+color:#fff;
+text-shadow:#888 1px 1px 1px;
+box-shadow:#999 0 1px 4px;
+}
+
+a.read-more:active{
+box-shadow:none;
+margin-top: 1px;
+margin-bottom: 7px;
+margin-right: -26px;
+}
+
+.entry-footer{ padding:5px; background: #efefef; border-top:1px solid #ddd; margin-top:1em;}
+.footer-meta{ text-shadow:none; color:#ccc; font-size:13px; }
+.footer-meta a{ color:#bbb; }
+.footer-meta a:hover{ color:#666; }
+
+/* POST FORMATS */
+.format-image {
+background: black;
+border: 1px solid #333;
+color: #666;
+}
+
+
 
 #authorbox
 {
@@ -90,7 +203,7 @@ blockquote{
 
 #cancel-comment-reply-link
 {
-  background:url(images/close.png) -2px -6px no-repeat;
+  background:url(../images/close.png) -2px -6px no-repeat;
   color:#BBB;
   text-shadow:#FFF 1px 1px 0
 }
@@ -126,9 +239,16 @@ blockquote{
   color:#999!important
 }
 
-#footer-wrapper
-{
+/* FOOTER */
+#footer-wrapper {
   background:transparent
+}
+
+#scrolltotop{
+	display:block; width:32px; height:32px; text-align:left; text-indent:-9999px; 
+	background: #ddd url(../images/blue_arrow_up.png) 50% 50% no-repeat;
+	padding: 5px; border-radius: 5px;
+	border:1px solid #fff;
 }
 
 #page #searchform
@@ -137,29 +257,25 @@ blockquote{
   border-top:1px solid #DDD
 }
 
-#respond input[aria-required="true"],input[type="text"].required
-{
-  background:#fff url(images/required.gif) 99% 3px no-repeat
+/* COMMENTS */
+#respond input[aria-required="true"],input[type="text"].required {
+  background:#fff url(../images/required.gif) 99% 3px no-repeat
 }
 
-#respond input[type=text],textarea#comment
-{
+#respond input[type=text],textarea#comment {
   border:1px solid #ccc
 }
 
-#respond input[type=text]:focus,textarea#comment:focus
-{
+#respond input[type=text]:focus,textarea#comment:focus {
   border-color:#BBB
 }
 
-#respond textarea#comment
-{
+#respond textarea#comment {
   color:#666;
   text-shadow:#FFF 0 1px 0
 }
 
-#respond,#comments-list #respond
-{
+#respond,#comments-list #respond {
   -moz-box-shadow:inset #ccc 0 0 6px;
   background-color:#E6E6E6;
   border:1px solid #FFF;
@@ -169,8 +285,7 @@ blockquote{
 
 
 
-#tooltip
-{
+#tooltip {
   -moz-box-shadow:0 1px 4px rgba(0,0,0,0.3);
   -webkit-box-shadow:0 1px 4px rgba(0,0,0,0.3);
   background:#ffe;
@@ -179,58 +294,7 @@ blockquote{
   border:1px solid #111;
 }
 
-.entry-content table,.widget_calendar table
-{
-  border:1px solid #e6e6e6
-}
 
-.entry-content td,.widget_calendar td
-{
-  border-color:#ddd;
-  border-style:solid;
-  border-width:0 0 1px
-}
-
-.entry-content tr,.widget_calendar tr
-{
-  border-bottom:1px solid #ddd
-}
-
-.entry-content tr.alternate,tr.alt,.widget_calendar tr.alternate,tr.alt
-{
-  background:#e8e8e8
-}
-
-.entry-content tr:hover,.widget_calendar tr:hover
-{
-  -webkit-transition:.5s;
-  background:#fff8e5
-}
-
-.entry-pages .page-number
-{
-  background:#ddd;
-  border:none;
-  color:#888
-}
-
-.entry-pages a .page-number
-{
-  background:#ccc;
-  color:#FFF
-}
-
-.entry-pages a,.entry-pages a:hover
-{
-  background:transparent;
-  border:0
-}
-
-.entry-pages a:hover .page-number
-{
-  background:#999;
-  color:#FFF
-}
 
 .error a,.alert a
 {
@@ -260,11 +324,6 @@ blockquote{
 .gallery-display li
 {
   background:#DDD
-}
-
-.hentry
-{
-  border-bottom:2px dotted #e6e6e6
 }
 
 .info
@@ -336,12 +395,6 @@ blockquote{
   background:#DDD;
   color:#FFF;
   text-shadow:#AAA 0 0 1px
-}
-
-.share-horizontal
-{
-  border-bottom:1px solid #DDD;
-  border-top:2px solid #DDD
 }
 
 .share-label
@@ -420,12 +473,6 @@ blockquote{
   border-color:#000
 }
 
-a.back-to-parent:hover,a.read-more:hover
-{
-  background:#666;
-  color:#FFF
-}
-
 a.button,#comment-submit,div.nav-next a,div.nav-previous a
 {
   -moz-box-shadow:#AAA 0 1px 3px;
@@ -440,7 +487,7 @@ a.button,#comment-submit,div.nav-next a,div.nav-previous a
 
 a.button.demo span.icon
 {
-  background:url(images/icons/preview.png) 0 0 no-repeat
+  background:url(../images/icons/preview.png) 0 0 no-repeat
 }
 
 a.button.demo:hover
@@ -453,7 +500,7 @@ a.button.demo:hover
 
 a.button.download span.icon
 {
-  background:url(images/icons/download.png) 0 0 no-repeat
+  background:url(../images/icons/download.png) 0 0 no-repeat
 }
 
 a.button.download:hover
@@ -482,27 +529,27 @@ a.button:hover,#comment-submit:hover,div.nav-next a:hover,div.nav-previous a:hov
 
 a.buzz,a.buzz:hover
 {
-  background:url(images/share_buzz.png) no-repeat
+  background:url(../images/share_buzz.png) no-repeat
 }
 
 a.delicious,a.delicious:hover
 {
-  background:url(images/share_delicious.gif) no-repeat
+  background:url(../images/share_delicious.gif) no-repeat
 }
 
 a.digg,a.digg:hover
 {
-  background:url(images/share_digg.gif) no-repeat
+  background:url(../images/share_digg.gif) no-repeat
 }
 
 a.like,a.like:hover
 {
-  background:url(images/share_facebook.gif) no-repeat
+  background:url(../images/share_facebook.gif) no-repeat
 }
 
 a.tweet,a.tweet:hover
 {
-  background:url(images/share_twitter.png) no-repeat
+  background:url(../images/share_twitter.png) no-repeat
 }
 
 body .hascountdown
@@ -608,9 +655,3 @@ a:visited,.comment-edit-link a:hover,.comment-date a:hover,a.comment-reply-link:
   color:#AAAAAA;
 }
 
-a.back-to-parent, a.read-more
-{
-  -webkit-transition:background .2s ease-in-out;
-  background:#DDD;
-  color:#888
-}

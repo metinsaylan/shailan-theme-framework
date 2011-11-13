@@ -1,5 +1,5 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="entry-content">
+	<div class="entry-content clearfix">
 		<div class="author-avatar">
 			<?php if (function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '60' ); }?>
 		</div>

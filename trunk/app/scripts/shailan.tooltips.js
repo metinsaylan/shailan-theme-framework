@@ -27,7 +27,7 @@ jQuery(document).ready(function() {
 		  var tipHeight = tip.height(); //Find height of tooltip
 		  
 		  var mousex = e.pageX - tipWidth/2 - 8; // + 20; //Get X coodrinates
-		  var mousey = e.pageY - tipHeight - 40; // + 20; //Get Y coordinates
+		  var mousey = e.pageY - tipHeight - 20; // + 20; //Get Y coordinates
 
 		 // Distance of element from the right edge of viewport
 		  var tipVisX = jQuery(window).width() - ( mousex + tipWidth );

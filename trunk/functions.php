@@ -1,6 +1,5 @@
 <?php 
 
-define( 'STF_DEBUG', false );
 include_once('app/stf-framework.php'); // INCLUDE FRAMEWORK 
   
 if(! function_exists('theme_setup')) {
@@ -31,32 +30,32 @@ function theme_setup(){
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
-	
-	add_action('init', 'template_enqueue_scripts');
 
 } add_action('after_setup_theme', 'theme_setup');
 }
 
-// Enqueue template scripts
-function template_enqueue_scripts(){
-	if( !is_admin() ){
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'shailan.jumper', get_template_directory_uri() . '/app/scripts/shailan.jumper.js', 'jquery' );
-		wp_enqueue_script( 'shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltips.js', 'jquery' );
-	}
-}
-
 function top_nav_callback(){
+	echo "<div id=\"shailan-dropdown-menu\" class=\"dm-align-right\"><table><tr><td>";
+	echo "<ul class=\"dropdown dropdown-horizontal\">";
+
 	$args = array(
-	'sort_column' => 'menu_order, post_title',
-	'menu_class'  => 'ddmenu',
-	'include'     => '',
-	'exclude'     => '',
-	'link_before' => '',
-	'depth'		  => 4,
-	'link_after'  => '' );
+	'depth'        => 0,
+	'show_date'    => '',
+	'date_format'  => get_option('date_format'),
+	'child_of'     => 0,
+	'exclude'      => '',
+	'include'      => '',
+	'title_li'     => '',
+	'echo'         => 1,
+	'authors'      => '',
+	'sort_column'  => 'menu_order, post_title',
+	'link_before'  => '',
+	'link_after'   => '',
+	'walker'       => '' );
 	
-	wp_page_menu( $args );
+	wp_list_pages( $args );
+	
+	echo "</ul></td></tr></table></div>";
 }
 
 function nav_callback(){

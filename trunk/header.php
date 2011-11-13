@@ -27,15 +27,14 @@
 <div id="header-wrapper" class="clearfix">
 
 	<div id="topnav-wrap">
-	<div id="topnav">
+	<div id="topnav" class="clearfix">
 		<?php 
 		
 		$args = array(
 			'theme_location'  => 'topnav',
-			'menu_class'      => 'ddmenu', 
+			'menu_class'      => 'dropdown', 
 			'menu_id'         => 'top-navigation',
-			'items_wrap'      => '<ul id=\"%1$s\" class=\"%2$s\">%3$s</ul>',
-			'depth'           => 3,
+			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 			'fallback_cb'	  => 'top_nav_callback'
 		);
 		
@@ -51,8 +50,10 @@
 	</div>
 	<!-- [End] Header -->
 	
-	<div id="menu-wrap">
-		<?php stf_widget_area('header-bottom'); ?>
+	<div id="header-bottom-wrap">
+		<div id="header-bottom" class="">
+			<?php dynamic_sidebar('header-bottom') ?>
+		</div>
 	</div>
 	
 </div>

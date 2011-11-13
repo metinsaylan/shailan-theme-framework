@@ -1,6 +1,4 @@
-
-
-  elemID = "scrolltotop";
+elemID = "scrolltotop";
 
 // Animated Scrolling
 jQuery(document).ready(function() {
