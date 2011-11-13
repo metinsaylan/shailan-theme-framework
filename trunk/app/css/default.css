@@ -157,6 +157,21 @@ margin-right: -26px;
 .footer-meta a{ color:#bbb; }
 .footer-meta a:hover{ color:#666; }
 
+div.seperator {
+	padding-top: 15px;
+	margin-bottom: 0px;
+	border-top: 1px solid #EEE;
+	clear: both;
+	padding-bottom: 0px;
+	border-bottom: 0;
+	
+	background: -moz-radial-gradient(50% 0, ellipse, rgba(0,0,0,0.2) 0%, rgba(255,255,255,0) 75%);
+	background: -webkit-radial-gradient(50% 0, ellipse, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0) 75%);
+	background: -o-radial-gradient(50% 0, ellipse, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 75%);
+	background: -ms-radial-gradient(50% 0, ellipse, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 75%);
+	background: radial-gradient(50% 0, ellipse, rgba(0,0,0,0.2) 0%,rgba(255,255,255,0) 75%);
+}
+
 /* POST FORMATS */
 .format-image {
 background: black;

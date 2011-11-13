@@ -628,12 +628,20 @@ function custom_query_shortcode($atts) {
 
 
 /* LAYOUT BOXES */
-function stf_box_half( $atts, $content = null ){ return '<div class="half-width column">' . do_shortcode($content) . '</div>'; }
+function stf_row( $atts, $content = null ){ return '<div class="row">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('row', 'stf_row');
+function stf_box_half( $atts, $content = null ){ return '<div class="one_half column">' . do_shortcode($content) . '</div>'; }
 	add_shortcode('half', 'stf_box_half');
-function stf_box_onethird( $atts, $content = null ){ return '<div class="one-third column">' . do_shortcode($content) . '</div>'; }
-	add_shortcode('one-third', 'stf_box_onethird');
-function stf_box_onefourth( $atts, $content = null ){ return '<div class="one-fourth column">' . do_shortcode($content) . '</div>'; }
-	add_shortcode('one-fourth', 'stf_box_onefourth');
+function stf_box_onethird( $atts, $content = null ){ return '<div class="one_third column">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('one_third', 'stf_box_onethird');
+function stf_box_onefourth( $atts, $content = null ){ return '<div class="one_fourth column">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('one_fourth', 'stf_box_onefourth');
+function stf_box_half_last( $atts, $content = null ){ return '<div class="one_half last column">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('half_last', 'stf_box_half_last');
+function stf_box_onethird_last( $atts, $content = null ){ return '<div class="one_third last column">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('one_third_last', 'stf_box_onethird_last');
+function stf_box_onefourth_last( $atts, $content = null ){ return '<div class="one_fourth last column">' . do_shortcode($content) . '</div>'; }
+	add_shortcode('one_fourth_last', 'stf_box_onefourth_last');
 
 /* FLOAT BOXES */
 function stf_box_alignright( $atts, $content = null ){ return '<div class="alignright">' . do_shortcode($content) . '</div>'; }
