@@ -6,7 +6,7 @@
 		<div id="subpage-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 		
 			<!-- Post Thumbnail -->
-			<?php stf_entry_thumbnail('featured-small'); ?>
+			<?php stf_entry_thumbnail( array(100,100) ); ?>
 			<!-- [End] Post Thumbnail -->
 
 			<div class="entry-body">

@@ -2,18 +2,19 @@
 
 /* Template Name: Links Page */
 
-get_header() ?>
-<div id="content-wrapper">
-	<div id="page" class="container_12 clearfix">
-		<div id="container">
-			<!-- Content -->
-			<div id="content" class="grid_8 clearfix">
-				<?php stf_widget_area( 'before-content' ); ?>
-			
-			<!-- Main -->
-			<div id="content-main">
-			
-				<div class="entry-wrap">
+get_header(); ?>
+
+<div id="page" class="clearfix">
+
+	<div id="container">
+		<div id="content" role="main">
+		
+		<?php do_action('before_content'); ?>
+		<?php stf_breadcrumbs(); ?>
+		
+		<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+		
+<div class="entry-wrap">
 					<!-- Post -->
 					<div id="entry-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<div class="entry-body">
@@ -21,18 +22,10 @@ get_header() ?>
 						
 						<!-- Entry Content -->
 						<div class="entry-content">
-							<?php 
-							
-								if( is_archive() ){ 
-									the_excerpt(); 
-								} else {
-									the_content( stf_more() ); 
-								}
-							
-							?>
-							<?php stf_entry_pages_navigation(); ?>
+							<?php the_content(); ?>
+							<?php stf_entry_pages(); ?>
 						
-						<!-- Links list -->
+						<!-- Links -->
 						<?php $args = array(
 							'orderby'          => 'name',
 							'order'            => 'ASC',
@@ -68,25 +61,16 @@ get_header() ?>
 					<!-- [End] Post -->
 				</div>
 				
-
-				<?php stf_comments(); ?>
-				
-			</div>
-			<!-- [End] Main -->
-			
-			<?php stf_widget_area( 'after-content' ); ?>
-		</div>
-		<!-- [End] Content -->
-		</div>
+		<?php stf_comments(); ?>
+		<?php endwhile; // end of the loop. ?>
 		
-		<!-- Sidebars -->
-		<?php get_sidebar() ?>
-		<!-- [End] Sidebars -->
+		<?php do_action('after_content'); ?>
 		
+		</div>
 	</div>
-	<!-- [End] Page -->
-		
+	
+	<?php get_sidebar(); ?>
+	
 </div>
-<!-- [End] Content Wrapper -->
 
-<?php get_footer() ?>
+<?php get_footer(); ?>
