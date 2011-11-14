@@ -30,6 +30,10 @@
 				<li><a href="<?php echo get_permalink( $post['post_id'] ); ?>"><?php echo get_the_title( $post['post_id'] ); ?></a></li>
 			<?php endforeach; ?>
 		</ul>
+		<?php } else { ?>
+		
+		<h4>Some random posts</h4>
+		
 		<?php } ?>
 			
 					
