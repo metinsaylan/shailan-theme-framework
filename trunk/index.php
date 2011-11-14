@@ -8,9 +8,12 @@
 		<?php do_action('before_content'); ?>
 		
 		<?php stf_breadcrumbs(); ?>
-		<?php if ( have_posts() ) :
+		<?php if ( have_posts() ) : 
+			$post_index = 1; 
 			while ( have_posts() ) : the_post();
+				$posts_displayed[] = $post->ID;
 				get_template_part( 'content', get_post_format() );
+				$post_index = $post_index + 1; 
 			endwhile;
 			stf_pagination();		
 		else : ?>

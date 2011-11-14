@@ -225,8 +225,8 @@ function stf_entry_thumbnail( $size = 'thumbnail', $args = null ){
  */
 function stf_entry_pages_navigation(){
 	wp_link_pages( array(
-		'before'		=> '<div class="entry-pages"><span class="label">' . __('Pages:') . '</span>',
-		'after'			=> '</div>',
+		'before'		=> '<div class="entry-pages-wrap"><div class="entry-pages"><span class="label">' . __('Pages:') . '</span>',
+		'after'			=> '</div></div>',
 		'link_before'	=> '<span class="page-number">',
 		'link_after'	=> '</span>'
 	) ); 

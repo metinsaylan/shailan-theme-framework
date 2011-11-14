@@ -17,9 +17,6 @@ if( '3cb' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2
 
 function stf_layout(){
 
-	if( 'off' == stf_get_setting('stf_layout_enabled') )
-		return FALSE;
-
 	$layout = stf_get_setting( 'stf_layout' ); 
 	$stf_page_width = stf_get_setting('stf_page_width');
 	$stf_sidebar_width = stf_get_setting('stf_sidebar_width');

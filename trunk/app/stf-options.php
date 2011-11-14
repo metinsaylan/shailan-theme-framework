@@ -133,14 +133,6 @@ array( "type" => "close"),
 array( "name" => "Layout",
 	"type" => "section"),
 array( "type" => "open"),
-
-	array(
-		"name" => "Enable Custom Layout",
-		"desc" => "This option enables controls on this page to change your site's layout.",
-		"id" => "stf_layout_enabled",
-		"type" => "checkbox",
-		"std" => "on"
-	),
 	
 	array(
 		"name" => "Page layout",
