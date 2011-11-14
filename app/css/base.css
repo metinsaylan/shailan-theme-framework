@@ -7,8 +7,6 @@
 
 */
 
-@import url('http://fonts.googleapis.com/css?family=Crimson+Text:400italic&v2');
-
 #topnav-wrap, #menu-wrap {
 background: #333;
 color: #888;
@@ -674,7 +672,7 @@ blockquote cite {
 float: right;
 }
 blockquote cite:before {
-content: '- ';
+content: '~ ';
 }
 body .hascountdown {
 -moz-border-radius: 6px;
