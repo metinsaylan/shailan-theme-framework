@@ -487,7 +487,7 @@ width: 30px;
 .paginated-comments-links {
 text-align: center;
 }
-.pagination {
+.pagination, .attachment-navi{
 clear: both;
 line-height: 13px;
 padding: 20px 0;
@@ -497,7 +497,7 @@ text-align: center;
 .pagination .current {
 padding: 6px 9px 5px 9px;
 }
-.pagination span, .pagination a {
+.pagination span, .pagination a, .attachment-navi a, .attachment-navi strong {
 border-radius: 4px;
 margin: 2px 2px 2px 0;
 padding: 6px 9px 5px 9px;

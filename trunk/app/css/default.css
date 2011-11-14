@@ -2,7 +2,6 @@
 
 body { 
 	background:#fff; color:#555;
-	text-shadow:rgba(0,0,0,0.2) 0 0 1px;
 	font-smooth:always;
 	-webkit-font-smoothing: antialiased;
 	/* -webkit-text-stroke: 1px transparent; */
@@ -382,21 +381,21 @@ color: #666;
   border:1px solid #999
 }
 
-.pagination .current
-{
-  background:#555;
-  color:#FFF
-}
-
-.pagination a:hover
+.pagination a:hover, .attachment-navi a:hover
 {
   background:#3279BB;
   color:#fff
 }
 
-.pagination span,.pagination a
+.pagination span,.pagination a, .attachment-navi a, .attachment-navi strong
 {
   background:#AAA;
+  color:#FFF
+}
+
+.pagination .current, .attachment-navi strong
+{
+  background:#555;
   color:#FFF
 }
 

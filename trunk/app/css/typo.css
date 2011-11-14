@@ -29,7 +29,7 @@
 
 .pagination, .entry-footer, .pagerank,.wp-pagenavi{ font-size:12px; }
 
-pre,code, .pagination a, .pagination span, .entry-pages a, .entry-pages span.page-number
+pre,code, .pagination a, .pagination span, .entry-pages a, .entry-pages span.page-number, .attachment-navi a, .attachment-navi strong
 {
 	font-family:Monaco, Consolas, "Andale Mono", "Dejavu Sans Mono", monospace;
 	font-size:12px

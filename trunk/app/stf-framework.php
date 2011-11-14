@@ -103,7 +103,13 @@ class Shailan_Framework{
 			
 			if ( get_option('thread_comments') == 1 )
 				wp_enqueue_script( 'comment-reply' );
-			
+				
+			if ( 'on' == stf_get_setting( 'sharing_enabled' ) ){
+				wp_enqueue_script( 'facebook-share', 'http://connect.facebook.net/en_US/all.js#xfbml=1', '', '', true );
+				wp_enqueue_script( 'twitter-share', 'http://twitter.com/javascripts/widgets/widget.js', '', '', true );
+				wp_enqueue_script( 'google-share', 'https://apis.google.com/js/plusone.js', '', '', true );
+			}
+			 
 		}
 		
 	}
@@ -152,7 +158,7 @@ class Shailan_Framework{
 	function theme_admin_header(){
 		global $menu;
 	
-		if ( @$_GET['page'] == "stf-options" ) {
+		if ( isset($_GET['page']) && $_GET['page'] == "stf-options" ) {
 		
 			if ( @$_REQUEST['action'] && 'save' == $_REQUEST['action'] ) {
 				// Save settings
