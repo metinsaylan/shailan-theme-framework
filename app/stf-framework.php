@@ -198,7 +198,7 @@ class Shailan_Framework{
 		}
 
 		$menu[56] = array( '', 'read', 'separator1', '', 'wp-menu-separator' );
-		add_menu_page( $this->name . " Options", $this->name, "administrator", "stf-options", array(&$this, 'theme_admin_page'), get_template_directory_uri() . "/app/css/images/layout_content.png", 57 );
+		add_menu_page( $this->name . " Options", $this->name, "administrator", "stf-options", array(&$this, 'theme_admin_page'), get_template_directory_uri() . "/app/images/layout_content.png", 57 );
 		
 	}
 	
