@@ -290,7 +290,7 @@ div.seperator {
 
 #scrolltotop{
 	display:block; width:32px; height:32px; text-align:left; text-indent:-9999px; 
-	background: #ddd url(../images/blue_arrow_up.png) 50% 50% no-repeat;
+	background: #ddd url(../images/icons/blue_arrow_up.png) 50% 50% no-repeat;
 	padding: 5px; border-radius: 5px;
 	border:1px solid #fff;
 }
