@@ -22,6 +22,6 @@
 	<!-- [End] Entry Title -->
 	
 	<?php if( is_single() ) { stf_entry_header_meta(); } ?>
-	<?php if( is_single() || is_page() || is_attachment() && 'on' == stf_get_setting('sharing_enabled') ) get_template_part('share', 'horizontal'); ?>
+	<?php if( ( is_single() || is_page() || is_attachment() ) && 'on' == stf_get_setting('sharing_enabled') ) get_template_part('share', 'horizontal'); ?>
 	
 </div><!-- .entry-header -->

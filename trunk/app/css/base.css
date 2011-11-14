@@ -113,30 +113,39 @@ body.ie #header-bottom ul.menu ul { border:1px solid #aaa; }
 #header-bottom ul.menu li.current-menu-ancestor>a,#header-bottom ul.menu li.current-menu-ancestor>a:visited, #header-bottom ul.menu li.current-menu-ancestor>a:link { color: #444; }
 
 /*- SUBSCRIBE */
-#subscribe-right {
+#subscribe-large {
 	bottom: 0;
 	left: auto;
 	position: absolute;
 	right: 0;
 }
 
+#subscribe-small {
+	display:inline;
+}
+
 .subscribe-icons {
 	margin: 0;
 	padding: 0;
 }
+
 .subscribe-icons li {
 	display: inline;
 	list-style: none;
 	margin: 0;
-	margin-left: 15px;
+	margin-left: 5px;
 	padding: 0;
+}
+
+#subscribe-large .subscribe-icons li{
+	margin-left: 10px;
 }
 
 .subscribe-label.first-child {
 	display: none;
 }
 
-li.subscribe-icon img {
+#subscribe-large li.subscribe-icon img {
 	height: 32px;
 	width: 32px;
 }
@@ -244,11 +253,14 @@ padding: 8px;
 position: relative;
 }
 #s {
-padding-left: 26px;
-width: 100px;
+	padding-left: 26px;
+	width: 210px;
 }
-#s:active, #s:focus {
-width: 210px;
+
+#header #s { width: 100px; }
+
+#header #s:active, #header #s:focus {
+	width: 210px;
 }
 #searchform-wrapper {
 position: absolute;

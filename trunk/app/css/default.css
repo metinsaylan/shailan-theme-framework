@@ -29,18 +29,24 @@ blockquote{
 	-moz-transition:width .4s ease-in-out;
 	-o-transition:width .4s ease-in-out;
 	-webkit-transition:width .4s ease-in-out;
-	background: #DDD url(../images/search.png) 3px 50% no-repeat;
-	padding-left: 26px;
+	background: #FFF url(../images/search.png) 6px 50% no-repeat;
+	padding-left: 30px;
 	color: #666;
 	border: 1px solid black;
+	font-size: 16px; color: #999;
+	height: 30px;
+	line-height: 30px;
+}
+
+#header #s{
+	background: #FFF url(../images/search.png) 3px 50% no-repeat;
+	padding-left: 26px;
 	font-size: 12px;
 	height: 18px;
 	line-height: 16px;
 }
 
-#s:focus
-{
-  background:#fff url(../images/search.png) 3px 50% no-repeat;
+#s:focus{
   color:#555
 }
 
