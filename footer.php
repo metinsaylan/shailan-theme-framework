@@ -45,8 +45,6 @@
 </div> 
 <!-- [End] Footer Wrapper -->
 
-
-
 <?php wp_footer(); // Needed for plugins. Do not remove. ?>
 
 <!-- <?php echo $wpdb->num_queries; ?>Q @ <?php timer_stop(1); ?>s -->

@@ -18,7 +18,7 @@
 
 </head>
 <body <?php body_class(); ?>>
-<div id="top"></div>
+<a name="top" id="top"></a>
 
 <?php global $posts_displayed; $posts_displayed = array(); ?>
 <?php do_action('body_top'); ?>

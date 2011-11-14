@@ -129,6 +129,20 @@ array( "type" => "open"),
 
 array( "type" => "close"),
 
+array( "name" => __( "Social", 'stf' ),
+		"type" => "section"),
+		
+	array(
+		"name" => "Enable share buttons",
+		"desc" => "This option enables use of sharing buttons.",
+		"id" => "sharing_enabled",
+		"type" => "checkbox",
+		"std" => "on"
+	),
+		
+array( "type" => "open"),
+
+array( "type" => "close"),
 
 array( "name" => "Layout",
 	"type" => "section"),
@@ -181,7 +195,6 @@ array( "name" => "Colors",
 	"type" => "section"),
 array( "type" => "open"),
 
-	
 	array(
 		"name" => "Color scheme",
 		"desc" => "Select a base color scheme.",
@@ -197,14 +210,6 @@ array( "type" => "open"),
 		"id" => "stf_colors_enabled",
 		"type" => "checkbox",
 		"std" => "off"
-	),
-
-	array(
-		"name" => "Background color",
-		"desc" => "Background color value (Eg. #ffffff)",
-		"id" => "stf_background_color",
-		"type" => "text",
-		"std" => "#222222"
 	),
 	
 	array(

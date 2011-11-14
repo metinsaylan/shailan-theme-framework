@@ -1,7 +1,10 @@
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<div class="entry-body">
+<div id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?>>
+<div class="entry-body" class="clearfix">
+
+	<?php get_template_part('entry', 'header'); ?>
+
+	<div class="entry-content" class="clearfix">
 	<div class="gallery-wrap">
-		<h2><?php the_title(); ?></h2>
 		
 		<div id="gallery-<?php the_ID(); ?>" class="gallery-container">
 			<ul class="gallery-display clearfix">
@@ -29,6 +32,8 @@
 			<a class="read-more" href="<?php the_permalink(); ?>"><?php _e('View all &rarr;'); ?></a>
 		<?php } ?>
 	</div>
+	</div>
+	
 	<?php get_template_part('entry', 'footer'); ?>
 	
 	<?php stf_comments(); ?>
