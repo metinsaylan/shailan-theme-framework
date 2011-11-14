@@ -35,6 +35,7 @@
 		
 			<div class="half-width column last right">
 				<small><a id="scrolltotop" href="#top" class="jumper">Return to Top &uarr;</a></small>
+				<?php get_template_part('subscribe', 'small'); ?>
 			</div>
 		</div>
 	</div>

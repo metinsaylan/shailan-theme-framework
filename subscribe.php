@@ -1,5 +1,5 @@
 <!-- SUBSCRIBE -->
-<div id="subscribe-right">
+<div id="subscribe-large">
 	<ul class="subscribe-icons">
 		<li class="subscribe-label"><?php _e('SUBSCRIBE :', 'stf'); ?></li>
 		
