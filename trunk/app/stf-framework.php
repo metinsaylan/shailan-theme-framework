@@ -101,6 +101,9 @@ class Shailan_Framework{
 			wp_enqueue_style( 'shailan.tabs', get_template_directory_uri() . '/app/css/shailan.tabs.css' );
 			wp_enqueue_style( 'shailan.dropdown', get_template_directory_uri() . '/app/css/shailan.dropdown.css' );
 			
+			if ( get_option('thread_comments') == 1 )
+				wp_enqueue_script( 'comment-reply' );
+			
 		}
 		
 	}
