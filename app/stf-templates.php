@@ -534,11 +534,6 @@ function stf_show_comment_form() {
 	return $show;
 }
 
-function stf_post_reply_link(){
-	if ( ! post_password_required() )
-		echo post_reply_link( array( 'before' => ' | ', 'after' => '',  'reply_text' => __( 'Reply' ), 'add_below' => 'entry' ), get_the_id() );
-}
-
 function stf_simple_pagination( $args = null ){
 	
 	extract( wp_parse_args( $args, array(
