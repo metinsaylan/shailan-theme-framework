@@ -4,8 +4,7 @@
 	
 	/* Sidebar tabs */
 	include_once('/app/widgets/stf-tabs-content.php');
-	
-	
+
 	?>
 	
 	

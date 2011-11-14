@@ -699,7 +699,12 @@ $icons = array(
 	'newsletter_large' => 'newsletter_large.png',
 	'search_large' => 'search_large.png',
 	'wordpress_large' => 'icon_wordpress_large.png',
-	'download_large' => 'download.png'
+	'download_large' => 'download.png',
+	'star' => 'star.png',
+	'biz' => 'users_business_32.png',
+	'social' => 'users_32.png',
+	'tools' => 'tools_32.png',
+	'lightbulb' => 'lightbulb_32.png'
 );
 
 $icons_large = array(
@@ -713,10 +718,11 @@ function stf_icon( $atts, $content = null ){
 
 	extract(shortcode_atts(array(
       "src" => 'preview',
-	  "class" => 'stf-icon'
+	  "class" => 'stf-icon',
+	  "float" => 'none'
 	), $atts));
 	
-	return '<img class="'. $class .'" src="'. $images_folder . $icons[$src] .'" '. do_shortcode($content) . '/>'; 
+	return '<img class="'. $class .' float-' . $float . '" src="'. $images_folder . $icons[$src] .'" '. do_shortcode($content) . '/>'; 
 }
 add_shortcode('icon', 'stf_icon');
 

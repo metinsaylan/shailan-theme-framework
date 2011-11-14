@@ -16,12 +16,12 @@
 		<?php else : ?>
 			<div class="entry-content" class="clearfix">
 			
-				<?php the_content( stf_more( ) ); ?>
+				<?php the_content( stf_more() ); ?>
 				<?php stf_entry_pages(); ?>
 				
-				<?php if( is_single() ) { stf_related_posts(); } ?>
+				<?php if( is_single() ){ stf_related_posts(); } ?>
 				
-			</div><!-- .entry-content -->
+			</div>
 		<?php endif; ?>
 
 	<?php get_template_part('entry', 'footer'); ?>

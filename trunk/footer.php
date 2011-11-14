@@ -56,5 +56,7 @@
 
 <!-- <?php echo $wpdb->num_queries; ?>Q @ <?php timer_stop(1); ?>s -->
 
+Powered by <a href="http://wordpress.org">Wordpress</a> <span class="amp">&amp;</span> <a href="http://shailan.com/wordpress/themes/framework/">STF</a>.
+
 </body>
 </html>
