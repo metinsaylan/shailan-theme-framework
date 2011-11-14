@@ -203,7 +203,7 @@ color: #666;
 }
 .sidebar li ul{ border-top:1px solid #ddd }
 .sidebar li ul li:last-child { border:0 }
-.sidebar li:hover { background:#efefef }
+.sidebar li:hover { background-color:#efefef }
 .sidebar ul{ border-top:2px solid #ddd }
 
 #breadcrumbs

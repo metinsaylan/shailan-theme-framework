@@ -660,15 +660,15 @@ function stf_box_center( $atts, $content = null ){ return '<div class="center">'
 	add_shortcode('center', 'stf_box_center');
 
 /* DIALOG BOXES */
-function stf_note( $atts, $content = null ){ return '<div class="note">' . do_shortcode($content) . '</div>'; }
+function stf_note( $atts, $content = null ){ return '<div class="dialog note clearfix">' . do_shortcode($content) . '</div>'; }
 	add_shortcode('note', 'stf_note');
-function stf_alert( $atts, $content = null ){ return '<div class="alert">' . do_shortcode($content) . '</div>'; }
+function stf_alert( $atts, $content = null ){ return '<div class="dialog alert clearfix">' . do_shortcode($content) . '</div>'; }
 	add_shortcode('alert', 'stf_alert');
-function stf_warning( $atts, $content = null ){ return '<div class="warning">' . do_shortcode($content) . '</div>'; }
+function stf_warning( $atts, $content = null ){ return '<div class="dialog warning clearfix">' . do_shortcode($content) . '</div>'; }
 	add_shortcode('warning', 'stf_warning');
-function stf_info( $atts, $content = null ){ return '<div class="info">' . do_shortcode($content) . '</div>'; }
+function stf_info( $atts, $content = null ){ return '<div class="dialog info clearfix">' . do_shortcode($content) . '</div>'; }
 	add_shortcode('info', 'stf_info');
-function stf_success( $atts, $content = null ){ return '<div class="success">' . do_shortcode($content) . '</div>'; }
+function stf_success( $atts, $content = null ){ return '<div class="dialog success clearfix">' . do_shortcode($content) . '</div>'; }
 	add_shortcode('success', 'stf_success');
 
 /* MARKERS */
@@ -687,6 +687,27 @@ function stf_donate_shortcode( $atts, $content = null ){
 	return stripslashes($donate_code); 
 } add_shortcode('donate', 'stf_donate_shortcode');
 
+global $icons;
+
+$icons = array(
+	'preview' => 'preview.png',
+	'info_large' => 'dialog_info.png',
+	'error_large' => 'dialog_error.png'
+);
+
+/* LAYOUT BOXES */
+function stf_icon( $atts, $content = null ){ 
+	global $icons;
+	$images_folder = get_template_directory_uri() . '/app/images/icons/';
+
+	extract(shortcode_atts(array(
+      "src" => 'preview',
+	  "class" => 'stf-icon'
+	), $atts));
+	
+	return '<img class="'. $class .'" src="'. $images_folder . $icons[$src] .'" '. do_shortcode($content) . '/>'; 
+}
+add_shortcode('icon', 'stf_icon');
 
 /* WIDGETS */
 add_shortcode('tag_cloud', 'stf_tags_shortcode');
