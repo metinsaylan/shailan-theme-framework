@@ -305,7 +305,7 @@ border-radius: 5px;
 .entry-header{ margin-bottom:20px; position:relative; padding: 0px 20px; }
 .entry-header .category-title{ text-transform:uppercase; color:#bbb; font-size:11px; font-weight:bold; }
 
-.entry-content {
+.entry-content, .entry-summary {
 padding: 0 20px;
 }
 
@@ -425,8 +425,8 @@ width: 169px;
 a.permalink {
 display: none;
 position: absolute;
-top: -1px;
-right: -1px;
+top: -2px;
+right: -3px;
 text-indent: -9999px;
 background: #fff url(../images/permalink.png) top right no-repeat;
 height: 18px;
@@ -436,20 +436,17 @@ text-align: left;
 
 .hentry:hover a.permalink{ display:block; }
 
-
 a.post-edit-link {
 display: block;
 position: absolute;
 top: 24px;
-right: -5px;
+right: 20px;
 text-align: left;
 text-indent: -9999px;
-background: #DDD url(../images/pencil.png) 50% 50% no-repeat;
+background: transparent url(../images/pencil.png) 50% 50% no-repeat;
 width: 20px;
 height: 20px;
-border-radius: 3px;
 opacity: 0;
-border: 1px solid #CCC;
 -webkit-transition: opacity linear 0.3s;
 }
 
@@ -800,3 +797,6 @@ top: 160px;
 position: fixed;
 right: 20px;
 }
+
+/* WIDGETS */
+.fb-like{ margin-left:10px; }
