@@ -106,7 +106,7 @@ class Shailan_Framework{
 				
 			if ( 'on' == stf_get_setting( 'sharing_enabled' ) ){
 				wp_enqueue_script( 'facebook-share', 'http://connect.facebook.net/en_US/all.js#xfbml=1', '', '', true );
-				wp_enqueue_script( 'twitter-share', 'http://twitter.com/javascripts/widgets/widget.js', '', '', true );
+				wp_enqueue_script( 'twitter-share', 'http://platform.twitter.com/widgets.js', '', '', true );
 				wp_enqueue_script( 'google-share', 'https://apis.google.com/js/plusone.js', '', '', true );
 			}
 			 

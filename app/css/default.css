@@ -55,7 +55,10 @@ blockquote{
 /* TOPNAV */
 
 /* ENTRY */
-.hentry{ border:1px solid #ddd; box-shadow: #ddd 0 1px 4px; }
+.hentry{ 
+	border: 1px solid white;
+	box-shadow: rgba(0,0,0,0.4) 0 1px 5px; 
+}
 .entry-title { display:block; border-bottom: 1px solid #DDD; padding: 0px 0px 15px; }
 
 .share-horizontal {
@@ -96,6 +99,7 @@ border-radius: 4px;
 .entry-pages a .page-number {
   background:#ccc;
   color:#FFF
+  box-shadow: inset #666 0 0 4px;
 }
 
 .entry-pages a,.entry-pages a:hover
@@ -121,21 +125,6 @@ background: url(../images/icon-views-light.png) 0px 50% no-repeat;
 } .view-noun{ display:none; }
 
 a.read-more{
-background: #eeeeee; /* Old browsers */
-background: -moz-linear-gradient(45deg,  #eeeeee 0%, #ffffff 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#eeeeee), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(45deg,  #eeeeee 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(45deg,  #eeeeee 0%,#ffffff 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(45deg,  #eeeeee 0%,#ffffff 100%); /* IE10+ */
-background: linear-gradient(45deg,  #eeeeee 0%,#ffffff 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-border-bottom-left-radius: 3px;
-border-top-left-radius: 3px;
-box-shadow: #ddd 0 1px 4px;
-color:#999;
-margin-bottom:8px;
-}
-a.read-more:hover{
 background: #888888;
 background: -moz-linear-gradient(45deg,  #888888 0%, #bbbbbb 100%);
 background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#888888), color-stop(100%,#bbbbbb));
@@ -147,6 +136,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888888', end
 border:1px solid #888;
 color:#fff;
 text-shadow:#888 1px 1px 1px;
+box-shadow:#999 0 1px 4px;
+
+-webkit-transition: background-color linear 3s;
+
+border-bottom-left-radius: 3px;
+border-top-left-radius: 3px;
+margin-bottom:8px;
+}
+a.read-more:hover{
+background: #27D;
+background: -moz-linear-gradient(60deg,  #27D 0%, #55BBFF 75%);
+background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#888888), color-stop(75%,#55BBFF));
+background: -webkit-linear-gradient(60deg,  #27D 0%,#55BBFF 75%);
+background: -o-linear-gradient(60deg,  #27D 0%,#55BBFF 75%);
+background: -ms-linear-gradient(60deg,  #27D 0%,#55BBFF 75%);
+background: linear-gradient(60deg,  #27D 0%,#4499ff 75%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2277DD', endColorstr='#55BBFF',GradientType=1 );
+border:1px solid #27D;
+color:#fff;
+text-shadow:#27D 1px 1px 1px;
 box-shadow:#999 0 1px 4px;
 }
 
@@ -178,12 +187,27 @@ div.seperator {
 }
 
 /* POST FORMATS */
-.format-image {
-background: black;
-border: 1px solid #333;
-color: #666;
+.format-image .entry-content{ text-align:center; }
+.format-image .wp-caption {
+	padding: 0;
+	box-shadow: none;
+	text-align: center;
+}
+.format-image .wp-caption p.wp-caption-text{
+	text-align:center;
 }
 
+.format-aside {
+	background: #F6FFE0;
+}
+
+.format-quote{ background: #efefef; }
+.format-quote .entry-content blockquote
+{
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+}
 
 
 #authorbox
@@ -277,6 +301,16 @@ color: #666;
   border-top:1px solid #DDD
 }
 
+#theme-footer {
+position: fixed;
+bottom: 0;
+box-shadow: rgba(0,0,0,0.3) 0 -1px 3px;
+padding: 9px 10px 5px;
+background: rgba(255, 255, 255, 0.8);
+left: 0px;
+right: 0px;
+width: auto;
+}
 /* COMMENTS */
 #respond input[aria-required="true"],input[type="text"].required {
   background:#fff url(../images/required.gif) 99% 3px no-repeat
@@ -330,15 +364,6 @@ color: #666;
 .featured-post img.wp-post-image
 {
   border:2px solid #999
-}
-
-.format-quote .entry-content blockquote
-{
-  -moz-box-shadow:#DDD 0 1px 3px;
-  -webkit-box-shadow:#DDD 0 1px 3px;
-  background:#EFEFEF;
-  border:1px solid #FFF;
-  box-shadow:#DDD 0 1px 3px
 }
 
 .gallery-display li
@@ -572,16 +597,6 @@ a.tweet,a.tweet:hover
   background:url(../images/share_twitter.png) no-repeat
 }
 
-body .hascountdown
-{
-  -moz-box-shadow:inset #FFF 1px 1px 0 inset #FFF -1px -1px 0;
-  -o-box-shadow:inset #FFF 1px 1px 0 inset #FFF -1px -1px 0;
-  -webkit-box-shadow:inset #FFF 1px 1px 0 inset #FFF -1px -1px 0;
-  background:#EFEFEF;
-  border:1px solid #DDD;
-  box-shadow:inset #FFF 1px 1px 0 inset #FFF -1px -1px 0
-}
-
 div#theme-copyright
 {
   background:#FFF
@@ -627,24 +642,6 @@ input[type="text"],input[type="password"],#s,.wpcf7-text,.wpcf7 textarea
   color:#999
 }
 
-mark,.highlight
-{
-  background:#D9F500;
-  text-shadow:#C8E400 1px 1px 0
-}
-
-mark.orange,.highlight.orange
-{
-  background:#FF9B30;
-  text-shadow:#EE8A20 1px 1px 0
-}
-
-mark.yellow,.highlight.yellow
-{
-  background:#FFEC16;
-  text-shadow:#EEDB05 1px 1px 0
-}
-
 .comment-edit-link a,.comment-date a,a.comment-reply-link,#breadcrumbs a,.entry-meta a,.entry-controls a,.sub-title
 {
   color:#aaa;
@@ -675,3 +672,30 @@ a:visited,.comment-edit-link a:hover,.comment-date a:hover,a.comment-reply-link:
   color:#AAAAAA;
 }
 
+/* SHORTCODES */
+
+mark,.highlight {
+  background:#D9F500;
+  text-shadow:#C8E400 1px 1px 0
+}
+
+mark.orange,.highlight.orange {
+  background:#FF9B30;
+  text-shadow:#EE8A20 1px 1px 0
+}
+
+mark.yellow,.highlight.yellow {
+  background:#FFEC16;
+  text-shadow:#EEDB05 1px 1px 0
+}
+
+/* PLUGIN STYLES */
+body .hascountdown
+{
+  -moz-box-shadow:inset #FFF 1px 1px 0 inset #FFF -1px -1px 0;
+  -o-box-shadow:inset #FFF 1px 1px 0 inset #FFF -1px -1px 0;
+  -webkit-box-shadow:inset #FFF 1px 1px 0 inset #FFF -1px -1px 0;
+  background:#EFEFEF;
+  border:1px solid #DDD;
+  box-shadow:inset #FFF 1px 1px 0 inset #FFF -1px -1px 0
+}

@@ -28,14 +28,20 @@
 		</div>
 		
 	<div id="theme-footer" class="clearfix">
-		<div class="row clearfix">
-			<div class="half-width column">
-				<small><?php stf_theme_footer(); ?></small> 
-			</div>
-		
-			<div class="half-width column last right">
-				<small><a id="scrolltotop" href="#top" class="jumper">Return to Top &uarr;</a></small>
-				<?php get_template_part('subscribe', 'small'); ?>
+		<div id="footer-line">
+			<div class="row clearfix">
+				<div class="fl">
+					<small><?php stf_theme_footer(); ?></small> <div class="fb-like" data-href="<?php bloginfo('url'); ?>" data-send="false" data-layout="button_count" data-width="90" data-show-faces="false" data-font="segoe ui"></div> 
+					
+					<?php if( stf_get_setting( 'stf_twitter_username' ) ) { ?>
+						<a href="https://twitter.com/<?php echo stf_get_setting( 'stf_twitter_username' ); ?>" class="twitter-follow-button">Follow @<?php echo stf_get_setting( 'stf_twitter_username' ); ?></a>
+					<?php } ?>
+				</div>
+			
+				<div class="fr last right">
+					<small><a id="scrolltotop" href="#top" class="jumper">Return to Top &uarr;</a></small>
+					<?php get_template_part('subscribe', 'small'); ?>
+				</div>
 			</div>
 		</div>
 	</div>
