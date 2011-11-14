@@ -692,7 +692,18 @@ global $icons;
 $icons = array(
 	'preview' => 'preview.png',
 	'info_large' => 'dialog_info.png',
-	'error_large' => 'dialog_error.png'
+	'error_large' => 'dialog_error.png',
+	'warning_large' => 'dialog_warning.png',
+	'donate_large' => 'donate.png',
+	'success' => 'dialog_success.png',
+	'newsletter_large' => 'newsletter_large.png',
+	'search_large' => 'search_large.png',
+	'wordpress_large' => 'icon_wordpress_large.png',
+	'download_large' => 'download.png'
+);
+
+$icons_large = array(
+
 );
 
 /* LAYOUT BOXES */

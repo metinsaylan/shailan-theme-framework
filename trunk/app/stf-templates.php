@@ -610,7 +610,7 @@ function stf_related_posts( $number = 6 ){
 	   
 		$my_query = new WP_Query($args);
 		if( $my_query->have_posts() ) { 
-			echo '<div id="related-posts" class="clearfix"><h4 class="mt0 mb1">' . _('Related Posts', 'stf') . '</h4>';
+			echo '<div id="related-posts" class="clearfix"><h4 class="mt0 mb1">' . __('Related Posts', 'stf') . '</h4>';
 			echo "<ul>";
 			while ($my_query->have_posts()) : $my_query->the_post(); ?>
 			  <li class="clearfix"><?php the_post_thumbnail( array(40, 40) ); ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
@@ -630,7 +630,7 @@ function stf_related_posts( $number = 6 ){
 			$my_query = new WP_Query($args);
 
 			if( $my_query->have_posts() ) {
-				echo '<div id="related-posts" class="clearfix"><h4 class="mt0 mb1">' . _('Related Posts', 'stf') . '</h4>';
+				echo '<div id="related-posts" class="clearfix"><h4 class="mt0 mb1">' . __('Related Posts', 'stf') . '</h4>';
 				echo "<ul>";
 				while ($my_query->have_posts()) : $my_query->the_post(); ?>
 					<li class="clearfix"><?php the_post_thumbnail( array(40, 40) ); ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
