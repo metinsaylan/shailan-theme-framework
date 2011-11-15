@@ -800,3 +800,37 @@ right: 20px;
 
 /* WIDGETS */
 .fb-like{ margin-left:10px; }
+
+.loop-da-loop .entry-title {
+	padding: 0;
+	border: 0;
+	background: transparent;
+}
+
+/* COPYRIGHT */
+#powerpack {
+padding-bottom: 40px;
+font-size: 10px;
+color: #BBB;
+text-align: center;
+}
+
+a#wordpress, a#stf{
+	display: inline-block;
+	text-indent: -9999px;
+	width: 32px;
+	height: 32px;
+	opacity: 0.2;
+	vertical-align: middle;
+	margin: 5px;
+}
+
+a#wordpress{
+	background: url('../images/icons/icon_wordpress_32.png');
+}
+
+a#stf {
+	background: url('../images/icons/shailan_copyright.png');
+}
+
+a#stf:hover, a#wordpress:hover{opacity:1;}
