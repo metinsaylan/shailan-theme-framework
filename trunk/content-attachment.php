@@ -133,4 +133,4 @@
 </div>
 </div><!-- #post-<?php the_ID(); ?> -->
 
-<?php stf_comments(); ?>
+<?php stf_comments(); ?> 
