@@ -32,8 +32,8 @@ document.observe("dom:loaded", function() {
 	// Return to Top elevator 
 	setInterval(function(){
 	if (document.viewport.getScrollOffsets().top >= 600 && $(elemID).getOpacity() == 0 ) {
-		new Effect.Opacity(elemID, { to:1, duration:0.50 });
-	} else if ( document.viewport.getScrollOffsets().top < 600 && $(elemID).getOpacity() == 1 ) {
+		new Effect.Opacity(elemID, { to:0.8, duration:0.50 });
+	} else if ( document.viewport.getScrollOffsets().top < 600 && $(elemID).getOpacity() >= 0.7 ) {
 		new Effect.Opacity(elemID, { to:0, duration:0.50 });
 	} }, 200);	
 });

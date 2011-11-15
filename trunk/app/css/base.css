@@ -658,12 +658,16 @@ display: block;
 }
 
 a.read-more.tiny {
-	margin: 10px 0;
+	margin: 10px 0px;
 	line-height: 10px;
 	padding: 6px 11px;
 	border-radius: 4px;
 	box-shadow: #aaa 0 1px 3px;
 	font-size: 11px;
+}
+
+a.read-more.tiny:active{
+	margin: 11px 0 9px 0;
 }
 
 a.share-button {
@@ -802,9 +806,9 @@ margin-left: 20px;
 /* SCROLLTOTOP */
 #scrolltotop {
 display: block;
-top: 160px;
+top: 200px;
 position: fixed;
-right: 20px;
+right: 0px;
 }
 
 /* WIDGETS */
