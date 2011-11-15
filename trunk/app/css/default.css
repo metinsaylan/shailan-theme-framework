@@ -555,7 +555,7 @@ input[type="text"],input[type="password"],#s, .wpcf7-text, .wpcf7 textarea
   color:#aaa;
 }
 
-a:visited, .comment-edit-link a:hover, .comment-date a:hover,a.comment-reply-link:hover, .entry-meta a:hover, .entry-controls a:hover
+.comment-edit-link a:hover, .comment-date a:hover, a.comment-reply-link:hover, .entry-meta a:hover, .entry-controls a:hover
 {
   color:#7af
 }
