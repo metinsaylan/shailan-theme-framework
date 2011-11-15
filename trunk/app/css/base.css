@@ -366,7 +366,9 @@ padding: 1px 4px;
 }
 .entry-thumbnail {
 float: left;
-margin-right: 1em;
+margin: 0 20px;
+position: relative;
+z-index: 3;
 }
 .error,
 .alert, .warning,
