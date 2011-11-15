@@ -657,6 +657,15 @@ padding: 5px 15px;
 display: block;
 }
 
+a.read-more.tiny {
+	margin: 10px 0;
+	line-height: 10px;
+	padding: 6px 11px;
+	border-radius: 4px;
+	box-shadow: #aaa 0 1px 3px;
+	font-size: 11px;
+}
+
 a.share-button {
 display: block;
 float: right;
@@ -799,7 +808,7 @@ right: 20px;
 }
 
 /* WIDGETS */
-.fb-like{ margin-left:10px; }
+#footer .fb-like{ margin-left:10px; }
 
 .loop-da-loop .entry-title {
 	padding: 0;
@@ -820,7 +829,7 @@ a#wordpress, a#stf{
 	text-indent: -9999px;
 	width: 32px;
 	height: 32px;
-	opacity: 0.2;
+	opacity: 0.4;
 	vertical-align: middle;
 	margin: 5px;
 }
