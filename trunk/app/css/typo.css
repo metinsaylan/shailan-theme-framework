@@ -84,7 +84,8 @@ a.button.large
 
 a.read-more
 {
-  font-size:small
+  font-size:small;
+  line-height: 1.5em;
 }
 
 a.share-button
