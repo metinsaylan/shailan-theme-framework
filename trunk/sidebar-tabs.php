@@ -1,13 +1,17 @@
 <div id="sidebar-tabs" class="clearfix">
 	<ul class="tabs">
-		<li><a href="#featured"><img src="<?php bloginfo('template_directory'); ?>/images/icons/featured.png" class="tooltip" title="Featured posts" alt="Featured" /></a></li>
-		<?php if( function_exists('stats_get_csv') ){ ?> <li><a href="#popular"><img src="<?php bloginfo('template_directory'); ?>/images/icons/popular.png"  class="tooltip" title="Popular posts" alt="Popular" /></a></li> <?php } ?>
-		<li><a href="#recent-entries"><img src="<?php bloginfo('template_directory'); ?>/images/icons/recent.png"  class="tooltip" title="Recent Posts" alt="Recent" /></a></li>
-		<li><a href="#recent-comments"><img src="<?php bloginfo('template_directory'); ?>/images/icons/comments.png"  class="tooltip" title="Recent Comments" alt="Comments" /></a></li>
-		<li><a href="#categories"><img src="<?php bloginfo('template_directory'); ?>/images/icons/categories.png"  class="tooltip" title="Categories" alt="Categories" /></a></li>
+		<?php if ( term_exists( 'featured' , 'category' ) ) { ?>
+		<li><a href="#featured"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/featured.png" class="tooltip" title="Featured posts" alt="Featured" /><span class="tab-title">Featured</span></a></li>
+		<?php } ?>
+		
+		<?php if( function_exists('stats_get_csv') ){ ?> <li><a href="#popular"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/popular.png"  class="tooltip" title="Popular posts" alt="Popular" /><span class="tab-title">Popular</span></a></li> <?php } ?>
+		<li><a href="#recent-entries"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/recent.png"  class="tooltip" title="Recent Posts" alt="Recent" /><span class="tab-title">Recent</span></a></li>
+		<li><a href="#recent-comments"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/comments.png"  class="tooltip" title="Recent Comments" alt="Comments" /><span class="tab-title">Comments</span></a></li>
+		<li><a href="#categories"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/categories.png"  class="tooltip" title="Categories" alt="Categories" /><span class="tab-title">Categories</span></a></li>
 	</ul>
 	<div class="tab_container">
 	
+		<?php if ( term_exists( 'featured' , 'category' ) ) { ?>	
 		<div id="featured" class="tab_content">
 			<ul>
 			<?php 
@@ -15,10 +19,11 @@
 			?>
 			</ul>
 		</div>
+		<?php } ?>
 	
 		<?php if(function_exists('stats_get_csv')){ 
 		
-		$top_posts = stats_get_csv( 'postviews', "days=7&limit=15" );
+		$top_posts = stats_get_csv( 'postviews', "days=15&limit=15" );
 		
 		?> <div id="popular" class="tab_content">
 		<ul>
@@ -40,9 +45,12 @@
 			<ul class="blclastcommentedposts">
 		   <?php
 				if( function_exists('blc_latest_comments') ){
+					echo "<ul class=\"blclastcommentedposts\">";
 					blc_latest_comments( 6, 4, true, "<li class='alternate'>", "</li>", true, 15, "#444444", "#BBBBBB");
+					echo "</ul>";
 				} else {
-					the_widget('WP_Widget_Recent_Comments'); 
+					$args = array('title'=>' ', 'number'=>8);
+					the_widget('WP_Widget_Recent_Comments', $args); 
 				} 
 		   ?>
 		   </ul>
@@ -53,7 +61,9 @@
 		   <?php
 		   
 				$args = array(
-					'title_li' => ''
+					'title_li' => '',
+					'hierarchical' => 'false',
+					'depth' => 1
 				);
 		   
 				wp_list_categories( $args );

@@ -45,7 +45,9 @@
 			<ul class="blclastcommentedposts">
 		   <?php
 				if( function_exists('blc_latest_comments') ){
+					echo "<ul class=\"blclastcommentedposts\">";
 					blc_latest_comments( 6, 4, true, "<li class='alternate'>", "</li>", true, 15, "#444444", "#BBBBBB");
+					echo "</ul>";
 				} else {
 					$args = array('title'=>' ', 'number'=>8);
 					the_widget('WP_Widget_Recent_Comments', $args); 

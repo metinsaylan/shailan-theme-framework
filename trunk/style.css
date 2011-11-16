@@ -2,11 +2,11 @@
 THEME NAME: Framework
 THEME URI: http://shailan.com
 DESCRIPTION: Awesome <strong>all-widget theme framework</strong> by Shailan.
-VERSION: v3
+VERSION: v3.2
 AUTHOR: Matt Say
 AUTHOR URI: http://shailan.com
 TAGS: framework, all-widget, widgets, widget-areas, xhtml, light, white, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, theme-options, translation-ready, login-widget, tabs-widget, custom-fonts, css3
 */
 
-@import url('app/css/base.css');
+@import url('app/css/base.css'); /* Framework base styles */
 
