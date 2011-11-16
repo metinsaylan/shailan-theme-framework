@@ -91,7 +91,8 @@ class Shailan_Framework{
 		} else {
 		 
 		 	wp_enqueue_script( 'jquery' );
-			wp_enqueue_script( 'scriptaculous' );
+			wp_enqueue_script( 'scriptaculous-root' );
+			wp_enqueue_script( 'scriptaculous-effects' );
 			wp_enqueue_script( 'shailan.jumper', get_template_directory_uri() . '/app/scripts/shailan.jumper.js', 'jquery' );
 			wp_enqueue_script( 'shailan.tooltips', get_template_directory_uri() . '/app/scripts/shailan.tooltips.js', 'jquery' );
 			wp_enqueue_script( 'shailan.tabs', get_template_directory_uri() . '/app/scripts/shailan.tabs.js', 'jquery');
