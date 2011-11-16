@@ -631,19 +631,9 @@ function stf_related_posts( $number = 6 ){
 
 function stf_stylesheets(){
 	global $stf, $content_width;
-	
-	if( !stf_layout() ){
-		$content_width = '642';
-		
 	?>
-		<!-- Default Layout -->
-		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/default-layout.css" />	
 	
-	<?php } ?>
-	
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/common.css" />	
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/typo.css" />	
-	
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/common.css" />
 	
 	<?php if( 'on' == stf_get_setting( 'use_framework_stylesheet', 'off' ) || ! $stf->is_child ){ ?>
 
