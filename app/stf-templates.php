@@ -627,17 +627,15 @@ function stf_related_posts( $number = 6 ){
 	wp_reset_postdata();
 }
 
-
-
 function stf_stylesheets(){
 	global $stf, $content_width;
 	
 	stf_layout();
-?>	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo stf_get_setting( 'stf_colorscheme' ); ?>" />
+?><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/common.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo stf_get_setting( 'stf_colorscheme' ); ?>" />
 <?php if( 'on' == stf_get_setting( 'use_framework_stylesheet', 'off' ) || ! $stf->is_child ){ ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/style.css" />
-	<!--[if IE]><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/ie.css" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/style.css" />
+<!--[if IE]><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/ie.css" /><![endif]-->
 <?php } 
 
 	if ( $stf->is_child ) { ?>
