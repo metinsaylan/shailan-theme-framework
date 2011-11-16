@@ -8,26 +8,8 @@
  Contact	: metinsaylan (at) gmail (dot) com
 */
 
-
 global $stf;
-
 global $theme_data;
-
-/** CONSTANTS */
-define('THEME_IMAGES_DIRECTORY', trailingslashit(get_bloginfo('stylesheet_directory')) . 'images');
-
-function stf_content(){
-	if ( have_posts() ) :
-		while ( have_posts() ) : the_post();
-			get_template_part( 'content', get_post_format() );
-		endwhile;
-		stf_pagination();		
-	else : ?>
-		<?php get_template_part( 'content', '404' ); ?>
-	<?php endif;
-}
-
-
 
 /**
  * Returns theme info if exists. 
@@ -390,7 +372,7 @@ function stf_theme_footer(){
  * @param string $alt 			alternative text attribute of the image.
  */
 function get_theme_image($filename, $dimensions=NULL, $classname='', $alt='', $title='' ){
-	$img = '<img src="' . THEME_IMAGES_DIRECTORY . '/' . $filename . '"';
+	$img = '<img src="' . trailingslashit(get_bloginfo('stylesheet_directory')) . 'images/' . $filename . '"';
 	
 	if(!empty($dimensions)){
 		$dimensions = explode('x', $dimensions); 
