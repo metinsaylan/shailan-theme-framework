@@ -4,6 +4,7 @@
 global $stf;
 
 $stf_color_schemes = array(
+	'none' => '',
 	'default' => get_template_directory_uri() . '/app/css/default.css',
 	'freshmilk' => get_template_directory_uri() . '/app/css/freshmilk.css',
 	'darkshine' => get_template_directory_uri() . '/app/css/darkshine.css'
