@@ -46,7 +46,8 @@ function stf_layout(){
 		
 		$thumbnail_margin = -90 - $stf_padding;
 
-?><!-- Start of Smart Layout -->
+?>	
+	<!-- Start of Smart Layout -->
 	<style type="text/css" media="all">
 	
 		div#header, div#billboard, div#page, div#footer, div#footer-line, div#theme-copyright, div#topnav, div#header-bottom{
@@ -252,10 +253,11 @@ function stf_layout(){
 		
 	</style>
 	<!-- End of Smart Layout -->
-		<?php
+
+<?php
 		
 	return TRUE;
 }
 
 // Hook it up.
-add_action( 'wp_head', 'stf_layout' );
+// add_action( 'wp_head', 'stf_layout' );

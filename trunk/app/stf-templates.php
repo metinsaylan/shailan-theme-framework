@@ -631,35 +631,26 @@ function stf_related_posts( $number = 6 ){
 
 function stf_stylesheets(){
 	global $stf, $content_width;
-	?>
 	
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/common.css" />
-	
-	<?php if( 'on' == stf_get_setting( 'use_framework_stylesheet', 'off' ) || ! $stf->is_child ){ ?>
-
-	<!-- Framework styles -->
+	stf_layout();
+?>	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo stf_get_setting( 'stf_colorscheme' ); ?>" />
+<?php if( 'on' == stf_get_setting( 'use_framework_stylesheet', 'off' ) || ! $stf->is_child ){ ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/style.css" />
 	<!--[if IE]><link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/ie.css" /><![endif]-->
-	
-	<?php } ?>
-	
-	<!-- Color scheme -->
-	<link rel="stylesheet" type="text/css" href="<?php echo stf_get_setting( 'stf_colorscheme' ); ?>" />
-	
-	<?php if ( $stf->is_child ) { ?>
-	
-	<!-- Theme Stylesheet -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>" />
-	
-	<?php 
+<?php } 
+
+	if ( $stf->is_child ) { ?>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>" /> <?php 
 	
 	if( file_exists( get_stylesheet_directory_uri() . '/ie.css' ) ){
 		echo '<!--[if IE]><link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() .'/ie.css" /><![endif]-->';
 	} } 
 	
-	
 	stf_colors();
 }
+
+add_action( 'wp_head', 'stf_stylesheets', 1 );
 
 function _stf_deprecated_function( $function, $version, $replacement=null ) {
 
