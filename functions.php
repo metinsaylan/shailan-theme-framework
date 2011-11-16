@@ -1,6 +1,6 @@
 <?php 
 
-include_once('app/stf-framework.php'); // INCLUDE FRAMEWORK 
+include_once('app/stf-framework.php'); // Include framework
   
 if(! function_exists('theme_setup')) {
 function theme_setup(){
@@ -10,7 +10,7 @@ function theme_setup(){
 	set_post_thumbnail_size( '200', '200', true );
 
 	// Navigation Menus
-	add_theme_support('nav_menus');
+	add_theme_support( 'nav_menus' );
 	register_nav_menu( 'topnav', 'Top Navigation' );
 	register_nav_menu( 'primary', 'Header Navigation' );
 	register_nav_menu( 'footer', 'Footer Navigation' );
@@ -19,7 +19,7 @@ function theme_setup(){
 	add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video', 'audio' ) );
 	
 	// Editor Style
-	add_editor_style( '/app/css/editor.css' );
+	add_editor_style( 'editor.css' );
 	
 	// Enable custom background
 	add_custom_background();

@@ -1,10 +1,7 @@
 <?php
-/** SHAILAN THEME FRAMEWORK 
- Author		: Matt Say
-
- Author URL	: http://shailan.com
- Version	: 1.0
- Contact	: metinsaylan (at) gmail (dot) com
+/*
+	SHAILAN THEME FRAMEWORK 
+	Author : Matt Say ( @metinsaylan )
 */
 
 global $stf;
