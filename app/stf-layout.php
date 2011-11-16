@@ -1,8 +1,11 @@
 <?php 
+/*============================================================================
 
-/** Smart Layout (content widths & paddings) */
+  Smart Layout Control (content widths & paddings) 
+ 
+=============================================================================*/
 
-/** Set up content width */
+// Set up content width
 $layout = stf_get_setting( 'stf_layout' ); 
 $stf_page_width = stf_get_setting('stf_page_width');
 $stf_sidebar_width = stf_get_setting('stf_sidebar_width');
@@ -15,6 +18,7 @@ if( '2cl' == $layout || '2cr' == $layout ){ $content_width = $stf_page_width - $
 if( '3cl' == $layout || '3cr' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ); } 
 if( '3cb' == $layout ){ $content_width = $stf_page_width - $sidebars_total - ( 2 * $stf_padding ) ; }
 
+// Setup layout
 function stf_layout(){
 
 	$layout = stf_get_setting( 'stf_layout' ); 
@@ -254,15 +258,4 @@ function stf_layout(){
 }
 
 // Hook it up.
-// add_action( 'wp_head', 'stf_layout' );
-
-// Set default layout options
-$layout = stf_get_setting( 'stf_layout' ); 
-if( strlen( $layout ) <= 1 ){
-	// Insert default options
-	stf_update_setting( 'stf_page_width', 980 );
-	stf_update_setting( 'stf_sidebar_width', 160 );
-	stf_update_setting( 'stf_secondary_width', 160 );
-	stf_update_setting( 'stf_padding', 15 );
-	stf_update_setting( 'stf_layout', '2cr' );
-}
+add_action( 'wp_head', 'stf_layout' );
