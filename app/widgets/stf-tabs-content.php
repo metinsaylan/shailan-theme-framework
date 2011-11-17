@@ -1,13 +1,13 @@
 <div id="sidebar-tabs" class="clearfix">
 	<ul class="tabs">
 		<?php if ( term_exists( 'featured' , 'category' ) ) { ?>
-		<li><a href="#featured"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/featured.png" class="tooltip" title="Featured posts" alt="Featured" /><span class="tab-title">Featured</span></a></li>
+		<li><a href="#featured"><img src="<?php echo get_template_directory_uri(); ?>/app/images/icons/featured.png" class="tooltip" title="Featured posts" alt="Featured" /><span class="tab-title">Featured</span></a></li>
 		<?php } ?>
 		
-		<?php if( function_exists('stats_get_csv') ){ ?> <li><a href="#popular"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/popular.png"  class="tooltip" title="Popular posts" alt="Popular" /><span class="tab-title">Popular</span></a></li> <?php } ?>
-		<li><a href="#recent-entries"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/recent.png"  class="tooltip" title="Recent Posts" alt="Recent" /><span class="tab-title">Recent</span></a></li>
-		<li><a href="#recent-comments"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/comments.png"  class="tooltip" title="Recent Comments" alt="Comments" /><span class="tab-title">Comments</span></a></li>
-		<li><a href="#categories"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/folder_32.png"  class="tooltip" title="Categories" alt="Categories" /><span class="tab-title">Categories</span></a></li>
+		<?php if( function_exists('stats_get_csv') ){ ?> <li><a href="#popular"><img src="<?php echo get_template_directory_uri(); ?>/app/images/icons/popular.png"  class="tooltip" title="Popular posts" alt="Popular" /><span class="tab-title">Popular</span></a></li> <?php } ?>
+		<li><a href="#recent-entries"><img src="<?php echo get_template_directory_uri(); ?>/app/images/icons/recent.png"  class="tooltip" title="Recent Posts" alt="Recent" /><span class="tab-title">Recent</span></a></li>
+		<li><a href="#recent-comments"><img src="<?php echo get_template_directory_uri(); ?>/app/images/icons/comments.png"  class="tooltip" title="Recent Comments" alt="Comments" /><span class="tab-title">Comments</span></a></li>
+		<li><a href="#categories"><img src="<?php echo get_template_directory_uri(); ?>/app/images/icons/folder_32.png"  class="tooltip" title="Categories" alt="Categories" /><span class="tab-title">Categories</span></a></li>
 	</ul>
 	<div class="tab_container">
 	

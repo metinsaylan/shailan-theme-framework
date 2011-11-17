@@ -1,7 +1,9 @@
 <?php
 /*
 	SHAILAN THEME FRAMEWORK 
-	Author : Matt Say ( @metinsaylan )
+	CORE
+	___________________________________________________________________________
+											 Author : Matt Say ( @metinsaylan )
 */
 
 global $stf;
@@ -141,7 +143,6 @@ class Shailan_Framework{
 	}
 	
 	function theme_admin_init(){
-		$file_dir = get_bloginfo('template_directory');
 		 
 		wp_enqueue_style("stf-options-page", STF_URL . "css/options.css", false, "1.0", "all");
 		wp_enqueue_style("stf-widgets-mod", STF_URL . "css/widgets.css", false, "1.0", "all");
