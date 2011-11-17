@@ -13,9 +13,10 @@ blockquote.stylish { font-size:1.2em; }
 blockquote {
 font-family:Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
 font-style:italic;
-padding:15px;
+padding:10px 10px 10px 20px;
+background-color: #ddd;
 background:rgba(0,0,0,0.1);
-text-shadow:rgba(255,255,255,0) 1px 1px 0;
+text-shadow:rgba(155,155,155,0) 1px 1px 1px;
 border-radius:6px;
 -moz-border-radius:6px;
 -webkit-border-radius:6px;
@@ -758,12 +759,6 @@ a.share-button
 {
   font-family:Monaco, Consolas, "Andale Mono", "Dejavu Sans Mono", monospace;
   font-size:12px
-}
-
-blockquote
-{
-  font-family:'Marck Script', cursive;
-  font-size:18px
 }
 
 input.wpcf7-submit

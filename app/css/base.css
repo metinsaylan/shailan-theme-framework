@@ -16,13 +16,11 @@ html{ -webkit-font-smoothing: antialiased; }
 	padding: 20px 0 0;
 }
 
-#header .widget-container{ margin:0; }
-
 #header #searchform-wrapper {
 	margin-top: 6px;
 }
 
-#header-bottom .widget-container{ margin:0; }
+#header-wrapper .widget-container, #header-bottom .widget-container{ margin:0; }
 #header-bottom-wrap{
 background: #F0F0EF;
 position: relative;
@@ -40,7 +38,6 @@ z-index: 45;
 border-bottom: 1px solid #AABBCE;
 }
 
-#topnav ul.dropdown > li { float:right; }
 #topnav ul li a{ color:#999; text-shadow:none; }
 #topnav ul li.hover{ background: #222; color:#BBB; }
 #topnav ul a:hover{ color:#FFF; }
@@ -306,7 +303,9 @@ top: 0px;
 #site-title {
 line-height: 1;
 margin: 10px 0 1em 0;
+padding:0;
 }
+
 #subscribe {
 margin: 0 10px;
 width: 25px;
@@ -340,10 +339,16 @@ border-radius: 5px;
 	margin-bottom: 1.5em;
 	position:relative; 
 	padding: 20px 0px 0px;
-	border: 1px solid #ddd;
+	border: 1px solid #ccc;
+	box-shadow: #ccc 0 1px 3px;
 }
 .entry-header{ margin-bottom:20px; position:relative; padding: 0px 20px; }
-.entry-header .category-title{ text-transform:uppercase; color:#bbb; font-size:11px; font-weight:bold; }
+
+div.categories{ margin-bottom:1em; }
+.entry-header .category-title{ text-transform:uppercase; color:#bbb; font-size:11px; font-weight:bold; padding-right: 18px; }
+.category-title a { color:#bbb; }
+.sub-categories{ opacity:0; -webkit-transition: opacity linear 0.3s; }
+.hentry:hover .sub-categories{ opacity: 1; }
 
 .entry-content, .entry-summary {
 	padding: 0 20px;
@@ -472,8 +477,8 @@ ul.gallery-display li img {
 a.permalink {
 display: none;
 position: absolute;
-top: -2px;
-right: -3px;
+top: -1px;
+right: -2px;
 text-indent: -9999px;
 background: #fff url(../images/permalink.png) top right no-repeat;
 height: 18px;
@@ -796,10 +801,13 @@ border-radius: 4px;
 padding: 3px;
 }
 div.seperator {
-clear: both;
-margin-bottom: 0px;
-padding-bottom: 0px;
-padding-top: 15px;
+	clear: both;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-top: 15px;
+	
+	border-top:1px solid #ddd;
+	
 }
 div.share {
 float: right;

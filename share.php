@@ -1,27 +1,39 @@
-<div class="share">
+<div class="share-horizontal clearfix">
 
 	<?php
 		$id = get_the_ID();
 		$title = get_the_title();
-		$url = stf_get_shortlink();
+		// $url = stf_get_shortlink();
+		$url = get_permalink();
 		$tweet = stf_generate_post_tweet( $id );
-		$thumb_id = get_post_thumbnail_id( $id );
-		$thumb_url = wp_get_attachment_image_src( $thumb_id, array(250,250), false );
+		
+		$context = 'post';
+		if( is_page() ) $context = 'page';
+		if( is_attachment() ) $context = 'file';
+		if( get_post_format() == 'link' ) $context = 'link';		
+		if( get_post_format() == 'gallery' ) $context = 'gallery';		
+		if( get_post_format() == 'image' ) $context = 'image';		
+		if( get_post_format() == 'quote' ) $context = 'quote';		
+		if( get_post_format() == 'chat' ) $context = 'chat';		
+		if( get_post_format() == 'video' ) $context = 'video';		
+		if( get_post_format() == 'audio' ) $context = 'audio';		
+		
 	?>
+	<div class="share-label">Like this <?php echo $context; ?>?</div>
+	
+	<div class="share-button tweet-button">
+		<!-- tweet -->
+		<a href="http://twitter.com/share" class="twitter-share-button tooltip" data-text="<?php echo $tweet ?>" data-count="horizontal" data-via="shailancom" title="Tweet this post!" >Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+	</div>
 
-	<!-- facebook share -->
-	<a class="share-button like tooltip" href="http://www.facebook.com/sharer.php?u=<?php echo $url ?>&t=<?php echo urlencode( $title ); ?>" rel="nofollow" target="_blank" title="Share on facebook"></a>
+	<div class="share-button plusone-button">
+		<!-- plusone -->
+		<g:plusone size="medium"></g:plusone>
+	</div>
 
-	<!-- tweet -->
-	<a class="share-button tweet tooltip" href="http://twitter.com/?status=<?php echo rawurlencode($tweet) ?>" rel="nofollow" target="_blank" title="Tweet this post!"></a>
-
-	<!-- bookmark -->
-	<a href="http://www.delicious.com/save" onclick="window.open('http://www.delicious.com/save?v=5&noui&jump=close&url='+encodeURIComponent('<?php the_permalink() ?>')+'&title='+encodeURIComponent('<?php the_title() ?>'),'delicious', 'toolbar=no,width=550,height=550'); return false;" class="share-button delicious tooltip" rel="nofollow" title="Bookmark this post"></a>
-
-	<!-- Digg Button -->
-	<a href="http://digg.com/submit?url=<?php echo $url; ?>&bodytext=<?php echo urlencode( $title ); ?>" target="_blank" rel="nofollow" class="share-button digg tooltip" title="Digg this post"></a>
-
-	<!-- Buzz button -->
-	<a href="http://www.google.com/buzz/post?url=<?php echo $url; ?>&imageurl=<?php echo $thumb_url; ?>" target="_blank" rel="nofollow" class="share-button buzz tooltip" title="Buzz this post"></a>
+	<div class="share-button facebook-button">
+		<!-- facebook share -->
+		<fb:like href="<?php echo $url ?>" send="true" layout="button_count" width="120" show_faces="false" ></fb:like>
+	</div>
 
 </div>

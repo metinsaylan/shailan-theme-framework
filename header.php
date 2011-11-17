@@ -24,7 +24,7 @@
 
 	<div id="topnav-wrap">
 	<div id="topnav" class="clearfix">
-		<?php if( ! dynamic_sidebar('header-bottom') ) {
+		<?php if( ! dynamic_sidebar('header-top') ) {
 		
 			$args = array(
 				'theme_location'  => 'topnav',

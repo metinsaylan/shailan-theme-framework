@@ -371,7 +371,7 @@ function stf_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'stf' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'edit' ), '<span class="comment-edit-link">', '</span>' );	?></p>
+		<p><?php _e( 'Ping:', 'stf' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( 'edit' ), '<span class="comment-edit-link">', '</span>' );	?></p>
 	<?php
 			break;
 	endswitch;
@@ -420,7 +420,7 @@ function stf_comment_inline( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'stf' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('Edit'), ' ' ); ?></p>
+		<p><?php _e( 'Ping:', 'stf' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('Edit'), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;

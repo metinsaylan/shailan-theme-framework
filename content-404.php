@@ -10,7 +10,7 @@
 	<div class="row">
 		<div class="one_half">
 			<h4>Most read posts</h4>
-			<?php stf_most_viewed_posts( 7, 'loop-list.php' ); ?>
+			<?php stf_most_viewed_posts( 7, 'list' ); ?>
 		</div>
 		<div class="one_half last">
 			<?php if(function_exists('stats_get_csv')){ 
@@ -25,7 +25,7 @@
 			<?php } else { ?>
 
 			<h4>Some random posts</h4>
-			<?php stf_random_posts( 7, 'loop-list.php' ); ?>
+			<?php stf_random_posts( 7, 'list' ); ?>
 
 			<?php } ?>
 		</div>
