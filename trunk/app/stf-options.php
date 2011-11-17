@@ -1,6 +1,10 @@
 <?php 
-
-/** DEFAULT FRAMEWORK OPTIONS */
+/*
+	SHAILAN THEME FRAMEWORK 
+	THEME OPTIONS & DEFAULTS
+	___________________________________________________________________________
+	                                         Author : Matt Say ( @metinsaylan )
+*/
 global $stf;
 
 $stf_color_schemes = array(

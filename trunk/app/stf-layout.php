@@ -1,9 +1,10 @@
 <?php 
-/*============================================================================
-
-  Smart Layout Control (content widths & paddings) 
- 
-=============================================================================*/
+/*
+	SHAILAN THEME FRAMEWORK 
+	LAYOUT MANAGER
+	___________________________________________________________________________
+	                                         Author : Matt Say ( @metinsaylan )
+*/
 
 // Set up content width
 $layout = stf_get_setting( 'stf_layout' ); 
