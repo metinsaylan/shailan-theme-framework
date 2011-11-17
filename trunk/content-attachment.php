@@ -1,21 +1,9 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 <div class="entry-body" class="clearfix">
 
-	<?php if ( ! empty( $post->post_parent ) ) : $parent = $post->post_parent; ?>
-		<p class="parent-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'stf' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
-			/* translators: %s - title of parent post */
-			printf( __( '<span class="meta-nav">&larr;</span> %s', 'stf' ), get_the_title( $post->post_parent ) );
-		?></a></p>
-	<?php endif; ?>
-
 	<?php get_template_part('entry', 'header'); ?>
 	
-		<?php if ( is_search() ) : // Only display Excerpts for Search ?>
-			<div class="entry-summary">
-				<?php the_excerpt(); ?>
-			</div><!-- .entry-summary -->
-		<?php else : ?>
-			<div class="entry-content" class="clearfix">
+		<div class="entry-content" class="clearfix">
 			
 			<div class="entry-attachment">
 <?php if ( wp_attachment_is_image() ) :
@@ -101,7 +89,16 @@
 							<div class="nav-next"><?php next_image_link( false ); ?></div>
 						</div><!-- #nav-below -->
 						
-						<?php echo $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE post_parent = '$parent' AND post_type = 'attachment'" ); ?> pictures // <?php echo stf_views(); ?>
+						<?php 
+						
+						if ( ! empty( $post->post_parent ) ) {
+							$parent = $post->post_parent;
+						} else {
+							$parent = 0;
+						}
+						echo $wpdb->get_var( "SELECT COUNT(*) FROM $wpdb->posts WHERE post_parent = '$parent' AND post_type = 'attachment'" ); 
+						
+						?> pictures // <?php echo stf_views(); ?>
 						
 						<div class="attachment-navi">
 							<?php	if ( count( $attachments ) > 1 ) {
@@ -126,7 +123,6 @@
 				<?php if( is_single() ) { stf_related_posts(); } ?>
 				
 			</div><!-- .entry-content -->
-		<?php endif; ?>
 
 	<?php get_template_part('entry', 'footer'); ?>
 

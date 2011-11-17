@@ -6,8 +6,7 @@ function stf_wrapCurrent($link){
 function stf_breadcrumbs( $args = array() ) {
 	global $wp_query, $post;
 	
-	$enabled = stf_get_setting( 'breadcrumbs_enabled' );
-	if( 'off' == $enabled ){
+	if( 'off' == stf_get_setting( 'breadcrumbs_enabled' ) ){
 		return '';
 	}
 	
@@ -62,7 +61,7 @@ function stf_breadcrumbs( $args = array() ) {
 		
 	} elseif ( ($on_front == "page" && is_front_page()) || ($on_front == "posts" && is_home()) ) {
 	
-		$output = $hometext;
+		return '';
 		
 	} elseif ( $on_front == "page" && is_home() ) {
 	
@@ -76,7 +75,16 @@ function stf_breadcrumbs( $args = array() ) {
 			$output .= '<a href="' . get_permalink( $opt['singleparent']) . '">' . get_the_title($opt['singleparent']).'</a>'.$seperator;
 		} */
 		
-		if (is_single()) {
+		if ( is_attachment() ){
+		
+			$parent = &get_post( $post->post_parent );
+			$parent_title = isset( $parent->post_title ) ? $parent->post_title : 'Attachment';
+			
+			if( $parent_title != $post->post_title ) {
+				$output .= '<a href="' . get_permalink( $post->post_parent ) . '" title="' . $parent_title . '">' . $parent_title . '</a>' . $seperator;
+			}
+		
+		} else if ( is_single() ) {
 			$cats = get_the_category();
 			$cat = $cats[0];
 			if ( is_object($cat) ) {
