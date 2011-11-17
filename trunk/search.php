@@ -3,6 +3,7 @@
 <div id="page" class="clearfix">
 	<div id="container">
 		<div id="content" role="main">
+		
 		<?php if ( have_posts() ) { ?>
 		<h1 class="page-title">Search Results for <?php $key = esc_html($s, 1); _e('<span class="alt search-terms">'); echo $key; _e('</span>'); ?></h1>
 		<span class="sub-title">Showing results <strong><?php 
@@ -19,8 +20,25 @@
 			if ($end>$total_count)
 				$end = $total_count;
 			echo $start . '&dash;' . $end; ?></strong> of <strong><?php echo $total_count; ?></strong>.</span>
-		<?php } //if ( have_posts() ) { ?>
-		<?php stf_content(); ?>
+		<?php } ?>
+		
+		<?php do_action('before_content'); ?>
+
+		<?php if ( have_posts() ) : 
+			$post_index = 1; 
+			while ( have_posts() ) : the_post();
+				$posts_displayed[] = $post->ID;
+				get_template_part( 'content', get_post_format() );
+				$post_index = $post_index + 1; 
+			endwhile;
+			stf_pagination();		
+		else : ?>
+			<?php get_template_part( 'content', '404' ); ?>
+		<?php endif; ?>
+		
+		<?php do_action('after_content'); ?>
+		
+		
 		</div><!-- #content -->
 	</div><!-- #primary -->
 <?php get_sidebar(); ?>
