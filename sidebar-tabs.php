@@ -7,7 +7,7 @@
 		<?php if( function_exists('stats_get_csv') ){ ?> <li><a href="#popular"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/popular.png"  class="tooltip" title="Popular posts" alt="Popular" /><span class="tab-title">Popular</span></a></li> <?php } ?>
 		<li><a href="#recent-entries"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/recent.png"  class="tooltip" title="Recent Posts" alt="Recent" /><span class="tab-title">Recent</span></a></li>
 		<li><a href="#recent-comments"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/comments.png"  class="tooltip" title="Recent Comments" alt="Comments" /><span class="tab-title">Comments</span></a></li>
-		<li><a href="#categories"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/categories.png"  class="tooltip" title="Categories" alt="Categories" /><span class="tab-title">Categories</span></a></li>
+		<li><a href="#categories"><img src="<?php bloginfo('template_directory'); ?>/app/images/icons/folder_32.png"  class="tooltip" title="Categories" alt="Categories" /><span class="tab-title">Categories</span></a></li>
 	</ul>
 	<div class="tab_container">
 	
