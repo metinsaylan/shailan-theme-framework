@@ -76,7 +76,7 @@ class shailan_LoginWidget extends WP_Widget {
 			<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></label></p>
 		
 			<div class="widget-control-actions">
-				<p><small>Powered by <a href="http://shailan.com/wordpress/plugins/include-template-widget" title="Wordpress Tips and tricks, Freelancing, Web Design">Shailan.com</a> | <a href="http://shailan.com/wordpress/" title="Get more wordpress widgets and themes" target="_blank" >Get more..</a></small></p>
+				<p><small>Powered by <a href="http://shailan.com/wordpress/plugins/wp-login-widget" title="Wordpress Tips and tricks, Freelancing, Web Design">Shailan.com</a> | <a href="http://shailan.com/wordpress/" title="Get more wordpress widgets and themes" target="_blank" >Get more..</a></small></p>
 			</div>
 	
 			<div class="clear"></div>
@@ -97,7 +97,7 @@ if( !function_exists('stf_loginform') ){
 		$user_login = ( isset($_POST['log']) ) ? esc_attr( stripslashes( $_POST['log'] ) ) : '';
 		
 		echo '<div class="login-form-container">';
-		if (!(current_user_can('Subscriber'))){ ?>
+		if (! is_user_logged_in() ){ ?>
 			<form action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
 				<div class="login-field"><input type="text" name="log" id="log" value="<?php echo $user_login; ?>" size="20" /></div>
 				<div class="login-field"><input type="password" name="pwd" id="pwd" size="20" /></div>
@@ -109,7 +109,7 @@ if( !function_exists('stf_loginform') ){
 			</form>
 			<a href="<?php echo get_option('home'); ?>/wp-login.php?action=lostpassword" class="login-recover-link"><?php _e('Recover password'); ?></a>
 		<?php } else { ?>
-			<a href="<?php echo wp_logout_url(urlencode($_SERVER['REQUEST_URI'])); ?>"><?php _e('Logout'); ?></a> | <a href="<?php echo get_option('home'); ?>/wp-admin/"><?php _e('Admin'); ?></a>
+			<a href="<?php echo wp_logout_url(urlencode($_SERVER['REQUEST_URI'])); ?>"><?php _e('Logout'); ?></a> | <a href="<?php echo home_url(); ?>/wp-admin/"><?php _e('Admin'); ?></a>
 		<?php } 
 		echo '</div>';
 	}

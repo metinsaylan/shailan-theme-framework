@@ -1,4 +1,10 @@
-<?php  
+<?php
+/*
+	SHAILAN THEME FRAMEWORK 
+	BREADCRUMBS
+	___________________________________________________________________________
+											 Author : Matt Say ( @metinsaylan )
+*/
 
 function stf_wrapCurrent($link){
 	return "<span class='current'>".$link."</span>";
@@ -98,7 +104,7 @@ function stf_breadcrumbs( $args = array() ) {
 		
 		if ( is_category() ) {
 			$cat = intval( get_query_var('cat') );
-			$output .= __('Categories') . $seperator . yoast_get_category_parents($cat, false, $seperator);
+			$output .= __( 'Categories' ) . $seperator . yoast_get_category_parents($cat, false, $seperator);
 		} elseif ( is_tag() ) {
 			$output .= __('Tags') . $seperator . stf_wrapCurrent(single_cat_title('',false));
 		} elseif ( is_date() ) { 

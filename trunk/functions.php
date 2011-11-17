@@ -16,7 +16,7 @@ function theme_setup(){
 	register_nav_menu( 'footer', 'Footer Navigation' );
 	
 	// Automatic feed links
-	add_theme_support( 'automatic-feed-links' )
+	add_theme_support( 'automatic-feed-links' );
 
 	// Post Formats
 	add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video', 'audio' ) );

@@ -1,4 +1,11 @@
 <?php
+/*
+	SHAILAN THEME FRAMEWORK 
+	FILTERS
+	___________________________________________________________________________
+											 Author : Matt Say ( @metinsaylan )
+*/
+
 
 // Taken from k2 theme
 function stf_body_class_filter($classes) {

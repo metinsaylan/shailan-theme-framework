@@ -1,10 +1,9 @@
 <?php 
-/** SHAILAN THEME FRAMEWORK 
- File 		: shailan-utilities.php
- Author		: Matt Say
- Author URL	: http://shailan.com
- Version	: 1.0
- Contact	: metinsaylan (at) gmail (dot) com
+/*
+	SHAILAN THEME FRAMEWORK 
+	UTILITIES
+	___________________________________________________________________________
+	                                         Author : Matt Say ( @metinsaylan )
 */
 
 /* Head codes */
@@ -58,7 +57,7 @@ function shailan_editor_style($url) {
 /** Custom Admin Logo */
 function shailan_custom_logo() {
 	echo '<style type="text/css">
-		#header-logo { background-image: url('.get_bloginfo('template_directory').'/images/custom-logo.gif) !important; }
+		#header-logo { background-image: url('. get_template_directory_uri() .'/images/custom-logo.gif) !important; }
 	</style>'; }
 //add_action('admin_head', 'shailan_custom_logo');
 
@@ -69,7 +68,7 @@ function shailan_admin_footer($content) {
 
 /** Custom Default Avatar */
 function shailan_avatar ($avatar_defaults) {
-$myavatar = get_bloginfo('template_directory') . '/images/gravatar.gif';
+$myavatar = get_template_directory_uri() . '/images/gravatar.gif';
 $avatar_defaults[$myavatar] = "Custom Avatar";
 return $avatar_defaults;
 } //add_filter( 'avatar_defaults', 'shailan_avatar' );
