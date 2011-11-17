@@ -1,9 +1,9 @@
 <?php 
 /*
- * Sidebar Functions & Default Sidebars 1.0
- *
- * Changelog:
- * 1.0 - First release 
+	SHAILAN THEME FRAMEWORK 
+	DEFAULT SIDEBARS & WIDGET AREAS
+	___________________________________________________________________________
+	                                         Author : Matt Say ( @metinsaylan )
 */
 
 global $stf_widget_areas;

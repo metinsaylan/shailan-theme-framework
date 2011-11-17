@@ -1,3 +1,11 @@
+<?php 
+/*
+	SHAILAN THEME FRAMEWORK 
+	OPTIONS PAGE TEMPLATE
+	___________________________________________________________________________
+	                                         Author : Matt Say ( @metinsaylan )
+*/ ?>
+
 <div class="wrap stf_options_page">
 	<?php screen_icon(); ?>
 	<h2><?php echo esc_html( $title ); ?></h2>

@@ -1,6 +1,10 @@
 <?php 
-
-/* Color Customizations Module */
+/*
+	SHAILAN THEME FRAMEWORK 
+	THEME COLORS MANAGER
+	___________________________________________________________________________
+	                                         Author : Matt Say ( @metinsaylan )
+*/
 
 function stf_colors(){
 

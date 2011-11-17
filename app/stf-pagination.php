@@ -1,4 +1,11 @@
 <?php
+/*
+	SHAILAN THEME FRAMEWORK 
+	PAGINATION
+	___________________________________________________________________________
+	                                         Author : Matt Say ( @metinsaylan )
+*/
+
 
 function stf_pagination($pages = '', $range = 3)
 {  

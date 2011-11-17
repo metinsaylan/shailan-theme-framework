@@ -1,10 +1,9 @@
 <?php 
-/** SHAILAN THEME FRAMEWORK 
- File 		: shailan-shortcodes.php
- Author		: Matt Say
- Author URL	: http://shailan.com
- Version	: 1.0
- Contact	: metinsaylan (at) gmail (dot) com
+/*
+	SHAILAN THEME FRAMEWORK 
+	SHORTCODES
+	___________________________________________________________________________
+	                                         Author : Matt Say ( @metinsaylan )
 */
 
 /** [tags] : outputs tag cloud */
