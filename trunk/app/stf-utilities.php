@@ -22,16 +22,16 @@ add_filter('the_excerpt_rss', 'do_shortcode');
 add_action('init', 'enable_page_excerpts');
 function enable_page_excerpts() { add_post_type_support('page', 'excerpt'); }
 
-/** RSS Footer Text
+// RSS Footer Text
 function shailan_postrss($content) {
 	$feed_footer = stf_get_setting('stf_feed_footer');
-	if(is_feed() && !empty($feed_footer)){
+	if( is_feed() && !empty($feed_footer) ){
 		$content = $content . '<br />' .  $feed_footer . '';
 	}	
 	return $content;
 }
 add_filter('the_excerpt_rss', 'shailan_postrss');
-add_filter('the_content', 'shailan_postrss'); */
+add_filter('the_content', 'shailan_postrss');
 
 /** RSS Feed Thumbnails */
 function shailan_rss_post_thumbnail($content) {
@@ -198,7 +198,7 @@ function shailan_twitter_followers( $twitter_id ){
 	$ago = $now - 3600;
 	
 	if($last_check < $ago){
-		$xml=file_get_contents('http://twitter.com/users/show.xml?screen_name=' . $twitter_id);
+		$xml=file_get_contents( 'http://twitter.com/users/show.xml?screen_name=' . $twitter_id );
 		if (preg_match('/followers_count>(.*)</',$xml,$match)!=0) {
 			$twitter['count'] = $match[1];
 		};

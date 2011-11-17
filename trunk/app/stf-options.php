@@ -116,11 +116,11 @@ array( "type" => "open"),
 		"type" => "select",
 		"options" => array("3" => "3", "5" => "5", "10" => "10")),
 		
-	/*array(  "name" => "Feed footer",
+	array(  "name" => "Feed footer",
 		"desc" => "Displays after every post in the feed.",
 		"id" => "stf_feed_footer",
-		"std" => '<p><strong><em>This post is originally posted on <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>. <br />Visit <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> for more..</em></strong></p>',
-		"type" => "htmlarea"),*/
+		"std" => 'Read more on <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>.',
+		"type" => "text"),
 		
 	array(  "name" => "Site Footer Text",
 		"desc" => "Displays at the bottom of site. You can use various shortcodes here.",

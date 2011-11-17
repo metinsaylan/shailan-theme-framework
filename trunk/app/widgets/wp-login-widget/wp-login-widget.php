@@ -97,7 +97,7 @@ if( !function_exists('stf_loginform') ){
 		$user_login = ( isset($_POST['log']) ) ? esc_attr( stripslashes( $_POST['log'] ) ) : '';
 		
 		echo '<div class="login-form-container">';
-		if (!(current_user_can('level_0'))){ ?>
+		if (!(current_user_can('Subscriber'))){ ?>
 			<form action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
 				<div class="login-field"><input type="text" name="log" id="log" value="<?php echo $user_login; ?>" size="20" /></div>
 				<div class="login-field"><input type="password" name="pwd" id="pwd" size="20" /></div>
