@@ -763,6 +763,17 @@ margin-right: 5px;
 position: relative;
 z-index: 3;
 }
+
+.bypostauthor div.comment-author-avatar {
+float: right;
+}
+
+.bypostauthor div.comment-text {
+margin: 0;
+margin-right: 50px;
+}
+
+
 div.comment-body-inline {
 display: block;
 }
