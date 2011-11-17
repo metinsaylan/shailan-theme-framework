@@ -14,6 +14,10 @@
  endif;
 endif;
 
+?>
+
+<?php
+
 if ( have_comments() ) : 
 
 $ping_count = $comment_count = 0;
@@ -23,6 +27,12 @@ foreach ( $comments as $comment )
 $comments_by_type = &separate_comments($comments);
 
 ?>
+
+<?php $total_pages = get_comment_pages_count(); if ( $total_pages > 1 ) : ?>
+	<div id="comments-nav-above" class="comments-navigation">
+				<div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
+	</div><!-- #comments-nav-above -->
+<?php endif; ?> 
  
 <?php /* IF there are comments, show the comments */ ?>
 <?php if ( ! empty($comments_by_type['comment']) ) : ?>
@@ -51,6 +61,13 @@ $comments_by_type = &separate_comments($comments);
 </div>
  
 <?php endif /* if ( $ping_count ) */ ?>
+
+<?php $total_pages = get_comment_pages_count(); if ( $total_pages > 1 ) : ?>
+	<div id="comments-nav-above" class="comments-navigation">
+				<div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
+	</div><!-- #comments-nav-above -->
+<?php endif; ?> 
+
 <?php endif /* if ( $comments ) */ ?>
 
 <?php $pc = 0; ?>
