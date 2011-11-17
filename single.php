@@ -5,9 +5,10 @@
 	<div id="container">
 		<div id="content" role="main">
 		
+		<?php stf_breadcrumbs(); ?>
+		
 		<?php do_action('before_content'); ?>
 		
-		<?php stf_breadcrumbs(); ?>
 		<?php if ( have_posts() ) : 
 			$post_index = 1; 
 			while ( have_posts() ) : the_post();

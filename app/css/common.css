@@ -3,7 +3,7 @@
 /*- RESET */
 html,body,div,h1,h2,h3,h4,h5,h6,p,img,dl,dt,dd,ol,ul,li,table,caption,tbody,tfoot,thead,tr,th,td,form,fieldset,embed,object,applet { margin:0; padding:0; border:0; }
 body { background:#fffffe; font-size:14px; font-family:"Helvetica Neue", Arial, Helvetica, sans-serif; color:#666; background:#fff; }
-a { color:#00c; } a:active { color:red; } a:visited { color:#551a8b; } table { border-collapse:collapse; border-width:0; empty-cells:show; } ul { padding:0 0 1em 1em; } ol { padding:0 0 1em 1.3em; } li { line-height:1.5em; padding:0 0 .5em; } p { padding:0 0 1em; } h1,h2,h3,h4,h5 { padding:0 0 1em; } h1,h2 { font-size:1.3em; } h3 { font-size:1.1em; } h4,h5,table { font-size:1em; }  sup,sub { font-size:.7em; } input,select,textarea,option { font-family:inherit; font-size:inherit; }
+a { color:#27d; } a:active { color:red; } a:visited { color:#27d; } table { border-collapse:collapse; border-width:0; empty-cells:show; } ul { padding:0 0 1em 1em; } ol { padding:0 0 1em 1.3em; } li { line-height:1.5em; padding:0 0 .5em; } p { padding:0 0 1em; } h1,h2,h3,h4,h5 { padding:0 0 1em; } h1,h2 { font-size:1.3em; } h3 { font-size:1.1em; } h4,h5,table { font-size:1em; }  sup,sub { font-size:.7em; } input,select,textarea,option { font-family:inherit; font-size:inherit; }
 
 /*- COMMON */
 pre,code,tt,code,kbd,samp { font-family:Monaco, Consolas, "Andale Mono", "Dejavu Sans Mono", monospace; }
@@ -35,6 +35,11 @@ margin-left:20px;
 margin-right:0;
 text-align:left;
 width:33%;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 a {
@@ -143,20 +148,17 @@ line-height:1;
 
 h2 {
 font-size:1.7em;
-margin-bottom:.75em;
 }
 
 h3 {
 font-size:1.3em;
 line-height:1.3em;
-margin:.2em 0;
 text-transform:uppercase;
 }
 
 h4 {
 font-size:1.2em;
 line-height:1;
-margin:1.33em 0;
 }
 
 h5 {
@@ -510,7 +512,7 @@ display:block;
 }
 
 .entry-title,.widget-title {
-margin-bottom:.5em;
+	padding-bottom:.5em;
 }
 
 .hentry {

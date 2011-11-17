@@ -15,7 +15,7 @@
 		<div id="featured" class="tab_content">
 			<ul>
 			<?php 
-				stf_custom_posts( array('category_name' => 'featured' ), 'loop-list.php');
+				stf_custom_posts( array('category_name' => 'featured' ), 'list');
 			?>
 			</ul>
 		</div>
@@ -36,7 +36,7 @@
 		<div id="recent-entries" class="tab_content">
 			<ul>
 			<?php 
-				stf_custom_posts( array('posts_per_page' => 8), 'loop-list.php');
+				stf_custom_posts( array('posts_per_page' => 8), 'list');
 			?>
 			</ul>
 		</div>

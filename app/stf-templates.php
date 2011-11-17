@@ -48,31 +48,6 @@ function stf_style( $name, $args = null, $echo = true ){
 	}
 }
 
-function stf_branding(){
-	$logo_url = stf_get_setting('stf_logo_url');
-	
-	?><!-- Branding -->
-		<div id="branding"> <?php
-	
-	if(strlen($logo_url)>0){ ?>
-		
-		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>"><img id="logo" src="<?php echo $logo_url ?>" alt="<?php bloginfo('name') ?>" title="<?php bloginfo('description') ?>" /></a>
-		
-		
-	<?php } else { ?>
-	
-		<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
-		<<?php echo $heading_tag; ?> id="site-title">
-			<span><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'description' ) ); ?>" rel="home <?php if(!is_front_page() || !is_home()){ echo 'nofollow';} ?>"><?php bloginfo( 'name' ); ?></a></span>
-		</<?php echo $heading_tag; ?>>
-		
-	<?php } ?>
-	
-		</div>
-	<!-- [End] Branding -->
-	<?php 
-}
-
 /**
  * An extension for dynamic_sidebar(). If no widgets exist it shows default widgets
  * given by an array or a callback.
@@ -207,60 +182,10 @@ function stf_entry_pages_navigation(){
 }
 function stf_entry_pages(){  stf_entry_pages_navigation(); }
 
-function stf_get_templates(){
-	global $wp_query;
-
-	// array for loading loop templates
-	$templates = array();
+function stf_posts( $number_of_posts = 0, $template = '',  $reset = false, $pagination = false ){
+	global $wp_query, $posts_displayed, $post_index;
 	
-	if ( is_home() ) {
-		$templates[] = 'loop-home.php';
-
-	} elseif(is_single()){
-		$templates[] = 'loop-single.php';
-	}elseif(is_page()){
-		$templates[] = 'loop-page.php';
-	}elseif ( is_archive() ) {
-		if ( is_date() ) {
-
-			the_post();
-
-			if ( is_day() ) {
-				$templates[] = 'loop-archive-day.php';
-			} elseif ( is_month() ) {
-				$templates[] = 'loop-archive-month.php';
-			} elseif ( is_year() ) {
-				$templates[] = 'loop-archive-year.php';
-			}
-
-			$templates[] = 'loop-archive-date.php';
-
-			rewind_posts();
-		} elseif ( is_category() ) {
-			$templates[] = 'loop-category-' . absint( get_query_var('cat') ) . '.php';
-			$templates[] = 'loop-category.php';
-			
-		} elseif ( is_tag() ) {
-			$templates[] = 'loop-tag-' . get_query_var('tag') . '.php';
-			$templates[] = 'loop-tag.php';
-			
-		} elseif ( is_author() ) {
-			$templates[] = 'loop-author.php';
-		}
-		
-		$templates[] = 'loop-archive.php';
-	} elseif ( is_search() ) {
-		$templates[] = 'loop-search.php';
-	}
-
-	$templates[] = 'loop.php';
-	
-	return $templates;
-	
-}
-
-function stf_posts( $number_of_posts = 0, $template = '',  $reset = false ){
-	global $wp_query;
+	$posts_displayed = (array) $posts_displayed;
 	
 	// Reset to default query if needed
 	if($reset){ wp_reset_query(); }
@@ -273,21 +198,22 @@ function stf_posts( $number_of_posts = 0, $template = '',  $reset = false ){
 				$wp_query->query
 			)
 		); }
-	
-	// Load template if given
-	if('' != $template){
-		locate_template( array($template), true, false );
-	} else { 
-	
-		$templates = stf_get_templates();
-	
-		if ( have_posts() ): 
-			locate_template( $templates, true, false ); 
-		else: 
-			define('PAGE_NOT_FOUND', true); 
-			locate_template( array('loop-404.php'), true, false );
-		endif; 
+		
+	if( strpos ( $template , 'loop' ) ){
+		trigger_error ( 'Old template file include' );
 	}
+	
+	// The Loop
+	if ( have_posts() ) : 
+		$post_index = 1; 
+		while ( have_posts() ) : the_post();
+			$posts_displayed[] = get_the_ID();
+			get_template_part( 'app/templates/' . $template , get_post_format() );
+			$post_index = $post_index + 1; 
+		endwhile;
+		if ($pagination) stf_pagination();
+	endif;
+	
 }
 
 function stf_random_posts( $number_of_posts = 5, $template = '' ){
@@ -397,7 +323,7 @@ function stf_comments(){
 		$withcomments = true;		
 		comments_template( '/inline-comments.php', true );
 	} elseif ( ( is_single() || is_page() ) && comments_open() ){
-		comments_template( '/inline-comments.php', true ); 
+		comments_template( '/comments.php', true ); 
 	} else {
 		//comments_template( '', true ); 
 	}
@@ -592,7 +518,7 @@ function stf_related_posts( $number = 6 ){
 	   
 		$my_query = new WP_Query($args);
 		if( $my_query->have_posts() ) { 
-			echo '<div id="related-posts" class="clearfix"><h4 class="mt0 mb1">' . __('Related Posts', 'stf') . '</h4>';
+			echo '<div id="related-posts" class="clearfix"><h4 class="">' . __('Related Posts', 'stf') . '</h4>';
 			echo "<ul>";
 			while ($my_query->have_posts()) : $my_query->the_post(); ?>
 			  <li class="clearfix"><?php the_post_thumbnail( array(40, 40) ); ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
@@ -612,7 +538,7 @@ function stf_related_posts( $number = 6 ){
 			$my_query = new WP_Query($args);
 
 			if( $my_query->have_posts() ) {
-				echo '<div id="related-posts" class="clearfix"><h4 class="mt0 mb1">' . __('Related Posts', 'stf') . '</h4>';
+				echo '<div id="related-posts" class="clearfix"><h4 class="">' . __('Related Posts', 'stf') . '</h4>';
 				echo "<ul>";
 				while ($my_query->have_posts()) : $my_query->the_post(); ?>
 					<li class="clearfix"><?php the_post_thumbnail( array(40, 40) ); ?><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>

@@ -12,7 +12,7 @@ function theme_setup(){
 	// Navigation Menus
 	add_theme_support( 'nav_menus' );
 	register_nav_menu( 'topnav', 'Top Navigation' );
-	register_nav_menu( 'primary', 'Header Navigation' );
+	register_nav_menu( 'main', 'Header Navigation' );
 	register_nav_menu( 'footer', 'Footer Navigation' );
 
 	// Post Formats
@@ -59,6 +59,10 @@ function top_nav_callback(){
 }
 
 function nav_callback(){
+
+	echo "<div id=\"shailan-dropdown-menu\" class=\"dm-align-left\"><table><tr><td>";
+	echo "<ul class=\"dropdown dropdown-horizontal\">";
+
 	$args = array(
     'orderby'            => 'name',
     'order'              => 'ASC',
@@ -78,7 +82,8 @@ function nav_callback(){
     'taxonomy'           => 'category',
     'number'             => 12
 	);
-	echo "<ul class=\"ddmenu\">";
-		wp_list_categories( $args );
-	echo "</ul>";
+	
+	wp_list_categories( $args );
+		
+	echo "</ul></td></tr></table></div>";
 }
