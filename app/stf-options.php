@@ -53,24 +53,6 @@ array( "type" => "open"),
 		"std" => get_bloginfo('rss2_url'),
 		"type" => "text"),
 		
-	array(  "name" => __("Twitter username", 'stf'),
-		"desc" => "Will be used to display your latest tweet on header",
-		"id" => "stf_twitter_username",
-		"std" => "shailancom",
-		"type" => "text"),
-		
-	array(  "name" => "Facebook page URL",
-		"desc" => "URL of your facebook fan page",
-		"id" => "stf_facebook_URL",
-		"std" => "",
-		"type" => "text"),
-		
-	array(  "name" => "Subscribe using Email URL",
-		"desc" => "Feedburner URL for e-mail or any other e-mail subscription site URL",
-		"id" => "stf_subscribe_URL",
-		"std" => "",
-		"type" => "text"),
-		
 	array("name" => "Show breadcrumbs",
 		"desc" => "Enable breadcrumbs on home page.",
 		"id" => "breadcrumbs_enabled",
@@ -120,11 +102,11 @@ array( "type" => "open"),
 		"type" => "select",
 		"options" => array("3" => "3", "5" => "5", "10" => "10")),
 		
-	array(  "name" => "Feed footer",
+	/*array(  "name" => "Feed footer",
 		"desc" => "Displays after every post in the feed.",
 		"id" => "stf_feed_footer",
-		"std" => 'Read more on <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>.',
-		"type" => "text"),
+		"std" => '<p><strong><em>This post is originally posted on <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a>. <br />Visit <a href="'.get_bloginfo('url').'">'.get_bloginfo('name').'</a> for more..</em></strong></p>',
+		"type" => "htmlarea"),*/
 		
 	array(  "name" => "Site Footer Text",
 		"desc" => "Displays at the bottom of site. You can use various shortcodes here.",
@@ -144,6 +126,24 @@ array( "name" => __( "Social", 'stf' ),
 		"type" => "checkbox",
 		"std" => "on"
 	),
+	
+	array(  "name" => __("Twitter username", 'stf'),
+		"desc" => "Will be used to display your latest tweet on header",
+		"id" => "stf_twitter_username",
+		"std" => "shailancom",
+		"type" => "text"),
+		
+	array(  "name" => "Facebook page URL",
+		"desc" => "URL of your facebook fan page",
+		"id" => "stf_facebook_URL",
+		"std" => "",
+		"type" => "text"),
+		
+	array(  "name" => "Subscribe using Email URL",
+		"desc" => "Feedburner URL for e-mail or any other e-mail subscription site URL",
+		"id" => "stf_subscribe_URL",
+		"std" => "",
+		"type" => "text"),
 		
 array( "type" => "open"),
 
@@ -246,6 +246,14 @@ array( "type" => "close"),
 array( "name" => "Fonts",
 	"type" => "section"),
 array( "type" => "open"),
+
+	array(
+		"name" => "Enable Custom Fonts",
+		"desc" => "This option enables use of custom fonts.",
+		"id" => "custom_fonts_enabled",
+		"type" => "checkbox",
+		"std" => "on"
+	),
 
 	array(
 		"name" => "Title font",
