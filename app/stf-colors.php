@@ -33,6 +33,8 @@ function stf_colors(){
 		
 		a{ color: <?php echo $stf_link_color; ?>; }
 		
+		#header-wrapper { background-color: <?php echo stf_get_setting('stf_header_bgcolor'); ?> }
+		
 	</style>
 	<!-- End of STF Custom colors -->
 		<?php

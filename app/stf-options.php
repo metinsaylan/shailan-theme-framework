@@ -218,6 +218,14 @@ array( "type" => "open"),
 	),
 	
 	array(
+		"name" => "Header Background",
+		"desc" => "Header Background color value (Eg. #778899)",
+		"id" => "stf_header_bgcolor",
+		"type" => "text",
+		"std" => "#778899"
+	),
+	
+	array(
 		"name" => "Text Color",
 		"desc" => "Site text color value (Eg. #444444)",
 		"id" => "stf_text_color",
