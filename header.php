@@ -6,6 +6,20 @@
 
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	
+	<!-- Layout Functions (Editable via options)-->
+	<?php stf_layout(); ?>
+	
+	<!-- Base styles -->
+	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/app/css/base.css" />
+	
+	<!-- Color Scheme (Editable via options)-->
+	<?php if( stf_get_setting( 'stf_colorscheme' ) ){ ?>
+		<link rel="stylesheet" type="text/css" href="<?php echo stf_get_setting( 'stf_colorscheme' ); ?>" />
+	<?php } ?>
+	
+	<!-- Custom colors (Editable via options) -->
+	<?php stf_colors(); ?>
+	
 	<?php wp_head(); // For plugins ?>
 
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>" title="<?php printf( __( '%s latest posts', 'stf' ), esc_html( get_bloginfo('name'), 1 ) ) ?>" />

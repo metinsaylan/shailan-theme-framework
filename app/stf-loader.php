@@ -20,8 +20,6 @@ include_once('stf-templates.php'); // CUSTOM TEMPLATES
 include_once('stf-social.php'); // SOCIAL
 include_once('stf-toc.php'); // TABLE OF CONTENT GENERATOR
 
-// ob_end_clean();
-
 // WIDGETS
 function stf_widget_footer(){
 	echo "<div class=\"widget-control-actions\">
@@ -40,10 +38,4 @@ include_once('widgets/stf-latest-tweet.php'); // LATEST TWEET WIDGET
 include_once('widgets/stf-floating-sidebar.php'); // FLOAINGBAR WIDGET
 include_once('widgets/stf-sidebar-tabs.php'); // TABS WIDGET
 include_once('widgets/stf-nivo-slider.php'); // NIVO SLIDER WIDGET
-
-// ob_end_clean();
-
-
-
-
 
